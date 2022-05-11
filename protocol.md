@@ -1,3 +1,14 @@
+---
+title: Functionalized lineage tracing for the study and manipulation of heterogeneous cell populations
+pdf_engine: xelatex
+geometry: margin=2cm
+fontfamily: helvet
+numbersections: true
+toc: true
+header-includes:
+  - \renewcommand{\familydefault}{\sfdefault}
+---
+
 **Chapter Title:**
 
 Functionalized lineage tracing for the study and manipulation of heterogeneous cell populations
@@ -22,27 +33,25 @@ Amy Brock, Ph.D.; amy.brock@utexas.edu
 
 Functionalized lineage tracing
 
-# i. Summary/Abstract
+# Summary/Abstract
 
 The ability to track and isolate unique cell lineages from large heterogeneous populations increases the resolution at which cellular processes can be understood under normal and pathogenic states beyond snapshots obtained from single cell RNA sequencing (scRNA-seq). Here, we describe the Control of Lineages by Barcode Enabled Recombinant Transcription (COLBERT) method in which unique single guide RNA (sgRNA) barcodes are used as functional tags to identify and recall specific lineages of interest. A sgRNA barcode is stably integrated and actively transcribed, such that all cellular progeny will contain the parental barcode and produce a functional sgRNA. The sgRNA barcode has all the benefits of a DNA barcode and added functionalities. Once a barcode pertaining to a lineage of interest is identified, the lineage of interest can be isolated using an activator variant of Cas9 (such as dCas9-VPR) and a barcode-matched sequence upstream of a fluorescent reporter gene. CRISPR activation of the fluorescent reporter will only occur in cells producing the matched sgRNA barcode, allowing precise identification and isolation of lineages of interest from heterogeneous populations.
 
-# ii. Key Words:
+# Key Words:
 
 lineage tracking, single cell, barcoding, clonal dynamics, RNA-seq, scRNA-seq, CRISPR, lineage isolation
 
-# 1. Introduction
+# Introduction
 
 Insight into the clonal composition of a cells during key events -- such as development, infection, tumor progression, or treatment response -- is critical to understanding the nature of the interaction between the population of cells and the selective forces shaping it. While advances in genomics and transcriptomics and the advent of single-cell RNA sequencing (scRNA-seq) have vastly increased the resolution at which we can understand cellular processes, they lack the ability to directly assign clonal relationships. To meet this need, lineage tracing technologies, such as DNA barcoding, have been developed to label and track individual cells and their progeny ***(1)(2)***. In DNA barcoding, each individual cell in a population is labeled with a unique random string of nucleotides that is integrated into the genome and heritable by its daughter cells. The ensemble of all DNA barcodes in the cell population can be quantified by next-generation sequencing (NGS) to determine how clonal abundance changes over time.
 
 While highly informative, DNA barcoding and other lineage tracing techniques are still limited in that interesting lineages of cells cannot be easily isolated from the bulk population for clonally pure analysis. Here, we describe a detailed protocol for the Control of Lineages by Barcode Enabled Recombinant Transcription (COLBERT), a workflow that enables precise identification and isolation of populations of interest from heterogeneous mammalian cells ***(3)***. An overview of COLBERT is shown in **Fig. 1**. COLBERT is a functionalized variant of DNA barcoding in which the DNA barcode is a CRISPR-Cas9 compatible single-guide RNA (sgRNA). The sgRNA-barcode has multiple functionalities: (1) It is an integrated DNA barcode, (2) It is transcribed and captured in scRNA-seq workflows, and (3) It can be used to actuate lineage-specific genes of interest using an activator variant of Cas9 ***(4)***. This protocol describes the use of COLBERT for lineage-specific activation of GFP, enabling isolation of clonal cells from a heterogeneous population.
 
-This protocol describes two variants of the COLBERT system, one compatible with single-cell RNA sequencing workflows that use polyA capture and another with specific compatibility with 10X Genomics systems. In the polyA capture version, the sgRNA barcode is engineered using the CROPseq method ***(5)*** such that the sgRNA barcode is transcribed by both RNA polymerase III and RNA polymerase II, creating a functional sgRNA barcode transcript and a polyadenylated transcript containing the barcode, respectively. In the 10X Genomics version, the sgRNA is engineered to contain a capture sequence that allows targeted capture by the Chromium Single Cell 3ʹ v3 Gel Beads ***([6])***.
+This protocol describes two variants of the COLBERT system, one compatible with single-cell RNA sequencing workflows that use polyA capture and another with specific compatibility with 10X Genomics systems. In the polyA capture version, the sgRNA barcode is engineered using the CROPseq method ***(5)*** such that the sgRNA barcode is transcribed by both RNA polymerase III and RNA polymerase II, creating a functional sgRNA barcode transcript and a polyadenylated transcript containing the barcode, respectively. In the 10X Genomics version, the sgRNA is engineered to contain a capture sequence that allows targeted capture by the Chromium Single Cell 3' v3 Gel Beads ***([6])***.
 
 Cells are first transduced with lentivirus containing either the CROPseq sgRNA barcoding vector or the 10X Capture sgRNA barcoding vector at a low multiplicity of infection (MOI) to minimize the integration of multiple barcodes per cell. In both versions of the vector, the sgRNA barcode is co-expressed with blue fluorescent protein (BFP) for easy identification and collection of barcoded cells via flow cytometry and fluorescence-activated cell sorting (FACS). Once established, the barcoded cell population is available for experimental manipulation. Clonal dynamics may be measured by NGS analysis and gene expression signatures of clonal populations may be resolved by scRNA-Seq. Once a barcode of interest is identified from NGS or scRNA-seq, the barcode identifier can be exploited for isolation of the clone. This is achieved by transfecting the cell population with a plasmid containing an activator variant of Cas9 (dCas9-VPR) and a second plasmid containing the Cas9-homing PAM sites adjacent to the identified barcode upstream of green fluorescent protein (sfGFP) reporter. Expression of sfGFP will occur only in cells that are producing the matching sgRNA barcode, allowing precise identification and FACS isolation of cells from lineages of interest.
 
-\[INSERT FIGURE 1 NEAR HERE\]
-
-# 2. Materials 
+# Materials
 
 Equipment
 
@@ -170,9 +179,9 @@ Computational
 
 4.  Cashier (https://github.com/russelldurrett/cashier)
 
-# 3. Methods 
+# Methods
 
-## 3.1 sgRNA Barcode Library Plasmid Pool Assembly
+## sgRNA Barcode Library Plasmid Pool Assembly
 
 1.  \[[CROPseq]{.underline}\] Perform an extension reaction to generate double-stranded insert gRNA barcode DNA. Mix 10 μL NEB 5X Q5 Reaction Buffer, 1 μL of 10 mM dNTPs, 2 μL 100µM CROPseq-PrimeF-BgL-BsmBI, 1 μL 100µM CROPseq-RevExt-BgL-BsmBI , and 0.5 μL to create a 50 μL reaction (*see* **Note 2**).
 
@@ -218,7 +227,7 @@ Computational
 
 20. Calculate transformation efficiency from dilution plating (*see* **Note 8**).
 
-## 3.2 sgRNA Barcode Sampling
+## SgRNA Barcode Sampling
 
 The diversity of the initial plasmid pool should be assessed to ensure a high diversity library. To do this, PCR is performed with primers containing Illumina indices that anneal to regions flanking the barcodes.
 
@@ -266,7 +275,7 @@ The diversity of the initial plasmid pool should be assessed to ensure a high di
 
 21. See 3.7.2 for processing barcode sequence data.
 
-## 3.3 sgRNA Barcoding Lentivirus Production 
+## SgRNA Barcoding Lentivirus Production
 
 1.  48 hours before transfection, plate 0.22-0.25 x 10^6^ low-passage HEK-293T cells in DMEM supplemented with 10% FBS without antibiotics in each well of a sterile 6-well tissue culture treated plate such that cells will be 70-80% confluent at the time of transfection.
 
@@ -304,11 +313,11 @@ The diversity of the initial plasmid pool should be assessed to ensure a high di
 
 18. Aliquot 25-50 μL of concentrated virus in threaded cryovials and store at -80 °C (*see* **Note 25**, **Note 26**).
 
-## 3.4 Determine sgRNA Viral Titer 
+## Determine sgRNA Viral Titer
 
 (*see* **Note 27**, **Note 28**)
 
-### 3.4.1 Titering on Adherent Cells (Forward Procedure)
+### Titering on Adherent Cells (Forward Procedure)
 
 (*see* **Note 29**)
 
@@ -338,7 +347,7 @@ The diversity of the initial plasmid pool should be assessed to ensure a high di
 
 12. Keep cells on ice and continue to step 3.4.3
 
-### 3.4.2 Titering on Suspension Cells
+### Titering on Suspension Cells
 
 1.  Count your cells of interest using a hemocytometer.
 
@@ -364,7 +373,7 @@ The diversity of the initial plasmid pool should be assessed to ensure a high di
 
 12. Keep cells on ice and continue to step 3.4.3
 
-### 3.4.3 Flow Cytometry to Determine Viral Titer
+### Flow Cytometry to Determine Viral Titer
 
 1.  Pass cells resuspended in FACS buffer through a 35 μm nylon mesh strainer into a 5 mL flow cytometry test tube (*see* **Note 41**).
 
@@ -378,7 +387,7 @@ The diversity of the initial plasmid pool should be assessed to ensure a high di
 
 $$\frac{\text{TU}}{\text{mL}}\text{\ }\text{=}\text{\ }\frac{\left( \text{Number\ of\ cells\ at\ time\ of\ transduction} \right)\text{\ ×\ }\left( \text{Fraction\ of\ Positive\ Cells} \right)}{\left( \text{Volume\ of\ virus\ }\left\lbrack \text{mL} \right\rbrack \right)}$$
 
-## 3.5 sgRNA Barcode Transduction
+## sgRNA Barcode Transduction
 
 1.  After calculating the viral titer (TU/mL) on your cell line of interest, determine the final number of cells you require for your experiment using and transduce cells at a multiplicity of infection (MOI) of 0.1 (**Equation 2**) to minimize the occurrence of multiple barcode integrations (*see* **Note 45**, **Note 46**).
 
@@ -392,9 +401,9 @@ $$\frac{\text{TU}}{\text{mL}}\text{\ }\text{=}\text{\ }\frac{\left( \text{Number
 
 $$\text{MOI\ [TU/cell]\ =\ }\frac{\left( \text{Volume\ of\ Virus\ needed\ [mL]} \right)\text{\ ×\ }\left( \text{Titer\ of\ Virus\ [TU/mL]} \right)}{\left( \text{Number\ of\ cells\ exposed\ to\ virus} \right)}\text{\ =\ 0.1}$$
 
-## 3.7 Targeted sgRNA Barcode Sampling of Cells 
+## Targeted sgRNA Barcode Sampling of Cells
 
-### 3.7.1 Preparing Samples for Sequencing
+### Preparing Samples for Sequencing
 
 1.  To assess cell barcode diversity harvest cells from culture and collect into cell pellet. (See **Note 48**).
 
@@ -408,15 +417,12 @@ $$\text{MOI\ [TU/cell]\ =\ }\frac{\left( \text{Volume\ of\ Virus\ needed\ [mL]} 
 
 5.  Finish preparing barcodes as described in 3.2 steps 4-20.
 
-### 3.7.2 Processing Barcode Sequencing Data
+### Processing Barcode Sequencing Data
 
 1.  Processing barcode data is accomplished through several bash scripts which can be found at [[https://github.com/russelldurrett/cashier]{.underline}][1] (*see* **Note 50**).
 
 2.  Concatenate all fastq files for a given sample into a single fastq file using the following command: *cat sampe1\*.fastq \> sample1.fastq* (*see* **Note 51**).
 
-```{=html}
-<!-- -->
-```
 3.  Extract the barcodes from each illumina read with a minimum Phred quality of 30 using the following command: *cashier_extract -i sample1.fastq -q 30* (*see* **Note 52**).
 
 4.  This will generate multiple output files. Extracted barcodes can be found in the tsv file with the naming format \*.barcodes.q30.tsv.
@@ -429,7 +435,7 @@ $$\text{MOI\ [TU/cell]\ =\ }\frac{\left( \text{Volume\ of\ Virus\ needed\ [mL]} 
 
 8.  We recommend eliminating the lowest abundant and rare sequences that are not likely to be present in the population. This can be accomplished with the *cat* and *awk* command to, for instance remove sequences occurring less than 20 times: *cat* *sample1.barcodes.q30.raw2.c1d1r3.uniq.tsv \| awk '\$2\>19 {print;}' \> sample1.barcodes.q30.raw2.c1d1r3.uniq.min20.tsv*
 
-### 3.7.3 Processing CROP-seq Barcodes from 10X Cell Ranger Output 
+###  Processing CROP-seq Barcodes from 10X Cell Ranger Output
 
 1.  To obtain barcode data from cells with 10X Capture sgRNA barcodes (*see* **Note 54**) run 10X Cell Ranger on fastq samples obtained from Illumina sequencing.
 
@@ -437,7 +443,7 @@ $$\text{MOI\ [TU/cell]\ =\ }\frac{\left( \text{Volume\ of\ Virus\ needed\ [mL]} 
 
 3.  Next pipe the bead- and umi-tagged reads through cutadapt to identify and trim barcodes, then translate to a tsv: *python \$cashier/scripts/sam_to_name_labeled_fastq.py possorted.sam \| cutadapt -g CTTGTGGAAAGGACGAAACACCG -a GTTTTAGAGCTAGAA -n 2 - \| python \$cashier/scripts/fastq_tagged_to_tsv.py - \> readname_umi_cellbarcode_lineagebarcode.tsv*
 
-## 3.8 Recall Plasmid Assembly
+## Recall Plasmid Assembly
 
 1.  3 pairs of overlapping oligos containing the barcode sequence of interest flanked by overlapping sequences should be ordered according to **Table 1** (*see* **Note 55**).
 
@@ -461,7 +467,7 @@ $$\text{MOI\ [TU/cell]\ =\ }\frac{\left( \text{Volume\ of\ Virus\ needed\ [mL]} 
 
 10. Verify insertion of barcode array into Recall-miniCMV-sfGFP backbone via Sanger sequencing.
 
-## 3.9 Recall and Isolation of Barcoded Lineages
+## Recall and Isolation of Barcoded Lineages
 
 (*see* **Note 57**)
 
@@ -483,23 +489,17 @@ $$\text{MOI\ [TU/cell]\ =\ }\frac{\left( \text{Volume\ of\ Virus\ needed\ [mL]} 
 
 9.  48-72 hours post-transfection, dissociate cells from the plate and wash cells with PBS twice at 300 x g for 5 minutes at 4 °C before resuspending in chilled FACS buffer (*see* **Note 37**).
 
-```{=html}
-<!-- -->
-```
 5.  Pass cells resuspended in FACS buffer through a 35 μm nylon mesh strainer into a 5 mL flow cytometry test tube and keep on ice.
 
 6.  Use control samples to set laser voltages on FSC-A, SSC-A, BFP, and GFP on FACS sorter such that nearly all cells are seen within FSC-A vs. SSC-A plot and both negative and positive populations can be seen and distinguished on the BFP and the GFP channel. Set compensations based on single positive populations (*see* **Note 58**).
 
-```{=html}
-<!-- -->
-```
 10. Set sort gate on GFP and BFP double positive gate indicative of a recalled cell (*see* **Note 59**).
 
 11. Sort cells in GFP and BFP double positive gate (*see* **Note 60**).
 
 12. Maintain sorted cells in culture with complete growth medium.
 
-# 4. Notes
+# Notes
 
 1.  Make sure cells are transducible with lentivirus. Timing of lentiviral exposure and detectable expression of transgene will vary across cell types.
 
@@ -621,9 +621,7 @@ $$\text{MOI\ [TU/cell]\ =\ }\frac{\left( \text{Volume\ of\ Virus\ needed\ [mL]} 
 
 60. Single cell sorting can be performed for isolation and growth of clonal populations.
 
-\[Insert Table 1 near here\]
-
-# 5 References
+# References
 
 1.  Blundell, J.R., and Levy, S.F. (2014). Beyond genome sequencing: Lineage tracking with barcodes to study the dynamics of evolution, infection, and cancer. Genomics **104**, 417--430.
 
@@ -658,7 +656,7 @@ Table 1. Oligonucleotides
   ---------- ------------------------------------------- ------------------------------------------------------------------------------------------------------------------- ------------------------------------------------------------------------
   3.1        CROPseq-PrimeF-BgL-BsmBI                    GAGCCTCGTCTCCCACCG[NNNNNNNNNNNNNNNNNNNN]{.underline}GTTTTGAGACGCATGCTGCA                                            The N~20~ sequence is a random string of oligonucleotides
 
-  3.1        CROPseq-RevExt-BgL-BsmBI                    TGCAGCATGCGTCTCAAAAC                                                                                                
+  3.1        CROPseq-RevExt-BgL-BsmBI                    TGCAGCATGCGTCTCAAAAC
 
   3.1        10X PrimeF-BgL-BbsI                         GCCTGAAGACCTCACCG[NNNNNNNNNNNNNNNNNNNN]{.underline}GTTTTAGTCTTCCATGCTGC                                             ** **The N~20~ sequence is a random string of oligonucleotides
 

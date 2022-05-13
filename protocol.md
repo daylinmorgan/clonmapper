@@ -1,14 +1,4 @@
----
-title: Functionalized lineage tracing for the study and manipulation of heterogeneous cell populations
-pdf_engine: xelatex
-geometry: margin=2cm
-fontfamily: helvet
-numbersections: true
-toc: true
-header-includes:
-  - \renewcommand{\familydefault}{\sfdefault}
----
-
+<!-- TODO: move this info/declaration to the meta.yml/preamble.tex -->
 **Chapter Title:**
 
 Functionalized lineage tracing for the study and manipulation of heterogeneous cell populations
@@ -33,14 +23,6 @@ Amy Brock, Ph.D.; amy.brock@utexas.edu
 
 Functionalized lineage tracing
 
-# Summary/Abstract
-
-The ability to track and isolate unique cell lineages from large heterogeneous populations increases the resolution at which cellular processes can be understood under normal and pathogenic states beyond snapshots obtained from single cell RNA sequencing (scRNA-seq). Here, we describe the Control of Lineages by Barcode Enabled Recombinant Transcription (COLBERT) method in which unique single guide RNA (sgRNA) barcodes are used as functional tags to identify and recall specific lineages of interest. A sgRNA barcode is stably integrated and actively transcribed, such that all cellular progeny will contain the parental barcode and produce a functional sgRNA. The sgRNA barcode has all the benefits of a DNA barcode and added functionalities. Once a barcode pertaining to a lineage of interest is identified, the lineage of interest can be isolated using an activator variant of Cas9 (such as dCas9-VPR) and a barcode-matched sequence upstream of a fluorescent reporter gene. CRISPR activation of the fluorescent reporter will only occur in cells producing the matched sgRNA barcode, allowing precise identification and isolation of lineages of interest from heterogeneous populations.
-
-# Key Words:
-
-lineage tracking, single cell, barcoding, clonal dynamics, RNA-seq, scRNA-seq, CRISPR, lineage isolation
-
 # Introduction
 
 Insight into the clonal composition of a cells during key events -- such as development, infection, tumor progression, or treatment response -- is critical to understanding the nature of the interaction between the population of cells and the selective forces shaping it. While advances in genomics and transcriptomics and the advent of single-cell RNA sequencing (scRNA-seq) have vastly increased the resolution at which we can understand cellular processes, they lack the ability to directly assign clonal relationships. To meet this need, lineage tracing technologies, such as DNA barcoding, have been developed to label and track individual cells and their progeny ***(1)(2)***. In DNA barcoding, each individual cell in a population is labeled with a unique random string of nucleotides that is integrated into the genome and heritable by its daughter cells. The ensemble of all DNA barcodes in the cell population can be quantified by next-generation sequencing (NGS) to determine how clonal abundance changes over time.
@@ -56,53 +38,35 @@ Cells are first transduced with lentivirus containing either the CROPseq sgRNA b
 Equipment
 
 1.  Electroporator
-
 2.  Mammalian cell incubator
-
 3.  Bacterial cell incubator with shaking
-
 4.  Thermocycler
-
 5.  Gel electrophoresis box
-
 6.  Bioanalyzer
-
 7.  Illumina sequencer
-
 8.  Flow cytometer with filters for BFP (Ex: 380/20, Em: 460/40)
 
 Disposables
 
 1.  Sterile filtered pipette tips
-
 2.  1.5 mL microcentrifuge tubes (sterile)
-
 3.  1.8 mL Screw top cryovials (sterile)
-
 4.  20 mL Luer-tapered syringe (sterile)
-
 5.  0.45 µm polyethersulfone (PES) syringe filter
-
 6.  30,000 molecular weight cutoff (MWCO) PES concentrator capable of processing 20 mL
 
 Biologics
 
 1.  Electrocompetent *e. coli* suitable for unstable DNA (restriction minus, endonuclease deficient, and recombination deficient)
-
 2.  Cells of interest (*see* **Note 1**)
 
 Plasmids
 
 1.  CROPseq gRNA expression transfer vector, Cropseq-BFP-WPRE-TS-hU6-BsmbI {Addgene \# Pending / Brock Lab AA112}
-
 2.  10X Capture gRNA expression transfer vector, pLKV2-hU6-BbsI-PGK-Puro-TagBFP-WPRE {Addgene \# Pending / Brock Lab AA174}
-
 3.  Lentiviral packaging plasmid, VSV-G (Addgene #14888)
-
 4.  Lentiviral packaging plasmid, psPAX2 (Addgene #12260)
-
 5.  dCas9-VPR (Addgene #63798)
-
 6.  Recall-miniCMV-sfGFP (Addgene \# Pending/ Brock Lab #AA158)
 
 Primers
@@ -112,71 +76,44 @@ Primers
 Buffers
 
 1.  Buffer 3.1: 100 mM NaCl , 50 mM Tris-HCl, 10 mM MgCl~2~, 100 µg/ml BSA , pH 7.9 at 25°C
-
 2.  NEB 5X Q5 Reaction Buffer
-
 3.  10X T4 PNK Buffer
-
 4.  10 mM dNTPs
-
 5.  1X Tris-acetate-EDTA (TAE)
-
 6.  FACS Buffer: 5% FBS, 1-5 mM EDTA, 95% Phosphate-Buffered Saline
 
 Enzymes
 
 1.  BsmBI (10,000 U/mL)
-
 2.  BbsI (10,000 U/mL)
-
 3.  NEB Q5 polymerase
-
 4.  T4 ligase (400,000 U/mL )
-
 5.  T7 ligase (3,000,000 U/mL)
-
 6.  PNK (10,000 U/mL)
 
 Other Reagents
 
 1.  Lipofectamine^TM^ 2000
-
 2.  Lipofectamine^TM^ 3000
-
 3.  Nuclease-free water
-
 4.  Agarose
-
 5.  DNA Clean and Concentrator kit
-
 6.  2xYT microbial growth medium
-
 7.  Dulbecco's Modified Eagle Medium (DMEM)
-
 8.  OptiMEM^TM^ reduced serum medium
-
 9.  Fetal Bovine Serum (FBS)
-
 10. Carbenicillin
-
 11. Solid Phase Reversible Immobilization (SPRI) paramagnetic beads for PCR cleanup
-
 12. 70% molecular biology grade ethanol in nuclease-free water
-
 13. 10 mg/mL hexadimethrine bromide
-
 14. 0.05% Trypan blue
-
 15. Plasmid Midi-Prep Kit
 
 Computational
 
 1.  Python 3.7
-
 2.  Cell Ranger (for 10X analysis)
-
 3.  Samtools
-
 4.  Cashier (https://github.com/russelldurrett/cashier)
 
 # Methods

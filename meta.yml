@@ -1,0 +1,31 @@
+---
+title: Functionalized lineage tracing for the study and manipulation of heterogeneous cell populations
+geometry: margin=2cm
+fontfamily: helvet
+numbersections: true
+toc: true
+header-includes:
+  - \renewcommand{\familydefault}{\sfdefault}
+abstract: |
+  The ability to track and isolate unique cell lineages from large heterogeneous populations increases the
+  resolution at which cellular processes can be understood under normal and pathogenic states beyond snapshots
+  obtained from single cell RNA sequencing (scRNA-seq). Here, we describe the Control of Lineages by
+  Barcode Enabled Recombinant Transcription (COLBERT) method in which unique single guide RNA (sgRNA)
+  barcodes are used as functional tags to identify and recall specific lineages of interest.
+  A sgRNA barcode is stably integrated and actively transcribed, such that all cellular progeny will
+  contain the parental barcode and produce a functional sgRNA. The sgRNA barcode has all the
+  benefits of a DNA barcode and added functionalities. Once a barcode pertaining to a lineage of
+  interest is identified, the lineage of interest can be isolated using an activator variant of
+  Cas9 (such as dCas9-VPR) and a barcode-matched sequence upstream of a fluorescent reporter gene.
+  CRISPR activation of the fluorescent reporter will only occur in cells producing the matched
+  sgRNA barcode, allowing precise identification and isolation of lineages of interest from heterogeneous populations.
+keywords:
+  - lineage tracking
+  - single cell
+  - barcoding
+  - clonal dynamics
+  - RNA-seq
+  - scRNA-seq
+  - CRISPR
+  - lineage isolation
+---

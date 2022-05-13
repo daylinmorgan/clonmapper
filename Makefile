@@ -6,15 +6,16 @@ else
 		PANDOC_CMD := docker pull pandoc/latex && docker run --rm -v ${CWD}:/data pandoc/latex
 endif
 
+FLAGS := --metadata-file=meta.yml --pdf-engine=xelatex --standalone
 
 protocol.pdf:
-	${PANDOC_CMD} --pdf-engine=xelatex -o protocol.pdf protocol.md
+	${PANDOC_CMD} ${FLAGS} --output protocol.pdf protocol.md
 
 protocol.html: protocol.tex
-	${PANDOC_CMD} --standalone --mathjax -o protocol.html protocol.tex
+	${PANDOC_CMD} ${FLAGS} --mathjax --output protocol.html protocol.tex
 
 protocol.tex:
-	${PANDOC_CMD} --pdf-engine xelatex -o protocol.tex protocol.md --pdf-engine xelatex
+	${PANDOC_CMD} ${FLAGS} --output protocol.tex protocol.md
 
 .PHONY: clean
 

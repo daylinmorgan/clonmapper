@@ -456,9 +456,9 @@ $endif$
 
 $for(include-before)$
 $include-before$
-
 $endfor$
 $if(toc)$
+\pagebreak
 $if(toc-title)$
 \renewcommand*\contentsname{$toc-title$}
 $endif$
@@ -476,6 +476,7 @@ $if(colorlinks)$
 $endif$
 \setcounter{tocdepth}{$toc-depth$}
 \tableofcontents
+\pagebreak
 }
 $endif$
 $endif$

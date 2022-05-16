@@ -533,6 +533,12 @@ $$\text{MOI\ [TU/cell]\ =\ }\frac{\left( \text{Volume\ of\ Virus\ needed\ [mL]} 
 
 60. Single cell sorting can be performed for isolation and growth of clonal populations.
 
+\input{tex/table.tex}
+
+# Acknowledgements
+
+This work has been supported by funding through the NIH (R21CA212928 to AB).
+
 # References
 
 1.  Blundell, J.R., and Levy, S.F. (2014). Beyond genome sequencing: Lineage tracking with barcodes to study the dynamics of evolution, infection, and cancer. Genomics **104**, 417--430.
@@ -555,63 +561,9 @@ $$\text{MOI\ [TU/cell]\ =\ }\frac{\left( \text{Volume\ of\ Virus\ needed\ [mL]} 
 
 10. Kustikova, O.S., Wahlers, A., Kuhlcke, K., et al. (2003). Dose finding with retroviral vectors: correlation of retroviral vector copy numbers in single cells with gene transfer efficiency in a cell population. Blood **102**, 3934--3937.
 
-**Figure Captions**
-
-Figure 1. Overview of COLBERT workflow
-
-**Table Captions**
-
-Table 1. Oligonucleotides
-
-  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  **Step**   **Name**                                    **Sequence (5\' -\> 3\')**                                                                                          **Notes**
-  ---------- ------------------------------------------- ------------------------------------------------------------------------------------------------------------------- ------------------------------------------------------------------------
-  3.1        CROPseq-PrimeF-BgL-BsmBI                    GAGCCTCGTCTCCCACCG[NNNNNNNNNNNNNNNNNNNN]{.underline}GTTTTGAGACGCATGCTGCA                                            The N~20~ sequence is a random string of oligonucleotides
-
-  3.1        CROPseq-RevExt-BgL-BsmBI                    TGCAGCATGCGTCTCAAAAC
-
-  3.1        10X PrimeF-BgL-BbsI                         GCCTGAAGACCTCACCG[NNNNNNNNNNNNNNNNNNNN]{.underline}GTTTTAGTCTTCCATGCTGC                                             ** **The N~20~ sequence is a random string of oligonucleotides
-
-  3.1        10X-RevExt-BgL-BbsI                         TGCAGCATGGAAGACTAAAAC                                                                                               ** **
-
-  3.2, 3.7   PrimeR_cropseq                              CAAGCAGAAGACGGCATACGAGAT[NNNNNN]{.underline}GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCTGGACTAGCCTTATTTTAACTTGCTATTTCTAGCTC   The N~6~ sequence is where the i7 Illumina index should be placed
-
-  3.2, 3.7   PrimeR_10x                                  CAAGCAGAAGACGGCATACGAGAT[NNNNNN]{.underline}GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCTCTAGGACCGGCCTTAAAGC                   ** **The N~6~ sequence is where the i7 Illumina index should be placed
-
-  3.2, 3.7   PrimeF PAS-hU6_F                            equimolar mixture of UniF PAS primers                                                                               ** **
-
-  3.2, 3.7   UniF PASx0 1 stage                          AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCTGCTTTATATATCTTGTGGAAAGGACGAAAC                            ** **
-
-  3.2, 3.7   UniF PASx1 1 stage                          AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCTCGCTTTATATATCTTGTGGAAAGGACGAAAC                           ** **
-
-  3.2, 3.7   UniF PASx2 1 stage                          AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCTGCGCTTTATATATCTTGTGGAAAGGACGAAAC                          ** **
-
-  3.2, 3.7   UniF PASx3 1 stage                          AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCTAGCGCTTTATATATCTTGTGGAAAGGACGAAAC                         ** **
-
-  3.2, 3.7   UniF PASx4 1 stage                          AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCTCAACGCTTTATATATCTTGTGGAAAGGACGAAAC                        ** **
-
-  3.2, 3.7   UniF PASx6 1 stage                          AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGCTCTTCCGATCTTGCACCGCTTTATATATCTTGTGGAAAGGACGAAAC                      ** **
-
-  3.8        Barcode_PAM A-C - Fragment 2 (reversed)     CATTGCACCTTAGCTGAGCCT[NNNNNNNNNNNNNNNNNNNN]{.underline}GACGAGTGATACCAC                                              Insert reverse-complement barcode in place of N~20~
-
-  3.8        Barcode_PAM A-C - Fragment 2 extraction     GGAGGTGGTATCACTCGTC[NNNNNNNNNNNNNNNNNNNN]{.underline}AGGCTCAGCTAAGGTGC                                              Insert barcode in place of N~20~
-
-  3.8        Barcode_PAM B-E - Fragment 2 (reversed)     AAGCAGAGAACTAATCCACCT[NNNNNNNNNNNNNNNNNNNN]{.underline}TGCGGTTCTTGGTCG                                              Insert reverse-complement barcode in place of N~20~
-
-  3.8        Barcode_PAM B-E - Fragment 2 extraction     TACTCGACCAAGAACCGCA[NNNNNNNNNNNNNNNNNNNN]{.underline}AGGTGGATTAGTTCTCT                                              Insert barcode in place of N~20~
-
-  3.8        Barcode_PAM E-F - Fragment 2 (reversed)     AGCGCAGCTGGATTACAGCCT[NNNNNNNNNNNNNNNNNNNN]{.underline}GGGTAACCGCAGGAC                                              Insert reverse-complement barcode in place of N~20~
-
-  3.8        Barcode_PAM E-F - Fragment 2 extraction     GCTTGTCCTGCGGTTACCC[NNNNNNNNNNNNNNNNNNNN]{.underline}AGGCTGTAATCCAGCTG                                              Insert barcode in place of N~20~
-
-  3.8        F-A Shunt by BbsI - Fragment 2 (reversed)   CTCCAGCTAATGACCTTCCATAGC                                                                                             
-
-  3.8        F-A Shunt by BbsI - Fragment 2 extraction   CGCTGCTATGGAAGGTCATTAGCT                                                                                             
-  ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-# Acknowledgements
-
-This work has been supported by funding through the NIH (R21CA212928 to AB).
 
   [6]: https://teichlab.github.io/scg_lib_structs/data/CG000197_GuideRNA_SpecificationsCompatible_withFeatureBarcodingtechnology_forCRISPRScreening_Rev-A.pdf
   [1]: https://github.com/russelldurrett/cashier
+
+
+

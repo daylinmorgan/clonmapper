@@ -3,9 +3,30 @@ title: Functionalized lineage tracing for the study and manipulation of heteroge
 geometry: margin=2cm
 fontfamily: helvet
 numbersections: true
-toc: true
 header-includes:
   - \renewcommand{\familydefault}{\sfdefault}
+institute:
+  - bme: Department of Biomedical Engineering, The University of Texas at Austin, Austin TX
+  - icmb: Institute for Cellular and Molecular Biology, The University of Texas at Austin, Austin TX
+
+author:
+  - Andrea Gardner:
+      institute:
+        - bme
+      equal_contributor: "yes"
+  - Daylin Morgan:
+      institute:
+        - bme
+      equal_contributor: "yes"
+  - Aziz Al'Khafaji:
+      institute:
+        - icmb
+  - Amy Brock:
+      institute:
+        - bme
+        - icmb
+      correspondence: "yes"
+      email: "amy.brock@utexas.edu"
 abstract: |
   The ability to track and isolate unique cell lineages from large heterogeneous populations increases the
   resolution at which cellular processes can be understood under normal and pathogenic states beyond snapshots
@@ -19,6 +40,7 @@ abstract: |
   Cas9 (such as dCas9-VPR) and a barcode-matched sequence upstream of a fluorescent reporter gene.
   CRISPR activation of the fluorescent reporter will only occur in cells producing the matched
   sgRNA barcode, allowing precise identification and isolation of lineages of interest from heterogeneous populations.
+
 keywords:
   - lineage tracking
   - single cell

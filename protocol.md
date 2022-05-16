@@ -1,28 +1,3 @@
-<!-- TODO: move this info/declaration to the meta.yml/preamble.tex -->
-**Chapter Title:**
-
-Functionalized lineage tracing for the study and manipulation of heterogeneous cell populations
-
-**Authors:**
-
-Andrea Gardner^\*,1^ , Daylin Morgan^\*,1^, Aziz Al'Khafaji^2^, Amy Brock^1,2^
-
-**Affiliations:**
-
-1.  Department of Biomedical Engineering, The University of Texas at Austin, Austin TX
-
-2.  Institute for Cellular and Molecular Biology, The University of Texas at Austin, Austin TX
-
-> \* *equal contribution*
-
-**Corresponding Author:**
-
-Amy Brock, Ph.D.; amy.brock@utexas.edu
-
-**Running Head (short version of chapter title):**
-
-Functionalized lineage tracing
-
 # Introduction
 
 Insight into the clonal composition of a cells during key events -- such as development, infection, tumor progression, or treatment response -- is critical to understanding the nature of the interaction between the population of cells and the selective forces shaping it. While advances in genomics and transcriptomics and the advent of single-cell RNA sequencing (scRNA-seq) have vastly increased the resolution at which we can understand cellular processes, they lack the ability to directly assign clonal relationships. To meet this need, lineage tracing technologies, such as DNA barcoding, have been developed to label and track individual cells and their progeny ***(1)(2)***. In DNA barcoding, each individual cell in a population is labeled with a unique random string of nucleotides that is integrated into the genome and heritable by its daughter cells. The ensemble of all DNA barcodes in the cell population can be quantified by next-generation sequencing (NGS) to determine how clonal abundance changes over time.

@@ -8,7 +8,7 @@ WIDTH_CUTOFF = int(round(94 / 2, 0))
 
 def main():
 
-    path_to_csv = Path.cwd() / "table.csv"
+    path_to_csv = Path.cwd() / "table" / "table.csv"
     rows = []
 
     # get header and row information from csv
@@ -64,8 +64,8 @@ def main():
 %...
 """
     # build latex file
-    (Path.cwd() /"tex").mkdir(exist_ok=True)
-    path_to_tex = Path.cwd()/"tex"/ "table.tex"
+    (Path.cwd() / "tex").mkdir(exist_ok=True)
+    path_to_tex = Path.cwd() / "tex" / "table.tex"
 
     with path_to_tex.open(mode="w") as f:
         f.write(table_tex_str)

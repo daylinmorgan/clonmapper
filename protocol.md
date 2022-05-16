@@ -1,10 +1,10 @@
 # Introduction
 
-Insight into the clonal composition of a cells during key events -- such as development, infection, tumor progression, or treatment response -- is critical to understanding the nature of the interaction between the population of cells and the selective forces shaping it. While advances in genomics and transcriptomics and the advent of single-cell RNA sequencing (scRNA-seq) have vastly increased the resolution at which we can understand cellular processes, they lack the ability to directly assign clonal relationships. To meet this need, lineage tracing technologies, such as DNA barcoding, have been developed to label and track individual cells and their progeny ***(1)(2)***. In DNA barcoding, each individual cell in a population is labeled with a unique random string of nucleotides that is integrated into the genome and heritable by its daughter cells. The ensemble of all DNA barcodes in the cell population can be quantified by next-generation sequencing (NGS) to determine how clonal abundance changes over time.
+Insight into the clonal composition of a cells during key events -- such as development, infection, tumor progression, or treatment response -- is critical to understanding the nature of the interaction between the population of cells and the selective forces shaping it. While advances in genomics and transcriptomics and the advent of single-cell RNA sequencing (scRNA-seq) have vastly increased the resolution at which we can understand cellular processes, they lack the ability to directly assign clonal relationships. To meet this need, lineage tracing technologies, such as DNA barcoding, have been developed to label and track individual cells and their progeny [@blundell2014;@kebschull2018]. In DNA barcoding, each individual cell in a population is labeled with a unique random string of nucleotides that is integrated into the genome and heritable by its daughter cells. The ensemble of all DNA barcodes in the cell population can be quantified by next-generation sequencing (NGS) to determine how clonal abundance changes over time.
 
-While highly informative, DNA barcoding and other lineage tracing techniques are still limited in that interesting lineages of cells cannot be easily isolated from the bulk population for clonally pure analysis. Here, we describe a detailed protocol for the Control of Lineages by Barcode Enabled Recombinant Transcription (COLBERT), a workflow that enables precise identification and isolation of populations of interest from heterogeneous mammalian cells ***(3)***. An overview of COLBERT is shown in **Fig. 1**. COLBERT is a functionalized variant of DNA barcoding in which the DNA barcode is a CRISPR-Cas9 compatible single-guide RNA (sgRNA). The sgRNA-barcode has multiple functionalities: (1) It is an integrated DNA barcode, (2) It is transcribed and captured in scRNA-seq workflows, and (3) It can be used to actuate lineage-specific genes of interest using an activator variant of Cas9 ***(4)***. This protocol describes the use of COLBERT for lineage-specific activation of GFP, enabling isolation of clonal cells from a heterogeneous population.
+While highly informative, DNA barcoding and other lineage tracing techniques are still limited in that interesting lineages of cells cannot be easily isolated from the bulk population for clonally pure analysis. Here, we describe a detailed protocol for the Control of Lineages by Barcode Enabled Recombinant Transcription (COLBERT), a workflow that enables precise identification and isolation of populations of interest from heterogeneous mammalian cells [@alkhafaji2018]. An overview of COLBERT is shown in **Fig. 1**. COLBERT is a functionalized variant of DNA barcoding in which the DNA barcode is a CRISPR-Cas9 compatible single-guide RNA (sgRNA). The sgRNA-barcode has multiple functionalities: (1) It is an integrated DNA barcode, (2) It is transcribed and captured in scRNA-seq workflows, and (3) It can be used to actuate lineage-specific genes of interest using an activator variant of Cas9 [@chavez2015]. This protocol describes the use of COLBERT for lineage-specific activation of GFP, enabling isolation of clonal cells from a heterogeneous population.
 
-This protocol describes two variants of the COLBERT system, one compatible with single-cell RNA sequencing workflows that use polyA capture and another with specific compatibility with 10X Genomics systems. In the polyA capture version, the sgRNA barcode is engineered using the CROPseq method ***(5)*** such that the sgRNA barcode is transcribed by both RNA polymerase III and RNA polymerase II, creating a functional sgRNA barcode transcript and a polyadenylated transcript containing the barcode, respectively. In the 10X Genomics version, the sgRNA is engineered to contain a capture sequence that allows targeted capture by the Chromium Single Cell 3' v3 Gel Beads ***([6])***.
+This protocol describes two variants of the COLBERT system, one compatible with single-cell RNA sequencing workflows that use polyA capture and another with specific compatibility with 10X Genomics systems. In the polyA capture version, the sgRNA barcode is engineered using the CROPseq method [@datlinger2017] such that the sgRNA barcode is transcribed by both RNA polymerase III and RNA polymerase II, creating a functional sgRNA barcode transcript and a polyadenylated transcript containing the barcode, respectively. In the 10X Genomics version, the sgRNA is engineered to contain a capture sequence that allows targeted capture by the Chromium Single Cell 3' v3 Gel Beads [@10xgenomics].
 
 Cells are first transduced with lentivirus containing either the CROPseq sgRNA barcoding vector or the 10X Capture sgRNA barcoding vector at a low multiplicity of infection (MOI) to minimize the integration of multiple barcodes per cell. In both versions of the vector, the sgRNA barcode is co-expressed with blue fluorescent protein (BFP) for easy identification and collection of barcoded cells via flow cytometry and fluorescence-activated cell sorting (FACS). Once established, the barcoded cell population is available for experimental manipulation. Clonal dynamics may be measured by NGS analysis and gene expression signatures of clonal populations may be resolved by scRNA-Seq. Once a barcode of interest is identified from NGS or scRNA-seq, the barcode identifier can be exploited for isolation of the clone. This is achieved by transfecting the cell population with a plasmid containing an activator variant of Cas9 (dCas9-VPR) and a second plasmid containing the Cas9-homing PAM sites adjacent to the identified barcode upstream of green fluorescent protein (sfGFP) reporter. Expression of sfGFP will occur only in cells that are producing the matching sgRNA barcode, allowing precise identification and FACS isolation of cells from lineages of interest.
 
@@ -95,7 +95,7 @@ Computational
 
 ## sgRNA Barcode Library Plasmid Pool Assembly
 
-1.  \[[CROPseq]{.underline}\] Perform an extension reaction to generate double-stranded insert gRNA barcode DNA. Mix 10 $\mu$L NEB 5X Q5 Reaction Buffer, 1 $\mu$L of 10 mM dNTPs, 2 $\mu$L 100$\mu$M CROPseq-PrimeF-BgL-BsmBI, 1 $\mu$L 100$\mu$M CROPseq-RevExt-BgL-BsmBI , and 0.5 $\mu$L to create a 50 $\mu$L reaction (*see* **Note 2**).
+1.  \[[CROPseq]{.underline}\] Perform an extension reaction to generate double-stranded insert gRNA barcode DNA. Mix 10 $\mu$L NEB 5X Q5 Reaction Buffer, 1 $\mu$L of 10 mM dNTPs, 2 $\mu$L 100$\mu$M CROPseq-PrimeF-BgL-BsmBI, 1 $\mu$L 100$\mu$M CROPseq-RevExt-BgL-BsmBI , and 0.5 $\mu$L to create a 50 $\mu$L reaction (*see* **Note [^2]**).
 
 > \[[10X Capture]{.underline}\] Perform an extension reaction to generate double-stranded insert gRNA barcode DNA. Mix 10 $\mu$L NEB 5X Q5 Reaction Buffer, 1 $\mu$L of 10 mM dNTPs, 2 $\mu$L 100$\mu$M 10X-PrimeF-BgL-BbsI, 1 $\mu$L 100$\mu$M 10X-RevExt-BgL-BbsI and 0.5 $\mu$L to create a 50 $\mu$L reaction (*see* **Note 2**).
 
@@ -341,7 +341,7 @@ $$\text{MOI\ [TU/cell]\ =\ }\frac{\left( \text{Volume\ of\ Virus\ needed\ [mL]} 
 
 5.  Remove any barcode sequences that do not occur at least twice using the following command: *cat sample1.barcodes.q30.tsv \| cut -f 2 \| sort \| uniq -D \> sample1.barcodes.q30.raw2.tsv*
 
-6.  To correct for sequencing and PCR errors within the sequence we implement message-passing clustering by wrapping starcode ***(7)*** with the *cluster_columns* command: *cluster_columns -i sample1.barcodes.q30.raw2.tsv -r 3 -d 1 -c 1.* (*see* **Note 53**).
+6.  To correct for sequencing and PCR errors within the sequence we implement message-passing clustering by wrapping starcode [@zorita2015] with the *cluster_columns* command: *cluster_columns -i sample1.barcodes.q30.raw2.tsv -r 3 -d 1 -c 1.* (*see* **Note 53**).
 
 7.  This will create a file containing three columns the original sequence, the centroid, and the size of the centroid. Since we are only interested in centroids and the number of occurrences we remove the original sequences with the following command: *sample1.barcodes.q30.raw2.c1d1r3.tsv \| cut -f 2,3 -d ' ' \| sort -k 1,1 \| uniq \> sample1.barcodes.q30.raw2.c1d1r3.uniq.tsv*
 
@@ -475,7 +475,7 @@ $$\text{MOI\ [TU/cell]\ =\ }\frac{\left( \text{Volume\ of\ Virus\ needed\ [mL]} 
 
 31. Trypan blue exclusion is performed by mixing equal parts 0.05% Trypan blue with your cell suspension, usually 10 $\mu$L of each, then load 10 $\mu$L of the stained suspension into the hemocytometer.
 
-32. Hexadimethrine bromide is a cationic solution that assists in viral adsorption to cells ***(8)***. Hexadimethrine bromide can be toxic to some cells. Hexadimethrine bromide sensitivity should be assessed via serial dilution to determine maximum tolerable hexadimethrine bromide dose before determining viral titer. Most cells respond well to 6-8 $\mu$g/mL hexadimethrine bromide.
+32. Hexadimethrine bromide is a cationic solution that assists in viral adsorption to cells [@davis2002]. Hexadimethrine bromide can be toxic to some cells. Hexadimethrine bromide sensitivity should be assessed via serial dilution to determine maximum tolerable hexadimethrine bromide dose before determining viral titer. Most cells respond well to 6-8 $\mu$g/mL hexadimethrine bromide.
 
 33. Ensure one well is kept uninfected as a negative control. A range of 0.5-200 $\mu$L is usually sufficient to find viral titer, e.g. 0, 0.5, 1, 5, 10, 25, 50, 100, 150, 200 $\mu$L.
 
@@ -503,7 +503,7 @@ $$\text{MOI\ [TU/cell]\ =\ }\frac{\left( \text{Volume\ of\ Virus\ needed\ [mL]} 
 
 45. [Example]{.underline}: If your viral titer was 6.0 x 10^6^ TU/mL and you wanted to infect 3.0 x 10^6^ cells at an MOI of 0.1, you would need to subject the 3.0 x 10^6^ cells to 50 $\mu$L of virus.
 
-46. A low MOI of 0.1 or below helps prevent occurrence of multiple barcode integrations. In order to uniquely recall cell lineages it is important to maximize the probability that there is one or zero barcodes per cell at the time of transduction. The probability of barcode integration can be modeled as a Poisson distribution ***(9)(10)***.
+46. A low MOI of 0.1 or below helps prevent occurrence of multiple barcode integrations. In order to uniquely recall cell lineages it is important to maximize the probability that there is one or zero barcodes per cell at the time of transduction. The probability of barcode integration can be modeled as a Poisson distribution [@fehse2004;@kustikova2003].
 
 47. When sorting for sgRNA barcoded cells, use more stringent gating than used for titer determination. Ensure that 0% of negative control samples appear in the sorting gate.
 
@@ -535,35 +535,13 @@ $$\text{MOI\ [TU/cell]\ =\ }\frac{\left( \text{Volume\ of\ Virus\ needed\ [mL]} 
 
 \input{tex/table.tex}
 
+\pagebreak
+
 # Acknowledgements
 
 This work has been supported by funding through the NIH (R21CA212928 to AB).
 
 # References
 
-1.  Blundell, J.R., and Levy, S.F. (2014). Beyond genome sequencing: Lineage tracking with barcodes to study the dynamics of evolution, infection, and cancer. Genomics **104**, 417--430.
 
-2.  Kebschull, J.M., and Zador, A.M. (2018). Cellular barcoding: lineage tracing, screening and beyond. Nature Methods **15**, 871--879.
-
-3.  Al'Khafaji, A.M., Deatherage, D., and Brock, A. (2018). Control of Lineage-Specific Gene Expression by Functionalized gRNA Barcodes. ACS Synth Biol **7**, 2468--2474.
-
-4.  Chavez, A., Scheiman, J., Vora, S., et al. (2015). Highly efficient Cas9-mediated transcriptional programming. Nature Methods **12**, 326--328.
-
-5.  Datlinger, P., Rendeiro, A.F., Schmidl, C., et al. (2017). Pooled CRISPR screening with single-cell transcriptome readout. Nat. Methods **14**, 297--301.
-
-6.  10xGenomics. Guide RNA Specifications Compatible with Feature Barcoding technology for CRISPR screening. 10x Genomics. Technical Note. CG000197 RevA.
-
-7.  Zorita, E., Cuscó, P., and Filion, G.J. (2015). Starcode: sequence clustering based on all-pairs search. Bioinformatics **31**, 1913--1919.
-
-8.  Davis, H.E., Morgan, J.R., and Yarmush, M.L. (2002). Polybrene increases retrovirus gene transfer efficiency by enhancing receptor-independent virus adsorption on target cell membranes. Biophys. Chem. **97**, 159--172.
-
-9.  Fehse, B., Kustikova, O.S., Bubenheim, M., et al. (2004). Pois(s)on\--it's a question of dose.. Gene Ther. **11**, 879--881.
-
-10. Kustikova, O.S., Wahlers, A., Kuhlcke, K., et al. (2003). Dose finding with retroviral vectors: correlation of retroviral vector copy numbers in single cells with gene transfer efficiency in a cell population. Blood **102**, 3934--3937.
-
-
-  [6]: https://teichlab.github.io/scg_lib_structs/data/CG000197_GuideRNA_SpecificationsCompatible_withFeatureBarcodingtechnology_forCRISPRScreening_Rev-A.pdf
-  [1]: https://github.com/russelldurrett/cashier
-
-
-
+<!-- pandoc will attach refs to the end -->

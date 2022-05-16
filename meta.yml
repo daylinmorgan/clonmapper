@@ -3,12 +3,12 @@ title: Functionalized lineage tracing for the study and manipulation of heteroge
 geometry: margin=2cm
 fontfamily: helvet
 numbersections: true
+link-citations: true
 header-includes:
   - \input{tex/preamble.tex}
 institute:
   - bme: Department of Biomedical Engineering, The University of Texas at Austin, Austin TX
   - icmb: Institute for Cellular and Molecular Biology, The University of Texas at Austin, Austin TX
-
 author:
   - Andrea Gardner:
       institute:

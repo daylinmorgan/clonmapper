@@ -1,5 +1,6 @@
 CWD := $(shell pwd)
-
+REV := $(shell git rev-parse --short HEAD)
+DATE := $(shell date +'%Y.%m.%d')
 
 ifneq ($(DOCKER),true)
 		PANDOC_CMD := pandoc
@@ -23,10 +24,8 @@ FLAGS := --metadata-file=meta.yml \
 
 FILTERS := --lua-filter=filters/scholarly-metadata.lua --lua-filter=filters/author-info-blocks.lua
 
-pdf: protocol.pdf
-
-protocol.pdf: protocol.md tex/table.tex ${TEMPLATE}
-	${PANDOC_CMD} ${FLAGS} ${FILTERS}  --output protocol.pdf protocol.md
+pdf: protocol.md tex/oligos.tex ${TEMPLATE} rev.md
+	${PANDOC_CMD} ${FLAGS} ${FILTERS}  --output protocol-${REV}.pdf rev.md protocol.md
 
 protocol.html: protocol.tex
 	${PANDOC_CMD} ${FLAGS} --mathjax --output protocol.html protocol.tex
@@ -37,5 +36,9 @@ protocol.tex:
 tex/oligos.tex: tables/oligos.csv
 	./bin/csv2latex.py tables/oligos.csv tex/oligos.tex "Oligonucleotides"
 
+rev.md: protocol.md
+	echo -e "\nRev.${REV} | Updated: ${DATE}\n" > rev.md
+
 clean: 
 	rm -f protocol.pdf protocol.html protocol.tex table.tex protocol.docx
+

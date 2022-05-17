@@ -12,7 +12,6 @@ endif
 .PHONY: clean pdf
 
 TEMPLATE := tex/tmpl.tex
-# TEMPLATE := eisvogel.tex
 
 FLAGS := --metadata-file=meta.yml \
 				 --pdf-engine=xelatex \
@@ -40,5 +39,5 @@ rev.md: protocol.md
 	echo -e "\nRev.${REV} | Updated: ${DATE}\n" > rev.md
 
 clean: 
-	rm -f protocol.pdf protocol.html protocol.tex table.tex protocol.docx
+	rm -f protocol*.pdf protocol.html protocol.tex table.tex protocol.docx rev.md
 

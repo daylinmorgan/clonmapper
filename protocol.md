@@ -539,8 +539,5 @@ $$\text{MOI\ [TU/cell]\ =\ }\frac{\left( \text{Volume\ of\ Virus\ needed\ [mL]} 
 
 This work has been supported by funding through the NIH (R21CA212928 to AB).
 
-# References
-
-
 <!-- pandoc will attach refs to the end -->
 

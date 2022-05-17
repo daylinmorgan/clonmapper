@@ -4,6 +4,7 @@ geometry: margin=2cm
 fontfamily: helvet
 numbersections: true
 link-citations: true
+reference-section-title: References
 header-includes:
   - \input{tex/preamble.tex}
 institute:

@@ -34,8 +34,8 @@ protocol.html: protocol.tex
 protocol.tex:
 	${PANDOC_CMD} ${FLAGS} --output protocol.tex protocol.md
 
-tex/table.tex: table/table.csv
-	./table/csv2latex.py
+tex/oligos.tex: tables/oligos.csv
+	./bin/csv2latex.py tables/oligos.csv tex/oligos.tex "Oligonucleotides"
 
 clean: 
 	rm -f protocol.pdf protocol.html protocol.tex table.tex protocol.docx

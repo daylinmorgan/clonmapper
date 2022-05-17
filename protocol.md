@@ -531,7 +531,7 @@ $$\text{MOI\ [TU/cell]\ =\ }\frac{\left( \text{Volume\ of\ Virus\ needed\ [mL]} 
 12. Maintain sorted cells in culture with complete growth medium.
 
 
-\input{tex/table.tex}
+\input{tex/oligos.tex}
 
 \pagebreak
 
@@ -540,6 +540,7 @@ $$\text{MOI\ [TU/cell]\ =\ }\frac{\left( \text{Volume\ of\ Virus\ needed\ [mL]} 
 This work has been supported by funding through the NIH (R21CA212928 to AB).
 
 # References
+
 
 <!-- pandoc will attach refs to the end -->
 

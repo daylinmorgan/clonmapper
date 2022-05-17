@@ -1,0 +1,45 @@
+
+%...
+% generated using latex_table.py
+
+% DO NOT edit manually, regenerate with: snakemake table
+\setlength{\tabcolsep}{0.5em} % for the horizontal padding
+{\renewcommand{\arraystretch}{1.2} % for the vertical padding
+\begin{table}[ht!]
+  \begin{center}
+    \begin{adjustbox}{width=\textwidth}
+      \label{tab:table1}
+      \begin{tabular}{c l p{{.67\textwidth}} l}
+      \hline
+        \textbf{Step} & \textbf{Name} & \textbf{Sequence (5' -> 3')} & \textbf{Notes} \\
+      \hline
+        3.1 & CROPseq-PrimeF-BgL-BsmBI & GAGCCTCGTCTCCCACCGNNNNNNNNNNNNNNNNNNNNGTTTTGAGA-CGCATGCTGCA & The N20 sequence is a random string of oligonuc-leotides \\
+3.1 & CROPseq-RevExt-BgL-BsmBI & TGCAGCATGCGTCTCAAAAC &  \\
+3.1 & 10X PrimeF-BgL-BbsI & GCCTGAAGACCTCACCGNNNNNNNNNNNNNNNNNNNNGTTTTAGTCT-TCCATGCTGC & The N20 sequence is a random string of oligonuc-leotides \\
+3.1 & 10X-RevExt-BgL-BbsI & TGCAGCATGGAAGACTAAAAC &   \\
+3.2, 3.7 & PrimeR\_cropseq & CAAGCAGAAGACGGCATACGAGATNNNNNNGTGACTGGAGTTCAGAC-GTGTGCTCTTCCGATCTGGACTAGCCTTATTTTAACTTGCTATTTCTAGCTC & The N6 sequence is where the i7 Illumina index -should be placed \\
+3.2, 3.7 & PrimeR\_10x & CAAGCAGAAGACGGCATACGAGATNNNNNNGTGACTGGAGTTCAGAC-GTGTGCTCTTCCGATCTCTAGGACCGGCCTTAAAGC & The N6 sequence is where the i7 Illumina index -should be placed \\
+3.2, 3.7 & PrimeF PAS-hU6\_F & equimolar mixture of UniF PAS primers &   \\
+3.2, 3.7 & UniF PASx0 1 stage & AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGC-TCTTCCGATCTGCTTTATATATCTTGTGGAAAGGACGAAAC &   \\
+3.2, 3.7 & UniF PASx1 1 stage & AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGC-TCTTCCGATCTCGCTTTATATATCTTGTGGAAAGGACGAAAC &   \\
+3.2, 3.7 & UniF PASx2 1 stage & AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGC-TCTTCCGATCTGCGCTTTATATATCTTGTGGAAAGGACGAAAC &   \\
+3.2, 3.7 & UniF PASx3 1 stage & AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGC-TCTTCCGATCTAGCGCTTTATATATCTTGTGGAAAGGACGAAAC &   \\
+3.2, 3.7 & UniF PASx4 1 stage & AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGC-TCTTCCGATCTCAACGCTTTATATATCTTGTGGAAAGGACGAAAC &   \\
+3.2, 3.7 & UniF PASx6 1 stage & AATGATACGGCGACCACCGAGATCTACACTCTTTCCCTACACGACGC-TCTTCCGATCTTGCACCGCTTTATATATCTTGTGGAAAGGACGAAAC &   \\
+3.8 & Barcode\_PAM A-C - Fragment 2 (reversed) & CATTGCACCTTAGCTGAGCCTNNNNNNNNNNNNNNNNNNNNGACGAG-TGATACCAC & Insert reverse-complement barcode in place of N-20 \\
+3.8 & Barcode\_PAM A-C - Fragment 2 extraction & GGAGGTGGTATCACTCGTCNNNNNNNNNNNNNNNNNNNNAGGCTCAG-CTAAGGTGC & Insert barcode in place of N20 \\
+3.8 & Barcode\_PAM B-E - Fragment 2 (reversed) & AAGCAGAGAACTAATCCACCTNNNNNNNNNNNNNNNNNNNNTGCGGT-TCTTGGTCG & Insert reverse-complement barcode in place of N-20 \\
+3.8 & Barcode\_PAM B-E - Fragment 2 extraction & TACTCGACCAAGAACCGCANNNNNNNNNNNNNNNNNNNNAGGTGGAT-TAGTTCTCT & Insert barcode in place of N20 \\
+3.8 & Barcode\_PAM E-F - Fragment 2 (reversed) & AGCGCAGCTGGATTACAGCCTNNNNNNNNNNNNNNNNNNNNGGGTAA-CCGCAGGAC & Insert reverse-complement barcode in place of N-20 \\
+3.8 & Barcode\_PAM E-F - Fragment 2 extraction & GCTTGTCCTGCGGTTACCCNNNNNNNNNNNNNNNNNNNNAGGCTGTA-ATCCAGCTG & Insert barcode in place of N20 \\
+3.8 & F-A Shunt by BbsI - Fragment 2 (reversed) & CTCCAGCTAATGACCTTCCATAGC &   \\
+3.8 & F-A Shunt by BbsI - Fragment 2 extraction & CGCTGCTATGGAAGGTCATTAGCT &   \\
+
+      \hline
+      \end{tabular}
+    \end{adjustbox}
+    \caption{Oligonucleotides}
+  \end{center}
+\end{table}
+}
+%...

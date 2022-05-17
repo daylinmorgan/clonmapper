@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import csv
+import sys
 from pathlib import Path
 
 WIDTH_CUTOFF = int(round(94 / 2, 0))
@@ -8,7 +9,10 @@ WIDTH_CUTOFF = int(round(94 / 2, 0))
 
 def main():
 
-    path_to_csv = Path.cwd() / "table" / "table.csv"
+    path_to_csv = Path.cwd() / sys.argv[1]
+    path_to_tex = Path.cwd() / sys.argv[2]
+    caption = sys.argv[3]
+
     rows = []
 
     # get header and row information from csv
@@ -57,15 +61,14 @@ def main():
       \hline
       \end{{tabular}}
     \end{{adjustbox}}
-    \caption{{Oligonucleotides.}}
+    \caption{{{caption}}}
   \end{{center}}
 \end{{table}}
 }}
 %...
 """
     # build latex file
-    (Path.cwd() / "tex").mkdir(exist_ok=True)
-    path_to_tex = Path.cwd() / "tex" / "table.tex"
+    path_to_tex.parent.mkdir(exist_ok=True)
 
     with path_to_tex.open(mode="w") as f:
         f.write(table_tex_str)

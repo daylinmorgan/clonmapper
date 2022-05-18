@@ -47,7 +47,7 @@ To manually regenerate the `latex` for a table you can use the included script.
 If you update the csv. `Make` will regenerate the appropriate latex file for you.
 
 ```bash
-./bin/csv2latex.py tables/oligos.csv tex/oligos.tex "Oligonucleotides."
+./bin/csv2latex tables/oligos.csv tex/oligos.tex "Oligonucleotides."
 ```
 
 ### Citations

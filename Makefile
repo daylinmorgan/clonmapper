@@ -33,7 +33,7 @@ protocol.tex:
 	${PANDOC_CMD} ${FLAGS} --output protocol.tex protocol.md
 
 tex/oligos.tex: tables/oligos.csv
-	./bin/csv2latex.py tables/oligos.csv tex/oligos.tex "Oligonucleotides"
+	./bin/csv2latex tables/oligos.csv tex/oligos.tex "Oligonucleotides"
 
 rev.md: protocol.md
 	echo -e "\nRev.${REV} | Updated: ${DATE}\n" > rev.md

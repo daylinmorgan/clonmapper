@@ -224,7 +224,7 @@ The diversity of the initial plasmid pool should be assessed to ensure a high di
 
 2.  On the morning of transfection, replace media on HEK-293T cells with 2 mL of fresh Opti-MEM^TM^ (or your cells growth medium) supplemented with 10% FBS without antibiotics.
 
-3.  In the afternoon, warm Opti-MEM^TM^, Lipofectamine^TM^ 2000, and VSV-G, psPAX, and sgRNA barcoding plasmid to room temperature.[^16][^17] 
+3.  In the afternoon, warm Opti-MEM^TM^, Lipofectamine^TM^ 2000, and VSV-G, psPAX, and sgRNA barcoding plasmid to room temperature.[^16][^17]
 
 [^16]: Lentivirus can promiscuously infect cells, including your skin! Use a cuffed-sleeve lab coat and double-glove (one glove under sleeve cuffs, one glove over) at every step involving use of virus.
 

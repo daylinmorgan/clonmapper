@@ -373,15 +373,17 @@ $$\text{MOI\ [TU/cell]\ =\ }\frac{\left( \text{Volume\ of\ Virus\ needed\ [mL]} 
 
 [^55]: The barcode sequence should be ordered to match the extracted barcode for the fragments labeled as 'extraction' and in reverse-complement for oligos labeled as 'reversed'.
 
-2.  In separate tubes, mix each of the 100 $\mu$M oligo pairs together
+2.  In separate tubes, mix each of the 100 $\mu$M oligo pairs together:
 
-> "Tube AC": 10 $\mu$L Barcode_PAM A-C extraction + 10 $\mu$L Barcode_PAM A-C reversed "Tube BE": 10 $\mu$L Barcode_PAM B-E extraction + 10 $\mu$L Barcode_PAM B-E reversed "Tube EF": 10 $\mu$L Barcode_PAM E-F extraction + 10 $\mu$L Barcode_PAM E-F reversed
+- Tube AB: 10 $\mu$L Bg-AB-fwd + 10 $\mu$L Bg-AB-rev
+- Tube BC: 10 $\mu$L Bg-BC-fwd + 10 $\mu$L Bg-BC-rev
+- Tube CD: 10 $\mu$L Bg-CD-fwd + 10 $\mu$L Bg-CD-rev
 
 3.  Heat each to 80 °C and let cool to create DNA blocks containing a barcode, a PAM site, and overhang sequences.[^56]
 
 [^56]: This process anneals the single stranded DNA oligos together, creating short double stranded DNA blocks that will be ligated together in the next step.
 
-4.  Ligate DNA blocks together creating the barcode array by mixing 10 $\mu$L "Tube AC", 10 $\mu$L "Tube BE", 10 $\mu$L "Tube EF", 5 $\mu$L 10 mM dNTPs, 5 $\mu$L 10X T4 PNK buffer, 1 $\mu$L T4 PNK, and 9 $\mu$L nuclease-free water (50 $\mu$L reaction volume).
+4.  Ligate DNA blocks together creating the barcode array by mixing 10 $\mu$L "Tube AB", 10 $\mu$L "Tube BC", 10 $\mu$L "Tube CD", 5 $\mu$L 10 mM dNTPs, 5 $\mu$L 10X T4 PNK buffer, 1 $\mu$L T4 PNK, and 9 $\mu$L nuclease-free water (50 $\mu$L reaction volume).
 
 5.  Incubate at 37 °C for 45 minutes.
 
@@ -392,6 +394,8 @@ $$\text{MOI\ [TU/cell]\ =\ }\frac{\left( \text{Volume\ of\ Virus\ needed\ [mL]} 
 8.  Ligate the barcode array into the recall plasmid backbone at a molar ratio of 10:1 in a Golden Gate assembly reaction by mixing 25 fmol Recall-miniCMV-sfGFP, 250 fmol assembled barcode array (*from step 3.8.5*), 1 $\mu$L T4 ligase buffer, 0.5 $\mu$L T7 ligase, 0.5 $\mu$L BbsI, and nuclease-free water to 10 $\mu$L.
 
 9.  Run the Golden Gate assembly reaction on a thermocycler using the following settings: (1) 42 °C for 2 min, (2) 16 °C for 5 min, (3) Repeat steps 1-2 for 35 cycles, (4) 55 °C for 30 min, (6) 4 °C hold
+
+<!-- TODO: Add more instructions here..could be a simple then transform it -->
 
 10. Verify insertion of barcode array into Recall-miniCMV-sfGFP backbone via Sanger sequencing.
 

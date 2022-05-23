@@ -1,7 +1,7 @@
 CWD := $(shell pwd)
 REV := $(shell git rev-parse --short HEAD)
 DATE := $(shell date +'%Y.%m.%d')
-MD := $(wildcard md/*.md)
+MD := $(shell find md -not -name 00-rev.md -type f | sort )
 
 ifneq ($(DOCKER),true)
 		PANDOC_CMD := pandoc

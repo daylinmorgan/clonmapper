@@ -29,12 +29,12 @@ Biologics
 
 Plasmids
 
-1.  CROPseq gRNA expression transfer vector, Cropseq-BFP-WPRE-TS-hU6-BsmbI {Addgene \# Pending / Brock Lab AA112}
-2.  10X Capture gRNA expression transfer vector, pLKV2-hU6-BbsI-PGK-Puro-TagBFP-WPRE {Addgene \# Pending / Brock Lab AA174}
+1.  CROPseq gRNA expression transfer vector, Cropseq-BFP-WPRE-TS-hU6-BsmbI {Addgene \# 137993 / Brock Lab AA112}
+2.  10X Capture gRNA expression transfer vector, pLKV2-hU6-BbsI-PGK-Puro-TagBFP-WPRE {Addgene \# 137994 / Brock Lab AA174}
 3.  Lentiviral packaging plasmid, VSV-G (Addgene #14888)
 4.  Lentiviral packaging plasmid, psPAX2 (Addgene #12260)
 5.  dCas9-VPR (Addgene #63798)
-6.  Recall-miniCMV-sfGFP (Addgene \# Pending/ Brock Lab #AA158)
+6.  Recall-miniCMV-sfGFP (Addgene \#137995 / Brock Lab #AA158)
 
 Primers
 

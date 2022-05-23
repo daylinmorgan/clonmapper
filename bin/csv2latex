@@ -30,7 +30,7 @@ def main():
                     [
                         v
                         if len(v) < WIDTH_CUTOFF
-                        else "-".join([v[:WIDTH_CUTOFF], v[WIDTH_CUTOFF:]])
+                            else "-".join([v[i:i+WIDTH_CUTOFF] for i in range(0,len(v),WIDTH_CUTOFF)])
                         for v in row.values()
                     ]
                 )

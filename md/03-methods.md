@@ -1,98 +1,3 @@
-# Introduction
-
-Insight into the clonal composition of a cells during key events -- such as development, infection, tumor progression, or treatment response -- is critical to understanding the nature of the interaction between the population of cells and the selective forces shaping it. While advances in genomics and transcriptomics and the advent of single-cell RNA sequencing (scRNA-seq) have vastly increased the resolution at which we can understand cellular processes, they lack the ability to directly assign clonal relationships. To meet this need, lineage tracing technologies, such as DNA barcoding, have been developed to label and track individual cells and their progeny [@blundell2014;@kebschull2018]. In DNA barcoding, each individual cell in a population is labeled with a unique random string of nucleotides that is integrated into the genome and heritable by its daughter cells. The ensemble of all DNA barcodes in the cell population can be quantified by next-generation sequencing (NGS) to determine how clonal abundance changes over time.
-
-While highly informative, DNA barcoding and other lineage tracing techniques are still limited in that interesting lineages of cells cannot be easily isolated from the bulk population for clonally pure analysis. Here, we describe a detailed protocol for the Control of Lineages by Barcode Enabled Recombinant Transcription (COLBERT), a workflow that enables precise identification and isolation of populations of interest from heterogeneous mammalian cells [@alkhafaji2018]. An overview of COLBERT is shown in **Fig. 1**. COLBERT is a functionalized variant of DNA barcoding in which the DNA barcode is a CRISPR-Cas9 compatible single-guide RNA (sgRNA). The sgRNA-barcode has multiple functionalities: (1) It is an integrated DNA barcode, (2) It is transcribed and captured in scRNA-seq workflows, and (3) It can be used to actuate lineage-specific genes of interest using an activator variant of Cas9 [@chavez2015]. This protocol describes the use of COLBERT for lineage-specific activation of GFP, enabling isolation of clonal cells from a heterogeneous population.
-
-This protocol describes two variants of the COLBERT system, one compatible with single-cell RNA sequencing workflows that use polyA capture and another with specific compatibility with 10X Genomics systems. In the polyA capture version, the sgRNA barcode is engineered using the CROPseq method [@datlinger2017] such that the sgRNA barcode is transcribed by both RNA polymerase III and RNA polymerase II, creating a functional sgRNA barcode transcript and a polyadenylated transcript containing the barcode, respectively. In the 10X Genomics version, the sgRNA is engineered to contain a capture sequence that allows targeted capture by the Chromium Single Cell 3' v3 Gel Beads [@10xgenomics].
-
-Cells are first transduced with lentivirus containing either the CROPseq sgRNA barcoding vector or the 10X Capture sgRNA barcoding vector at a low multiplicity of infection (MOI) to minimize the integration of multiple barcodes per cell. In both versions of the vector, the sgRNA barcode is co-expressed with blue fluorescent protein (BFP) for easy identification and collection of barcoded cells via flow cytometry and fluorescence-activated cell sorting (FACS). Once established, the barcoded cell population is available for experimental manipulation. Clonal dynamics may be measured by NGS analysis and gene expression signatures of clonal populations may be resolved by scRNA-Seq. Once a barcode of interest is identified from NGS or scRNA-seq, the barcode identifier can be exploited for isolation of the clone. This is achieved by transfecting the cell population with a plasmid containing an activator variant of Cas9 (dCas9-VPR) and a second plasmid containing the Cas9-homing PAM sites adjacent to the identified barcode upstream of green fluorescent protein (sfGFP) reporter. Expression of sfGFP will occur only in cells that are producing the matching sgRNA barcode, allowing precise identification and FACS isolation of cells from lineages of interest.
-
-# Materials
-
-Equipment
-
-1.  Electroporator
-2.  Mammalian cell incubator
-3.  Bacterial cell incubator with shaking
-4.  Thermocycler
-5.  Gel electrophoresis box
-6.  Bioanalyzer
-7.  Illumina sequencer
-8.  Flow cytometer with filters for BFP (Ex: 380/20, Em: 460/40)
-
-Disposables
-
-1.  Sterile filtered pipette tips
-2.  1.5 mL microcentrifuge tubes (sterile)
-3.  1.8 mL Screw top cryovials (sterile)
-4.  20 mL Luer-tapered syringe (sterile)
-5.  0.45 $\mu$m polyethersulfone (PES) syringe filter
-6.  30,000 molecular weight cutoff (MWCO) PES concentrator capable of processing 20 mL
-
-Biologics
-
-1.  Electrocompetent *e. coli* suitable for unstable DNA (restriction minus, endonuclease deficient, and recombination deficient)
-2.  Cells of interest [^1]
-
-[^1]:  Make sure cells are transducible with lentivirus. Timing of lentiviral exposure and detectable expression of transgene will vary across cell types.
-
-Plasmids
-
-1.  CROPseq gRNA expression transfer vector, Cropseq-BFP-WPRE-TS-hU6-BsmbI {Addgene \# Pending / Brock Lab AA112}
-2.  10X Capture gRNA expression transfer vector, pLKV2-hU6-BbsI-PGK-Puro-TagBFP-WPRE {Addgene \# Pending / Brock Lab AA174}
-3.  Lentiviral packaging plasmid, VSV-G (Addgene #14888)
-4.  Lentiviral packaging plasmid, psPAX2 (Addgene #12260)
-5.  dCas9-VPR (Addgene #63798)
-6.  Recall-miniCMV-sfGFP (Addgene \# Pending/ Brock Lab #AA158)
-
-Primers
-
-(*see* **Table 1**)
-
-Buffers
-
-1.  Buffer 3.1: 100 mM NaCl , 50 mM Tris-HCl, 10 mM MgCl~2~, 100 $\mu$g/ml BSA , pH 7.9 at 25°C
-2.  NEB 5X Q5 Reaction Buffer
-3.  10X T4 PNK Buffer
-4.  10 mM dNTPs
-5.  1X Tris-acetate-EDTA (TAE)
-6.  FACS Buffer: 5% FBS, 1-5 mM EDTA, 95% Phosphate-Buffered Saline
-
-Enzymes
-
-1.  BsmBI (10,000 U/mL)
-2.  BbsI (10,000 U/mL)
-3.  NEB Q5 polymerase
-4.  T4 ligase (400,000 U/mL )
-5.  T7 ligase (3,000,000 U/mL)
-6.  PNK (10,000 U/mL)
-
-Other Reagents
-
-1.  Lipofectamine^TM^ 2000
-2.  Lipofectamine^TM^ 3000
-3.  Nuclease-free water
-4.  Agarose
-5.  DNA Clean and Concentrator kit
-6.  2xYT microbial growth medium
-7.  Dulbecco's Modified Eagle Medium (DMEM)
-8.  OptiMEM^TM^ reduced serum medium
-9.  Fetal Bovine Serum (FBS)
-10. Carbenicillin
-11. Solid Phase Reversible Immobilization (SPRI) paramagnetic beads for PCR cleanup
-12. 70% molecular biology grade ethanol in nuclease-free water
-13. 10 mg/mL hexadimethrine bromide
-14. 0.05% Trypan blue
-15. Plasmid Midi-Prep Kit
-
-Computational
-
-1.  Python 3.7
-2.  Cell Ranger (for 10X analysis)
-3.  Samtools
-4.  Cashier (https://github.com/russelldurrett/cashier)
-
 # Methods
 
 ## sgRNA Barcode Library Plasmid Pool Assembly
@@ -530,14 +435,7 @@ $$\text{MOI\ [TU/cell]\ =\ }\frac{\left( \text{Volume\ of\ Virus\ needed\ [mL]} 
 
 12. Maintain sorted cells in culture with complete growth medium.
 
-
-\input{tex/oligos.tex}
-
 \pagebreak
 
-# Acknowledgements
-
-This work has been supported by funding through the NIH (R21CA212928 to AB).
-
-<!-- pandoc will attach refs to the end -->
+\input{tex/oligos.tex}
 

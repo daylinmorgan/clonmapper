@@ -1,7 +1,7 @@
 CWD := $(shell pwd)
 REV := $(shell git rev-parse --short HEAD)
 DATE := $(shell date +'%Y.%m.%d')
-MD := $(shell find md -not -name 00-rev.md -type f | sort )
+MD := $(shell find md -type f -name *.md | sort )
 
 ifneq ($(DOCKER),true)
 		PANDOC_CMD := pandoc
@@ -15,16 +15,17 @@ endif
 TEMPLATE := tex/tmpl.tex
 
 FLAGS := --metadata-file=meta.yml \
+				 -V "rev:$(REV)" \
 				 --pdf-engine=xelatex \
 				 --standalone \
 				 --citeproc \
 				 --bibliography=bib/protocol.bib \
-				 --csl=bib/pnas.csl
+				 --csl=bib/pnas.csl \
 				 --template=$(TEMPLATE)
 
 FILTERS := --lua-filter=filters/scholarly-metadata.lua --lua-filter=filters/author-info-blocks.lua
 
-pdf: tex/oligos.tex $(TEMPLATE) $(MD) md/00-rev.md
+pdf: tex/oligos.tex $(TEMPLATE) $(MD)
 	$(PANDOC_CMD) $(FLAGS) $(FILTERS)  --output protocol-$(REV).pdf md/*.md
 
 # protocol.html: protocol.tex
@@ -35,9 +36,6 @@ pdf: tex/oligos.tex $(TEMPLATE) $(MD) md/00-rev.md
 
 tex/oligos.tex: tables/oligos.csv
 	./bin/csv2latex tables/oligos.csv tex/oligos.tex "Oligonucleotides"
-
-md/00-rev.md: $(MD)
-	echo -e "\nRev.$(REV) | Updated: $(DATE)\n" > md/00-rev.md
 
 clean: 
 	rm -f protocol*.pdf protocol.html protocol.tex table.tex protocol.docx rev.md

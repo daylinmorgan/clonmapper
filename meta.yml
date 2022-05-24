@@ -5,8 +5,6 @@ fontfamily: helvet
 numbersections: true
 link-citations: true
 reference-section-title: References
-header-includes:
-  - \input{tex/preamble.tex}
 institute:
   - bme: Department of Biomedical Engineering, The University of Texas at Austin, Austin TX
   - icmb: Institute for Cellular and Molecular Biology, The University of Texas at Austin, Austin TX

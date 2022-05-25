@@ -395,15 +395,18 @@ $$\text{MOI\ [TU/cell]\ =\ }\frac{\left( \text{Volume\ of\ Virus\ needed\ [mL]} 
 
 9.  Run the Golden Gate assembly reaction on a thermocycler using the following settings: (1) 42 °C for 2 min, (2) 16 °C for 5 min, (3) Repeat steps 1-2 for 35 cycles, (4) 55 °C for 30 min, (6) 4 °C hold
 
-<!-- TODO: Add more instructions here..could be a simple then transform it -->
+<!-- TODO: seperate section devoted to colony formation/selection and liquid inoculation?. -->
+10. Transform bacteria with golden gate product.[^57]
 
-10. Verify insertion of barcode array into Recall-miniCMV-sfGFP backbone via Sanger sequencing.
+[^57]: See [addgene](https://www.addgene.org/protocols/bacterial-transformation/) for protocol.
+
+11. Verify insertion of barcode array into Recall-miniCMV-sfGFP backbone via Sanger sequencing.
 
 ## Recall and Isolation of Barcoded Lineages
 
-[^57]
+[^58]
 
-[^57]: This protocol is optimized for adherent cell lines. If using suspension lines, electroporation can be done to introduce the plasmids to your cells. Be sure to optimize electroporation parameters on your cells for maximized plasmid expression and minimized cell death before recall electroporation. If electroporating, total plasmid load per cell may vary by cell type. Example: CD8 T cells respond well to 2.5 $\mu$g of each plasmid (5 $\mu$g total DNA load) per 5 x 10^5^ cells.
+[^58]: This protocol is optimized for adherent cell lines. If using suspension lines, electroporation can be done to introduce the plasmids to your cells. Be sure to optimize electroporation parameters on your cells for maximized plasmid expression and minimized cell death before recall electroporation. If electroporating, total plasmid load per cell may vary by cell type. Example: CD8 T cells respond well to 2.5 $\mu$g of each plasmid (5 $\mu$g total DNA load) per 5 x 10^5^ cells.
 
 1.  24-48 hours before performing recall transfection seed your cell line of interest in growth medium in a 6-well plate such that it is near 60-80% confluent at time of transfection.
 
@@ -423,23 +426,22 @@ $$\text{MOI\ [TU/cell]\ =\ }\frac{\left( \text{Volume\ of\ Virus\ needed\ [mL]} 
 
 9.  48-72 hours post-transfection, dissociate cells from the plate and wash cells with PBS twice at 300 x g for 5 minutes at 4 °C before resuspending in chilled FACS buffer.[^37]
 
-5.  Pass cells resuspended in FACS buffer through a 35 $\mu$m nylon mesh strainer into a 5 mL flow cytometry test tube and keep on ice.
+10..  Pass cells resuspended in FACS buffer through a 35 $\mu$m nylon mesh strainer into a 5 mL flow cytometry test tube and keep on ice.
 
-6.  Use control samples to set laser voltages on FSC-A, SSC-A, BFP, and GFP on FACS sorter such that nearly all cells are seen within FSC-A vs. SSC-A plot and both negative and positive populations can be seen and distinguished on the BFP and the GFP channel. Set compensations based on single positive populations.[^58]
+11.  Use control samples to set laser voltages on FSC-A, SSC-A, BFP, and GFP on FACS sorter such that nearly all cells are seen within FSC-A vs. SSC-A plot and both negative and positive populations can be seen and distinguished on the BFP and the GFP channel. Set compensations based on single positive populations.[^59]
 
-[^58]: Ensure proper controls for flow. Minimally have a positive control singularly positive for BFP, a positive control singularly positive for GFP, and a negative control expressing no fluorescent proteins.
+[^59]: Ensure proper controls for flow. Minimally have a positive control singularly positive for BFP, a positive control singularly positive for GFP, and a negative control expressing no fluorescent proteins.
 
-10. Set sort gate on GFP and BFP double positive gate indicative of a recalled cell.[^59]
+12. Set sort gate on GFP and BFP double positive gate indicative of a recalled cell.[^60]
 
-[^59]: When sorting for recalled cells, use stringent gating. Ensure that 0% of negative control and single positive samples appear in the sorting gate.
+[^60]: When sorting for recalled cells, use stringent gating. Ensure that 0% of negative control and single positive samples appear in the sorting gate.
 
-11. Sort cells in GFP and BFP double positive gate.[^60]
+13. Sort cells in GFP and BFP double positive gate.[^61]
 
-[^60]: Single cell sorting can be performed for isolation and growth of clonal populations.
+[^61]: Single cell sorting can be performed for isolation and growth of clonal populations.
 
-12. Maintain sorted cells in culture with complete growth medium.
+14. Maintain sorted cells in culture with complete growth medium.
 
 \pagebreak
 
 \input{tex/oligos.tex}
-

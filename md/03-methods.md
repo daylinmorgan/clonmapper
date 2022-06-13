@@ -379,6 +379,7 @@ $$\text{MOI\ [TU/cell]\ =\ }\frac{\left( \text{Volume\ of\ Virus\ needed\ [mL]} 
 - Tube BC: 10 $\mu$L Bg-BC-fwd + 10 $\mu$L Bg-BC-rev
 - Tube CD: 10 $\mu$L Bg-CD-fwd + 10 $\mu$L Bg-CD-rev
 
+  <!-- TODO: add times  -->
 3.  Heat each to 80 °C and let cool to create DNA blocks containing a barcode, a PAM site, and overhang sequences.[^56]
 
 [^56]: This process anneals the single stranded DNA oligos together, creating short double stranded DNA blocks that will be ligated together in the next step.
@@ -426,7 +427,7 @@ $$\text{MOI\ [TU/cell]\ =\ }\frac{\left( \text{Volume\ of\ Virus\ needed\ [mL]} 
 
 9.  48-72 hours post-transfection, dissociate cells from the plate and wash cells with PBS twice at 300 x g for 5 minutes at 4 °C before resuspending in chilled FACS buffer.[^37]
 
-10..  Pass cells resuspended in FACS buffer through a 35 $\mu$m nylon mesh strainer into a 5 mL flow cytometry test tube and keep on ice.
+10.  Pass cells resuspended in FACS buffer through a 35 $\mu$m nylon mesh strainer into a 5 mL flow cytometry test tube and keep on ice.
 
 11.  Use control samples to set laser voltages on FSC-A, SSC-A, BFP, and GFP on FACS sorter such that nearly all cells are seen within FSC-A vs. SSC-A plot and both negative and positive populations can be seen and distinguished on the BFP and the GFP channel. Set compensations based on single positive populations.[^59]
 
@@ -442,6 +443,3 @@ $$\text{MOI\ [TU/cell]\ =\ }\frac{\left( \text{Volume\ of\ Virus\ needed\ [mL]} 
 
 14. Maintain sorted cells in culture with complete growth medium.
 
-\pagebreak
-
-\input{tex/oligos.tex}

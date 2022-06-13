@@ -1,17 +1,30 @@
 #!/usr/bin/env python3
 
+import argparse
 import csv
-import sys
 from pathlib import Path
 
 WIDTH_CUTOFF = int(round(94 / 2, 0))
 
 
-def main():
+def get_args():
 
-    path_to_csv = Path.cwd() / sys.argv[1]
-    path_to_tex = Path.cwd() / sys.argv[2]
-    caption = sys.argv[3]
+    parser = argparse.ArgumentParser()
+    parser.add_argument("input", help="input csv file")
+    parser.add_argument("output", help="output tex file")
+    parser.add_argument("-c", "--caption", help="table caption", default="")
+    parser.add_argument(
+        "--fill", help="expand column 3 to fill page", action="store_true"
+    )
+
+    return parser.parse_args()
+
+
+def main():
+    args = get_args()
+    path_to_csv = Path.cwd() / args.input
+    path_to_tex = Path.cwd() / args.output
+    caption = args.caption
 
     rows = []
 
@@ -20,6 +33,10 @@ def main():
         reader = csv.DictReader(f)
         # column_fmt = '|'.join(['c']*len(reader.fieldnames))
         column_fmt = "c l p{{.67\\textwidth}} l"
+        if args.fill:
+            column_fmt = "c l p{{.67\\textwidth}} l"
+        else:
+            column_fmt = "l l l l"
         headers = [rf"\textbf{{{header}}}" for header in reader.fieldnames]
         header_str = " & ".join(headers) + r" \\"
 
@@ -30,7 +47,12 @@ def main():
                     [
                         v
                         if len(v) < WIDTH_CUTOFF
-                            else "-".join([v[i:i+WIDTH_CUTOFF] for i in range(0,len(v),WIDTH_CUTOFF)])
+                        else "-".join(
+                            [
+                                v[i : i + WIDTH_CUTOFF]
+                                for i in range(0, len(v), WIDTH_CUTOFF)
+                            ]
+                        )
                         for v in row.values()
                     ]
                 )

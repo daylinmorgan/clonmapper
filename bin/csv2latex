@@ -35,7 +35,9 @@ def main():
         column_fmt = "c l p{{.67\\textwidth}} l"
         if args.fill:
             column_fmt = "c l p{{.67\\textwidth}} l"
+            width = "width=\\textwidth"
         else:
+            width = ""
             column_fmt = "l l l l"
         headers = [rf"\textbf{{{header}}}" for header in reader.fieldnames]
         header_str = " & ".join(headers) + r" \\"
@@ -73,7 +75,7 @@ def main():
 {{\renewcommand{{\arraystretch}}{{1.2}} % for the vertical padding
 \begin{{table}}[ht!]
   \begin{{center}}
-    \begin{{adjustbox}}{{width=\textwidth}}
+    \begin{{adjustbox}}{{{width}}}
       \label{{tab:table1}}
       \begin{{tabular}}{{{column_fmt}}}
       \hline

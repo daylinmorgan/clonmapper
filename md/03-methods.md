@@ -1,10 +1,10 @@
+[10X]: #10x-capture-variations
+
 # Methods
 
 ## sgRNA Barcode Library Plasmid Pool Assembly
 
-1.  \[[CROPseq]{.underline}\] Perform an extension reaction to generate double-stranded insert gRNA barcode DNA. Mix 10 $\mu$L NEB 5X Q5 Reaction Buffer, 1 $\mu$L of 10 mM dNTPs, 2 $\mu$L 100$\mu$M CROPseq-PrimeF-BgL-BsmBI, 1 $\mu$L 100$\mu$M CROPseq-RevExt-BgL-BsmBI , and 0.5 $\mu$L to create a 50 $\mu$L reaction.[^2]
-
-    \[[10X Capture]{.underline}\] Perform an extension reaction to generate double-stranded insert gRNA barcode DNA. Mix 10 $\mu$L NEB 5X Q5 Reaction Buffer, 1 $\mu$L of 10 mM dNTPs, 2 $\mu$L 100$\mu$M 10X-PrimeF-BgL-BbsI, 1 $\mu$L 100$\mu$M 10X-RevExt-BgL-BbsI and 0.5 $\mu$L to create a 50 $\mu$L reaction.[^2]
+1. Perform an extension reaction to generate double-stranded insert gRNA barcode DNA. Mix 10 $\mu$L NEB 5X Q5 Reaction Buffer, 1 $\mu$L of 10 mM dNTPs, 2 $\mu$L 100$\mu$M CROPseq-PrimeF-BgL-BsmBI, 1 $\mu$L 100$\mu$M CROPseq-RevExt-BgL-BsmBI , and 0.5 $\mu$L to create a 50 $\mu$L reaction.[^2] See [10X-3.1.1](#10X) for 10X vector variation.
 
 [^2]: Always use filtered pipette tips when working with DNA to prevent cross-contamination.
 
@@ -12,12 +12,9 @@
 
 3.  Confirm dsDNA assembly on 2% agarose gel by running single stranded DNA against PCR product.
 
-4.  \[[CROPseq]{.underline}\] Digest 5-10 $\mu$g of CROPseq vector backbone in a reaction containing 20 $\mu$L Digestion Buffer 3.1, 8 $\mu$L BsmBI, and nuclease-fee water to 200 $\mu$L.
-
-> \[[10X Capture]{.underline}\] Digest 5-10 $\mu$g of 10X Capture vector backbone in a reaction containing 20 $\mu$L Digestion Buffer 3.1, 8 $\mu$L BbsI, and nuclease-fee water to 200 $\mu$L.
+4. Digest 5-10 $\mu$g of CROPseq vector backbone in a reaction containing 20 $\mu$L Digestion Buffer 3.1, 8 $\mu$L BsmBI, and nuclease-fee water to 200 $\mu$L. See [10X-3.1.4](#10X) for 10X vector variation.
 
 5.  Ligate double stranded gRNA barcode DNA into digested gRNA transfer vector at a molar ratio of 10:1 in a 50X Golden Gate assembly reaction by mixing 1.25 pmol digested gRNA transfer vector (*from step 3.1.4*), 12.5 pmol double stranded gRNA barcode DNA (*from step 3.1.1*), 50 $\mu$L T4 ligase buffer, 25 $\mu$L T7 ligase, 25 $\mu$L BsmBI (CROPseq) or BbsI (10X Capture), and nuclease-free water to 500 $\mu$L.[^3]
-
 
 [^3]:  A 1X Golden Gate assembly reaction is setup by mixing 25 fmol digested gRNA transfer vector (*from step 3.1.4*), 250 fmol double stranded gRNA barcode DNA (*from step 3.1.1*), 1 $\mu$L T4 ligase buffer, 0.5 $\mu$L T7 ligase, 0.5 $\mu$L BsmBI (CROPseq) or BbsI (10X Capture), and nuclease-free water to 10 $\mu$L.
 
@@ -71,9 +68,7 @@ The diversity of the initial plasmid pool should be assessed to ensure a high di
 
 [^9]:  Universal phase amplicon sequencing primers are used to add more diversity to the sequencing reads which helps prevents sequencing errors.
 
-3.  \[[CROPseq]{.underline}\] Prepare the PCR reaction to amplify barcodes and add Illumina indices by mixing 10 uL 5X Q5 Reaction Buffer, 1 $\mu$L 10 mM dNTPs, 2.5 $\mu$L PrimeF PAS-hU6_F (from step 3.2.2), 2.5 $\mu$L PrimeR_cropseq (*see* **Table 1**), 0.5 $\mu$L Q5 polymerase, 50 ng plasmid DNA, and nuclease-free water to 50 $\mu$L. [^10]
-
-    \[[10X Capture]{.underline}\] Prepare the PCR reaction to amplify barcodes and add Illumina indices by mixing 10 uL 5X Q5 Reaction Buffer, 1 $\mu$L 10 mM dNTPs, 2.5 $\mu$L PrimeF PAS-hU6_F (from step 3.2.2), 2.5 $\mu$L PrimeR_10x (*see* **Table 1**), 0.5 $\mu$L Q5 polymerase, 50 ng plasmid DNA, and nuclease-free water to 50 $\mu$L. [^10]
+3. Prepare the PCR reaction to amplify barcodes and add Illumina indices by mixing 10 uL 5X Q5 Reaction Buffer, 1 $\mu$L 10 mM dNTPs, 2.5 $\mu$L PrimeF PAS-hU6_F (from step 3.2.2), 2.5 $\mu$L PrimeR_cropseq (*see* **Table 1**), 0.5 $\mu$L Q5 polymerase, 50 ng plasmid DNA, and nuclease-free water to 50 $\mu$L. [^10] See [10X-3.2.3](#10X) for 10X vector variation.
 
 [^10]: Choose Illumina i7 index [NNNNNN]{.underline} based on Illumina sequencer to be used and avoid using the same i7 index for different samples.
 
@@ -321,11 +316,10 @@ $$\text{MOI\ [TU/cell]\ =\ }\frac{\left( \text{Volume\ of\ Virus\ needed\ [mL]} 
 
 2.  Isolate genomic DNA from cell pellet using kit or standard protocol and proceed to PCR amplification.
 
-3.  \[[CROPseq]{.underline}\] Prepare the PCR reaction to amplify barcodes and add Illumina indices[^10]  by mixing 10 uL 5X Q5 Reaction Buffer, 1 $\mu$L 10 mM dNTPs, 2.5 $\mu$L PrimeF PAS-hU6_F (from step 3.2.2), 2.5 $\mu$L PrimeR_cropseq (*see* **Table 1**), 0.5 $\mu$L Q5 polymerase, up to 2 $\mu$g genomic DNA[^49], and nuclease-free water to 50 $\mu$L.
+3. Prepare the PCR reaction to amplify barcodes and add Illumina indices[^10]  by mixing 10 uL 5X Q5 Reaction Buffer, 1 $\mu$L 10 mM dNTPs, 2.5 $\mu$L PrimeF PAS-hU6_F (from step 3.2.2), 2.5 $\mu$L PrimeR_cropseq (*see* **Table 1**), 0.5 $\mu$L Q5 polymerase, up to 2 $\mu$g genomic DNA[^49], and nuclease-free water to 50 $\mu$L.
+See [10X-3.6.1.3](#10X) for 10X vector variation.
 
-> \[[10X Capture]{.underline}\] Prepare the PCR reaction to amplify barcodes and add Illumina indices[^10] by mixing 10 uL 5X Q5 Reaction Buffer, 1 $\mu$L 10 mM dNTPs, 2.5 $\mu$L PrimeF PAS-hU6_F (from step 3.2.2), 2.5 $\mu$L PrimeR_10x (*see* **Table 1**), 0.5 $\mu$L Q5 polymerase, up to 2 $\mu$g genomic DNA[^49], and nuclease-free water to 50 $\mu$L.
-
-49. DNA amount used will be dependent on the nature of the cell population and desired sampling depth. To capture rare events, a maximum of 2 $\mu$g of DNA per reaction can be used and multiple reactions can be done. Given that a single diploid human genome is estimated at \~6.6 pg, 2 $\mu$g of genomic DNA represents that of \~300,000 cells. To capture only highly represented clonal populations, less DNA can be used.
+[^49]: DNA amount used will be dependent on the nature of the cell population and desired sampling depth. To capture rare events, a maximum of 2 $\mu$g of DNA per reaction can be used and multiple reactions can be done. Given that a single diploid human genome is estimated at \~6.6 pg, 2 $\mu$g of genomic DNA represents that of \~300,000 cells. To capture only highly represented clonal populations, less DNA can be used.
 
 4.  Amplify the barcodes by running the 50 $\mu$L reaction on a thermocycler using the following settings[^11]: (1) 98 °C for 2 min, (2) 98 °C for 10 sec, (3) 63 °C for 30 sec, (4) 72 °C for 15 sec, (4) Repeat steps 2-4 for 20 cycles, (5) 72 °C for 2 min, (6) 4 °C hold
 
@@ -443,3 +437,13 @@ $$\text{MOI\ [TU/cell]\ =\ }\frac{\left( \text{Volume\ of\ Virus\ needed\ [mL]} 
 
 14. Maintain sorted cells in culture with complete growth medium.
 
+
+## 10X Capture Variation {#10X .unnumbered}
+
+3.1.1. Perform an extension reaction to generate double-stranded insert gRNA barcode DNA. Mix 10 $\mu$L NEB 5X Q5 Reaction Buffer, 1 $\mu$L of 10 mM dNTPs, 2 $\mu$L 100$\mu$M 10X-PrimeF-BgL-BbsI, 1 $\mu$L 100$\mu$M 10X-RevExt-BgL-BbsI and 0.5 $\mu$L to create a 50 $\mu$L reaction.
+
+3.1.4. Digest 5-10 $\mu$g of 10X Capture vector backbone in a reaction containing 20 $\mu$L Digestion Buffer 3.1, 8 $\mu$L BbsI, and nuclease-fee water to 200 $\mu$L.
+
+3.2.3. Prepare the PCR reaction to amplify barcodes and add Illumina indices by mixing 10 uL 5X Q5 Reaction Buffer, 1 $\mu$L 10 mM dNTPs, 2.5 $\mu$L PrimeF PAS-hU6_F (from step 3.2.2), 2.5 $\mu$L PrimeR_10x (*see* **Table 1**), 0.5 $\mu$L Q5 polymerase, 50 ng plasmid DNA, and nuclease-free water to 50 $\mu$L.
+
+3.6.1.3 Prepare the PCR reaction to amplify barcodes and add Illumina indices by mixing 10 uL 5X Q5 Reaction Buffer, 1 $\mu$L 10 mM dNTPs, 2.5 $\mu$L PrimeF PAS-hU6_F (from step 3.2.2), 2.5 $\mu$L PrimeR_10x (*see* **Table 1**), 0.5 $\mu$L Q5 polymerase, up to 2 $\mu$g genomic DNA[^49], and nuclease-free water to 50 $\mu$L.

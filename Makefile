@@ -7,7 +7,9 @@ MD := $(shell find md -type f -name *.md | sort )
 ifneq ($(DOCKER),true)
 	PANDOC_CMD := pandoc
 else
-	PANDOC_CMD := docker run --rm -v "$(CWD)":/data -u $(id -u):$(id -g) daylinmorgan/pandoc
+	USER := $(shell id -u)
+	GROUP := $(shell id -g)
+	PANDOC_CMD := docker run --rm -v "$(CWD)":/data -u $(USER):$(GROUP) daylinmorgan/pandoc
 endif
 
 .PHONY: clean pdf

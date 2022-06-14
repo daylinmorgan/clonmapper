@@ -325,8 +325,10 @@ See [10X-3.6.1.3](#10X) for 10X vector variation.
 
 5.  Finish preparing barcodes as described in 3.2 steps 4-20.
 
-### Processing Barcode Sequencing Data
+### Processing Barcode Sequencing Data (*Section is WIP!*)
 
+See [pycashier](https://github.com/brocklab/pycashier) for more info.
+<!--
 1.  Processing barcode data is accomplished through several bash scripts which can be found at [https://github.com/russelldurrett/cashier]{.underline}.[^50]
 
 [^50]: We assume basic familiarity working with bash in a UNIX based environment
@@ -360,6 +362,7 @@ See [10X-3.6.1.3](#10X) for 10X vector variation.
 2.  To process barcodes from 10X data, run *samtools* to convert the unmapped read bam file into a sam file. You will first take the unmapped reads bam file and convert to a sam file using: *samtools view possorted.bam \> potsorted.sam*
 
 3.  Next pipe the bead- and umi-tagged reads through cutadapt to identify and trim barcodes, then translate to a tsv: *python \$cashier/scripts/sam_to_name_labeled_fastq.py possorted.sam \| cutadapt -g CTTGTGGAAAGGACGAAACACCG -a GTTTTAGAGCTAGAA -n 2 - \| python \$cashier/scripts/fastq_tagged_to_tsv.py - \> readname_umi_cellbarcode_lineagebarcode.tsv*
+-->
 
 ## Recall Plasmid Assembly
 

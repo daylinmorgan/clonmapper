@@ -2,7 +2,6 @@
 
 import argparse
 import re
-import sys
 from pathlib import Path
 
 PROTOCOL_METHODS = Path.cwd() / "md" / "03-methods.md"

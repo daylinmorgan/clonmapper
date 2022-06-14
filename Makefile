@@ -1,5 +1,6 @@
 CWD := $(shell pwd)
-REV := $(shell git rev-parse --short HEAD)
+# REV := $(shell git rev-parse --short HEAD)
+REV := $(shell git describe --always --dirty | sed s'/dirty/dev/')
 DATE := $(shell date +'%Y.%m.%d')
 MD := $(shell find md -type f -name *.md | sort )
 

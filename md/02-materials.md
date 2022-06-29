@@ -75,6 +75,7 @@ Other Reagents
 13. 10 mg/mL hexadimethrine bromide
 14. 0.05% Trypan blue
 15. Plasmid Midi-Prep Kit
+16. DNA gel purification kit
 
 Computational
 

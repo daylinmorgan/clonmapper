@@ -122,9 +122,9 @@ The diversity of the initial plasmid pool should be assessed to ensure a high di
 
 ## SgRNA Barcoding Lentivirus Production
 
-1.  48 hours before transfection, plate 0.22-0.25 x 10^6^ low-passage HEK-293T cells in DMEM supplemented with 10% FBS without antibiotics in each well of a sterile 6-well tissue culture treated plate such that cells will be 70-80% confluent at the time of transfection.
+1.  48 hours before transfection, plate 0.22-0.25 x 10^6^ low-passage HEK-293T cells in DMEM supplemented with 10% FBS **without antibiotics** in each well of a sterile 6-well tissue culture treated plate such that cells will be 70-80% confluent at the time of transfection.
 
-2.  On the morning of transfection, replace media on HEK-293T cells with 2 mL of fresh Opti-MEM^TM^ (or your cells growth medium) supplemented with 10% FBS without antibiotics.
+2.  On the morning of transfection, replace media on HEK-293T cells with 2 mL of fresh Opti-MEM^TM^ (or your cells growth medium) supplemented with 10% FBS **without antibiotics**.
 
 3.  In the afternoon, warm Opti-MEM^TM^, Lipofectamine^TM^ 2000, and VSV-G, psPAX, and sgRNA barcoding plasmid to room temperature.[^16][^17]
 
@@ -146,17 +146,17 @@ The diversity of the initial plasmid pool should be assessed to ensure a high di
 
 9.  Add 300 $\mu$L of the transfection mix slowly and dropwise to each well of HEK-293T cells.
 
-10. 16-18 hours post-transfection, carefully remove media containing Lipofectamine^TM^ 2000 complexes and slowly replenish with DMEM supplemented with 20% FBS without antibiotics.[^19][^20]
+10. 16-18 hours post-transfection, carefully remove and dipose of media containing Lipofectamine^TM^ 2000 complexes and slowly replenish with DMEM supplemented with 20% FBS **without antibiotics**.[^19][^20]
 
-[^19]: You are working with live virus at this stage and beyond. Stringently adhere to all biosafety procedures.
+[^19]: You are working with live virus at this stage and beyond. Stringently adhere to all biosafety procedures. Bleach and UV all media and containers exposed to live virus and virus producing reagents.
 
 [^20]: Cells exposed to lentivirus are fragile and extra care must be taken in removing and adding media.
 
-11. 48 hours post-transfection, harvest viral containing supernatant and store in a 50 mL conical tube at 4 °C. Replenish media dropwise on virus producing cells. [^21]
+11. 48 hours post-transfection, harvest viral containing supernatant and store in a 50 mL conical tube at 4 °C. Optional: To increase viral harvest,replenish media dropwise on virus producing cells for next day collection. [^21]
 
 [^21]: Virus should be stored in labeled secondary containment.
 
-12. 72 hours post-transfection, harvest viral containing supernatant and combine with 48 hour viral collection.[^22][^23]
+12. Optional: 72 hours post-transfection, harvest final viral containing supernatant and combine with 48 hour viral collection.[^22][^23]
 
 [^22]: Virus-producing HEK-293T cells should be bleached and UV irradiated in culture for at least 30 minutes to inactivate remaining virus before disposal.
 
@@ -166,11 +166,11 @@ The diversity of the initial plasmid pool should be assessed to ensure a high di
 
 14. Remove plunger from 20 mL syringe and attach to a 0.45 $\mu$m PES syringe filter.
 
-15. Transfer viral supernatant to a 20 mL syringe.
+15. Transfer viral supernatant to the 20 mL syringe.
 
 16. Filter viral supernatant through 0.45 $\mu$m PES syringe filter into a fresh 50 mL conical tube to remove any remaining cell debris.
 
-17. Concentrate virus 20X in 30,000 MWCO PES ultrafiltration centrifugal concentrator by loading 20 mL of filtered viral supernatant into concentrator chamber and spinning at 4000 x g for 60-75 minutes at 4 °C until \~1 mL of media remains in filter.[^24]
+17. Concentrate virus ~20X in 30,000 MWCO PES ultrafiltration centrifugal concentrator by loading 20 mL of filtered viral supernatant into concentrator chamber and spinning at 4000 x g for 60-75 minutes at 4 °C until \~1 mL of media remains in filter.[^24]
 
 [^24]: Spin times will vary based on centrifuge angle. spinning at 4 °C will increase the amount of time it takes for media to pass through filter (We have noted that 22 mL takes about 75 minutes).
 

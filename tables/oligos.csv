@@ -1,4 +1,4 @@
-Step,Name,Sequence (5' -> 3'),Notes
+Step,Name,Sequence (5'\rightarrow3'),Notes
 3.1,CROPseq-PrimeF-BgL-BsmBI,GAGCCTCGTCTCCCACCG\textbf{NNNNNNNNNNNNNNNNNNNN}GTTTTGAGACGCATGCTGCA,The N20 sequence is a random string of oligonucleotides
 3.1,CROPseq-RevExt-BgL-BsmBI,TGCAGCATGCGTCTCAAAAC,
 3.1,10X PrimeF-BgL-BbsI,GCCTGAAGACCTCACCG\textbf{NNNNNNNNNNNNNNNNNNNN}GTTTTAGTCTTCCATGCTGC,The N20 sequence is a random string of oligonucleotides

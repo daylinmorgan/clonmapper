@@ -12,9 +12,6 @@ else
 	PANDOC_CMD := docker run --rm -v "$(CWD)":/data -u $(USER):$(GROUP) daylinmorgan/pandoc
 endif
 
-
-TEMPLATE := tmpl/default.tex
-
 FLAGS := -V "rev:$(REV)" \
 	--metadata-file=meta.yml \
 	--standalone \
@@ -24,7 +21,7 @@ FLAGS := -V "rev:$(REV)" \
 
 LATEX_FLAGS := $(FLAGS) \
 	--pdf-engine=xelatex \
-	--template=$(TEMPLATE)
+	--template=tmpl/default.tex
 
 HTML_FLAGS := $(FLAGS) \
 				 --toc \
@@ -38,8 +35,7 @@ pdf: tex/oligos.tex tex/reagents.tex $(TEMPLATE) $(MD)
 	$(PANDOC_CMD) $(LATEX_FLAGS) $(FILTERS)  --output protocol-$(REV).pdf md/*.md
 
 html: protocol.tex
-	# $(PANDOC_CMD) $(HTML_FLAGS) $(FILTERS) --mathjax --output protocol.html protocol.tex
-	$(PANDOC_CMD) $(HTML_FLAGS) $(FILTERS) --mathjax -t html5 protocol.tex | sed 's/<span>width=1.1,center=.5<\/span>//g' > protocol.html
+	$(PANDOC_CMD) $(HTML_FLAGS) $(FILTERS) --mathjax --template=tmpl/default.html protocol.tex | sed 's/<span>width=.*,center=.*<\/span>//g' > protocol.html
 
 protocol.tex: tex/oligos.tex tex/reagents.tex
 	$(PANDOC_CMD) $(LATEX_FLAGS) $(FILTERS) --output protocol.tex md/*.md

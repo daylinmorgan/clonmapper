@@ -79,8 +79,8 @@ Other Reagents
 
 Computational
 
-1.  Python 3.7
-2.  Cell Ranger (for 10X analysis)
-3.  Samtools
-4.  Cashier (https://github.com/russelldurrett/cashier)
+1.  Linux Machine
+2.  Python 3.8
+3.  Cell Ranger (for 10X analysis)
+4.  [Pycashier](https://github.com/brocklab/pycashier)
 

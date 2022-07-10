@@ -282,7 +282,7 @@ The diversity of the initial plasmid pool should be assessed to ensure a high di
 
 [^43]: Plot will appear logarithmic. Only values within the linear region of the plot should be used to calculate viral titer (usually between 10-40% BFP-positive).
 
-> Calculate viral titer in titering units (TU) per mL using **Equation 1** using a pair of values within the linear region of the titer curve.[^44]
+Calculate viral titer in titering units (TU) per mL using **Equation 1** using a pair of values within the linear region of the titer curve.[^44]
 
 [^44]: [Example]{.underline}: If 5 $\mu$L of virus added to 100,000 cells resulted in 30% BFP-positive cells within the linear region of the titer curve, then the viral titer would be (100,000 x 0.30) / (0.005 mL) = 6.0 x 10^6^ TU/mL
 

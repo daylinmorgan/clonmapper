@@ -2,6 +2,7 @@
 import argparse
 import csv
 from pathlib import Path
+import sys
 
 
 def get_args():
@@ -66,7 +67,13 @@ def main():
                     + "\n"
                 )
             else:
-                row_str = " & ".join(row.values()) + r" \\" + "\n"
+                try:
+                    row_str = " & ".join(row.values()) + r" \\" + "\n"
+                except TypeError:
+                    print(f'Error:{row.values()}')
+                    print('there was an issue with this row does it have a value for each column?')
+                    sys.exit(1)
+
             rows.append(row_str)
 
         rows = "".join(rows)

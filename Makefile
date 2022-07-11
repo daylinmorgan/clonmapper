@@ -34,6 +34,7 @@ html: protocol.tex
 	$(PANDOC_CMD) $(HTML_FLAGS) $(FILTERS) --mathjax --template=tmpl/default.html protocol.tex | sed 's/<span>width=.*,center=.*<\/span>//g' > protocol.html
 
 site: protocol-$(REV).pdf
+	mkdir -p public
 	$(PANDOC_CMD) -s -o public/index.html site/index.md
 	cp protocol-$(REV).pdf public/clonmapper-protocol-$(REV).pdf
 	cd public && ln -sf ./clonmapper-protocol-$(REV).pdf ./protocol.pdf
@@ -50,5 +51,5 @@ docker-build:
 	docker build . --tag daylinmorgan/pandoc
 
 clean: 
-	rm -f protocol*.pdf protocol.html protocol.tex table.tex protocol.docx rev.md tex/*.tex
+	rm -f protocol*.pdf protocol.html protocol.tex table.tex protocol.docx rev.md tex/*.tex public/*
 

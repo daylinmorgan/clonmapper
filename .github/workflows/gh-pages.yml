@@ -18,6 +18,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: work around permission issue
+        run: git config --global --add safe.directory /__w/clonmapper-protocol/clonmapper-protocol
+
       - name: Build
         run: make site
 
@@ -30,5 +33,4 @@ jobs:
         with:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
           external_repository: brocklab/clonmapper
-          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public

@@ -1,6 +1,8 @@
-\pagebreak
+\clearpage
+
+## Tables
 
 \input{tex/oligos.tex}
 \input{tex/reagents.tex}
 
-\pagebreak
+\clearpage

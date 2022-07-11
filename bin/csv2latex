@@ -14,7 +14,6 @@ def get_args():
     parser.add_argument("--split", help="column number to split using splitseq")
     parser.add_argument("--fill", help="expand to fill page", action="store_true")
     parser.add_argument("--fmt", help="column format to use with tabular")
-
     return parser.parse_args()
 
 
@@ -85,7 +84,7 @@ def main():
 % DO NOT edit manually
 \setlength{{\tabcolsep}}{{0.5em}} % for the horizontal padding
 {{\renewcommand{{\arraystretch}}{{1.2}} % for the vertical padding
-\begin{{table}}[ht!]
+\begin{{table}}[!hbt]
   \begin{{center}}
     \begin{{adjustbox}}{{{width}}}
       \label{{tab:table1}}

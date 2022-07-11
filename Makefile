@@ -41,9 +41,9 @@ site: protocol-$(REV).pdf
 protocol.tex: tex/oligos.tex tex/reagents.tex
 	$(PANDOC_CMD) $(LATEX_FLAGS) $(FILTERS) --output protocol.tex md/*.md
 
-tex/oligos.tex: tables/oligos.csv
+tex/oligos.tex: tables/oligos.csv bin/csv2latex
 	./bin/csv2latex tables/oligos.csv tex/oligos.tex -c "Oligonucleotides" --split 3 --fmt 'c l p{{.5\textwidth}} l' --fill
-tex/reagents.tex: tables/reagents.csv
+tex/reagents.tex: tables/reagents.csv bin/csv2latex
 	./bin/csv2latex tables/reagents.csv tex/reagents.tex -c "Recommended Reagents" --fmt 'l c c'
 
 docker-build:

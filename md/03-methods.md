@@ -442,6 +442,8 @@ See [pycashier](https://github.com/brocklab/pycashier) for more info about how t
 
 14. Maintain sorted cells in culture with complete growth medium.
 
+<!-- pagebreak to keep these final footnotes one page -->
+\pagebreak
 
 ## 10X Capture Variation {#10X .unnumbered}
 

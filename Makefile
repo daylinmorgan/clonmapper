@@ -1,5 +1,6 @@
 CWD := $(shell pwd)
 # REV := $(shell git rev-parse --short HEAD)
+## TODO: make revision date based for clarity i.e. %Y.%M.%d-git-hash
 REV := $(shell git describe --always --dirty | sed s'/dirty/dev/')
 DATE := $(shell date +'%Y.%m.%d')
 MD := $(shell find md/ -type f -name "*.md" | sort )
@@ -14,7 +15,6 @@ endif
 
 FLAGS := -V "rev:$(REV)" \
 	--metadata-file=meta.yml \
-	--standalone \
 	--citeproc \
 	--bibliography=bib/protocol.bib \
 	--csl=bib/pnas.csl \
@@ -24,18 +24,24 @@ LATEX_FLAGS := $(FLAGS) \
 	--template=tmpl/default.tex
 
 HTML_FLAGS := $(FLAGS) \
-				 --toc \
 				 -t html5
 
 FILTERS := --lua-filter=filters/scholarly-metadata.lua --lua-filter=filters/author-info-blocks.lua
 
-.PHONY: clean pdf html
+.PHONY: clean pdf html site
 
-pdf: tex/oligos.tex tex/reagents.tex $(TEMPLATE) $(MD)
+pdf: protocol-$(REV).pdf
+
+protocol-$(REV).pdf: tex/oligos.tex tex/reagents.tex $(TEMPLATE) $(MD)
 	$(PANDOC_CMD) $(LATEX_FLAGS) $(FILTERS)  --output protocol-$(REV).pdf md/*.md
 
 html: protocol.tex
 	$(PANDOC_CMD) $(HTML_FLAGS) $(FILTERS) --mathjax --template=tmpl/default.html protocol.tex | sed 's/<span>width=.*,center=.*<\/span>//g' > protocol.html
+
+site: protocol-$(REV).pdf
+	$(PANDOC_CMD) -s -o public/index.html site/index.md
+	cp protocol-$(REV).pdf public/clonmapper-protocol-$(REV).pdf
+	cd public && ln -sf ./clonmapper-protocol-$(REV).pdf ./protocol.pdf
 
 protocol.tex: tex/oligos.tex tex/reagents.tex
 	$(PANDOC_CMD) $(LATEX_FLAGS) $(FILTERS) --output protocol.tex md/*.md

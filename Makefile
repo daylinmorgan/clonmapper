@@ -1,16 +1,11 @@
 CWD := $(shell pwd)
-# REV := $(shell git rev-parse --short HEAD)
-## TODO: make revision date based for clarity i.e. %Y.%M.%d-git-hash
-REV := $(shell git describe --always --dirty | sed s'/dirty/dev/')
-DATE := $(shell date +'%Y.%m.%d')
+REV := $(shell date +'%Y.%m.%d-' )$(shell git describe --always --dirty | sed s'/dirty/dev/')
 MD := $(shell find md/ -type f -name "*.md" | sort )
 
 ifneq ($(DOCKER),true)
 	PANDOC_CMD := pandoc
 else
-	USER := $(shell id -u)
-	GROUP := $(shell id -g)
-	PANDOC_CMD := docker run --rm -v "$(CWD)":/data -u $(USER):$(GROUP) daylinmorgan/pandoc
+	PANDOC_CMD := docker run --rm -v "$$(pwd)":/data -u $$(id -u):$$(id -g) daylinmorgan/pandoc
 endif
 
 FLAGS := -V "rev:$(REV)" \

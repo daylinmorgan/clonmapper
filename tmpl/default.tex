@@ -449,7 +449,9 @@ $endif$
 $if(rev)$
 \AddToHook{shipout/foreground}{%
   \put(1\baselineskip,-\paperheight+1\baselineskip)
-    {\footnotesize Rev. $rev$ | Updated: \DTMtoday.}
+    % {\footnotesize Rev. $rev$ | Updated: \DTMtoday.}
+    {\footnotesize Rev. $rev$ }
+
 }
 $endif$
 

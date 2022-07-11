@@ -327,9 +327,10 @@ See [10X-3.6.1.3](#10X) for 10X vector variation.
 
 5.  Finish preparing barcodes as described in 3.2 steps 4-20.
 
-### Processing Barcode Sequencing Data (*Section is WIP!*)
+### Processing Barcode Sequencing Data (*WIP!*)
 
-See [pycashier](https://github.com/brocklab/pycashier) for more info.
+See [pycashier](https://github.com/brocklab/pycashier) for more info about how to get started processing fastq data to get barcode information.
+
 <!--
 1.  Processing barcode data is accomplished through several bash scripts which can be found at [https://github.com/russelldurrett/cashier]{.underline}.[^50]
 
@@ -378,7 +379,6 @@ See [pycashier](https://github.com/brocklab/pycashier) for more info.
 - Tube BC: 10 $\mu$L Bg-BC-fwd + 10 $\mu$L Bg-BC-rev
 - Tube CD: 10 $\mu$L Bg-CD-fwd + 10 $\mu$L Bg-CD-rev
 
-  <!-- TODO: add times  -->
 3.  Heat each to 80 °C and let cool to create DNA blocks containing a barcode, a PAM site, and overhang sequences.[^56]
 
 [^56]: This process anneals the single stranded DNA oligos together, creating short double stranded DNA blocks that will be ligated together in the next step.

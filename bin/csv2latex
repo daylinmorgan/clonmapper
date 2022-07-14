@@ -24,10 +24,8 @@ def hyphen(v):
 def splitseq(v):
     if " " in v:
         return v
-    if r"\textbf" in v:
-        start = v.split(r"\textbf{")[0]
-        n = v.split(r"\textbf{")[1].split("}")[0]
-        end = v.split(r"}")[1]
+    if "**" in v:
+        start,n,end = v.split("**")
         return rf"{hyphen(start)}\-\textbf{{{hyphen(n)}}}\-{hyphen(end)}"
     else:
         return hyphen(v)

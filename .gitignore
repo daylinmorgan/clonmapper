@@ -1,10 +1,12 @@
-protocol*.pdf
+*protocol*.pdf
+protocol.tex
 protocol.html
-tex/*.tex
-!tex/preamble.tex
-!tex/tmpl.tex
-*rev.md
+tex/
 public/
+md/html-tables.md
+
+!site/static/pdfs/*.pdf
+site/static/latest/*.pdf
 
 # Created by https://www.toptal.com/developers/gitignore/api/latex
 # Edit at https://www.toptal.com/developers/gitignore?templates=latex
@@ -34,7 +36,7 @@ public/
 # *.pdf
 
 ## Generated if empty string is given at "Please type another file name for output:"
-.pdf
+#.pdf
 
 ## Bibliography auxiliary files (bibtex/biblatex/biber):
 *.bbl

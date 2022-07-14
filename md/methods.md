@@ -286,7 +286,7 @@ Calculate viral titer in titering units (TU) per mL using **Equation 1** using a
 
 [^44]: [Example]{.underline}: If 5 $\mu$L of virus added to 100,000 cells resulted in 30% BFP-positive cells within the linear region of the titer curve, then the viral titer would be (100,000 x 0.30) / (0.005 mL) = 6.0 x 10^6^ TU/mL
 
-$$\frac{\text{TU}}{\text{mL}}\text{\ }\text{=}\text{\ }\frac{\left( \text{Number\ of\ cells\ at\ time\ of\ transduction} \right)\text{\ ×\ }\left( \text{Fraction\ of\ Positive\ Cells} \right)}{\left( \text{Volume\ of\ virus\ }\left\lbrack \text{mL} \right\rbrack \right)}$$
+$$\frac{\text{TU}}{\text{mL}}\text{=}\frac{\left(\text{Number of cells at time of transduction} \right)\text{ × }\left( \text{Fraction of Positive Cells} \right)}{\left( \text{Volume of virus }\left\lbrack \text{mL} \right\rbrack \right)}$$
 
 ## sgRNA Barcode Transduction
 
@@ -306,7 +306,7 @@ $$\frac{\text{TU}}{\text{mL}}\text{\ }\text{=}\text{\ }\frac{\left( \text{Number
 
 5.  Maintain sorted cells in culture with complete growth medium.
 
-$$\text{MOI\ [TU/cell]\ =\ }\frac{\left( \text{Volume\ of\ Virus\ needed\ [mL]} \right)\text{\ ×\ }\left( \text{Titer\ of\ Virus\ [TU/mL]} \right)}{\left( \text{Number\ of\ cells\ exposed\ to\ virus} \right)}\text{\ =\ 0.1}$$
+$$\text{MOI [TU/cell] = }\frac{\left( \text{Volume of Virus needed [mL]} \right)\text{ × }\left( \text{Titer of Virus [TU/mL]} \right)}{\left( \text{Number of cells exposed to virus} \right)}\text{ = 0.1}$$
 
 ## Targeted sgRNA Barcode Sampling of Cells
 

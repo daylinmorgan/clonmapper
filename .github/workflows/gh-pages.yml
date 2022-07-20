@@ -24,9 +24,7 @@ jobs:
         uses: docker://daylinmorgan/pandoc
         with:
           entrypoint: "bash"
-          args: |
-            -c git config --global --add safe.directory /github/workspace \
-            && make website.content
+          args: -c 'git config --global --add safe.directory /github/workspace && make website.content'
 
       - name: Build Site
         run: cd site && hugo --minify

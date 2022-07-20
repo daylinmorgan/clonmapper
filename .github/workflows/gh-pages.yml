@@ -8,6 +8,10 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    container:
+      image: daylinmorgan/pandoc
+    permissions:
+      contents: write
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
     steps:
@@ -20,14 +24,11 @@ jobs:
           hugo-version: '0.101.0'
           extended: true
 
-      - name: Generate Site Content
-        uses: docker://daylinmorgan/pandoc
-        with:
-          entrypoint: "bash"
-          args: -c 'git config --global --add safe.directory /github/workspace && make website.content'
+      - name: work around permission issue
+        run: git config --global --add safe.directory /__w/clonmapper-protocol/clonmapper-protocol
 
-      - name: Build Site
-        run: cd site && hugo --minify
+      - name: Build
+        run: make website.build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

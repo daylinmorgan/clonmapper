@@ -1,12 +1,4 @@
-FROM pandoc/latex:2.18
-
-RUN apk update \
-  && apk add \
-    bash \
-    git \
-    make \
-    python3
-
+FROM pandoc/latex:2.18-ubuntu
 
 RUN tlmgr update --self && \
     tlmgr install \

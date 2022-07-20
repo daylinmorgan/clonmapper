@@ -5,7 +5,8 @@ RUN apk update \
     bash \
     git \
     make \
-    python3
+    python3 \
+    go
 
 
 RUN tlmgr update --self && \

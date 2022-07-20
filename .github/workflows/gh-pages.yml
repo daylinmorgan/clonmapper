@@ -24,6 +24,11 @@ jobs:
           hugo-version: '0.101.0'
           extended: true
 
+      - name: Setup Go
+        uses: actions/setup-go@v3
+        with:
+          go-version: '>=1.17.0'
+
       - name: work around permission issue
         run: git config --global --add safe.directory /__w/clonmapper-protocol/clonmapper-protocol
 

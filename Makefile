@@ -75,14 +75,18 @@ $(LATEST_DATA):
 CONTENT := $(patsubst md/%.md,site/content/protocol/%.md,$(HTML_MDs)) \
 		site/content/single-page-protocol.md
 
+.PHONY: website.content
+website.content: $(SITE_PDF) $(CONTENT) $(LATEST_DATA)
+	@echo "==> Generating Website Content <=="
+
+
 .PHONY: website.serve
-website.serve: $(SITE_PDF) $(CONTENT) $(LATEST_DATA)
+website.serve: website.content
 	@echo "==> Serving Website <=="
 	cd site && hugo server -D --minify --disableFastRender
 
 .PHONY: website.build
-website.build: $(SITE_PDF) $(CONTENT) $(LATEST_DATA)
-	@echo "==> Generating Website <=="
+website.build: website.content
 	cd site && hugo --minify
 
 ## latex tables with better formatting

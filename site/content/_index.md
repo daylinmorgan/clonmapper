@@ -12,6 +12,6 @@ See below for a graphical overview of the technique.
 
 <hr>
 
-<img src="/svg/clonmapper.svg" width='800' style='align:center;'>
+<img src="svg/clonmapper.svg" width='800' style='align:center;'>
 
 <br/>

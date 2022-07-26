@@ -12,12 +12,13 @@ For example:
 
 `2022.07.15-a9a0655.toml`:
 ```toml
-date= "2022.07.10"
-file= "clonmapper-protocol-2022.07.15-a9a0655.pdf"
-title= "An Important Version."
+date = "2022.07.10"
+file = "clonmapper-protocol-2022.07.15-a9a0655.pdf"
+title = "An Important Version."
 ```
 
 
 TODO:
 
+- [ ] add a page for the plasmid maps (link to addgene for image?)
 - [ ] drop mathjax for already builtin katex

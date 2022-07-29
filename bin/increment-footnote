@@ -4,7 +4,7 @@ import argparse
 import re
 from pathlib import Path
 
-PROTOCOL_METHODS = Path.cwd() / "md" / "03-methods.md"
+PROTOCOL_METHODS = Path.cwd() / "md" / "methods.md"
 
 footnote_cap_regex = re.compile(r"\[\^(\d+)\]")
 

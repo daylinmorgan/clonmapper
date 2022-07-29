@@ -134,7 +134,7 @@ The diversity of the initial plasmid pool should be assessed to ensure a high di
 
 4.  Per well of a 6 well plate, prepare "Tube A" containing 150 $\mu$L Opti-MEM^TM^ and 9 $\mu$L Lipofectamine^TM^ 2000.[^18]
 
-[^18]: Slowly dilute Lipofectamine^TM^ 2000 complexes dropwise with Opti-MEM^TM^ media with occasional flicking of the tube.
+[^18]: Slowly dilute Lipofectamine^TM^ complexes dropwise with Opti-MEM^TM^ media with occasional flicking of the tube.
 
 5.  Incubate "Tube A" at room temperature for 5 minutes.
 
@@ -404,9 +404,13 @@ See [pycashier](https://github.com/brocklab/pycashier) for more info about how t
 
 ## Recall and Isolation of Barcoded Lineages
 
-[^58]
+[^58][^59]
 
-[^58]: This protocol is optimized for adherent cell lines. If using suspension lines, electroporation can be done to introduce the plasmids to your cells. Be sure to optimize electroporation parameters on your cells for maximized plasmid expression and minimized cell death before recall electroporation. If electroporating, total plasmid load per cell may vary by cell type. Example: CD8 T cells respond well to 2.5 $\mu$g of each plasmid (5 $\mu$g total DNA load) per 5 x 10^5^ cells.
+<!-- ? Make section about optimizing with Known Bg population? -->
+
+[^58]: Lipofectamine effiency can vary significantly between cell lines. It's recommended you optimize transfection with a plasmid containing a constitutively promoter.
+
+[^59]: This protocol is optimized for adherent cell lines. If using suspension lines, electroporation can be done to introduce the plasmids to your cells. Be sure to optimize electroporation parameters on your cells for maximized plasmid expression and minimized cell death before recall electroporation. If electroporating, total plasmid load per cell may vary by cell type. Example: CD8 T cells respond well to 2.5 $\mu$g of each plasmid (5 $\mu$g total DNA load) per 5 x 10^5^ cells.
 
 1.  24-48 hours before performing recall transfection seed your cell line of interest in growth medium in a 6-well plate such that it is near 60-80% confluent at time of transfection.
 
@@ -414,7 +418,7 @@ See [pycashier](https://github.com/brocklab/pycashier) for more info about how t
 
 3.  Incubate "Tube A" at room temperature for 5 minutes.
 
-4.  Per well of a 6 well plate, prepare "Tube B" containing 125 $\mu$L Opti-MEM^TM^, 225 ng Recall plasmid (*from Section 3.8*), and 275 ng dCas9-VPR plasmid.
+4.  Per well of a 6 well plate, prepare "Tube B" containing 125 $\mu$L Opti-MEM^TM^, 225 ng Recall plasmid (*from Section 3.8*), 275 ng dCas9-VPR plasmid and 2 $\mu$L$\mu$g DNA of P300.
 
 5.  Slowly add "Tube B" dropwise to "Tube A" and carefully mix by gently inverting 10 times
 
@@ -428,17 +432,17 @@ See [pycashier](https://github.com/brocklab/pycashier) for more info about how t
 
 10.  Pass cells resuspended in FACS buffer through a 35 $\mu$m nylon mesh strainer into a 5 mL flow cytometry test tube and keep on ice.
 
-11.  Use control samples to set laser voltages on FSC-A, SSC-A, BFP, and GFP on FACS sorter such that nearly all cells are seen within FSC-A vs. SSC-A plot and both negative and positive populations can be seen and distinguished on the BFP and the GFP channel. Set compensations based on single positive populations.[^59]
+11.  Use control samples to set laser voltages on FSC-A, SSC-A, BFP, and GFP on FACS sorter such that nearly all cells are seen within FSC-A vs. SSC-A plot and both negative and positive populations can be seen and distinguished on the BFP and the GFP channel. Set compensations based on single positive populations.[^60]
 
-[^59]: Ensure proper controls for flow. Minimally have a positive control singularly positive for BFP, a positive control singularly positive for GFP, and a negative control expressing no fluorescent proteins.
+[^60]: Ensure proper controls for flow. Minimally have a positive control singularly positive for BFP, a positive control singularly positive for GFP, and a negative control expressing no fluorescent proteins.
 
-12. Set sort gate on GFP and BFP double positive gate indicative of a recalled cell.[^60]
+12. Set sort gate on GFP and BFP double positive gate indicative of a recalled cell.[^61]
 
-[^60]: When sorting for recalled cells, use stringent gating. Ensure that 0% of negative control and single positive samples appear in the sorting gate.
+[^61]: When sorting for recalled cells, use stringent gating. Ensure that 0% of negative control and single positive samples appear in the sorting gate.
 
-13. Sort cells in GFP and BFP double positive gate.[^61]
+13. Sort cells in GFP and BFP double positive gate.[^62]
 
-[^61]: Single cell sorting can be performed for isolation and growth of clonal populations.
+[^62]: Single cell sorting can be performed for isolation and growth of clonal populations.
 
 14. Maintain sorted cells in culture with complete growth medium.
 

@@ -408,6 +408,7 @@ See [pycashier](https://github.com/brocklab/pycashier) for more info about how t
 
 <!-- ? Make section about optimizing with Known Bg population? -->
 
+
 [^58]: Lipofectamine effiency can vary significantly between cell lines. It's recommended you optimize transfection with a plasmid containing a constitutively promoter.
 
 [^59]: This protocol is optimized for adherent cell lines. If using suspension lines, electroporation can be done to introduce the plasmids to your cells. Be sure to optimize electroporation parameters on your cells for maximized plasmid expression and minimized cell death before recall electroporation. If electroporating, total plasmid load per cell may vary by cell type. Example: CD8 T cells respond well to 2.5 $\mu$g of each plasmid (5 $\mu$g total DNA load) per 5 x 10^5^ cells.
@@ -418,9 +419,9 @@ See [pycashier](https://github.com/brocklab/pycashier) for more info about how t
 
 3.  Incubate "Tube A" at room temperature for 5 minutes.
 
-4.  Per well of a 6 well plate, prepare "Tube B" containing 125 $\mu$L Opti-MEM^TM^, 225 ng Recall plasmid (*from Section 3.8*), 275 ng dCas9-VPR plasmid and 2 $\mu$L$\mu$g DNA of P300.
+4.  Per well of a 6 well plate, prepare "Tube B" containing 125 $\mu$L Opti-MEM^TM^, 225 ng Recall plasmid (*from Section 3.8*), 275 ng dCas9-VPR plasmid and 2 $\mu$L$\mu$g DNA of p3000.
 
-5.  Slowly add "Tube B" dropwise to "Tube A" and carefully mix by gently inverting 10 times
+5.  Slowly add "Tube B" dropwise to "Tube A" and carefully mix by gently inverting 10 times.
 
 6.  Incubate at room temperature for 20 minutes.
 

@@ -21,4 +21,3 @@ title = "An Important Version."
 TODO:
 
 - [ ] add a page for the plasmid maps (link to addgene for image?)
-- [ ] drop mathjax for already builtin katex

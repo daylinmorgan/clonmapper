@@ -17,6 +17,8 @@ To run these locally you will need to additionally install `pandoc` and `tex-liv
 *NOTE*: the full `tex-live` distribution is quite large.
 Alternatively, if you have `docker` installed then you can append your `make` commands with `DOCKER=true`.
 
+For a list of the common commands run `make help`.
+
 ## Generating the PDF
 
 To make a new pdf you should only need to run the below command.

@@ -66,11 +66,11 @@ The diversity of the initial plasmid pool should be assessed to ensure a high di
 
 1.  Midi-prep one tube of transformed e. coli from step 3.1.1 according to manufacturer's instructions.
 
-2.  Create the phasing primer mixture 'PrimeF PAS-hU6_F' by mixing equimolar amounts of UniF PASx0 1 stage, UniF PASx1 1 stage, UniF PASx2 1 stage, UniF PASx3 1 stage, UniF PASx4 1 stage, UniF PASx6 1 stage (*see* **Table 1**).[^9]
+2.  Create the phasing primer mixture 'PrimeF-PAS' by mixing equimolar amounts of UniF PASx0 1 stage, UniF PASx1 1 stage, UniF PASx2 1 stage, UniF PASx3 1 stage, UniF PASx4 1 stage, UniF PASx6 1 stage (*see* **Table 1**).[^9]
 
 [^9]:  Universal phase amplicon sequencing primers are used to add more diversity to the sequencing reads which helps prevents sequencing errors.
 
-3. Prepare the PCR reaction to amplify barcodes and add Illumina indices by mixing 10 uL 5X Q5 Reaction Buffer, 1 $\mu$L 10 mM dNTPs, 2.5 $\mu$L PrimeF PAS-hU6_F (from step 3.2.2), 2.5 $\mu$L PrimeR_cropseq (*see* **Table 1**), 0.5 $\mu$L Q5 polymerase, 50 ng plasmid DNA, and nuclease-free water to 50 $\mu$L. [^10] See [10X-3.2.3](#10X) for 10X vector variation.
+3. Prepare the PCR reaction to amplify barcodes and add Illumina indices by mixing 10 uL 5X Q5 Reaction Buffer, 1 $\mu$L 10 mM dNTPs, 2.5 $\mu$L PrimeF-PAS (from step 3.2.2), 2.5 $\mu$L PrimeR_cropseq (*see* **Table 1**), 0.5 $\mu$L Q5 polymerase, 50 ng plasmid DNA, and nuclease-free water to 50 $\mu$L. [^10] See [10X-3.2.3](#10X) for 10X vector variation.
 
 [^10]: Choose Illumina i7 index [NNNNNN]{.underline} based on Illumina sequencer to be used and avoid using the same i7 index for different samples.
 
@@ -318,7 +318,7 @@ $$\text{MOI [TU/cell] = }\frac{\left( \text{Volume of Virus needed [mL]} \right)
 
 2.  Isolate genomic DNA from cell pellet using kit or standard protocol and proceed to PCR amplification.
 
-3. Prepare the PCR reaction to amplify barcodes and add Illumina indices[^10]  by mixing 10 uL 5X Q5 Reaction Buffer, 1 $\mu$L 10 mM dNTPs, 2.5 $\mu$L PrimeF PAS-hU6_F (from step 3.2.2), 2.5 $\mu$L PrimeR_cropseq (*see* **Table 1**), 0.5 $\mu$L Q5 polymerase, up to 2 $\mu$g genomic DNA[^49], and nuclease-free water to 50 $\mu$L.
+3. Prepare the PCR reaction to amplify barcodes and add Illumina indices[^10]  by mixing 10 uL 5X Q5 Reaction Buffer, 1 $\mu$L 10 mM dNTPs, 2.5 $\mu$L PrimeF-PAS (from step 3.2.2), 2.5 $\mu$L PrimeR_cropseq (*see* **Table 1**), 0.5 $\mu$L Q5 polymerase, up to 2 $\mu$g genomic DNA[^49], and nuclease-free water to 50 $\mu$L.
 See [10X-3.6.1.3](#10X) for 10X vector variation.
 
 [^49]: DNA amount used will be dependent on the nature of the cell population and desired sampling depth. To capture rare events, a maximum of 2 $\mu$g of DNA per reaction can be used and multiple reactions can be done. Given that a single diploid human genome is estimated at \~6.6 pg, 2 $\mu$g of genomic DNA represents that of \~300,000 cells. To capture only highly represented clonal populations, less DNA can be used.
@@ -456,6 +456,6 @@ See [pycashier](https://github.com/brocklab/pycashier) for more info about how t
 
 3.1.4. Digest 5-10 $\mu$g of 10X Capture vector backbone in a reaction containing 20 $\mu$L Digestion Buffer 3.1, 8 $\mu$L BbsI, and nuclease-fee water to 200 $\mu$L.
 
-3.2.3. Prepare the PCR reaction to amplify barcodes and add Illumina indices by mixing 10 uL 5X Q5 Reaction Buffer, 1 $\mu$L 10 mM dNTPs, 2.5 $\mu$L PrimeF PAS-hU6_F (from step 3.2.2), 2.5 $\mu$L PrimeR_10x (*see* **Table 1**), 0.5 $\mu$L Q5 polymerase, 50 ng plasmid DNA, and nuclease-free water to 50 $\mu$L.
+3.2.3. Prepare the PCR reaction to amplify barcodes and add Illumina indices by mixing 10 uL 5X Q5 Reaction Buffer, 1 $\mu$L 10 mM dNTPs, 2.5 $\mu$L PrimeF-PAS (from step 3.2.2), 2.5 $\mu$L PrimeR_10x (*see* **Table 1**), 0.5 $\mu$L Q5 polymerase, 50 ng plasmid DNA, and nuclease-free water to 50 $\mu$L.
 
-3.6.1.3 Prepare the PCR reaction to amplify barcodes and add Illumina indices by mixing 10 uL 5X Q5 Reaction Buffer, 1 $\mu$L 10 mM dNTPs, 2.5 $\mu$L PrimeF PAS-hU6_F (from step 3.2.2), 2.5 $\mu$L PrimeR_10x (*see* **Table 1**), 0.5 $\mu$L Q5 polymerase, up to 2 $\mu$g genomic DNA[^49], and nuclease-free water to 50 $\mu$L.
+3.6.1.3 Prepare the PCR reaction to amplify barcodes and add Illumina indices by mixing 10 uL 5X Q5 Reaction Buffer, 1 $\mu$L 10 mM dNTPs, 2.5 $\mu$L PrimeF-PAS (from step 3.2.2), 2.5 $\mu$L PrimeR_10x (*see* **Table 1**), 0.5 $\mu$L Q5 polymerase, up to 2 $\mu$g genomic DNA[^49], and nuclease-free water to 50 $\mu$L.

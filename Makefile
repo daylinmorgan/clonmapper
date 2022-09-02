@@ -148,7 +148,7 @@ flags:
 help h: Makefile params
 	@awk -v fill=$(shell sed -n 's/^## \(.*\) | .*/\1/p' $< | wc -L)\
   	'match($$0,/^## (.*) \|/,name) && match($$0,/\| (.*)$$/,help)\
-  	{printf "\033[36m%*s\033[0m | \033[30m%s\033[0m\n",\
+		{printf "\033[1;93m%*s\033[0m | \033[30m%s\033[0m\n",\
     fill,name[1],help[1];} match($$0,/^### (.*)/,str) \
 	{printf "%*s   \033[30m%s\033[0m\n",fill," ",str[1];}' $<
 

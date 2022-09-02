@@ -72,21 +72,21 @@ $(LATEST_DATA):
 CONTENT := $(patsubst md/%.md,site/content/protocol/%.md,$(HTML_MDs)) \
 		site/content/single-page-protocol.md
 
-## website | website.<recipes>
+## site | site.<recipes>
 ### content -> generate website content 
-.PHONY: website.content 
-website.content: $(SITE_PDF) $(CONTENT) $(LATEST_DATA)
+.PHONY: site.content
+site.content: $(SITE_PDF) $(CONTENT) $(LATEST_DATA)
 	@echo "==> Generating Website Content <=="
 
 ### serve -> run the hugo server
-.PHONY: website.serve
-website.serve: website.content
+.PHONY: site.serve
+site.serve: site.content
 	@echo "==> Serving Website <=="
 	cd site && hugo server -D --minify --disableFastRender
 
 ### build -> build the website
 .PHONY: website.build
-website.build: website.content
+site.build: site.content
 	cd site && hugo --minify
 
 # latex tables with better formatting
@@ -106,7 +106,7 @@ tex/reagents.tex: tables/reagents.csv bin/csv2latex
 		-c "Recommended Reagents" \
 		--fmt 'l c c'
 
-.PHONY: docker-build c clean clean.website clean.paper
+.PHONY: docker-build c clean clean.site clean.paper
 
 ## docker | build docker container to run pandoc locally
 docker:
@@ -115,7 +115,7 @@ docker:
 ## c, clean | runs clean.paper clean.website
 ### paper -> remove paper outputs
 ### website -> remove website outpurs
-c clean: clean.paper clean.website
+c clean: clean.paper clean.site
 
 clean.paper:
 	rm -f protocol*.pdf \
@@ -124,7 +124,7 @@ clean.paper:
 			protocol.tex \
 			public/*
 
-clean.website:
+clean.site:
 	rm -f $(patsubst md/%,site/content/protocol/%, $(HTML_MDs)) \
 			site/content/single-page-protocol.md \
 			site/static/pdfs/latest/* \

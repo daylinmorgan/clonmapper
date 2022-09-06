@@ -158,5 +158,3 @@ params:
 	@printf "\033[35mCurrent Params\033[0m:\n\n"
 	@printf "  REV: %s\n" $(REV)
 	@printf "\n"
-# 	@printf "  VERSION: %s\n" $(VERSION)
-# 	@printf "  TAG: %s | choices: %s\n\n" $(TAG) "$(TAGS)"

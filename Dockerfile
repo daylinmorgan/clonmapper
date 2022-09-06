@@ -1,4 +1,4 @@
-FROM pandoc/latex:2.18-ubuntu
+FROM pandoc/latex:2.19.2-ubuntu
 
 RUN apt-get update && \
       apt-get install -y \

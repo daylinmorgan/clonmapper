@@ -29,8 +29,7 @@ author:
 abstract: |
   The ability to track and isolate unique cell lineages from large heterogeneous populations increases the
   resolution at which cellular processes can be understood under normal and pathogenic states beyond snapshots
-  obtained from single cell RNA sequencing (scRNA-seq). Here, we describe the Control of Lineages by
-  Barcode Enabled Recombinant Transcription (COLBERT) method in which unique single guide RNA (sgRNA)
+  obtained from single cell RNA sequencing (scRNA-seq). Here, we describe the ClonMapper method in which unique single guide RNA (sgRNA)
   barcodes are used as functional tags to identify and recall specific lineages of interest.
   A sgRNA barcode is stably integrated and actively transcribed, such that all cellular progeny will
   contain the parental barcode and produce a functional sgRNA. The sgRNA barcode has all the

@@ -64,8 +64,7 @@ $(SITE_PDF): $(PDF)
 
 LATEST_DATA := site/data/latest.toml
 
-.PHONY: $(LATEST_DATA)
-$(LATEST_DATA):
+$(LATEST_DATA): .FORCE
 	@printf "%s\n" \
 		"revision = \"$(REV)\"" \
 		"file = \"$(PDF)\"" > $@
@@ -140,6 +139,8 @@ flags:
 	@printf "\033[34m%s\033[0m:\n" "LATEX_FLAGS"
 	@printf "\t%s\n" $(LATEX_FLAGS)
 
+.PHONY: .FORCE
+.FORCE:
 
 .DEFAULT_GOAL := help
 log = $(if $(tprint),$(call tprint,{a.bold}==> {a.magenta}$(1){a.end}),@echo '==> $(1)')

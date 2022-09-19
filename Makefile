@@ -118,14 +118,14 @@ docker:
 c clean: clean.paper clean.site
 
 clean.paper:
-	rm -f protocol*.pdf \
+	@rm -f protocol*.pdf \
 			clonmapper-protocol*.pdf \
 			protocol.html \
 			protocol.tex \
 			public/*
 
 clean.site:
-	rm -f $(patsubst md/%,site/content/protocol/%, $(HTML_MDs)) \
+	@rm -f $(patsubst md/%,site/content/protocol/%, $(HTML_MDs)) \
 			site/content/single-page-protocol.md \
 			site/static/pdfs/latest/* \
 			$(LATEST_DATA)

@@ -66,7 +66,7 @@ The diversity of the initial plasmid pool should be assessed to ensure a high di
 
 1.  Midi-prep one tube of transformed e. coli from step 3.1.1 according to manufacturer's instructions.
 
-2.  Create the phasing primer mixture 'PrimeF-PAS' by mixing equimolar amounts of UniF PASx0 1 stage, UniF PASx1 1 stage, UniF PASx2 1 stage, UniF PASx3 1 stage, UniF PASx4 1 stage, UniF PASx6 1 stage (*see* **Table 1**).[^9]
+2.  Create the phasing primer mixture 'PrimeF-PAS' by mixing equimolar amounts of PrimeF-PASx0, PrimeF-PASx1, PrimeF-PASx2, PrimeF-PASx3, PrimeF-PASx4, and PrimeF-PASx5 (*see* **Table 1**).[^9]
 
 [^9]:  Universal phase amplicon sequencing primers are used to add more diversity to the sequencing reads which helps prevents sequencing errors.
 

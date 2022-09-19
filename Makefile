@@ -72,7 +72,7 @@ $(LATEST_DATA): .FORCE
 CONTENT := $(patsubst md/%.md,site/content/protocol/%.md,$(HTML_MDs)) \
 		site/content/single-page-protocol.md
 
-## site.<recipe>: | see below
+## site.<recipe> | see below
 ###      content -> generate website content
 .PHONY: site.content
 site.content: $(SITE_PDF) $(CONTENT) $(LATEST_DATA)
@@ -145,4 +145,4 @@ flags:
 .DEFAULT_GOAL := help
 log = $(if $(tprint),$(call tprint,{a.bold}==> {a.magenta}$(1){a.end}),@echo '==> $(1)')
 -include .task.mk
-$(if $(filter help,$(MAKECMDGOALS)),$(if $(wildcard .task.mk),,.task.mk: ; curl -fsSL https://raw.githubusercontent.com/daylinmorgan/task.mk/v22.9.14/task.mk -o .task.mk))
+$(if $(filter help,$(MAKECMDGOALS)),$(if $(wildcard .task.mk),,.task.mk: ; curl -fsSL https://raw.githubusercontent.com/daylinmorgan/task.mk/v22.9.19/task.mk -o .task.mk))

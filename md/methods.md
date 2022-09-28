@@ -74,7 +74,7 @@ The diversity of the initial plasmid pool should be assessed to ensure a high di
 
 [^10]: Choose Illumina i7 index [NNNNNN]{.underline} based on Illumina sequencer to be used and avoid using the same i7 index for different samples.
 
-4.  Amplify the barcodes by running the 50 $\mu$L reaction on a thermocycler using the following settings[^11]: (1) 98 °C for 2 min, (2) 98 °C for 10 sec, (3) 63 °C for 30 sec, (4) 72 °C for 15 sec, (4) Repeat steps 2-4 for 7 cycles[^12], (5) 72 °C for 2 min, (6) 4 °C hold
+4.  Amplify the barcodes by running the 50 $\mu$L reaction on a thermocycler using the following settings[^11]: (1) 98 °C for 5 min, (2) 98 °C for 10 sec, (3) 63 °C for 30 sec, (4) 72 °C for 15 sec, (4) Repeat steps 2-4 for 7 cycles[^12], (5) 72 °C for 2 min, (6) 15°C hold
 
 [^11]: Pre-heat thermocycler to 98 °C before adding tubes to heat block.
 

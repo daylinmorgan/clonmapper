@@ -74,7 +74,7 @@ The diversity of the initial plasmid pool should be assessed to ensure a high di
 
 [^10]: Choose Illumina i7 index [NNNNNN]{.underline} based on Illumina sequencer to be used and avoid using the same i7 index for different samples.
 
-4.  Amplify the barcodes by running the 50 $\mu$L reaction on a thermocycler using the following settings[^11]: (1) 98 °C for 5 min, (2) 98 °C for 10 sec, (3) 63 °C for 30 sec, (4) 72 °C for 15 sec, (4) Repeat steps 2-4 for 7 cycles[^12], (5) 72 °C for 2 min, (6) 15°C hold
+4.  Amplify the barcodes by running the 50 $\mu$L reaction on a thermocycler using the following settings[^11]: (1) 98°C for 5 min, (2) 98°C for 10 sec, (3) 63°C for 30 sec, (4) 72°C for 15 sec, (4) Repeat steps 2-4 for 7 cycles[^12], (5) 72°C for 2 min, (6) 15°C hold
 
 [^11]: Pre-heat thermocycler to 98 °C before adding tubes to heat block.
 
@@ -329,7 +329,7 @@ See [10X-3.6.1.3](#10X) for 10X vector variation.
 
 [^50]: DNA amount used will be dependent on the nature of the cell population and desired sampling depth. To capture rare events, a maximum of 2 $\mu$g of DNA per reaction can be used and multiple reactions can be done. Given that a single diploid human genome is estimated at \~6.6 pg, 2 $\mu$g of genomic DNA represents that of \~300,000 cells. To capture only highly represented clonal populations, less DNA can be used.
 
-4.  Amplify the barcodes by running the 50 $\mu$L reaction on a thermocycler using the following settings[^11]: (1) 98 °C for 2 min, (2) 98 °C for 10 sec, (3) 63 °C for 30 sec, (4) 72 °C for 15 sec, (4) Repeat steps 2-4 for 20 cycles, (5) 72 °C for 2 min, (6) 4 °C hold
+4.  Amplify the barcodes by running the 50 $\mu$L reaction on a thermocycler using the following settings[^11]: (1) 98°C for 5 min, (2) 98°C for 10 sec, (3) 63°C for 30 sec, (4) 72°C for 15 sec, (4) Repeat steps 2-4 for 25 cycles[^12], (5) 72°C for 2 min, (6) 15°C hold
 
 5.  Finish preparing barcodes as described in 3.2 steps 4-20.
 

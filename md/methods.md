@@ -205,13 +205,13 @@ The diversity of the initial plasmid pool should be assessed to ensure a high di
 [^31]: It is very important to know the number of cells at the time of transduction. This number is used to calculate viral titer.
 [^32]: Trypan blue exclusion is performed by mixing equal parts 0.05% Trypan blue with your cell suspension, usually 10 $\mu$L of each, then load 10 $\mu$L of the stained suspension into the hemocytometer.
 
-3.  Create stock of media containing your cells' standard growth medium supplemented with 20% FBS containing 0-10 $\mu$g/mL hexadimethrine bromide (1:1000 dilution from hexadimethrine bromide stock for 10 $\mu$g/mL).[^33]
+3.  Create stock of media containing your cells' standard growth medium supplemented with 20% FBS containing 0-10 $\mu$g/mL hexadimethrine bromide (1:1000 dilution from hexadimethrine bromide stock to get 10 $\mu$g/mL).[^33]
 
 [^33]: Hexadimethrine bromide is a cationic solution that assists in viral adsorption to cells [@davis2002]. Hexadimethrine bromide can be toxic to some cells. Hexadimethrine bromide sensitivity should be assessed via serial dilution to determine maximum tolerable hexadimethrine bromide dose before determining viral titer. Most cells respond well to 6-8 $\mu$g/mL hexadimethrine bromide.
 
 4.  Place 600 $\mu$L of hexadimethrine bromide containing medium separate microcentrifuge tubes.
 
-5.  Add virus in increasing amounts to each tube (*see* **Note 33**).
+5.  Add virus in increasing amounts to each tube.
 
 [^34]: Ensure one well is kept uninfected as a negative control. A range of 0.5-200 $\mu$L is usually sufficient to find viral titer, e.g. 0, 0.5, 1, 5, 10, 25, 50, 100, 150, 200 $\mu$L.
 6.  Replace media on cells of interest with virus and hexadimethrine bromide containing dilutions.

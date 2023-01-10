@@ -1,4 +1,3 @@
-# baseURL = 'https://clonmapper.brocklab.com/'
 baseURL = "https://brocklab.github.io/clonmapper/"
 title = 'ClonMapper'
 
@@ -21,12 +20,12 @@ disablePathToLower = true
   weight = 25
 
 [[menu.after]]
-  name = "Lab Website"
+  name = "Brock Lab Site"
   url = "https://brocklab.com"
   weight = 30
 
 [[menu.after]]
-  name = "Lab Github"
+  name = "Brock Lab Github"
   url = "https://github.com/brocklab"
   weight = 35
 

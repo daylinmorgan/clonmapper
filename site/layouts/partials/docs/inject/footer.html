@@ -1,4 +1,7 @@
 {{ if .Page.Params.show_version}}
 <hr>
-Revision: {{ .Site.Data.latest.revision }}
+Revision: {{ .Site.Data.latest.revision }} |
+{{ end }}
+{{ if ne .IsHome true }}
+    <a href="https://github.com/brocklab/clonmapper/issues">Issues?</a>
 {{ end }}

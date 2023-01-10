@@ -10,6 +10,7 @@ ClonMapper was developed by Aziz Al'Khafaji in the [Brock Lab](https://brocklab.
 
 See below for a graphical overview of the technique.
 
+Please submit any questions/issues you have with the protocol [here](https://github.com/brocklab/clonmapper/issues).
 <hr>
 
 <img src="svg/clonmapper.svg" width='800' style='align:center;'>

@@ -1,6 +1,5 @@
 REV := $(shell date +'%Y.%m.%d-' )$(shell git describe --always --dirty | sed s'/dirty/dev/')
 
-
 ifneq ($(DOCKER),true)
 	PANDOC_CMD := pandoc
 else
@@ -72,19 +71,19 @@ $(LATEST_DATA): .FORCE
 CONTENT := $(patsubst md/%.md,site/content/protocol/%.md,$(HTML_MDs)) \
 		site/content/single-page-protocol.md
 
-## site.<recipe> | see below
-###      content -> generate website content
+## site.<recipe> | site.content, site.serve, site.build
+### content -> generate website content | args: --align sep
 .PHONY: site.content
 site.content: $(SITE_PDF) $(CONTENT) $(LATEST_DATA)
 	$(call log,Generating Website Content)
 
-###      serve -> run the hugo server
+### serve -> run the hugo server | args: --align sep
 .PHONY: site.serve
 site.serve: site.content
 	$(call log,Serving Website)
 	cd site && hugo server -D --minify --disableFastRender
 
-###      build -> build the website
+### build -> build the website | args: --align sep
 .PHONY: website.build
 site.build: site.content
 	cd site && hugo --minify
@@ -144,5 +143,6 @@ flags:
 
 .DEFAULT_GOAL := help
 log = $(if $(tprint),$(call tprint,{a.bold}==> {a.magenta}$(1){a.end}),@echo '==> $(1)')
+USAGE = {a.bold}{a.cyan}ClonMapper Protocol Tasks{a.end}\n\t{a.green}make{a.end}: <recipe>\n
 -include .task.mk
 $(if $(filter help,$(MAKECMDGOALS)),$(if $(wildcard .task.mk),,.task.mk: ; curl -fsSL https://raw.githubusercontent.com/daylinmorgan/task.mk/v22.9.19/task.mk -o .task.mk))

@@ -1,4 +1,4 @@
-REV := $(shell date +'%Y.%m.%d-' )$(shell git describe --always --dirty | sed s'/dirty/dev/')
+REV := $(shell date +'%Y.%m.%d-' )$(shell git describe --always --dirty=-dev)
 
 ifneq ($(DOCKER),true)
 	PANDOC_CMD := pandoc

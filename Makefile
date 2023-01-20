@@ -32,9 +32,8 @@ HTML_MDs := $(addprefix md/,$(SHARED_MDs) html-tables.md acknowledgements.md)
 
 PDF := clonmapper-protocol-$(REV).pdf
 
-## p pdf | generate the pdf
 .PHONY: p pdf
-p pdf: $(PDF)
+p pdf: $(PDF) ## generate the pdf
 
 $(PDF): $(addprefix tex/, oligos.tex reagents.tex) $(TEMPLATE) $(LATEX_MDs)
 	$(call log,Generating PDF)
@@ -71,19 +70,19 @@ $(LATEST_DATA): .FORCE
 CONTENT := $(patsubst md/%.md,site/content/protocol/%.md,$(HTML_MDs)) \
 		site/content/single-page-protocol.md
 
-## site.<recipe> | site.content, site.serve, site.build
-### content -> generate website content | args: --align sep
+## site.<recipe> |> site.content, site.serve, site.build
+### content -> generate website content |> --align sep
 .PHONY: site.content
 site.content: $(SITE_PDF) $(CONTENT) $(LATEST_DATA)
 	$(call log,Generating Website Content)
 
-### serve -> run the hugo server | args: --align sep
+### serve -> run the hugo server |> --align sep
 .PHONY: site.serve
 site.serve: site.content
 	$(call log,Serving Website)
 	cd site && hugo server -D --minify --disableFastRender
 
-### build -> build the website | args: --align sep
+### build -> build the website |> --align sep
 .PHONY: website.build
 site.build: site.content
 	cd site && hugo --minify
@@ -107,13 +106,12 @@ tex/reagents.tex: tables/reagents.csv bin/csv2latex
 
 .PHONY: docker-build c clean clean.site clean.paper
 
-## docker | build docker container to run pandoc locally
-docker:
+docker: ## build docker container to run pandoc locally
 	docker build . --tag daylinmorgan/pandoc
 
-## c, clean | clean.paper clean.website
-### paper -> remove paper outputs | args: --align sep
-### website -> remove website outputs | args: --align sep
+## c, clean |> clean.paper clean.website
+### paper -> remove paper outputs |> --align sep
+### website -> remove website outputs |> --align sep
 c clean: clean.paper clean.site
 
 clean.paper:
@@ -129,9 +127,8 @@ clean.site:
 			site/static/pdfs/latest/* \
 			$(LATEST_DATA)
 
-## flags | show current pandoc flags
 .PHONY: flags
-flags:
+flags: ## show current pandoc flags
 	@printf "\033[35mCurrent Flags\033[0m:\n\n"
 	@printf "\033[34m%s\033[0m:\n" "HTML_FLAGS"
 	@printf "\t%s\n" $(HTML_FLAGS)
@@ -141,8 +138,5 @@ flags:
 .PHONY: .FORCE
 .FORCE:
 
-.DEFAULT_GOAL := help
-log = $(if $(tprint),$(call tprint,{a.bold}==> {a.magenta}$(1){a.end}),@echo '==> $(1)')
-USAGE = {a.bold}{a.cyan}ClonMapper Protocol Tasks{a.end}\n\t{a.green}make{a.end}: <recipe>\n
--include .task.mk
-$(if $(filter help,$(MAKECMDGOALS)),$(if $(wildcard .task.mk),,.task.mk: ; curl -fsSL https://raw.githubusercontent.com/daylinmorgan/task.mk/v22.9.19/task.mk -o .task.mk))
+-include .task.cfg.mk .task.mk
+$(if $(filter help,$(MAKECMDGOALS)),$(if $(wildcard .task.mk),,.task.mk: ; curl -fsSL https://raw.githubusercontent.com/daylinmorgan/task.mk/v23.1.1/task.mk -o .task.mk))

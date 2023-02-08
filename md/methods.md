@@ -395,7 +395,7 @@ See [pycashier](https://github.com/brocklab/pycashier) for more info about how t
 
 6.  Add 2 $\mu$L T7 DNA ligase to the 50 $\mu$L mixture and incubate at room temperature overnight.
 
-7.  Run ligation product in a 2% agarose gel and gel purify band from approximately 200 bp
+7.  Run ligation product in a 2% agarose gel and gel purify band from approximately 170 bp.
 
 8.  Ligate the barcode array into the recall plasmid backbone at a molar ratio of 10:1 in a Golden Gate assembly reaction by mixing 25 fmol Recall-miniCMV-sfGFP, 250 fmol assembled barcode array (*from step 3.8.5*), 1 $\mu$L T4 ligase buffer, 0.5 $\mu$L T7 ligase, 0.5 $\mu$L BbsI, and nuclease-free water to 10 $\mu$L.
 

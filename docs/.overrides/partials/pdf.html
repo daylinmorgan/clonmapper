@@ -1,0 +1,29 @@
+{#-
+  This file was automatically generated - do not edit
+-#}
+{% if "material/tags" in config.plugins %}
+  {% include "partials/tags.html" %}
+{% endif %}
+{% include "partials/actions.html" %}
+{% if "\x3ch1" not in page.content %}
+  <h1>{{ page.title | d(config.site_name, true)}}</h1>
+{% endif %}
+    <p> See below for current and past PDF's of the protocol.</p>
+    <h2>Latest Version</h2>
+    <a href="{{ config.site_url }}pdf/latest/clonmapper-protocol-{{ config.revision }}.pdf">
+    <svg style="vertical-align:middle; display: inline-block;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M6 2a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6H6m0 2h7v5h5v11H6V4m2 8v2h8v-2H8m0 4v2h5v-2H8Z"/>
+    </svg>
+    <span style="vertical-align: middle; display: inline-block;">
+        {{ config.revision }}
+    </span>
+    </a>
+    {{ page.content }}
+{% if page.meta and (
+  page.meta.git_revision_date_localized or
+  page.meta.revision_date
+) %}
+  {% include "partials/source-file.html" %}
+{% endif %}
+{% include "partials/feedback.html" %}
+{% include "partials/comments.html" %}

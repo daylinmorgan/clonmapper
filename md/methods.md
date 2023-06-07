@@ -72,7 +72,7 @@ The diversity of the initial plasmid pool should be assessed to ensure a high di
 
 3. Prepare the PCR reaction to amplify barcodes and add Illumina indices by mixing 10 uL 5X Q5 Reaction Buffer, 1 $\mu$L 10 mM dNTPs, 2.5 $\mu$L PrimeF-PAS (from step 3.2.2), 2.5 $\mu$L PrimeR_cropseq (*see* **Table 1**), 0.5 $\mu$L Q5 polymerase, 50 ng plasmid DNA, and nuclease-free water to 50 $\mu$L. [^10] See [10X-3.2.3](#10X) for 10X vector variation.
 
-[^10]: Choose Illumina i7 index [NNNNNN]{.underline} based on Illumina sequencer to be used and avoid using the same i7 index for different samples.
+[^10]: Choose Illumina i7 index **NNNNNN** based on Illumina sequencer to be used and avoid using the same i7 index for different samples.
 
 4.  Amplify the barcodes by running the 50 $\mu$L reaction on a thermocycler using the following settings[^11]: (1) 98°C for 5 min, (2) 98°C for 10 sec, (3) 63°C for 30 sec, (4) 72°C for 15 sec, (4) Repeat steps 2-4 for 7 cycles[^12], (5) 72°C for 2 min, (6) 15°C hold
 
@@ -176,7 +176,7 @@ The diversity of the initial plasmid pool should be assessed to ensure a high di
 
 16. Filter viral supernatant through 0.45 $\mu$m PES syringe filter into a fresh 50 mL conical tube to remove any remaining cell debris.
 
-17. Concentrate virus ~20X in 30,000 MWCO PES ultrafiltration centrifugal concentrator by loading 20 mL of filtered viral supernatant into concentrator chamber and spinning at 4000 x g for 60-75 minutes at 4 °C until \~1 mL of media remains in filter.[^25]
+17. Concentrate virus ~20X in 30,000 MWCO PES ultrafiltration centrifugal concentrator by loading 20 mL of filtered viral supernatant into concentrator chamber and spinning at 4000 x g for 60-75 minutes at 4 °C until ~1 mL of media remains in filter.[^25]
 
 [^25]: Spin times will vary based on centrifuge angle. spinning at 4 °C will increase the amount of time it takes for media to pass through filter (We have noted that 22 mL takes about 75 minutes).
 
@@ -290,7 +290,7 @@ The diversity of the initial plasmid pool should be assessed to ensure a high di
 
 Calculate viral titer in titering units (TU) per mL using **Equation 1** using a pair of values within the linear region of the titer curve.[^45]
 
-[^45]: [Example]{.underline}: If 5 $\mu$L of virus added to 100,000 cells resulted in 30% BFP-positive cells within the linear region of the titer curve, then the viral titer would be (100,000 x 0.30) / (0.005 mL) = 6.0 x 10^6^ TU/mL
+[^45]: Example: If 5 $\mu$L of virus added to 100,000 cells resulted in 30% BFP-positive cells within the linear region of the titer curve, then the viral titer would be (100,000 x 0.30) / (0.005 mL) = 6.0 x 10^6^ TU/mL
 
 $$\frac{\text{TU}}{\text{mL}}\text{=}\frac{\left(\text{Number of cells at time of transduction} \right)\text{ × }\left( \text{Fraction of Positive Cells} \right)}{\left( \text{Volume of virus }\left\lbrack \text{mL} \right\rbrack \right)}$$
 
@@ -298,7 +298,7 @@ $$\frac{\text{TU}}{\text{mL}}\text{=}\frac{\left(\text{Number of cells at time o
 
 1.  After calculating the viral titer (TU/mL) on your cell line of interest, determine the final number of cells you require for your experiment using and transduce cells at a multiplicity of infection (MOI) of 0.1 (**Equation 2**) to minimize the occurrence of multiple barcode integrations.[^46][^47]
 
-[^46]: [Example]{.underline}: If your viral titer was 6.0 x 10^6^ TU/mL and you wanted to infect 3.0 x 10^6^ cells at an MOI of 0.1, you would need to subject the 3.0 x 10^6^ cells to 50 $\mu$L of virus.
+[^46]: Example: If your viral titer was 6.0 x 10^6^ TU/mL and you wanted to infect 3.0 x 10^6^ cells at an MOI of 0.1, you would need to subject the 3.0 x 10^6^ cells to 50 $\mu$L of virus.
 
 [^47]: A low MOI of 0.1 or below helps prevent occurrence of multiple barcode integrations. In order to uniquely recall cell lineages it is important to maximize the probability that there is one or zero barcodes per cell at the time of transduction. The probability of barcode integration can be modeled as a Poisson distribution [@fehse2004;@kustikova2003].
 
@@ -327,7 +327,7 @@ $$\text{MOI [TU/cell] = }\frac{\left( \text{Volume of Virus needed [mL]} \right)
 3. Prepare the PCR reaction to amplify barcodes and add Illumina indices[^10]  by mixing 10 uL 5X Q5 Reaction Buffer, 1 $\mu$L 10 mM dNTPs, 2.5 $\mu$L PrimeF-PAS (from step 3.2.2), 2.5 $\mu$L PrimeR_cropseq (*see* **Table 1**), 0.5 $\mu$L Q5 polymerase, up to 2 $\mu$g genomic DNA[^50], and nuclease-free water to 50 $\mu$L.
 See [10X-3.6.1.3](#10X) for 10X vector variation.
 
-[^50]: DNA amount used will be dependent on the nature of the cell population and desired sampling depth. To capture rare events, a maximum of 2 $\mu$g of DNA per reaction can be used and multiple reactions can be done. Given that a single diploid human genome is estimated at \~6.6 pg, 2 $\mu$g of genomic DNA represents that of \~300,000 cells. To capture only highly represented clonal populations, less DNA can be used.
+[^50]: DNA amount used will be dependent on the nature of the cell population and desired sampling depth. To capture rare events, a maximum of 2 $\mu$g of DNA per reaction can be used and multiple reactions can be done. Given that a single diploid human genome is estimated at ~6.6 pg, 2 $\mu$g of genomic DNA represents that of ~300,000 cells. To capture only highly represented clonal populations, less DNA can be used.
 
 4.  Amplify the barcodes by running the 50 $\mu$L reaction on a thermocycler using the following settings[^11]: (1) 98°C for 5 min, (2) 98°C for 10 sec, (3) 63°C for 30 sec, (4) 72°C for 15 sec, (4) Repeat steps 2-4 for 25 cycles[^12], (5) 72°C for 2 min, (6) 15°C hold
 

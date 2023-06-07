@@ -1,0 +1,30 @@
+#!/usr/bin/env python3
+"""
+Sanitize pandoc specific syntax from markdown files before using with mkdocs.
+"""
+
+import re
+import sys
+
+PATTERNS = dict(
+    # TODO: combine into one regex?
+    pagebreak=(re.compile(r"\\pagebreak"), ""),
+    unnumbered=(re.compile(r"{.*\.unnumbered}"), ""),
+    comments=(re.compile(r"<!--.*-->"), ""),
+    headers=(re.compile(r"^#"), "##"),
+)
+
+
+def replace(line):
+    for name, (pattern, txt) in PATTERNS.items():
+        line = pattern.sub(txt, line)
+    return line
+
+
+def main():
+    for line in sys.stdin:
+        sys.stdout.write(replace(line))
+
+
+if __name__ == "__main__":
+    main()

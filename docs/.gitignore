@@ -1,0 +1,6 @@
+site
+docs/protocol/*
+docs/full-protocol.md
+docs/pdf/latest/*
+!docs/pdf/latest/.gitkeep
+!docs/protocol/.gitkeep

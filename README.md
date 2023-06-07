@@ -27,8 +27,28 @@ To make a new pdf you should only need to run the below command.
 make pdf
 ```
 
-This will generate a new pdf document at `./protocol-<rev>.pdf`.
+This will generate a new pdf document at `./clonmapper-protocol-<rev>.pdf`.
 If you make changes and commit them a new `rev` id will be appended to the file based on the `HEAD` of the repo.
+
+## Generating the Website
+
+To get started generate a python virtual environment to install `mkdocs` and its plugins.
+
+```sh
+make bootstrap
+```
+
+There are several `make` recipes for updating the website.
+To start a development server with the website use the below:
+
+```sh
+make docs.server
+```
+
+Note that the latest pdf as well as any actual protocol markdown's (`docs/full-protocol.md`,`docs/protocol/*.md`)
+are auto-generated within the website docs and should not be edited by hand.
+Some of the syntax used with `pandoc` is first removed (see `./scripts/pre-mkdocs-sanitize`),
+as well as all the individual markdown's combined for the `full-protocol.md`
 
 ## Editing Instructions
 
@@ -43,10 +63,10 @@ Footnotes can be created to appear below the appropriate step. The syntax can be
 ```
 
 If you wish to add an additional footnote within the text and would like to increase the succeeding notes,
-you can use `./bin/increment-footnote`. It takes two positional arguments the starting note to increment and the number of step to increase all notes after it. If you only provide one positional value it will use this as the start and increment by one.
+you can use `./scripts/increment-footnote`. It takes two positional arguments the starting note to increment and the number of step to increase all notes after it. If you only provide one positional value it will use this as the start and increment by one.
 
 ```bash
-./bin/increment-footnote 15 2
+./scripts/increment-footnote 15 2
 ```
 
 ### Tables
@@ -56,7 +76,7 @@ To manually regenerate the `latex` for a table you can use the included script.
 If you update the csv. `Make` will regenerate the appropriate latex file for you.
 
 ```bash
-./bin/csv2latex tables/oligos.csv tex/oligos.tex "Oligonucleotides."
+./scripts/csv2latex tables/oligos.csv tex/oligos.tex "Oligonucleotides."
 ```
 
 ### Citations

@@ -1,0 +1,70 @@
+#!/usr/bin/env python3
+import argparse
+import csv
+from pathlib import Path
+import sys
+
+
+ALIGNMENTS = {"c": ":---:", "r": "---:", "l": ":---"}
+
+
+def get_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("input", help="input csv file")
+    parser.add_argument("-c", "--caption", help="table caption", default="")
+    parser.add_argument(
+        "--fmt", help="column alignments i.e. (l,c,r) by default all centered"
+    )
+    return parser.parse_args()
+
+
+def enclose(row):
+    return "| " + row + " |"
+
+
+def main():
+    args = get_args()
+    path_to_csv = Path.cwd() / args.input
+
+    rows = []
+
+    # get header and row information from csv
+    with path_to_csv.open(mode="r") as f:
+        reader = csv.DictReader(f)
+        if not args.fmt:
+            column_fmt = (
+                "|" + "|".join([ALIGNMENTS["c"]] * len(reader.fieldnames)) + "|"
+            )
+        else:
+            if len(args.fmt.split(",")) != len(reader.fieldnames):
+                print("--fmt argument and # of columns don't match")
+                sys.exit(1)
+            column_fmt = (
+                "|" + "|".join([ALIGNMENTS[c] for c in args.fmt.split(",")]) + "|"
+            )
+
+        rows.append(enclose(" | ".join(reader.fieldnames)))
+        rows.append(column_fmt)
+
+        for row in reader:
+            # split sequences so they will wrap nicer in the table
+            try:
+                row_out = enclose(" | ".join(row.values()))
+            except TypeError:
+                print(f"Error:{row.values()}")
+                print(
+                    "there was an issue with this row does it have a value for each column?"
+                )
+                sys.exit(1)
+
+            rows.append(row_out)
+        print("\n")
+        print("\n".join(rows))
+        print("\n")
+        if args.caption:
+            print(f"Table: {args.caption}")
+        print("\n")
+
+
+if __name__ == "__main__":
+    main()

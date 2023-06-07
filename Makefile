@@ -1,30 +1,31 @@
+-include .env
 REV := $(shell date +'%Y.%m.%d-' )$(shell git describe --always --dirty=-dev)
+VENV := $(PWD)/.venv
+DOCKER_RUN := docker run --rm -it -u $$(id -u):$$(id -g) -v "$$(pwd)":/data
+MKDOCS_ARGS ?=
 
 ifneq ($(DOCKER),true)
 	PANDOC_CMD := pandoc
+	MKDOCS_CMD := cd docs && $(VENV)/bin/mkdocs
 else
-	PANDOC_CMD := docker run --rm -v "$$(pwd)":/data -u $$(id -u):$$(id -g) daylinmorgan/pandoc
+	PANDOC_CMD := $(DOCKER_RUN) -v "$$(pwd)":/data $$(docker build -q .)
+	MKDOCS_CMD := $(DOCKER_RUN) --network host \
+		--entrypoint ./scripts/run-mkdocs \
+		$$(docker build -q .) 
 endif
 
-FLAGS := -V "rev:$(REV)" \
-	--citeproc \
-	--bibliography=bib/protocol.bib \
-	--csl=bib/pnas.csl
+FLAGS := -V "rev:$(REV)"
 
 LATEX_FLAGS := $(FLAGS) \
 	--metadata-file=meta.yml \
+	--citeproc \
+	--bibliography=bib/protocol.bib \
 	--pdf-engine=xelatex \
 	--template=tmpl/default.tex
 
-HTML_FLAGS := $(FLAGS) \
-				--mathjax \
-				--template=tmpl/default.html \
-				--css ./site/css/tufte.css
-
-MD_FLAGS := -t commonmark+footnotes+tex_math_dollars
-
-FILTERS := --lua-filter=filters/scholarly-metadata.lua \
-			--lua-filter=filters/author-info-blocks.lua
+FILTERS := \
+	--lua-filter=filters/scholarly-metadata.lua \
+	--lua-filter=filters/author-info-blocks.lua
 
 SHARED_MDs := introduction.md materials.md methods.md
 LATEX_MDs := $(addprefix md/,$(SHARED_MDs) latex-tables.md acknowledgements.md)
@@ -32,7 +33,10 @@ HTML_MDs := $(addprefix md/,$(SHARED_MDs) html-tables.md acknowledgements.md)
 
 PDF := clonmapper-protocol-$(REV).pdf
 
-.PHONY: p pdf
+bootstrap: ## setup venv for mkdocs
+	@python3 -m venv $(VENV) --clear
+	@$(VENV)/bin/pip install -r ./docs/requirements.txt
+
 p pdf: $(PDF) ## generate the pdf
 
 $(PDF): $(addprefix tex/, oligos.tex reagents.tex) $(TEMPLATE) $(LATEX_MDs)
@@ -40,56 +44,42 @@ $(PDF): $(addprefix tex/, oligos.tex reagents.tex) $(TEMPLATE) $(LATEX_MDs)
 	@$(PANDOC_CMD) $(LATEX_FLAGS) $(FILTERS) --output $@ $(LATEX_MDs)
 
 md/html-tables.md:
-	@./bin/csv2mdtable tables/oligos.csv -c "Oligonucleotides" --fmt 'c,l,l,l' > md/html-tables.md
-	@./bin/csv2mdtable tables/reagents.csv -c "Recommended Reagents" --fmt 'l,c,c' >> md/html-tables.md
+	@scripts/csv2mdtable tables/oligos.csv -c "Oligonucleotides" --fmt 'c,l,l,l' > md/html-tables.md
+	@scripts/csv2mdtable tables/reagents.csv -c "Recommended Reagents" --fmt 'l,c,c' >> md/html-tables.md
 
-site/content/protocol/%.md: md/%.md site/meta/%.md
-	@cat site/meta/$*.md > $@
-	@$(PANDOC_CMD) $(FLAGS) $(MD_FLAGS) -s \
-		 $< >> $@
+docs/docs/protocol/%.md: md/%.md
+	@cat $< | scripts/pre-mkdocs-sanitize > $@
 
-site/content/single-page-protocol.md: $(HTML_MDs)
-	@cat site/meta/single-page-protocol.md > $@
-	@$(PANDOC_CMD) $(FLAGS) $(MD_FLAGS) \
-		 $(HTML_MDs) >> $@
+docs/docs/full-protocol.md: $(HTML_MDs)
+	@printf -- '---\nhide:\n  - nagivation\n---\n' > $@
+	@cat $(HTML_MDs) | scripts/pre-mkdocs-sanitize >> $@
 
-SITE_PDF := site/static/pdfs/latest/$(PDF)
-
-$(SITE_PDF): $(PDF)
-	@mkdir -p site/static/pdfs/latest/
-	@rm -f site/static/pdfs/latest/*
+LATEST_PDF := docs/docs/pdf/latest/$(PDF)
+$(LATEST_PDF): $(PDF)
+	@rm -f docs/docs/pdf/latest/*
 	@cp $< $@
 
-LATEST_DATA := site/data/latest.toml
+MKDOCS_DOCS := $(patsubst md/%.md,docs/docs/protocol/%.md, $(HTML_MDs)) \
+		docs/docs/full-protocol.md
 
-$(LATEST_DATA): .FORCE
-	@printf "%s\n" \
-		"revision = \"$(REV)\"" \
-		"file = \"$(PDF)\"" > $@
-
-CONTENT := $(patsubst md/%.md,site/content/protocol/%.md,$(HTML_MDs)) \
-		site/content/single-page-protocol.md
-
-## site.<recipe> |> site.content, site.serve, site.build
+.PHONY: docs.build docs.content docs.serve
+## docs.* |> docs.{content,serve,build}
 ### content -> generate website content |> --align sep
-.PHONY: site.content
-site.content: $(SITE_PDF) $(CONTENT) $(LATEST_DATA)
+docs.content: $(LATEST_PDF) $(MKDOCS_DOCS)
 	$(call log,Generating Website Content)
 
-### serve -> run the hugo server |> --align sep
-.PHONY: site.serve
-site.serve: site.content
+### serve -> run the mkdocs live server |> --align sep
+docs.serve: docs.content
 	$(call log,Serving Website)
-	cd site && hugo server -D --minify --disableFastRender
+	@$(MKDOCS_CMD) serve --watch-theme $(MKDOCS_ARGS)
 
 ### build -> build the website |> --align sep
-.PHONY: website.build
-site.build: site.content
-	cd site && hugo --minify
+docs.build: docs.content
+	@$(MKDOCS_CMD) build
 
 # latex tables with better formatting
-tex/oligos.tex: tables/oligos.csv bin/csv2latex
-	@./bin/csv2latex \
+tex/oligos.tex: tables/oligos.csv scripts/csv2latex
+	@scripts/csv2latex \
 		tables/oligos.csv \
 		tex/oligos.tex \
 		-c "Oligonucleotides" \
@@ -97,22 +87,22 @@ tex/oligos.tex: tables/oligos.csv bin/csv2latex
 		--fmt 'c l p{{.5\textwidth}} l' \
 		--fill
 
-tex/reagents.tex: tables/reagents.csv bin/csv2latex
-	@./bin/csv2latex \
+tex/reagents.tex: tables/reagents.csv scripts/csv2latex
+	@scripts/csv2latex \
 		tables/reagents.csv \
 		tex/reagents.tex \
 		-c "Recommended Reagents" \
 		--fmt 'l c c'
 
-.PHONY: docker-build c clean clean.site clean.paper
 
 docker: ## build docker container to run pandoc locally
 	docker build . --tag daylinmorgan/pandoc
 
-## c, clean |> clean.paper clean.website
+.PHONY: clean.site clean.paper
+## c, clean |> clean.{paper,docs} 
 ### paper -> remove paper outputs |> --align sep
-### website -> remove website outputs |> --align sep
-c clean: clean.paper clean.site
+### docs -> remove mkdocs outputs |> --align sep
+c clean: clean.paper clean.docs
 
 clean.paper:
 	@rm -f protocol*.pdf \
@@ -121,19 +111,11 @@ clean.paper:
 			protocol.tex \
 			public/*
 
-clean.site:
-	@rm -f $(patsubst md/%,site/content/protocol/%, $(HTML_MDs)) \
-			site/content/single-page-protocol.md \
-			site/static/pdfs/latest/* \
-			$(LATEST_DATA)
-
-.PHONY: flags
-flags: ## show current pandoc flags
-	@printf "\033[35mCurrent Flags\033[0m:\n\n"
-	@printf "\033[34m%s\033[0m:\n" "HTML_FLAGS"
-	@printf "\t%s\n" $(HTML_FLAGS)
-	@printf "\033[34m%s\033[0m:\n" "LATEX_FLAGS"
-	@printf "\t%s\n" $(LATEX_FLAGS)
+clean.docs:
+	@rm -f $(patsubst md/%,docs/docs/protocol/%, $(HTML_MDs)) \
+			docs/docs/full-protocol.md \
+			docs/docs/pdf/latest/*.pdf
+	@rm -rf docs/site
 
 .PHONY: .FORCE
 .FORCE:

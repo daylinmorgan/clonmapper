@@ -4,7 +4,8 @@ RUN apt-get update && \
       apt-get install -y \
       git \
       make \
-      python3
+      python3 \
+      python3-pip
 
 RUN tlmgr update --self && \
       tlmgr install \
@@ -13,3 +14,6 @@ RUN tlmgr update --self && \
       collectbox \
       tracklang
 
+COPY docs/requirements.txt /tmp/requirements.txt
+
+RUN pip install -r /tmp/requirements.txt

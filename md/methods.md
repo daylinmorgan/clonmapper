@@ -4,15 +4,15 @@
 
 ## sgRNA Barcode Library Plasmid Pool Assembly
 
-1. Perform an extension reaction to generate double-stranded insert gRNA barcode DNA. Mix 10 $\mu$L NEB 5X Q5 Reaction Buffer, 1 $\mu$L of 10 mM dNTPs, 2 $\mu$L 100$\mu$M CROPseq-PrimeF-BgL-BsmBI, 1 $\mu$L 100$\mu$M CROPseq-RevExt-BgL-BsmBI , and 0.5 $\mu$L to create a 50 $\mu$L reaction.[^2] See [10X-3.1.1](#10X) for 10X vector variation.
+1. Perform an extension reaction to generate double-stranded insert gRNA barcode DNA. Mix 10 $\mu$L NEB 5X Q5 Reaction Buffer, 1 $\mu$L of 10 mM dNTPs, 2 $\mu$L 100$\mu$M CROPseq-PrimeF-BgL-BsmBI, 1 $\mu$L 100$\mu$M CROPseq-RevExt-BgL-BsmBI , and 0.5 $\mu$L Q5 polymerase to create a 50 $\mu$L reaction.[^2] See [10X-3.1.1](#10X) for 10X vector variation.
 
 [^2]: Always use filtered pipette tips when working with DNA to prevent cross-contamination.
 
-2. Run the extension reaction on a thermocycler using the following settings: (1) 98 °C for 2 min, (2) 65 °C for 30 sec, (3) 72 °C for 10 sec, (4) Repeat steps 2-3 for 10 cycles, (5) 72 °C for 1 min, (6) 4 °C hold
+2. Run the extension reaction on a thermocycler using the following settings: (1) 98 °C for 2 min, (2) 65 °C for 30 sec, (3) 72 °C for 10 sec, (4) Repeat steps 2-3 for 10 cycles, (5) 72 °C for 2 min, (6) 4 °C hold
 
-3. Confirm dsDNA assembly on 2% agarose gel by running single stranded DNA against PCR product.
+3. Clean and concentrate double-stranded barcode DNA PCR product and elute in 30 $\muL nuclease-free water. Confirm dsDNA assembly on 2% agarose gel by running single stranded DNA against PCR product.
 
-4. Digest 5-10 $\mu$g of CROPseq vector backbone in a reaction containing 20 $\mu$L Digestion Buffer 3.1, 8 $\mu$L BsmBI, and nuclease-fee water to 200 $\mu$L. See [10X-3.1.4](#10X) for 10X vector variation.
+4. Digest 5-10 $\mu$g of CROPseq vector backbone in a reaction containing 20 $\mu$L Digestion Buffer 3.1, 8 $\mu$L BsmBI, and nuclease-free water to 200 $\mu$L. See [10X-3.1.4](#10X) for 10X vector variation.
 
 5. Run the digested backbone on a 1-1.5% low melting point agarose gel, then follow the instructions on a DNA gel purification kit to extract and purify the linearized plasmid band.
 
@@ -397,10 +397,7 @@ See [pycashier](https://github.com/brocklab/pycashier) for more info about how t
 
 9. Run the Golden Gate assembly reaction on a thermocycler using the following settings: (1) 42 °C for 2 min, (2) 16 °C for 5 min, (3) Repeat steps 1-2 for 35 cycles, (4) 55 °C for 30 min, (6) 4 °C hold
 
-<!-- TODO: seperate section devoted to colony formation/selection and liquid inoculation?. -->
-10. Transform bacteria with golden gate product.[^58]
-
-[^58]: See [addgene](https://www.addgene.org/protocols/bacterial-transformation/) for protocol.
+10. Transform bacteria with golden gate product. See [Addgene](https://www.addgene.org/protocols/bacterial-transformation/) for standard protocol.
 
 11. Verify insertion of barcode array into Recall-miniCMV-sfGFP backbone via Sanger sequencing.
 

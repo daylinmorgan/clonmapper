@@ -1,6 +1,155 @@
-# Methods
+---
+hide:
+  - navigation
+---
+## Introduction
 
-## sgRNA Barcode Library Plasmid Pool Assembly
+Insight into the clonal composition of a cells during key events
+such as development, infection, tumor progression, or treatment response,
+is critical to understanding the nature of the interaction between
+the population of cells and the selective forces shaping it.
+While advances in genomics and transcriptomics and the advent
+of single-cell RNA sequencing (scRNA-seq) have vastly increased
+the resolution at which we can understand cellular processes,
+they lack the ability to directly assign clonal relationships.
+To meet this need, lineage tracing technologies, such as DNA barcoding,
+have been developed to label and track individual cells and their progeny [@blundell2014]^,^[@kebschull2018].
+In DNA barcoding, each individual cell in a population is labeled
+with a unique random string of nucleotides that is integrated
+into the genome and heritable by its daughter cells.
+The ensemble of all DNA barcodes in the cell population can be quantified
+by next-generation sequencing (NGS) to determine
+how clonal abundance changes over time.
+
+While highly informative, DNA barcoding and other lineage tracing techniques
+are still limited in that interesting lineages of cells cannot be easily
+isolated from the bulk population for clonally pure analysis.
+Here, we describe a detailed protocol for **ClonMapper**,
+a workflow that enables precise identification and isolation
+of populations of interest from heterogeneous mammalian cells [@alkhafaji2018].
+ClonMapper is a functionalized variant of DNA barcoding in which the DNA barcode
+is a CRISPR-Cas9 compatible single-guide RNA (sgRNA).
+The sgRNA-barcode has multiple functionalities: (1) It is an integrated DNA barcode,
+(2) It is transcribed and captured in scRNA-seq workflows, and
+(3) It can be used to actuate lineage-specific genes of interest using
+an activator variant of Cas9 [@chavez2015].
+This protocol describes the use of ClonMapper
+for lineage-specific activation of GFP,
+enabling isolation of clonal cells from a heterogeneous population.
+
+The sgRNA barcode is engineered using the CROPseq method [@datlinger2017] such
+that the sgRNA barcode is transcribed by both RNA polymerase III and
+RNA polymerase II, creating a functional sgRNA barcode transcript and a
+polyadenylated transcript containing the barcode, respectively.
+
+Cells are first transduced with lentivirus containing
+a ClonMapper sgRNA barcode vector at a low multiplicity of infection (MOI)
+to minimize the integration of multiple barcodes per cell.
+In both versions of the vector, the sgRNA barcode is co-expressed
+with blue fluorescent protein (BFP) for easy identification and collection of
+barcoded cells via flow cytometry and fluorescence-activated cell sorting (FACS).
+Once established, the barcoded cell population is available for experimental manipulation.
+Clonal dynamics may be measured by NGS analysis and gene expression signatures
+of clonal populations may be resolved by scRNA-seq. Once a barcode of interest
+is identified from NGS or scRNA-seq, the barcode identifier can be exploited
+for isolation of the clone.
+This is achieved by transfecting the cell population with a plasmid containing
+an activator variant of Cas9 (dCas9-VPR) and a second plasmid containing the
+Cas9-homing PAM sites adjacent to the identified barcode upstream of green
+fluorescent protein (sfGFP) reporter.
+Expression of sfGFP will occur only in cells that are producing the matching
+sgRNA barcode, allowing precise identification and FACS isolation of cells
+from lineages of interest.
+## Materials
+
+Equipment
+
+1. Electroporator
+1. Mammalian cell incubator
+1. Bacterial cell incubator with shaking
+1. Thermocycler
+1. Gel electrophoresis box
+1. Bioanalyzer
+1. Illumina sequencer
+1. Flow cytometer with filters for BFP (Ex: 380/20, Em: 460/40)
+
+Disposables
+
+1. Sterile filtered pipette tips
+1. 1.5 mL microcentrifuge tubes (sterile)
+1. 1.8 mL Screw top cryovials (sterile)
+1. 20 mL Luer-tapered syringe (sterile)
+1. 0.45 $\mu$m polyethersulfone (PES) syringe filter
+1. 30,000 molecular weight cutoff (MWCO) PES concentrator capable of processing 20 mL
+
+Biologics
+
+1. Electrocompetent *e. coli* suitable for unstable DNA (restriction minus,
+   endonuclease deficient, and recombination deficient)
+1. Cells of interest [^1]
+
+[^1]:  Make sure cells are transducible with lentivirus. Timing of lentiviral exposure and detectable expression of transgene will vary across cell types.
+
+Plasmids
+
+1. CROPseq gRNA expression transfer vector,
+   Cropseq-BFP-WPRE-TS-hU6-BsmbI (Addgene \#137993;Brock Lab AA112)
+1. Lentiviral packaging plasmid, VSV-G (Addgene #14888)
+1. Lentiviral packaging plasmid, psPAX2 (Addgene #12260)
+1. dCas9-VPR (Addgene #63798)
+1. Recall-miniCMV-sfGFP (Addgene \#137995;Brock Lab AA158)
+
+Primers
+
+(*see* **Table 1**)
+
+Buffers
+
+1. Buffer 3.1: 100 mM NaCl, 50 mM Tris-HCl,
+   10 mM MgCl~2~, 100 $\mu$g/ml BSA, pH 7.9 at 25°C
+2. NEB 5X Q5 Reaction Buffer
+3. 10X T4 PNK Buffer
+4. 10 mM dNTPs
+5. 1X Tris-acetate-EDTA (TAE)
+6. FACS Buffer: 5% FBS, 1-5 mM EDTA, 95% Phosphate-Buffered Saline
+
+Enzymes
+
+1. BsmBI (10,000 U/mL)
+1. BbsI (10,000 U/mL)
+1. NEB Q5 polymerase
+1. T4 ligase (400,000 U/mL )
+1. T7 ligase (3,000,000 U/mL)
+1. PNK (10,000 U/mL)
+
+Other Reagents
+
+1. Lipofectamine^TM^ 2000
+1. Lipofectamine^TM^ 3000
+1. Nuclease-free water
+1. Agarose
+1. DNA Clean and Concentrator kit
+1. 2xYT microbial growth medium
+1. Dulbecco's Modified Eagle Medium (DMEM)
+1. OptiMEM^TM^ reduced serum medium
+1. Fetal Bovine Serum (FBS)
+1. Carbenicillin
+1. Solid Phase Reversible Immobilization (SPRI) paramagnetic beads for PCR cleanup
+1. 70% molecular biology grade ethanol in nuclease-free water
+1. 10 mg/mL hexadimethrine bromide
+1. 0.05% Trypan blue
+1. Plasmid Midi-Prep Kit
+1. DNA gel purification kit
+
+Computational
+
+1. Linux Computing Environment (Such as University HPC)
+1. Python >=3.8
+1. Cell Ranger (for 10X analysis)
+1. [Pycashier](https://github.com/brocklab/pycashier)
+## Methods
+
+### sgRNA Barcode Library Plasmid Pool Assembly
 
 1. Perform a 4X extension reaction to generate the double-stranded
    gRNA insert. Mix the below reagents to create a 50 $\mu$L reaction.[^2]
@@ -32,7 +181,7 @@
 1. Digest 5-10 $\mu$g of CROPseq vector backbone in a reaction containing
    20 $\mu$L Digestion Buffer 3.1, 8 $\mu$L BsmBI,
    and nuclease-free water to 200 $\mu$L for 4 hours at 55°C
-    <!-- TODO: HOW LONG? -->
+    
 1. Run the digested backbone on a 1-1.5% low melting point agarose gel,
    then follow the instructions on a DNA gel purification kit to extract
    and purify the linearized plasmid band.
@@ -102,7 +251,7 @@
   calculate the amount of DNA used in $\mu$g, and determine your
   dilution factor. With those variable, TE = Colonies/$\mu$g/Dilution.
 
-## SgRNA Barcode Sampling
+### SgRNA Barcode Sampling
 
 The diversity of the initial plasmid pool should be assessed to ensure a
 high diversity library. To do this, PCR is performed with primers containing
@@ -184,7 +333,7 @@ Illumina indices that anneal to regions flanking the barcodes.
 1. Load sample on to BioAnalyzer chip according to the manufacturer's protocol
    and ensure a clear peak around 225 bp.[^16]
 1. Submit sample for Illumina sequencing.
-<!-- 1. See [](#processing-barcode-sequencing-data) for processing barcode sequence data. -->
+
 
 [^9]: Universal phase amplicon sequencing primers are used to add more
   diversity to the sequencing reads which helps prevents sequencing errors.
@@ -200,7 +349,7 @@ Illumina indices that anneal to regions flanking the barcodes.
   SPRI bead cleanup can be repeated with 1.1X beads to
   further purify PCR sample, but this will greatly reduce yield.
 
-## SgRNA Barcoding Lentivirus Production
+### SgRNA Barcoding Lentivirus Production
 
 1. 48 hours before transfection, plate 0.22-0.25 x 10^6^ low-passage HEK-293T
    cells in DMEM supplemented with 10% FBS **without antibiotics** in each well
@@ -274,11 +423,11 @@ Illumina indices that anneal to regions flanking the barcodes.
 [^27]: Virus should be completed frozen and then thawed
   before calculating viral titer.
 
-## Determine sgRNA Viral Titer
+### Determine sgRNA Viral Titer
 
 See [^28]^,^[^29]
 
-### Titering on Adherent Cells (Forward Procedure)
+#### Titering on Adherent Cells (Forward Procedure)
 
 [^30]
 
@@ -315,7 +464,7 @@ See [^28]^,^[^29]
   a constitutively active GFP. Some cells will require longer
   or shorter incubation times with the virus and some cells will
   take longer to produce the transgenic reporter protein.
-<!-- TODO: make sure these steps below are accurate -->
+
 [^30]: To perform reverse titer on adherent cells, follow the steps
   for titering on suspension cells through step 3.4.2.5,
   then return to the adherent protocol at step 3.4.1.6.
@@ -347,7 +496,7 @@ See [^28]^,^[^29]
   For extra-sticky cells, use 5 mM EDTA in FACS buffer.
 
 
-### Titering on Suspension Cells
+#### Titering on Suspension Cells
 
 1. Count your cells of interest using a hemocytometer.
 1. Create stock of media containing your cells' standard growth medium
@@ -375,7 +524,7 @@ See [^28]^,^[^29]
   and should be handled with added care when pipetting.
 [^41]: Perform this step three times to ensure removal of trace virus before flow cytometry.
 
-### Flow Cytometry to Determine Viral Titer
+#### Flow Cytometry to Determine Viral Titer
 
 1. Pass cells resuspended in FACS buffer through a 35 $\mu$m nylon mesh strainer
    into a 5 mL flow cytometry test tube.[^42]
@@ -403,7 +552,7 @@ See [^28]^,^[^29]
 
 $$\frac{\text{TU}}{\text{mL}}\text{=}\frac{\left(\text{Number of cells at time of transduction} \right)\text{ × }\left( \text{Fraction of Positive Cells} \right)}{\left( \text{Volume of virus }\left\lbrack \text{mL} \right\rbrack \right)}$$
 
-## SgRNA Barcode Transduction
+### SgRNA Barcode Transduction
 
 1. After calculating the viral titer (TU/mL) on your cell line of interest,
   determine the final number of cells you require for your experiment using
@@ -431,9 +580,9 @@ $$\text{MOI [TU/cell] = }\frac{\left( \text{Volume of Virus needed [mL]} \right)
   for titer determination. Ensure that 0% of negative control samples appear in the sorting gate.
 
 
-## Targeted sgRNA Barcode Sampling of Cells
+### Targeted sgRNA Barcode Sampling of Cells
 
-### Preparing Samples for Sequencing
+#### Preparing Samples for Sequencing
 
 1. To assess cell barcode diversity harvest cells from culture
    and collect into cell pellet.[^49]
@@ -494,12 +643,12 @@ $$\text{MOI [TU/cell] = }\frac{\left( \text{Volume of Virus needed [mL]} \right)
   is estimated at ~6.6 pg, 2 $\mu$g of genomic DNA represents that of ~300,000 cells.
   To capture only highly represented clonal populations, less DNA can be used.
 
-### Processing Barcode Sequencing Data
+#### Processing Barcode Sequencing Data
 
 See [pycashier](https://github.com/brocklab/pycashier) for more info about
 how to get started processing fastq data to get barcode information.
 
-## Recall Plasmid Assembly
+### Recall Plasmid Assembly
 
 1. 3 pairs of overlapping oligos containing the barcode sequence of interest
    flanked by overlapping sequences should be ordered according to **Table 1**.[^56]
@@ -529,12 +678,12 @@ how to get started processing fastq data to get barcode information.
    and incubate at room temperature overnight.
 1. Run ligation product in a 2% agarose gel
    and gel purify band from approximately 170 bp.
-<!--TODO: make a table -->
+
 1. Ligate the barcode array into the recall plasmid backbone at a molar ratio
    of 10:1 in a Golden Gate assembly reaction by mixing 25 fmol Recall-miniCMV-sfGFP,
    250 fmol assembled barcode array, 1 $\mu$L T4 ligase buffer,
    0.5 $\mu$L T7 ligase, 0.5 $\mu$L BbsI, and nuclease-free water to 10 $\mu$L.
-<!--TODO: make a table -->
+
 1. Run the Golden Gate assembly reaction on a thermocycler
    using the following settings, repeating steps 1-2 for 35 cycles:
 
@@ -558,7 +707,7 @@ how to get started processing fastq data to get barcode information.
 [^57]: This process anneals the single stranded DNA oligos together,
   creating short double stranded DNA blocks that will be ligated together in the next step.
 
-## Recall and Isolation of Barcoded Lineages
+### Recall and Isolation of Barcoded Lineages
 
 See [^59]^,^[^60]
 
@@ -612,5 +761,63 @@ See [^59]^,^[^60]
   Ensure that 0% of negative control and single positive samples appear in the sorting gate.
 [^63]: Single cell sorting can be performed for isolation and growth of clonal populations.
 
-<!-- pagebreak to keep these final footnotes one page -->
-\pagebreak
+
+
+
+
+| Step | Name | Sequence (5'-->3') | Notes |
+|:---:|:---|:---|:---|
+| 3.1 | CROPseq-PrimeF-BgL-BsmBI | GAGCCTCGTCTCCCACCG**NNNNNNNNNNNNNNNNNNNN**GTTTTGAGACGCATGCTGCA | The N20 sequence is a random string of oligonucleotides |
+| 3.1 | CROPseq-RevExt-BgL-BsmBI | TGCAGCATGCGTCTCAAAAC |  |
+| 3.1 | 10X PrimeF-BgL-BbsI | GCCTGAAGACCTCACCG**NNNNNNNNNNNNNNNNNNNN**GTTTTAGTCTTCCATGCTGC | The N20 sequence is a random string of oligonucleotides |
+| 3.1 | 10X-RevExt-BgL-BbsI | TGCAGCATGGAAGACTAAAAC |  |
+| 3.2, 3.7 | CM-FWD-S1-PAS | equimolar mixture of CM-FWD-S1 PAS primers |  |
+| 3.2, 3.7 | CM-FWD-S1-PASx0 | TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGCTTGTGGAAAGGACGAAACAC |  |
+| 3.2, 3.7 | CM-FWD-S1-PASx4 | TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGGCAACTTGTGGAAAGGACGAAACAC |  |
+| 3.2, 3.7 | CM-FWD-S1-PASx7 | TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGAGCCACCCTTGTGGAAAGGACGAAACAC |  |
+| 3.2, 3.7 | CM-FWD-S1-PASx8 | TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGTAGTGAATCTTGTGGAAAGGACGAAACAC |  |
+| 3.2, 3.7 | CM-REV-S1 | GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAGGGACTAGCCTTATTTTAACTTGCTATTTCTAGCTC |  |
+| 3.2, 3.7 | CM-FWD-S2-i5 | AATGATACGGCGACCACCGAGATCTACAC**NNNNNNNN**TCGTCGGCAGCGTC | The N8 sequence is where the i5 Illumina index should be placed |
+| 3.2, 3.7 | CM-REV-S2-i7 | CAAGCAGAAGACGGCATACGAGAT**NNNNNNNN**GTCTCGTGGGCTCGG | The N8 sequence is where the i7 Illumina index should be placed |
+| 3.8 | BgN20-AB-fwd | TACTCGACCAAGAACCGCA**NNNNNNNNNNNNNNNNNNNN**AGGTGGATTAGTTCTCT | Insert barcode in place of N20 |
+| 3.8 | BgN20-AB-rev | AAGCAGAGAACTAATCCACCT**NNNNNNNNNNNNNNNNNNNN**TGCGGTTCTTGGTCG | Insert reverse-complement barcode in place of N20 |
+| 3.8 | BgN20-BC-fwd | GCTTGTCCTGCGGTTACCC**NNNNNNNNNNNNNNNNNNNN**AGGCTGTAATCCAGCTG | Insert barcode in place of N20 |
+| 3.8 | BgN20-BC-rev | AGCGCAGCTGGATTACAGCCT**NNNNNNNNNNNNNNNNNNNN**GGGTAACCGCAGGAC | Insert reverse-complement barcode in place of N20 |
+| 3.8 | BgN20-CD-fwd | CGCTGTGGTATCACTCGTC**NNNNNNNNNNNNNNNNNNNN**AGGCTCAGCTAAGGTGC | Insert barcode in place of N20 |
+| 3.8 | BgN20-CD-rev | CATTGCACCTTAGCTGAGCCT**NNNNNNNNNNNNNNNNNNNN**GACGAGTGATACCAC | Insert reverse-complement barcode in place of N20 |
+
+
+Table: Oligonucleotides
+
+
+
+
+| Name | Vendor | Catalog No. |
+|:---|:---:|:---:|
+| AMPure XP Reagent | Beckman Coulter | A63880 |
+| BbsI-HF | NEB | R3539S |
+| BsmBI-v2 | NEB | R0739S |
+| NEBuffer r3.1 |  NEB |  B6003S |
+| Q5 Hot Start Polymerase | NEB | M0493S |
+| T4 Ligase | NEB | M0202S |
+| T4 PNK | NEB | M0201S |
+| T7 Ligase | NEB | M0318S |
+| Genomic DNA Mini Kit | ThermoFisher | K182001 |
+| Lipofectamine 2000 | ThermoFisher | 11668030 |
+| Lipofectamine 3000 | ThermoFisher | L3000001 |
+| OptiMEM | ThermoFisher | 31985070 |
+| Typan Blue Stain | ThermoFisher | T10282 |
+| 2xYT medium | Millpore Sigma | Y2377-250G |
+| Carbenicillin | Millpore Sigma | C1389-250MG |
+| DMEM |  Millpore Sigma | D5671 |
+| Hexadimethrine bromide | Millpore Sigma | TR-1003-G |
+| Plasmid Plus Kit (Midi) | Qiagen | 12941 |
+| DNA Clean and Concentrator-5 | Zymo | D4013 |
+
+
+Table: Recommended Reagents
+
+
+## Acknowledgements 
+
+This work has been supported by funding through the NIH (R21CA212928 to AB).

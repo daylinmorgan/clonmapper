@@ -1,0 +1,39 @@
+name: Pull Request
+
+on:
+  # This workflow is started only on PRs
+  pull_request:
+    # Your branch, usually "main" or "master"
+    branches: [ "main" ]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    permissions:
+      # Required to upload/save artifact, otherwise you'll get
+      # "Error: Resource not accessible by integration"
+      contents: write
+      # Required to post comment, otherwise you'll get
+      # "Error: Resource not accessible by integration"
+      pull-requests: write
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # setup nix
+      - uses: DeterminateSystems/nix-installer-action@main
+      - uses: DeterminateSystems/magic-nix-cache-action@main
+
+      - name: Build PDF
+        run: nix develop --command make pdf
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: clonmapper-protocol-PR${{ github.event.number }}
+          path: clonmapper-protocol-*.pdf
+          if-no-files-found: error

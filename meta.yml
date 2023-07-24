@@ -1,7 +1,7 @@
 ---
 title: Functionalized lineage tracing for the study and manipulation of heterogeneous cell populations
 geometry: margin=2cm
-fontfamily: helvet
+mainfont: DejaVuSans
 numbersections: true
 link-citations: true
 reference-section-title: References

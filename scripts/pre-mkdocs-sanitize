@@ -7,7 +7,9 @@ import re
 import sys
 
 PATTERNS = dict(
-    # TODO: combine into one regex?
+    citation = (re.compile(
+r"\[@blundell2014;@kebschull2018\]"),'[@blundell2014]^,^[@kebschull2018]'
+) ,
     pagebreak=(re.compile(r"\\pagebreak"), ""),
     unnumbered=(re.compile(r"{.*\.unnumbered}"), ""),
     comments=(re.compile(r"<!--.*-->"), ""),
@@ -16,7 +18,7 @@ PATTERNS = dict(
 
 
 def replace(line):
-    for name, (pattern, txt) in PATTERNS.items():
+    for _, (pattern, txt) in PATTERNS.items():
         line = pattern.sub(txt, line)
     return line
 

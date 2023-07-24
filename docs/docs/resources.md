@@ -3,6 +3,6 @@ hide: [toc, navigation]
 ---
 # Additional Resources
 
-- [Pycashier](https://github.com/brocklab/pycashier)
-- [Lab Website](https://brocklab.com)
-- [Lab Github](https://github.com/brocklab)
+- [Pycashier](https://docs.brocklab.com/pycashier)
+- [Brock Lab Website](https://brocklab.com)
+- [Brock Lab Github](https://github.com/brocklab)

@@ -10,7 +10,7 @@
 
 2. Run the extension reaction on a thermocycler using the following settings: (1) 98 °C for 2 min, (2) 65 °C for 30 sec, (3) 72 °C for 10 sec, (4) Repeat steps 2-3 for 10 cycles, (5) 72 °C for 2 min, (6) 4 °C hold
 
-3. Clean and concentrate double-stranded barcode DNA PCR product and elute in 30 $\muL nuclease-free water. Confirm dsDNA assembly on 2% agarose gel by running single stranded DNA against PCR product.
+3. Clean and concentrate double-stranded barcode DNA PCR product and elute in 30 $\mu$L nuclease-free water. Confirm dsDNA assembly on 2% agarose gel by running single stranded DNA against PCR product.
 
 4. Digest 5-10 $\mu$g of CROPseq vector backbone in a reaction containing 20 $\mu$L Digestion Buffer 3.1, 8 $\mu$L BsmBI, and nuclease-free water to 200 $\mu$L. See [10X-3.1.4](#10X) for 10X vector variation.
 
@@ -320,16 +320,21 @@ $$\text{MOI [TU/cell] = }\frac{\left( \text{Volume of Virus needed [mL]} \right)
 
 2. Isolate genomic DNA from cell pellet using kit or standard protocol and proceed to PCR amplification.
 
-3. Prepare the PCR reaction to amplify barcodes and add Illumina indices[^10]  by mixing 10 uL 5X Q5 Reaction Buffer, 1 $\mu$L 10 mM dNTPs, 2.5 $\mu$L PrimeF-PAS (from step 3.2.2), 2.5 $\mu$L PrimeR_cropseq (*see* **Table 1**), 0.5 $\mu$L Q5 polymerase, up to 2 $\mu$g genomic DNA[^50], and nuclease-free water to 50 $\mu$L.
+3. Prepare **stage 1** PCR reaction to amplify barcodes by mixing 10 uL 5X Q5 Reaction Buffer, 1 $\mu$L 10 mM dNTPs, 2.5 $\mu$L CM-FWD-S1-PAS (from step 3.2.2), 2.5 $\mu$L CM-REV-S1 (*see* **Table 1**), 0.5 $\mu$L Q5 polymerase, up to 2 $\mu$g genomic DNA[^50], and nuclease-free water to 50 $\mu$L.
+
 See [10X-3.6.1.3](#10X) for 10X vector variation.
 
 [^50]: DNA amount used will be dependent on the nature of the cell population and desired sampling depth. To capture rare events, a maximum of 2 $\mu$g of DNA per reaction can be used and multiple reactions can be done. Given that a single diploid human genome is estimated at ~6.6 pg, 2 $\mu$g of genomic DNA represents that of ~300,000 cells. To capture only highly represented clonal populations, less DNA can be used.
 
-4. Amplify the barcodes by running the 50 $\mu$L reaction on a thermocycler using the following settings[^11]: (1) 98°C for 5 min, (2) 98°C for 10 sec, (3) 63°C for 30 sec, (4) 72°C for 15 sec, (4) Repeat steps 2-4 for 25 cycles[^12], (5) 72°C for 2 min, (6) 15°C hold
+4. Amplify the barcodes by running the 50 $\mu$L reaction on a thermocycler using the following settings[^11]: (1) 98°C for 5 min, (2) 98°C for 10 sec, (3) 63°C for 30 sec, (4) 72°C for 15 sec, (4) Repeat steps 2-4 for 20 cycles[^12], (5) 72°C for 2 min, (6) 15°C hold
 
-5. Finish preparing barcodes as described in 3.2 steps 4-20.
+5. Clean stage 1 reaction as described in [sgRNA barcode sequencing](#sgrna-barcode-sampling) steps 4-20.
 
-### Processing Barcode Sequencing Data (*WIP!*)
+6. Prepare **stage 2** PCR reaction to attach index sequences and Illumina adapters by mixing 10 uL 5X Q5 Reaction Buffer, 1 $\mu$L 10 mM dNTPs, 2.5 $\mu$L CM-FWD-S2-i5, 2.5 $\mu$L CM-REV-S2-i7 (*see* **Table 1**), 0.5 $\mu$L Q5 polymerase, 4 ng **stage 1** amplicon, and nuclease-free water to 50 $\mu$L.
+
+7. Clean stage 2 reaction as described in 3.2 steps 4-20.
+
+### Processing Barcode Sequencing Data
 
 See [pycashier](https://github.com/brocklab/pycashier) for more info about how to get started processing fastq data to get barcode information.
 

@@ -322,8 +322,6 @@ $$\text{MOI [TU/cell] = }\frac{\left( \text{Volume of Virus needed [mL]} \right)
 
 3. Prepare **stage 1** PCR reaction to amplify barcodes by mixing 10 uL 5X Q5 Reaction Buffer, 1 $\mu$L 10 mM dNTPs, 2.5 $\mu$L CM-FWD-S1-PAS (from step 3.2.2), 2.5 $\mu$L CM-REV-S1 (*see* **Table 1**), 0.5 $\mu$L Q5 polymerase, up to 2 $\mu$g genomic DNA[^50], and nuclease-free water to 50 $\mu$L.
 
-See [10X-3.6.1.3](#10X) for 10X vector variation.
-
 [^50]: DNA amount used will be dependent on the nature of the cell population and desired sampling depth. To capture rare events, a maximum of 2 $\mu$g of DNA per reaction can be used and multiple reactions can be done. Given that a single diploid human genome is estimated at ~6.6 pg, 2 $\mu$g of genomic DNA represents that of ~300,000 cells. To capture only highly represented clonal populations, less DNA can be used.
 
 4. Amplify the barcodes by running the 50 $\mu$L reaction on a thermocycler using the following settings[^11]: (1) 98°C for 5 min, (2) 98°C for 10 sec, (3) 63°C for 30 sec, (4) 72°C for 15 sec, (4) Repeat steps 2-4 for 20 cycles[^12], (5) 72°C for 2 min, (6) 15°C hold
@@ -332,7 +330,9 @@ See [10X-3.6.1.3](#10X) for 10X vector variation.
 
 6. Prepare **stage 2** PCR reaction to attach index sequences and Illumina adapters by mixing 10 uL 5X Q5 Reaction Buffer, 1 $\mu$L 10 mM dNTPs, 2.5 $\mu$L CM-FWD-S2-i5, 2.5 $\mu$L CM-REV-S2-i7 (*see* **Table 1**), 0.5 $\mu$L Q5 polymerase, 4 ng **stage 1** amplicon, and nuclease-free water to 50 $\mu$L.
 
-7. Clean stage 2 reaction as described in 3.2 steps 4-20.
+7. Amplify the barcodes by running the 50 $\mu$L reaction on a thermocycler using the following settings[^11]: (1) 98°C for 5 min, (2) 98°C for 10 sec, (3) 63°C for 30 sec, (4) 72°C for 15 sec, (4) Repeat steps 2-4 for 10 cycles[^12], (5) 72°C for 2 min, (6) 15°C hold
+
+8. Clean stage 2 reaction as described in 3.2 steps 4-20.
 
 ### Processing Barcode Sequencing Data
 

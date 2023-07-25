@@ -70,6 +70,8 @@ The diversity of the initial plasmid pool should be assessed to ensure a high di
 
 [^9]: Universal phase amplicon sequencing primers are used to add more diversity to the sequencing reads which helps prevents sequencing errors.
 
+<!-- TODO: update with 2 stage reaction -->
+
 3. Prepare the PCR reaction to amplify barcodes and add Illumina indices by mixing 10 uL 5X Q5 Reaction Buffer, 1 $\mu$L 10 mM dNTPs, 2.5 $\mu$L PrimeF-PAS (from step 3.2.2), 2.5 $\mu$L PrimeR_cropseq (*see* **Table 1**), 0.5 $\mu$L Q5 polymerase, 50 ng plasmid DNA, and nuclease-free water to 50 $\mu$L. [^10] See [10X-3.2.3](#10X) for 10X vector variation.
 
 [^10]: Choose Illumina i7 index **NNNNNN** based on Illumina sequencer to be used and avoid using the same i7 index for different samples.
@@ -78,7 +80,7 @@ The diversity of the initial plasmid pool should be assessed to ensure a high di
 
 [^11]: Pre-heat thermocycler to 98 °C before adding tubes to heat block.
 
-[^12]: The number of cycles will depend on the starting template amount (7-23 cycles). A nested PCR reaction may have to be performed to enhance barcode specificity.
+[^12]: The number of cycles will depend on the starting template amount. A nested PCR reaction may have to be performed to enhance barcode specificity.
 
 5. Transfer 50 $\mu$L PCR amplification product to a nuclease-free microcentrifuge tube
 
@@ -92,7 +94,7 @@ The diversity of the initial plasmid pool should be assessed to ensure a high di
 
 10. While the tube is on the rack transfer the clear supernatant to a new tube without disturbing the bead pellet.
 
-11. Add 55 $\mu$L (1.8-0.7x) paramagnetic SPRI beads to the supernatant from step 10 and mix well with vortexing or pipetting up and down 10 times.
+11. Add 45 $\mu$L (1.6-0.7x) paramagnetic SPRI beads to the supernatant from step 10 and mix well with vortexing or pipetting up and down 10 times.
 
 12. Place the tube on a magnetic rack and allow solution to clear (5-10 minutes).
 
@@ -337,42 +339,6 @@ $$\text{MOI [TU/cell] = }\frac{\left( \text{Volume of Virus needed [mL]} \right)
 ### Processing Barcode Sequencing Data
 
 See [pycashier](https://github.com/brocklab/pycashier) for more info about how to get started processing fastq data to get barcode information.
-
-<!--
-1.  Processing barcode data is accomplished through several bash scripts which can be found at [https://github.com/russelldurrett/cashier]{.underline}.[^51]
-
-[^51]: We assume basic familiarity working with bash in a UNIX based environment
-
-2.  Concatenate all fastq files for a given sample into a single fastq file using the following command: *cat sampe1\*.fastq \> sample1.fastq*.[^52]
-
-[^52]: If your amplicons were analyzed on a paired end run you should first merge the paired reads from each lane before proceeding.
-
-3.  Extract the barcodes from each illumina read with a minimum Phred quality of 30 using the following command: *cashier_extract -i sample1.fastq -q 30*.[^53]
-
-[^53]: When processing barcodes from 10X vector it is necessary to specify the downstream adapter with *-a GTTTAAGAGCTAAGCTGG.*
-
-4.  This will generate multiple output files. Extracted barcodes can be found in the tsv file with the naming format \*.barcodes.q30.tsv.
-
-5.  Remove any barcode sequences that do not occur at least twice using the following command: *cat sample1.barcodes.q30.tsv \| cut -f 2 \| sort \| uniq -D \> sample1.barcodes.q30.raw2.tsv*
-
-6.  To correct for sequencing and PCR errors within the sequence we implement message-passing clustering by wrapping starcode [@zorita2015] with the *cluster_columns* command: *cluster_columns -i sample1.barcodes.q30.raw2.tsv -r 3 -d 1 -c 1.*.[^54]
-
-[^54]: This command requires an input file, a clustering ratio, Levenshtein distance and column to cluster on.
-
-7.  This will create a file containing three columns the original sequence, the centroid, and the size of the centroid. Since we are only interested in centroids and the number of occurrences we remove the original sequences with the following command: *sample1.barcodes.q30.raw2.c1d1r3.tsv \| cut -f 2,3 -d ' ' \| sort -k 1,1 \| uniq \> sample1.barcodes.q30.raw2.c1d1r3.uniq.tsv*
-
-8.  We recommend eliminating the lowest abundant and rare sequences that are not likely to be present in the population. This can be accomplished with the *cat* and *awk* command to, for instance remove sequences occurring less than 20 times: *cat* *sample1.barcodes.q30.raw2.c1d1r3.uniq.tsv \| awk '\$2\>19 {print;}' \> sample1.barcodes.q30.raw2.c1d1r3.uniq.min20.tsv*
-
-###  Processing CROP-seq Barcodes from 10X Cell Ranger Output
-
-1.  To obtain barcode data from cells with 10X Capture sgRNA barcodes[^55] run 10X Cell Ranger on fastq samples obtained from Illumina sequencing.
-
-[^55]: For the 10X compatible sgRNA processing refer to the 10X genomics documentation on their feature barcoding technology.
-
-2.  To process barcodes from 10X data, run *samtools* to convert the unmapped read bam file into a sam file. You will first take the unmapped reads bam file and convert to a sam file using: *samtools view possorted.bam \> potsorted.sam*
-
-3.  Next pipe the bead- and umi-tagged reads through cutadapt to identify and trim barcodes, then translate to a tsv: *python \$cashier/scripts/sam_to_name_labeled_fastq.py possorted.sam \| cutadapt -g CTTGTGGAAAGGACGAAACACCG -a GTTTTAGAGCTAGAA -n 2 - \| python \$cashier/scripts/fastq_tagged_to_tsv.py - \> readname_umi_cellbarcode_lineagebarcode.tsv*
--->
 
 ## Recall Plasmid Assembly
 

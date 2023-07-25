@@ -12,11 +12,11 @@ nav:
     - "protocol/materials.md"
     - "protocol/methods.md"
     - "protocol/html-tables.md"
-    - "protocol/acknowledgements.md"  
-  - Citation: "citation.md"
+    - "protocol/acknowledgements.md"
   - PDF: "pdf/index.md"
-  - Plasmids: "plasmids.md"
+  - Sequences: "sequences/index.md"
   - Resources: "resources.md"
+  - Citation: "citation.md"
 
 theme:
   name: material

@@ -2,9 +2,17 @@
 hide: [toc, navigation]
 ---
 
-# Plasmids
+## Oligos
 
-## Crop-Seq-BFP-WPRE-TS-hU6-BsmbI
+See below for `csvs` containing forward and reverse primers
+used in stage 2 of barcode amplification reactions.
+
+- [ClonMapper S2 Sequences](./csvs/clonmapper-oligos.csv)
+- [ClonMapper S2 Pairings](./csvs/pairings.csv)
+
+## Plasmids
+
+### Crop-Seq-BFP-WPRE-TS-hU6-BsmbI
 
 [Addgene #137993](https://www.addgene.org/137993/)
 
@@ -13,7 +21,7 @@ hide: [toc, navigation]
   width="400"
 />
 
-## Recall-miniCMV-sfGFP
+### Recall-miniCMV-sfGFP
 
 [Addgene #137995](https://www.addgene.org/137995/)
 

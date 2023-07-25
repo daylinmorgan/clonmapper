@@ -4,11 +4,11 @@
 
 ## sgRNA Barcode Library Plasmid Pool Assembly
 
-1. Perform an extension reaction to generate double-stranded insert gRNA barcode DNA. Mix 10 $\mu$L NEB 5X Q5 Reaction Buffer, 1 $\mu$L of 10 mM dNTPs, 2 $\mu$L 100$\mu$M CROPseq-PrimeF-BgL-BsmBI, 1 $\mu$L 100$\mu$M CROPseq-RevExt-BgL-BsmBI , and 0.5 $\mu$L Q5 polymerase to create a 50 $\mu$L reaction.[^2] See [10X-3.1.1](#10X) for 10X vector variation.
+1. Perform a 4X extension reaction to generate double-stranded insert gRNA barcode DNA. Mix 10 $\mu$L NEB 5X Q5 Reaction Buffer, 1 $\mu$L of 10 mM dNTPs, 2 $\mu$L 100$\mu$M CROPseq-PrimeF-BgL-BsmBI, 1 $\mu$L 100$\mu$M CROPseq-RevExt-BgL-BsmBI , and 0.5 $\mu$L Q5 Polymerase to create a 50 $\mu$L reaction.[^2] See [10X-3.1.1](#10X) for 10X vector variation.
 
 [^2]: Always use filtered pipette tips when working with DNA to prevent cross-contamination.
 
-2. Run the extension reaction on a thermocycler using the following settings: (1) 98 °C for 2 min, (2) 65 °C for 30 sec, (3) 72 °C for 10 sec, (4) Repeat steps 2-3 for 10 cycles, (5) 72 °C for 2 min, (6) 4 °C hold
+2.  Run the extension reaction on a thermocycler using the following settings: (1) 98 °C for 2 min, (2) 65 °C for 30 sec, (3) 72 °C for 10 sec, (4) Repeat steps 2-3 for 10 cycles, (5) 72 °C for 2 min, (6) 4 °C hold
 
 3. Clean and concentrate double-stranded barcode DNA PCR product and elute in 30 $\mu$L nuclease-free water. Confirm dsDNA assembly on 2% agarose gel by running single stranded DNA against PCR product.
 

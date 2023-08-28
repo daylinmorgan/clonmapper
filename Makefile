@@ -44,11 +44,15 @@ $(PDF): $(addprefix tex/, oligos.tex reagents.tex) $(TEMPLATE) $(LATEX_MDs)
 	@$(PANDOC_CMD) $(LATEX_FLAGS) $(FILTERS) --output $@ $(LATEX_MDs)
 
 md/html-tables.md: tables/oligos.csv tables/reagents.csv
-	@scripts/csv2mdtable tables/oligos.csv -c "Oligonucleotides" --fmt 'c,l,l,l' > md/html-tables.md
-	@scripts/csv2mdtable tables/reagents.csv -c "Recommended Reagents" --fmt 'l,c,c' >> md/html-tables.md
+	@scripts/csv2mdtable tables/oligos.csv -c "Oligonucleotides" --fmt 'c,l,l,l' > $@
+	@scripts/csv2mdtable tables/reagents.csv -c "Recommended Reagents" --fmt 'l,c,c' >> $@
 
 docs/docs/protocol/%.md: md/%.md
 	@cat $< | scripts/pre-mkdocs-sanitize > $@
+
+docs/docs/protocol/html-tables.md:
+	@echo "# Tables" > $@
+	@cat $< | scripts/pre-mkdocs-sanitize >> $@
 
 docs/docs/full-protocol.md: $(HTML_MDs)
 	@printf -- '---\nhide:\n  - navigation\n---\n' > $@

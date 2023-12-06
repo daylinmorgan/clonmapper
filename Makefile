@@ -50,7 +50,7 @@ md/html-tables.md: tables/oligos.csv tables/reagents.csv
 docs/docs/protocol/%.md: md/%.md
 	@cat $< | scripts/pre-mkdocs-sanitize > $@
 
-docs/docs/protocol/html-tables.md:
+docs/docs/protocol/html-tables.md: md/html-tables.md
 	@echo "# Tables" > $@
 	@cat $< | scripts/pre-mkdocs-sanitize >> $@
 

@@ -80,14 +80,11 @@ Illumina indices that anneal to regions flanking the barcodes.
 
 1. Midi-prep one tube of transformed e. coli from step 3.1.1
    according to manufacturer's instructions.
-<!-- TODO: update with 2 stage reaction -->
-1. Create the phasing primer mixture 'PrimeF-PAS' by mixing equimolar amounts of PrimeF-PASx0, PrimeF-PASx1, PrimeF-PASx2, PrimeF-PASx3, PrimeF-PASx4, and PrimeF-PASx5 (*see* **Table 1**).[^9]
-1. Prepare the PCR reaction to amplify barcodes and add Illumina indices by mixing 10 uL 5X Q5 Reaction Buffer, 1 $\mu$L 10 mM dNTPs, 2.5 $\mu$L PrimeF-PAS (from step 3.2.2), 2.5 $\mu$L PrimeR_cropseq (*see* **Table 1**), 0.5 $\mu$L Q5 polymerase, 50 ng plasmid DNA, and nuclease-free water to 50 $\mu$L. [^10]
-1. Amplify the barcodes by running the 50 $\mu$L reaction on a thermocycler using the following settings[^11]: (1) 98°C for 5 min, (2) 98°C for 10 sec, (3) 63°C for 30 sec, (4) 72°C for 15 sec, (4) Repeat steps 2-4 for 7 cycles[^12], (5) 72°C for 2 min, (6) 15°C hold
-<!-- TODO: update with 2 stage reaction -->
-<!-- Ampure clean up separated? -->
 
-1. Prepare **stage 1** PCR reaction to amplify barcodes by mixing the following reagents[^50]:
+1  Generate the phasing primer mixture 'CM-FWD-S1-PAS' by mixing equimolar amounts
+   of CM-FWD-S1-PASx0, CM-FWD-S1-PASx4, CM-FWD-S1-PASx7, and CM-FWD-S1-PASx8.[^9]
+
+1. Prepare **stage 1** PCR reaction to amplify barcodes by mixing the following reagents:
 
     | Reagent | volume ($\mu$L) |
     |---|---|
@@ -96,11 +93,11 @@ Illumina indices that anneal to regions flanking the barcodes.
     | CM-FWD-S1-PAS | 2.5 |
     | CM-REV-S1 | 2.5 |
     | Q5 Polymerase | 0.5 |
-    | 2 $\mu$g DNA | variable |
+    | 100 ng DNA | variable |
     | nuclease-free water | to 50 |
 
 1. Amplify barcodes by running 50 $\mu$L reaction on a thermocycler
-   using the following setting[^11], repeating steps 2-4 for 20 cycles[^12]:
+   using the following settings[^11], repeating steps 2-4 for 10 cycles[^12]:
 
     | Step | Temp (°C) | Time |
     |---|---|---|
@@ -130,7 +127,7 @@ Illumina indices that anneal to regions flanking the barcodes.
    on a thermocycler using the above cycling parameters
    from **stage 1**, repeating steps 2-4 for 10 cycles [^12].
 1. Transfer 50 $\mu$L PCR amplification product to a
-  nuclease-free microcentrifuge tube
+   nuclease-free microcentrifuge tube
 1. Allow SPRI beads to come to room temperature.
 1. Add 35 $\mu$L (0.7X) paramagnetic SPRI beads and mix
    well with vortexing or pipetting up and down 10 times.
@@ -151,18 +148,16 @@ Illumina indices that anneal to regions flanking the barcodes.
    by adding 42 $\mu$L of nuclease-free water.
 1. Incubate at room temperature for 10 minutes.
 1. Transfer tube to magnetic rack and collect 40 $\mu$L of purified
-  PCR product after solution has cleared (5-10 minutes).[^15]
+   PCR product after solution has cleared (5-10 minutes).[^15]
 1. Quantify DNA yield with a high sensitivity fluorometry kit
    ensuring yield between 0.5-10 ng/$\mu$L.
 1. Load sample on to BioAnalyzer chip according to the manufacturer's protocol
    and ensure a clear peak around 225 bp.[^16]
 1. Submit sample for Illumina sequencing.
-1. See 3.7.2 for processing barcode sequence data.
+<!-- 1. See [](#processing-barcode-sequencing-data) for processing barcode sequence data. -->
 
 [^9]: Universal phase amplicon sequencing primers are used to add more
   diversity to the sequencing reads which helps prevents sequencing errors.
-[^10]: Choose Illumina i7 index **NNNNNN** based on Illumina sequencer
-  to be used and avoid using the same i7 index for different samples.
 [^11]: Pre-heat thermocycler to 98 °C before adding tubes to heat block.
 [^12]: The number of cycles will depend on the starting template amount.
   A nested PCR reaction may have to be performed to enhance barcode specificity.
@@ -175,7 +170,6 @@ Illumina indices that anneal to regions flanking the barcodes.
   SPRI bead cleanup can be repeated with 1.1X beads to
   further purify PCR sample, but this will greatly reduce yield.
 
-
 ## SgRNA Barcoding Lentivirus Production
 
 1. 48 hours before transfection, plate 0.22-0.25 x 10^6^ low-passage HEK-293T
@@ -186,7 +180,7 @@ Illumina indices that anneal to regions flanking the barcodes.
     2 mL of fresh Opti-MEM^TM^ (or your cells growth medium)
     supplemented with 10% FBS **without antibiotics**.
 1. In the afternoon, warm Opti-MEM^TM^, Lipofectamine^TM^ 2000,
-   and VSV-G, psPAX, and sgRNA barcoding plasmid to room temperature.[^17] [^18]
+   and VSV-G, psPAX, and sgRNA barcoding plasmid to room temperature.[^17]^,^[^18]
 1. Per well of a 6 well plate,
    prepare "Tube A" containing 150 $\mu$L Opti-MEM^TM^
    and 9 $\mu$L Lipofectamine^TM^ 2000.[^19]
@@ -201,9 +195,9 @@ Illumina indices that anneal to regions flanking the barcodes.
    and dropwise to each well of HEK-293T cells.
 1. 16-18 hours post-transfection, carefully remove and dispose of media
    containing Lipofectamine^TM^ 2000 complexes and slowly replenish with
-   DMEM supplemented with 20% FBS **without antibiotics**.[^20][^21]
+   DMEM supplemented with 20% FBS **without antibiotics**.[^20]^,^[^21]
 1. 48 hours post-transfection, harvest viral containing supernatant
-   and store in a 50 mL conical tube at 4 °C.[^22][^23][^24]
+   and store in a 50 mL conical tube at 4 °C.[^22]^,^[^23]^,^[^24]
 1. Spin down collected viral containing supernatant at 500 x g
    for 10 min at 4 °C to remove residual HEK-293T cells.
 1. Remove plunger from 20 mL syringe and attach to a 0.45 $\mu$m PES syringe filter.
@@ -215,7 +209,7 @@ Illumina indices that anneal to regions flanking the barcodes.
    concentrator chamber and spinning at 4000 x g for 60-75 minutes
    at 4 °C until ~1 mL of media remains in filter.[^25]
 1. Aliquot 25-50 $\mu$L of concentrated virus in
-   threaded cryovials and store at -80 °C.[^26][^27]
+   threaded cryovials and store at -80 °C.[^26]^,^[^27]
 
 [^17]: Lentivirus can promiscuously infect cells, including your skin!
   Use a cuffed-sleeve lab coat and double-glove (one glove under sleeve cuffs,
@@ -252,7 +246,7 @@ Illumina indices that anneal to regions flanking the barcodes.
 
 ## Determine sgRNA Viral Titer
 
-[^28][^29]
+See [^28]^,^[^29]
 
 ### Titering on Adherent Cells (Forward Procedure)
 
@@ -264,16 +258,17 @@ Illumina indices that anneal to regions flanking the barcodes.
 1. Prior to transduction, one well of the replicate 12 wells should
    be dissociated and counted using trypan blue exclusion on a
    hemocytometer to know approximate number of live cells at
-   time of transduction.[^31][^32]
+   time of transduction.[^31]^,^[^32]
 1. Create stock of media containing your cells' standard growth medium
    supplemented with 20% FBS containing 0-10 $\mu$g/mL hexadimethrine
    bromide (1:1000 dilution from hexadimethrine bromide stock to get 10 $\mu$g/mL).[^33]
-1. Place 600 $\mu$L of hexadimethrine bromide containing medium separate microcentrifuge tubes.
+1. Place 600 $\mu$L of hexadimethrine bromide containing medium
+   into separate microcentrifuge tubes.
 1. Add virus in increasing amounts to each tube.
 1. Replace media on cells of interest with virus and
    hexadimethrine bromide containing dilutions.
 1. Incubate for 16 hrs at 37 °C, then carefully remove viral containing
-   supernatant and replace with complete growth medium.[^35][^36]
+   supernatant and replace with complete growth medium.[^35]^,^[^36]
 1. Incubate for an additional 32 hrs at 37 °C, then remove medium
    and wash each well gently with PBS.[^37]
 1. Dissociate the cells from the plate
@@ -326,13 +321,13 @@ Illumina indices that anneal to regions flanking the barcodes.
 1. Count your cells of interest using a hemocytometer.
 1. Create stock of media containing your cells' standard growth medium
   supplemented with 20% FBS containing 0-10 $\mu$g/mL hexadimethrine bromide
-  (1:1000 dilution from hexadimethrine bromide stock for 10 $\mu$g/mL).[^33].
+  (1:1000 dilution from hexadimethrine bromide stock for 10 $\mu$g/mL).[^33]
 1. Resuspend 1.20 x 10^6^ cells in 7.2 mL of containing hexadimethrine bromide
    media such that the final solution contains 1 x 10^5^ cells in 600 $\mu$L.
 1. Plate 600 $\mu$L of cell solution in 10 wells
    of a tissue culture treated 12-well plate
 1. Add virus in increasing amounts to each well and mix well.[^34]
-1. Incubate for 16 hrs at 37 °C.[^35][^36]
+1. Incubate for 16 hrs at 37 °C.[^35]^,^[^36]
 1. Transfer cell suspensions to sterile 1.7 mL microcentrifuge tubes
    and spin down at 500 x g for 5 minutes at 4 °C.[^39]
 1. Resuspend each cell pellet with complete growth medium
@@ -382,7 +377,7 @@ $$\frac{\text{TU}}{\text{mL}}\text{=}\frac{\left(\text{Number of cells at time o
 1. After calculating the viral titer (TU/mL) on your cell line of interest,
   determine the final number of cells you require for your experiment using
   and transduce cells at a multiplicity of infection (MOI) of 0.1 (**Equation 2**)
-  to minimize the occurrence of multiple barcode integrations.[^46][^47]
+  to minimize the occurrence of multiple barcode integrations.[^46]^,^[^47]
 1. Use control samples to set laser voltages on FSC-A, SSC-A,
    and BFP such that nearly all cells are seen within FSC-A vs. SSC-A plot
    and both negative and positive .populations can be seen and distinguished
@@ -413,6 +408,7 @@ $$\text{MOI [TU/cell] = }\frac{\left( \text{Volume of Virus needed [mL]} \right)
    and collect into cell pellet.[^49]
 1. Isolate genomic DNA from cell pellet using kit
    or standard protocol and proceed to PCR amplification.
+1. Prepare CM-FWD-S1-PAS by creating
 1. Prepare **stage 1** PCR reaction to amplify barcodes by mixing the following reagents[^50]:
 
     | Reagent | volume ($\mu$L) |
@@ -454,8 +450,9 @@ $$\text{MOI [TU/cell] = }\frac{\left( \text{Volume of Virus needed [mL]} \right)
 
 1. Amplify the barcodes by running the 50 $\mu$L reaction
    on a thermocycler using the above cycling parameters
-   from **stage 1**, repeating steps 2-4 for 10 cycles [^12].
-1. Clean stage 2 reaction as described in 3.2 steps 4-20.
+   from **stage 1**, repeating steps 2-4 for 10 cycles. [^12]
+1. Clean stage 2 reaction as described
+   in [sgRNA Barcode Sampling](#sgrna-barcode-sampling) steps 6-22.
 
 [^49]: It is important to ensure that you have enough cells
   to sufficiently sample your population depending upon the initial barcode diversity.
@@ -513,7 +510,7 @@ how to get started processing fastq data to get barcode information.
 
 ## Recall and Isolation of Barcoded Lineages
 
-[^59][^60]
+See [^59]^,^[^60]
 
 1. 24-48 hours before performing recall transfection seed your cell line
    of interest in growth medium in a 6-well plate such that

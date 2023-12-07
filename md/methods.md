@@ -86,6 +86,49 @@ Illumina indices that anneal to regions flanking the barcodes.
 1. Amplify the barcodes by running the 50 $\mu$L reaction on a thermocycler using the following settings[^11]: (1) 98°C for 5 min, (2) 98°C for 10 sec, (3) 63°C for 30 sec, (4) 72°C for 15 sec, (4) Repeat steps 2-4 for 7 cycles[^12], (5) 72°C for 2 min, (6) 15°C hold
 <!-- TODO: update with 2 stage reaction -->
 <!-- Ampure clean up separated? -->
+
+1. Prepare **stage 1** PCR reaction to amplify barcodes by mixing the following reagents[^50]:
+
+    | Reagent | volume ($\mu$L) |
+    |---|---|
+    | 5X Q5 Reaction Buffer | 10 |
+    | 10 mM dNTPs | 1 |
+    | CM-FWD-S1-PAS | 2.5 |
+    | CM-REV-S1 | 2.5 |
+    | Q5 Polymerase | 0.5 |
+    | 2 $\mu$g DNA | variable |
+    | nuclease-free water | to 50 |
+
+1. Amplify barcodes by running 50 $\mu$L reaction on a thermocycler
+   using the following setting[^11], repeating steps 2-4 for 20 cycles[^12]:
+
+    | Step | Temp (°C) | Time |
+    |---|---|---|
+    | 1 | 95 | 5 min |
+    | 2 | 98 | 10 sec |
+    | 3 | 63 | 30 sec |
+    | 4 | 72 | 15 sec |
+    | 5 | 72 | 2 min |
+    | 6 | 15 | hold |
+
+1. Clean stage 1 reaction as described in
+   [sgRNA barcode sampling](#sgrna-barcode-sampling) steps 4-20.
+1. Prepare **stage 2** PCR reaction to attach index sequences
+   and Illumina adapters by mixing the following reagents:
+
+    | Reagent | volume ($\mu$L) |
+    |---|---|
+    | 5X Q5 Reaction Buffer | 10 |
+    | 10 mM dNTPs | 1 |
+    | CM-FWD-S2-i5 | 2.5 |
+    | CM-REV-S2-i7 | 2.5 |
+    | Q5 Polymerase | 0.5 |
+    | 4 ng **stage 1** amplicon | variable |
+    | nuclease-free water | to 50 |
+
+1. Amplify the barcodes by running the 50 $\mu$L reaction
+   on a thermocycler using the above cycling parameters
+   from **stage 1**, repeating steps 2-4 for 10 cycles [^12].
 1. Transfer 50 $\mu$L PCR amplification product to a
   nuclease-free microcentrifuge tube
 1. Allow SPRI beads to come to room temperature.
@@ -97,6 +140,7 @@ Illumina indices that anneal to regions flanking the barcodes.
    to a new tube without disturbing the bead pellet.
 1. Add 45 $\mu$L (1.6-0.7x) paramagnetic SPRI beads to the supernatant
    from step 10 and mix well with vortexing or pipetting up and down 10 times.
+1. Incubate at room temperature for 5 minutes.
 1. Place the tube on a magnetic rack and allow solution to clear (5-10 minutes).
 1. With the tube still in the rack, aspirate the clear supernatant.
 1. With the tube still in the rack, add 180 $\mu$L of 80% ethanol and

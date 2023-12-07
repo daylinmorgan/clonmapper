@@ -81,7 +81,7 @@ Illumina indices that anneal to regions flanking the barcodes.
 1. Midi-prep one tube of transformed e. coli from step 3.1.1
    according to manufacturer's instructions.
 
-1  Generate the phasing primer mixture 'CM-FWD-S1-PAS' by mixing equimolar amounts
+1. Generate the phasing primer mixture 'CM-FWD-S1-PAS' by mixing equimolar amounts
    of CM-FWD-S1-PASx0, CM-FWD-S1-PASx4, CM-FWD-S1-PASx7, and CM-FWD-S1-PASx8.[^9]
 
 1. Prepare **stage 1** PCR reaction to amplify barcodes by mixing the following reagents:

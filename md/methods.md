@@ -34,22 +34,33 @@
 1. Prepare for *e. coli* electroporation by pre-warming recovery media to room
    temperature, thawing electrocompetent *e. coli* on ice,
    and pre-chilling 2 mm electroporation cuvettes on ice.[^5]
-1. Aliquot 100 $\mu$L of E.coli into the chilled 0.2 cm electroporation cuvette, add 5 $\mu$L of purified assembled plasmid, and stir with pipet tip.[^6]
+1. Aliquot 100 $\mu$L of E.coli into the chilled 0.2 cm electroporation cuvette,
+   add 5 $\mu$L of purified assembled plasmid, and stir with pipet tip.[^6]
 1. Transform e. coli by electroporating with 1 pulse at 2.5 kV.[^7]
-1. Add 2 mL Recovery Media and gently pipet up and down immediately after electroporation, and transfer to a sterile 50ml conical tube.
+1. Add 2 mL Recovery Media and gently pipet up and down immediately after
+   electroporation, and transfer to a sterile 50ml conical tube.
 1. Repeat steps 10-12 three times
 1. Allow cells to recover for 30 min at 37 °C with shaking at 250 rpm.
 1. Pre-warm 2xYT agar plates with 100 $\mu$g/mL carbenicillin.
-1. After recovery, perform dilution plating 1:10^4^, 1:10^5^, 1:10^6^ on carbenicillin agar plates.
+1. After recovery, perform dilution plating
+   1:10^4^, 1:10^5^, 1:10^6^ on carbenicillin agar plates.
 1. Incubate plates overnight at 37 °C.
-1. Put the remaining transformant mixture into 500 mL 2xYT with 100 $\mu$g/mL carbenicillin in a 2 L flasks.
+1. Put the remaining transformant mixture into 500 mL 2xYT
+   with 100 $\mu$g/mL carbenicillin in a 2 L flasks.
 1. Incubate flasks at 30 °C overnight with shaking at 250 rpm.
 1. The culture can be pelleted or midi/maxi prepped for usage.
 1. Calculate transformation efficiency from dilution plating.[^8]
 
-[^2]: Always use filtered pipette tips when working with DNA to prevent cross-contamination.
-[^3]: A 1X Golden Gate assembly reaction is setup by mixing 25 fmol digested gRNA transfer vector (*from step 3.1.4*), 250 fmol double stranded gRNA barcode DNA (*from step 3.1.1*), 1 $\mu$L T4 ligase buffer, 0.5 $\mu$L T7 ligase, 0.5 $\mu$L BsmBI (CROPseq) or BbsI (10X Capture), and nuclease-free water to 10 $\mu$L.
-[^4]: Letting the water sit on the column for 3-5 minutes before elution increases yield. Re-run elution product through column 3 times to maximize yield.
+[^2]: Always use filtered pipette tips when working with
+      DNA to prevent cross-contamination.
+[^3]: A 1X Golden Gate assembly reaction is setup by mixing 25 fmol digested
+      gRNA transfer vector (*from step 3.1.4*), 250 fmol double stranded gRNA
+      barcode DNA (*from step 3.1.1*), 1 $\mu$L T4 ligase buffer,
+      0.5 $\mu$L T7 ligase, 0.5 $\mu$L BsmBI (CROPseq) or BbsI (10X Capture),
+      and nuclease-free water to 10 $\mu$L.
+[^4]: Letting the water sit on the column for 3-5 minutes before
+      elution increases yield. Re-run elution product through
+      column 3 times to maximize yield.
 [^5]: Make sure to use *E. coli* suitable for use with unstable DNA.
 [^6]: Do not pipet up and down. Ensure bubbles are not added to the mix which can cause electrical arcing and cell death during electroporation).
 [^7]: Optimal time constants should be between 4.2-5.4 ms. This protocol was optimized with the EC2 setting on the Bio-Rad MicroPulser^TM^ Electroporator.

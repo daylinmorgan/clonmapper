@@ -37,14 +37,10 @@ The sgRNA barcode is engineered using the CROPseq method [@datlinger2017] such
 that the sgRNA barcode is transcribed by both RNA polymerase III and
 RNA polymerase II, creating a functional sgRNA barcode transcript and a
 polyadenylated transcript containing the barcode, respectively.
-There are also instructions for a 10X Genomics version, in which the sgRNA
-is engineered to contain a capture sequence that allows targeted capture
-by the Chromium Single Cell 3' v3 Gel Beads [@10xgenomics].
 
-Cells are first transduced with lentivirus containing either the
-CROPseq sgRNA barcoding vector or the 10X Capture sgRNA barcoding vector
-at a low multiplicity of infection (MOI) to minimize the integration
-of multiple barcodes per cell.
+Cells are first transduced with lentivirus containing
+a ClonMapper sgRNA barcode vector at a low multiplicity of infection (MOI)
+to minimize the integration of multiple barcodes per cell.
 In both versions of the vector, the sgRNA barcode is co-expressed
 with blue fluorescent protein (BFP) for easy identification and collection of
 barcoded cells via flow cytometry and fluorescence-activated cell sorting (FACS).
@@ -60,4 +56,3 @@ fluorescent protein (sfGFP) reporter.
 Expression of sfGFP will occur only in cells that are producing the matching
 sgRNA barcode, allowing precise identification and FACS isolation of cells
 from lineages of interest.
-

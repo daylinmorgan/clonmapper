@@ -2,33 +2,63 @@
 
 ## sgRNA Barcode Library Plasmid Pool Assembly
 
-1. Perform a 4X extension reaction to generate double-stranded
-   insert gRNA barcode DNA. Mix 10 $\mu$L NEB 5X Q5 Reaction Buffer,
-   1 $\mu$L of 10 mM dNTPs, 2 $\mu$L 100$\mu$M CROPseq-PrimeF-BgL-BsmBI,
-   1 $\mu$L 100$\mu$M CROPseq-RevExt-BgL-BsmBI,
-   and 0.5 $\mu$L Q5 Polymerase to create a 50 $\mu$L reaction.[^2]
-1. Run the extension reaction on a thermocycler using the following settings:
-   (1) 98 °C for 2 min, (2) 65 °C for 30 sec, (3) 72 °C for 10 sec,
-   (4) Repeat steps 2-3 for 10 cycles, (5) 72 °C for 2 min, (6) 4 °C hold
-1. Clean and concentrate double-stranded barcode DNA PCR product
-   and elute in 30 $\mu$L nuclease-free water Confirm dsDNA assembly
-   on 2% agarose gel by running single stranded DNA against PCR product.
+1. Perform a 4X extension reaction to generate the double-stranded
+   gRNA insert. Mix the below reagents to create a 50 $\mu$L reaction.[^2]
+
+    | Reagent | volume ($\mu$L) |
+    |---|---|
+    | 5X Q5 Reaction Buffer | 10 |
+    | 10 mM dNTPs | 1 |
+    | 100 $\mu$M CROPseq-PrimeF-BgL-BsmBI | 2
+    | 100$\mu$M CROPseq-RevExt-BgL-BsmBI | 1
+    | Q5 Polymerase | 0.5 |
+    | nuclease-free water | to 50 |
+
+1. Run the extension reaction on a thermocycler using the following settings,
+   repeating steps 2-3 for 10 cycles:
+
+    | Step | Temp (°C) | Time |
+    |---|---|---|
+    | 1 | 98 | 2 min |
+    | 2 | 65 | 30 sec |
+    | 3 | 72 | 10 sec |
+    | 4 | 72 | 2 min |
+    | 5 | 4 | hold |
+
+1. Clean and concentrate double-stranded gRNA insert PCR product
+   and elute in 30 $\mu$L nuclease-free water.
+   Confirm dsDNA assembly on 2% agarose gel
+   by running single stranded DNA against PCR product.
 1. Digest 5-10 $\mu$g of CROPseq vector backbone in a reaction containing
    20 $\mu$L Digestion Buffer 3.1, 8 $\mu$L BsmBI,
-   and nuclease-free water to 200 $\mu$L.
+   and nuclease-free water to 200 $\mu$L for 4 hours at 55°C
+    <!-- TODO: HOW LONG? -->
 1. Run the digested backbone on a 1-1.5% low melting point agarose gel,
    then follow the instructions on a DNA gel purification kit to extract
    and purify the linearized plasmid band.
-1. Ligate double stranded gRNA barcode DNA into linearized gRNA transfer vector
-   at a molar ratio of 10:1 in a 50X Golden Gate assembly reaction by mixing
-   1.25 pmol digested gRNA transfer vector (*from step 3.1.4*),
-   12.5 pmol double stranded gRNA barcode DNA (*from step 3.1.1*),
-   50 $\mu$L T4 ligase buffer, 25 $\mu$L T7 ligase, 25 $\mu$L BsmBI (CROPseq)
-   or BbsI (10X Capture), and nuclease-free water to 500 $\mu$L.[^3]
+1. Ligate double stranded gRNA insert into linearized transfer vector backbone
+   at a molar ratio of 10:1 in a 50X Golden Gate assembly reaction
+   by mixing the below reagents[^3]:
+
+    | Reagent | volume ($\mu$L) |
+    |---|---|
+    | 1.25 pmol linearized backbone | variable |
+    | 12.5 pmol gRNA insert | variable |
+    | T4 Ligase Buffer | 50 |
+    | T7 Ligase | 25 |
+    | BsmBI | 25 |
+    | nuclease-free water | to 500 |
+
 1. Run the Golden Gate assembly reaction on a thermocycler
-   overnight using the following settings:
-   (1) 42 °C for 2 min, (2) 16 °C for 5 min, (3) Repeat steps 1-2 for 99 cycles,
-   (4) 55 °C for 30 min, (6) 4 °C hold
+   overnight using the following settings, repeating steps 1-2 for 99 cycles:
+
+    | Step | Temp (°C) | Time |
+    |---|---|---|
+    | 1 | 42 | 2 min |
+    | 2 | 16 | 5 min |
+    | 4 | 55 | 30 min |
+    | 5 | 4 | hold |
+
 1. Clean barcoding library plasmid pool using a DNA clean and
    concentrator kit and elute in 22 $\mu$L warm, nuclease-free water.[^4]
 1. Prepare for *e. coli* electroporation by pre-warming recovery media to room
@@ -56,7 +86,7 @@
 [^3]: A 1X Golden Gate assembly reaction is setup by mixing 25 fmol digested
   gRNA transfer vector (*from step 3.1.4*), 250 fmol double stranded gRNA
   barcode DNA (*from step 3.1.1*), 1 $\mu$L T4 ligase buffer,
-  0.5 $\mu$L T7 ligase, 0.5 $\mu$L BsmBI (CROPseq) or BbsI (10X Capture),
+  0.5 $\mu$L T7 ligase, 0.5 $\mu$L BsmBI,
   and nuclease-free water to 10 $\mu$L.
 [^4]: Letting the water sit on the column for 3-5 minutes before
   elution increases yield. Re-run elution product through

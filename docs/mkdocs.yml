@@ -6,13 +6,7 @@ hooks:
 
 nav:
   - Home: "index.md"
-  - Full Protocol: "full-protocol.md" 
-  - Protocol by Section:
-    - "protocol/introduction.md"
-    - "protocol/materials.md"
-    - "protocol/methods.md"
-    - "protocol/html-tables.md"
-    - "protocol/acknowledgements.md"
+  - Protocol: "full-protocol.md" 
   - PDF: "pdf/index.md"
   - Sequences: "sequences/index.md"
   - Resources: "resources.md"

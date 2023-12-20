@@ -6,7 +6,7 @@ hooks:
 
 nav:
   - Home: "index.md"
-  - Protocol: "full-protocol.md" 
+  - Protocol: "protocol.md" 
   - PDF: "pdf/index.md"
   - Sequences: "sequences/index.md"
   - Resources: "resources.md"
@@ -62,8 +62,10 @@ markdown_extensions:
       permalink: true
   - pymdownx.superfences
   - pymdownx.caret
+  - pymdownx.tilde
   - pymdownx.snippets:
       check_paths: true
   - pymdownx.arithmatex:
       generic: true
+
 

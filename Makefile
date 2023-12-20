@@ -54,7 +54,7 @@ docs/docs/protocol/html-tables.md: md/html-tables.md
 	@echo "# Tables" > $@
 	@cat $< | scripts/pre-mkdocs-sanitize >> $@
 
-docs/docs/full-protocol.md: $(HTML_MDs)
+docs/docs/protocol.md: $(HTML_MDs)
 	@printf -- '---\nhide:\n  - navigation\n---\n' > $@
 	@cat $(HTML_MDs) | scripts/pre-mkdocs-sanitize >> $@
 
@@ -63,8 +63,9 @@ $(LATEST_PDF): $(PDF)
 	@rm -f docs/docs/pdf/latest/*
 	@cp $< $@
 
-MKDOCS_DOCS := $(patsubst md/%.md,docs/docs/protocol/%.md, $(HTML_MDs)) \
-		docs/docs/full-protocol.md
+# MKDOCS_DOCS := $(patsubst md/%.md,docs/docs/protocol/%.md, $(HTML_MDs)) \
+# 		docs/docs/full-protocol.md
+MKDOCS_DOCS = docs/docs/protocol.md
 
 .PHONY: docs.build docs.content docs.serve
 ## docs.* |> docs.{content,serve,build}

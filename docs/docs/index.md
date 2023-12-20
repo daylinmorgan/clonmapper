@@ -3,7 +3,14 @@ title: ClonMapper
 hide:
   - navigation
 ---
+<!-- hide title -->
 
+<style>
+  .md-typeset h1,
+  .md-content__button {
+    display: none;
+  }
+</style>
 
 <img src="assets/svg/clonmapper.svg" width='600' style='background-color: white;' align="left">
 

@@ -41,7 +41,7 @@ p pdf: $(PDF) ## generate the pdf
 
 $(PDF): $(addprefix tex/, oligos.tex reagents.tex) $(TEMPLATE) $(LATEX_MDs)
 	$(call log,Generating PDF)
-	@$(PANDOC_CMD) $(LATEX_FLAGS) $(FILTERS) --output $@ $(LATEX_MDs)
+	$(PANDOC_CMD) $(LATEX_FLAGS) $(FILTERS) --output $@ $(LATEX_MDs)
 
 md/html-tables.md: tables/oligos.csv tables/reagents.csv
 	@scripts/csv2mdtable tables/oligos.csv -c "Oligonucleotides" --fmt 'c,l,l,l' > $@

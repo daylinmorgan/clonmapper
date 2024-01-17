@@ -1,5 +1,6 @@
 {
-  description = "brain";
+  description = "clonmapper-protocol";
+  inputs.nixpkgs.url = "nixpkgs/nixos-23.11";
   inputs.flake-utils.url = "github:numtide/flake-utils";
 
   outputs = {
@@ -16,7 +17,8 @@
           devShells.default = mkShell {
             nativeBuildInputs = [
               pandoc
-              python311.withPackages (packages: with packages; [ pip ])
+              (texlive.combine { inherit (texlive) scheme-small adjustbox datetime2; })
+              (python3.withPackages (packages: with packages; [ pip ]))
             ];
           };
         }

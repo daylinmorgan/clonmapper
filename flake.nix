@@ -14,7 +14,7 @@
       in
         with pkgs; {
           devShells.default = mkShell {
-            buildInputs = [
+            nativeBuildInputs = [
               pandoc
               python311.withPackages (packages: with packages; [ pip ])
             ];

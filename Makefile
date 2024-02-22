@@ -24,14 +24,12 @@ LATEX_FLAGS := $(FLAGS) \
 	--template=tmpl/default.tex \
 	--verbose
 
-
 FILTERS := \
 	--lua-filter=filters/scholarly-metadata.lua \
 	--lua-filter=filters/author-info-blocks.lua
 
 SHARED_MDs := introduction.md materials.md methods.md
-LATEX_MDs := $(addprefix md/,$(SHARED_MDs) latex-tables.md acknowledgements.md)
-# LATEX_MDs := $(addprefix md/,$(SHARED_MDs) acknowledgements.md)
+LATEX_MDs := $(addprefix md/,$(SHARED_MDs) latex-tables.md  acknowledgements.md)
 
 HTML_MDs := $(addprefix md/,$(SHARED_MDs) html-tables.md acknowledgements.md)
 LATEX_TABLES := $(addprefix tex/, oligos.tex reagents.tex)
@@ -43,7 +41,7 @@ bootstrap: ## setup venv for mkdocs
 
 p pdf: $(PDF) ## generate the pdf
 
-protocol.tex:
+protocol.tex: .FORCE
 	$(PANDOC_CMD) $(LATEX_FLAGS) $(FILTERS) --output $@ $(LATEX_MDs)
 
 $(PDF): $(TEMPLATE) $(LATEX_MDs) $(LATEX_TABLES)

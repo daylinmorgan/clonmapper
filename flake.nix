@@ -1,26 +1,27 @@
 {
   description = "clonmapper-protocol";
-  inputs.nixpkgs.url = "nixpkgs/nixos-23.11";
-  inputs.flake-utils.url = "github:numtide/flake-utils";
-
+  inputs.nixpkgs.url = "nixpkgs/nixos-unstable";
   outputs = {
     self,
     nixpkgs,
-    flake-utils,
-  }:
-    flake-utils.lib.eachDefaultSystem
-    (
-      system: let
-        pkgs = nixpkgs.legacyPackages.${system};
-      in
-        with pkgs; {
-          devShells.default = mkShell {
-            nativeBuildInputs = [
+  }: let
+    inherit (nixpkgs.lib) genAttrs makeBinPath;
+    forAllSystems = f:
+      genAttrs [ "x86_64-linux" "x86_64-darwin" "aarch64-linux" "aarch64-darwin"]
+      (system:
+        f (import nixpkgs {
+          localSystem = system;
+        }));
+  in {
+    devShells = forAllSystems (pkgs: {
+      default = pkgs.mkShell {
+            nativeBuildInputs = with pkgs; [
               pandoc
               (texlive.combine { inherit (texlive) scheme-small adjustbox datetime2; })
               (python3.withPackages (packages: with packages; [ pip ]))
             ];
-          };
-        }
-    );
+      };
+    });
+  };
 }
+

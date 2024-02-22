@@ -21,7 +21,9 @@ LATEX_FLAGS := $(FLAGS) \
 	--citeproc \
 	--bibliography=bib/protocol.bib \
 	--pdf-engine=xelatex \
-	--template=tmpl/default.tex
+	--template=tmpl/default.tex \
+	--verbose
+
 
 FILTERS := \
 	--lua-filter=filters/scholarly-metadata.lua \
@@ -29,6 +31,8 @@ FILTERS := \
 
 SHARED_MDs := introduction.md materials.md methods.md
 LATEX_MDs := $(addprefix md/,$(SHARED_MDs) latex-tables.md acknowledgements.md)
+# LATEX_MDs := $(addprefix md/,$(SHARED_MDs) acknowledgements.md)
+
 HTML_MDs := $(addprefix md/,$(SHARED_MDs) html-tables.md acknowledgements.md)
 LATEX_TABLES := $(addprefix tex/, oligos.tex reagents.tex)
 PDF := clonmapper-protocol-$(REV).pdf
@@ -38,6 +42,9 @@ bootstrap: ## setup venv for mkdocs
 	@$(VENV)/bin/pip install -r ./docs/requirements.txt
 
 p pdf: $(PDF) ## generate the pdf
+
+protocol.tex:
+	$(PANDOC_CMD) $(LATEX_FLAGS) $(FILTERS) --output $@ $(LATEX_MDs)
 
 $(PDF): $(TEMPLATE) $(LATEX_MDs) $(LATEX_TABLES)
 	$(call log,Generating PDF)

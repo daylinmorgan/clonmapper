@@ -7,8 +7,9 @@ import sys
 
 def get_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("input", help="input csv file")
+    parser.add_argument("input", help="input csv file",)
     parser.add_argument("output", help="output tex file")
+    parser.add_argument("--label", help="table label", required=True)
     parser.add_argument("-c", "--caption", help="table caption", default="")
     parser.add_argument("--split", help="column number to split using splitseq")
     parser.add_argument("--fill", help="expand to fill page", action="store_true")
@@ -75,7 +76,7 @@ def main():
             rows.append(row_str)
 
         rows = "".join(rows)
-
+    label = args.label
     table_tex_str = rf"""
 %...
 % generated using csv2latex
@@ -86,7 +87,7 @@ def main():
 \begin{{table}}[!hbt]
   \begin{{center}}
     \begin{{adjustbox}}{{{width}}}
-      \label{{tab:table1}}
+      \label{{tab:{label}}}
       \begin{{tabular}}{{{column_fmt}}}
       \hline
         {header_str}

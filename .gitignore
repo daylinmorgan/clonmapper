@@ -3,9 +3,7 @@
 *.pdf
 protocol.tex
 protocol.html
-tex/
 public/
-md/html-tables.md
 
 !docs/docs/pdf/archive/*.pdf
 docs/docs/pdf/latest/*.pdf

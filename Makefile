@@ -30,7 +30,7 @@ FILTERS := \
 SHARED_MDs := introduction.md materials.md methods.md
 LATEX_MDs := $(addprefix md/,$(SHARED_MDs) latex-tables.md acknowledgements.md)
 HTML_MDs := $(addprefix md/,$(SHARED_MDs) html-tables.md acknowledgements.md)
-
+LATEX_TABLES := $(addprefix tex/, oligos.tex reagents.tex)
 PDF := clonmapper-protocol-$(REV).pdf
 
 bootstrap: ## setup venv for mkdocs
@@ -39,7 +39,7 @@ bootstrap: ## setup venv for mkdocs
 
 p pdf: $(PDF) ## generate the pdf
 
-$(PDF): $(addprefix tex/, oligos.tex reagents.tex) $(TEMPLATE) $(LATEX_MDs)
+$(PDF): $(TEMPLATE) $(LATEX_MDs) $(LATEX_TABLES)
 	$(call log,Generating PDF)
 	$(PANDOC_CMD) $(LATEX_FLAGS) $(FILTERS) --output $@ $(LATEX_MDs)
 
@@ -87,6 +87,7 @@ tex/oligos.tex: tables/oligos.csv scripts/csv2latex
 	@scripts/csv2latex \
 		tables/oligos.csv \
 		tex/oligos.tex \
+		--label 'oligos' \
 		-c "Oligonucleotides" \
 		--split 3 \
 		--fmt 'c l p{{.5\textwidth}} l' \
@@ -96,6 +97,7 @@ tex/reagents.tex: tables/reagents.csv scripts/csv2latex
 	@scripts/csv2latex \
 		tables/reagents.csv \
 		tex/reagents.tex \
+		--label 'reagents' \
 		-c "Recommended Reagents" \
 		--fmt 'l c c'
 

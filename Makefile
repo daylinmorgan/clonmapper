@@ -8,7 +8,7 @@ ifneq ($(DOCKER),true)
 	PANDOC_CMD := pandoc
 	MKDOCS_CMD := cd docs && $(VENV)/bin/mkdocs
 else
-	PANDOC_CMD := $(DOCKER_RUN) -v "$$(pwd)":/data $$(docker build -q .)
+	PANDOC_CMD := $(DOCKER_RUN) -v "$$(pwd)":/data $$(docker build -q .) pandoc
 	MKDOCS_CMD := $(DOCKER_RUN) --network host \
 		--entrypoint ./scripts/run-mkdocs \
 		$$(docker build -q .) 
@@ -20,7 +20,7 @@ LATEX_FLAGS := $(FLAGS) \
 	--metadata-file=meta.yml \
 	--citeproc \
 	--bibliography=bib/protocol.bib \
-	--pdf-engine=xelatex \
+	--pdf-engine=lualatex \
 	--template=tmpl/default.tex \
 	--verbose
 
@@ -42,7 +42,7 @@ bootstrap: ## setup venv for mkdocs
 p pdf: $(PDF) ## generate the pdf
 
 protocol.tex: .FORCE
-	$(PANDOC_CMD) $(LATEX_FLAGS) $(FILTERS) --output $@ $(LATEX_MDs)
+	'$(PANDOC_CMD) $(LATEX_FLAGS) $(FILTERS) --output $@ $(LATEX_MDs)'
 
 $(PDF): $(TEMPLATE) $(LATEX_MDs) $(LATEX_TABLES)
 	$(call log,Generating PDF)

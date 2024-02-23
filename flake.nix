@@ -17,7 +17,7 @@
       default = pkgs.mkShell {
         nativeBuildInputs = with pkgs; [
           pandoc
-          (texlive.combine {inherit (texlive) scheme-small adjustbox datetime2;})
+          (texlive.combine {inherit (texlive) scheme-small adjustbox datetime2 lualatex-math selnolig;})
           (python3.withPackages (packages: with packages; [pip]))
         ];
       };

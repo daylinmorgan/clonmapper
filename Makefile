@@ -42,7 +42,7 @@ bootstrap: ## setup venv for mkdocs
 p pdf: $(PDF) ## generate the pdf
 
 protocol.tex: .FORCE
-	'$(PANDOC_CMD) $(LATEX_FLAGS) $(FILTERS) --output $@ $(LATEX_MDs)'
+	$(PANDOC_CMD) $(LATEX_FLAGS) $(FILTERS) --output $@ $(LATEX_MDs)
 
 $(PDF): $(TEMPLATE) $(LATEX_MDs) $(LATEX_TABLES)
 	$(call log,Generating PDF)

@@ -11,7 +11,7 @@ else
 	PANDOC_CMD := $(DOCKER_RUN) -v "$$(pwd)":/data $$(docker build -q .) pandoc
 	MKDOCS_CMD := $(DOCKER_RUN) --network host \
 		--entrypoint ./scripts/run-mkdocs \
-		$$(docker build -q .) 
+		$$(docker build -q .)
 endif
 
 FLAGS := -V "rev:$(REV)"

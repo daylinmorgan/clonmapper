@@ -21,7 +21,7 @@ LATEX_FLAGS := $(FLAGS) \
 	--citeproc \
 	--bibliography=bib/protocol.bib \
 	--pdf-engine=lualatex \
-	--template=tmpl/default.tex \
+	--template=templates/default.tex \
 	--verbose
 
 FILTERS := \
@@ -128,6 +128,10 @@ clean.docs:
 			docs/docs/full-protocol.md \
 			docs/docs/pdf/latest/*.pdf
 	@rm -rf docs/site
+
+update-template: .FORCE
+	pandoc -D latex > templates/default.tex
+	patch -u -b templates/default.tex -i templates/default.patch
 
 .PHONY: .FORCE
 .FORCE:

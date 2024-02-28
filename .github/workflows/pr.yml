@@ -6,6 +6,10 @@ on:
     # Your branch, usually "main" or "master"
     branches: [ "main" ]
 
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     permissions:

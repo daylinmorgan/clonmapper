@@ -1,5 +1,5 @@
 -include .env
-REV := $(shell date +'%Y.%m.%d-' )$(shell git describe --always --dirty=-dev)
+REV ?= $(shell date +'%Y.%m.%d-' )$(shell git describe --always --dirty=-dev)
 VENV := $(PWD)/.venv
 DOCKER_RUN := docker run --rm -it -u $$(id -u):$$(id -g) -v "$$(pwd)":/data
 MKDOCS_ARGS ?=

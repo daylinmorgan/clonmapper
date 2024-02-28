@@ -1,0 +1,58 @@
+name: Pull Request
+
+on:
+  # This workflow is started only on PRs
+  pull_request:
+    # Your branch, usually "main" or "master"
+    branches: [ "main" ]
+
+env:
+  PR_NUM: ${{ github.event.number }}
+
+
+jobs:
+  build:
+    permissions:
+      # Required to upload/save artifact, otherwise you'll get
+      # "Error: Resource not accessible by integration"
+      contents: write
+      # Required to post comment, otherwise you'll get
+      # "Error: Resource not accessible by integration"
+      pull-requests: write
+
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install Nix
+        uses: DeterminateSystems/nix-installer-action@main
+      - name: Build Pdf
+        run: VERSION="pr-$PR_NUM" nix develop --command make pdf
+      - name: Pull request artifacts
+        uses: gavv/pull-request-artifacts@v2
+        with:
+          # Commit hash that triggered PR
+          commit: ${{ github.event.pull_request.head.sha }}
+          # Token for current repo (used to post PR comment)
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+          # Optional, uncomment to upload artifacts to specific branch, otherwise
+          # the default branch is used.
+          # Note that usually the main branch is protected by rules, so it's not
+          # possible to upload there.
+          # Perhaps, the best solution is to create an empty unprotected branch
+          # dedicated for artifacts.
+          # See README for details.
+          #artifacts-branch: some_branch
+
+          # With options below, artifacts will be uploaded to "my_prs/<pr_number>/<artifact_path>".
+          artifacts-prefix: "prs/${{ github.event.number }}/"
+          preserve-path: true
+
+          # Optional, uncomment to use non-default title and style.
+          #comment-title: "PDF for "
+          #comment-message: "My message"
+          #comment-style: list
+
+          # Whitespace-separated list of files to upload
+          artifacts: "clonmapper-protocol-pr-${PR_NUM}.pdf"

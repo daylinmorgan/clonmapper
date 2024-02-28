@@ -1,7 +1,7 @@
-name: Bind Reports to Pull-Request
+name: Post Build Artifact to PR
 
 # ref: https://medium.com/@vlyskouski/github-actions-auto-reply-in-pull-requests-with-a-link-to-build-artifacts-ae1ef55034d8
-#
+
 on:
   workflow_run:
     workflows: [Pull Request]
@@ -39,7 +39,7 @@ jobs:
             Build artifacts:
             | Name | Link |
             |------|------|
-            | Protocol | [protocol rev. ${{PREVIOUS_JOB_ID}}](${{ env.ARTIFACT_URL }}) |
+            | Protocol | [protocol (PR #${{ env.PR_NUMBER }})](${{ env.ARTIFACT_URL }}) |
         with:
           script: |
             github.rest.issues.createComment({

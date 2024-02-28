@@ -6,10 +6,6 @@ on:
     # Your branch, usually "main" or "master"
     branches: [ "main" ]
 
-env:
-  PR_NUM: ${{ github.event.number }}
-
-
 jobs:
   build:
     permissions:
@@ -27,7 +23,7 @@ jobs:
       - name: Install Nix
         uses: DeterminateSystems/nix-installer-action@main
       - name: Build Pdf
-        run: VERSION="pr-$PR_NUM" nix develop --command make pdf
+        run: REV="pr-${{ github.event.number }}" nix develop --command make pdf
       - name: Pull request artifacts
         uses: gavv/pull-request-artifacts@v2
         with:
@@ -55,4 +51,4 @@ jobs:
           #comment-style: list
 
           # Whitespace-separated list of files to upload
-          artifacts: "clonmapper-protocol-pr-${PR_NUM}.pdf"
+          artifacts: "clonmapper-protocol-pr-${{ github.event.number }}.pdf"

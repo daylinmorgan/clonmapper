@@ -12,6 +12,8 @@ Alternatively you can make quick changes using the built-in github [VS-code edit
 
 If you would like to generate a new pdf file you will probably want to ensure at a minimum you have installed `make`.
 
+<!-- TODO: update these instructions -->
+
 This document takes advantage of pandoc to convert a markdown doc (`protocol.md`) to a well-formatted pdf.
 To run these locally you will need to additionally install `pandoc` and `tex-live`.
 *NOTE*: the full `tex-live` distribution is quite large.

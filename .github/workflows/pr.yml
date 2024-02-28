@@ -30,26 +30,10 @@ jobs:
       - uses: DeterminateSystems/magic-nix-cache-action@main
 
       - name: Build PDF
-        run: REV="pr-${{ github.event.number }}" nix develop --command make pdf
+        run: nix develop --command make pdf
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: protocol-pdf
+          name: clonmapper-protocol-PR${{ github.event.number }}
           path: clonmapper-protocol-*.pdf
           if-no-files-found: error
-
-      # - name: Pull request artifacts
-      #   uses: gavv/pull-request-artifacts@v2
-      #   with:
-      #     # Commit hash that triggered PR
-      #     commit: ${{ github.event.pull_request.head.sha }}
-      #     # Token for current repo (used to post PR comment)
-      #     repo-token: ${{ secrets.GITHUB_TOKEN }}
-      #     # Using dedicated branch for artifact uploads
-      #     # See README for details.
-      #     artifacts-branch: artifacts
-      #     # With options below, artifacts will be uploaded to "my_prs/<pr_number>/<artifact_path>".
-      #     artifacts-prefix: "prs/${{ github.event.number }}/"
-      #     preserve-path: true
-      #     # Whitespace-separated list of files to upload
-      #     artifacts: "clonmapper-protocol-pr-${{ github.event.number }}.pdf"

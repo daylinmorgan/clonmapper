@@ -55,4 +55,4 @@ jobs:
           #comment-style: list
 
           # Whitespace-separated list of files to upload
-          artifacts: "clonmapper-protocol-pr-${PR_NUM}.pdf"
+          artifacts: "clonmapper-protocol-pr-${{ github.event.number }}.pdf"

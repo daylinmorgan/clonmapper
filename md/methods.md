@@ -81,6 +81,8 @@
 1. The culture can be pelleted or midi/maxi prepped for usage.
 1. Calculate transformation efficiency from dilution plating.[^8]
 
+<!-- TODO: update the references in the below footnotes if possible -->
+
 [^2]: Always use filtered pipette tips when working with
   DNA to prevent cross-contamination.
 [^3]: A 1X Golden Gate assembly reaction is setup by mixing 25 fmol digested

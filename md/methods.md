@@ -495,7 +495,7 @@ $$\text{MOI [TU/cell] = }\frac{\left( \text{Volume of Virus needed [mL]} \right)
 
 ### Processing Barcode Sequencing Data
 
-See [pycashier](https://github.com/brocklab/pycashier) for more info about
+See [pycashier](https://docs.brocklab.com/pycashier) for more info about
 how to get started processing fastq data to get barcode information.
 
 ## Recall Plasmid Assembly

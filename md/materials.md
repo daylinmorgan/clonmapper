@@ -22,7 +22,7 @@ Disposables
 
 Biologics
 
-1. Electrocompetent *e. coli* suitable for unstable DNA (restriction minus,
+1. Electrocompetent *E. coli* suitable for unstable DNA (restriction minus,
    endonuclease deficient, and recombination deficient)
 1. Cells of interest [^1]
 

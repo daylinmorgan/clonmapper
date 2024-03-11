@@ -61,12 +61,12 @@
 
 1. Clean barcoding library plasmid pool using a DNA clean and
    concentrator kit and elute in 22 $\mu$L warm, nuclease-free water.[^4]
-1. Prepare for *e. coli* electroporation by pre-warming recovery media to room
-   temperature, thawing electrocompetent *e. coli* on ice,
+1. Prepare for *E. coli* electroporation by pre-warming recovery media to room
+   temperature, thawing electrocompetent *E. coli* on ice,
    and pre-chilling 2 mm electroporation cuvettes on ice.[^5]
-1. Aliquot 100 $\mu$L of E.coli into the chilled 0.2 cm electroporation cuvette,
+1. Aliquot 100 $\mu$L of *E.coli* into the chilled 0.2 cm electroporation cuvette,
    add 5 $\mu$L of purified assembled plasmid, and stir with pipet tip.[^6]
-1. Transform e. coli by electroporating with 1 pulse at 2.5 kV.[^7]
+1. Transform *E. coli* by electroporating with 1 pulse at 2.5 kV.[^7]
 1. Add 2 mL Recovery Media and gently pipet up and down immediately after
    electroporation, and transfer to a sterile 50ml conical tube.
 1. Repeat steps 10-12 three times
@@ -108,7 +108,7 @@ The diversity of the initial plasmid pool should be assessed to ensure a
 high diversity library. To do this, PCR is performed with primers containing
 Illumina indices that anneal to regions flanking the barcodes.
 
-1. Midi-prep one tube of transformed e. coli from step [*sgRNA Barcode Library Plasmid Pool Assembly*](#sgrna-barcode-library-plasmid-pool-assembly)
+1. Midi-prep one tube of transformed *E. coli* from step [*sgRNA Barcode Library Plasmid Pool Assembly*](#sgrna-barcode-library-plasmid-pool-assembly)
    according to manufacturer's instructions.
 
 1. Generate the phasing primer mixture 'CM-FWD-S1-PAS' by mixing equimolar amounts

@@ -8,12 +8,19 @@ import sys
 
 PATTERNS = dict(
     citation = (re.compile(
-r"\[@blundell2014;@kebschull2018\]"),'[@blundell2014]^,^[@kebschull2018]'
-) ,
+        r"\[@blundell2014;@kebschull2018\]"),'[@blundell2014]^,^[@kebschull2018]'
+    ),
     pagebreak=(re.compile(r"\\pagebreak"), ""),
     unnumbered=(re.compile(r"{.*\.unnumbered}"), ""),
     comments=(re.compile(r"<!--.*-->"), ""),
     headers=(re.compile(r"^#"), "##"),
+
+    # TODO: DRY
+    # units
+    microliter=(re.compile(r"\\unit\{\\micro\\liter\}"),"µL"),
+    microgram=(re.compile(r"\\unit\{\\micro\\gram\}"),"µg"),
+    micrometer=(re.compile(r"\\unit\{\\micro\\meter\}"),"µm"),
+    micromolar=(re.compile(r"\\unit\{\\micro\\molar\}"),"µM")
 )
 
 

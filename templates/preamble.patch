@@ -1,0 +1,33 @@
+--- templates/default.latex	2024-03-13 13:30:24.776720272 -0500
++++ templates/default.tex	2024-03-13 13:24:04.280772607 -0500
+@@ -494,6 +494,30 @@
+ $endif$
+ $endif$
+ 
++
++% custom preamble
++
++\usepackage{adjustbox}
++\renewcommand{\familydefault}{\sfdefault}
++\usepackage[multiple]{footmisc}
++
++% need for \input{table.tex} to work
++\usepackage{calc} % for calculating minipage widths
++
++\usepackage{datetime2}
++$if(rev)$
++\AddToHook{shipout/foreground}{%
++  \put(1\baselineskip,-\paperheight+1\baselineskip)
++    % {\footnotesize Rev. $rev$ | Updated: \DTMtoday.}
++    {\footnotesize Rev. $rev$ }
++}
++$endif$
++
++\usepackage{siunitx}
++\DeclareSIUnit\molar{M}
++
++% end custom preamble
++
+ \begin{document}
+ $if(has-frontmatter)$
+ \frontmatter

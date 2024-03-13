@@ -129,9 +129,13 @@ clean.docs:
 			docs/docs/pdf/latest/*.pdf
 	@rm -rf docs/site
 
-update-template: .FORCE
+templates/default.tex: templates/preamble.patch
 	pandoc -D latex > templates/default.tex
-	patch -u -b templates/default.tex -i templates/default.patch
+	patch -u -b templates/default.tex -i templates/preamble.patch
+
+templates/preamble.patch:
+	pandoc -D latex > templates/default.latex
+	diff -u templates/default.latex templates/default.tex > templates/preamble.patch || true
 
 .PHONY: .FORCE
 .FORCE:

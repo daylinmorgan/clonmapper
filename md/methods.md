@@ -102,7 +102,7 @@
   calculate the amount of DNA used in \unit{\ug}, and determine your
   dilution factor. With those variable, TE = Colonies/\unit{\ug}/Dilution.
 
-## sgRNA Barcode Sampling
+## ClonMapper Barcode Sampling
 
 The diversity of the initial plasmid pool should be assessed to ensure a
 high diversity library. To do this, PCR is performed with primers containing
@@ -139,8 +139,7 @@ Illumina indices that anneal to regions flanking the barcodes.
     | 5 | 72 | 2 min |
     | 6 | 15 | hold |
 
-1. Clean *stage 1* reaction as described in
-   [sgRNA barcode sampling](#sgrna-barcode-sampling) steps 4-20.
+1. Clean *stage 1* reaction as described in [**Appendix: AmpureXP Bead PCR Cleanup**](#ampurexp-bead-pcr-cleanup).
 1. Prepare *stage 2* PCR reaction to attach index sequences
    and Illumina adapters by mixing the following reagents:
 
@@ -157,48 +156,14 @@ Illumina indices that anneal to regions flanking the barcodes.
 1. Amplify the barcodes by running the 50 \unit{\uL} reaction
    on a thermocycler using the above cycling parameters
    from *stage 1*, repeating steps 2-4 for 10 cycles [^12].
-1. Transfer 50 \unit{\uL} PCR amplification product to a
-   nuclease-free microcentrifuge tube
-1. Allow SPRI beads to come to room temperature.
-1. Add 35 \unit{\uL} (0.7X) paramagnetic SPRI beads and mix
-   well with vortexing or pipetting up and down 10 times.
-1. Incubate at room temperature for 5 minutes.
-1. Place the tube on a magnetic rack and allow solution to clear (5-10 minutes).
-1. While the tube is on the rack transfer the clear supernatant
-   to a new tube without disturbing the bead pellet.
-1. Add 45 \unit{\uL} (1.6-0.7x) paramagnetic SPRI beads to the supernatant
-   from step 10 and mix well with vortexing or pipetting up and down 10 times.
-1. Incubate at room temperature for 5 minutes.
-1. Place the tube on a magnetic rack and allow solution to clear (5-10 minutes).
-1. With the tube still in the rack, aspirate the clear supernatant.
-1. With the tube still in the rack, add 180 \unit{\uL} of 80% ethanol and
-   allow it to sit for 30 seconds.[^13]
-1. With the tube still in the rack, aspirate the ethanol and repeat step 14.
-1. Remove supernatant and allow bead to dry for no **more** than 5 minutes.[^14]
-1. Remove tube from the magnetic rack and elute DNA
-   by adding 42 \unit{\uL} of nuclease-free water.
-1. Incubate at room temperature for 10 minutes.
-1. Transfer tube to magnetic rack and collect 40 \unit{\uL} of purified
-   PCR product after solution has cleared (5-10 minutes).[^15]
-1. Quantify DNA yield with a high sensitivity fluorometry kit
-   ensuring yield between 0.5-10 ng/\unit{\uL}.
-1. Load sample on to BioAnalyzer chip according to the manufacturer's protocol
-   and ensure a clear peak around 225 bp.[^16]
-1. Submit sample for Illumina sequencing.
+
+1. Clean *stage 2* reaction as described in [**Appendix: AmpureXP Bead PCR Cleanup**](#ampurexp-bead-pcr-cleanup).
 
 [^9]: Universal phase amplicon sequencing primers are used to add more
   diversity to the sequencing reads which helps prevents sequencing errors.
 [^11]: Pre-heat thermocycler to 98 °C before adding tubes to heat block.
 [^12]: The number of cycles will depend on the starting template amount.
   A nested PCR reaction may have to be performed to enhance barcode specificity.
-[^13]: 80% ethanol should be prepared fresh for each PCR cleanup.
-[^14]: Do not over dry the beads, this can result in a loss of yield and quality.
-[^15]: Beads may become trapped within the meniscus of the water.
-  Pipetting slowly will keep the beads against the wall of the tube
-  and leave them in the remaining 2 \unit{\uL} of water.
-[^16]: If there are considerable peaks at 120 bp or less,
-  SPRI bead cleanup can be repeated with 1.1X beads to
-  further purify PCR sample, but this will greatly reduce yield.
 
 ## sgRNA Barcoding Lentivirus Production
 
@@ -465,8 +430,9 @@ $$\text{MOI [TU/cell] = }\frac{\left( \text{Volume of Virus needed [mL]} \right)
     | 5 | 72 | 2 min |
     | 6 | 15 | hold |
 
-1. Clean *stage 1* reaction as described in
-   [sgRNA barcode sampling](#sgrna-barcode-sampling) steps 4-20.
+
+1. Clean *stage 1* reaction as described in [**Appendix: AmpureXP Bead PCR Cleanup**](#ampurexp-bead-pcr-cleanup).
+
 1. Prepare *stage 2* PCR reaction to attach index sequences
    and Illumina adapters by mixing the following reagents:
 
@@ -483,8 +449,8 @@ $$\text{MOI [TU/cell] = }\frac{\left( \text{Volume of Virus needed [mL]} \right)
 1. Amplify the barcodes by running the 50 \unit{\uL} reaction
    on a thermocycler using the above cycling parameters
    from *stage 1*, repeating steps 2-4 for 10 cycles. [^12]
-1. Clean *stage 2* reaction as described
-   in [sgRNA Barcode Sampling](#sgrna-barcode-sampling) steps 6-22.
+
+1. Clean *stage 2* reaction as described in [**Appendix: AmpureXP Bead PCR Cleanup**](#ampurexp-bead-pcr-cleanup).
 
 [^49]: It is important to ensure that you have enough cells
   to sufficiently sample your population depending upon the initial barcode diversity.

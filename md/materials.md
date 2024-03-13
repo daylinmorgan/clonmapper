@@ -72,7 +72,7 @@ Other Reagents
 1. OptiMEM^TM^ reduced serum medium
 1. Fetal Bovine Serum (FBS)
 1. Carbenicillin
-1. Solid Phase Reversible Immobilization (SPRI) paramagnetic beads for PCR cleanup
+1. AmpureXP beads for PCR cleanup
 1. 70% molecular biology grade ethanol in nuclease-free water
 1. 10 \unit{\mg\per\mL} hexadimethrine bromide
 1. 0.05% Trypan blue

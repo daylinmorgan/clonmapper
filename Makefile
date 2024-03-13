@@ -28,7 +28,7 @@ FILTERS := \
 	--lua-filter=filters/scholarly-metadata.lua \
 	--lua-filter=filters/author-info-blocks.lua
 
-SHARED_MDs := introduction.md materials.md methods.md
+SHARED_MDs := introduction.md materials.md methods.md appendix.md
 LATEX_MDs := $(addprefix md/,$(SHARED_MDs) latex-tables.md  acknowledgements.md)
 
 HTML_MDs := $(addprefix md/,$(SHARED_MDs) html-tables.md acknowledgements.md)

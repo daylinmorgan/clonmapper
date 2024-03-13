@@ -59,7 +59,7 @@ docs/docs/protocol/html-tables.md: md/html-tables.md
 	@echo "# Tables" > $@
 	@cat $< | scripts/pre-mkdocs-sanitize >> $@
 
-docs/docs/protocol.md: $(HTML_MDs)
+docs/docs/protocol.md: $(HTML_MDs) scripts/pre-mkdocs-sanitize
 	@printf -- '---\nhide:\n  - navigation\n---\n' > $@
 	@cat $(HTML_MDs) | scripts/pre-mkdocs-sanitize >> $@
 

@@ -14,11 +14,11 @@ Equipment
 Disposables
 
 1. Sterile filtered pipette tips
-1. 1.5 mL microcentrifuge tubes (sterile)
-1. 1.8 mL Screw top cryovials (sterile)
-1. 20 mL Luer-tapered syringe (sterile)
-1. 0.45 $\mu$m polyethersulfone (PES) syringe filter
-1. 30,000 molecular weight cutoff (MWCO) PES concentrator capable of processing 20 mL
+1. 1.5 \unit{\mL} microcentrifuge tubes (sterile)
+1. 1.8 \unit{\mL} Screw top cryovials (sterile)
+1. 20 \unit{\mL} Luer-tapered syringe (sterile)
+1. 0.45 \unit{\um} polyethersulfone (PES) syringe filter
+1. 30,000 molecular weight cutoff (MWCO) PES concentrator capable of processing 20 \unit{\uL}
 
 Biologics
 
@@ -43,22 +43,22 @@ Primers
 
 Buffers
 
-1. Buffer 3.1: 100 mM NaCl, 50 mM Tris-HCl,
-   10 mM MgCl~2~, 100 $\mu$g/ml BSA, pH 7.9 at 25°C
+1. Buffer 3.1: 100 \unit{\mM} NaCl, 50 \unit{\mM} Tris-HCl,
+   10 \unit{\mM} MgCl~2~, 100 \unit{\ug\per\mL} BSA, pH 7.9 at 25°C
 2. NEB 5X Q5 Reaction Buffer
 3. 10X T4 PNK Buffer
-4. 10 mM dNTPs
+4. 10 \unit{\mM} dNTPs
 5. 1X Tris-acetate-EDTA (TAE)
-6. FACS Buffer: 5% FBS, 1-5 mM EDTA, 95% Phosphate-Buffered Saline
+6. FACS Buffer: 5% FBS, 1-5 \unit{\mM} EDTA, 95% Phosphate-Buffered Saline
 
 Enzymes
 
-1. BsmBI (10,000 U/mL)
-1. BbsI (10,000 U/mL)
+1. BsmBI (10,000 \unit{U\per\mL})
+1. BbsI (10,000 \unit{U\per\mL})
 1. NEB Q5 polymerase
-1. T4 ligase (400,000 U/mL )
-1. T7 ligase (3,000,000 U/mL)
-1. PNK (10,000 U/mL)
+1. T4 ligase (400,000 \unit{U\per\mL})
+1. T7 ligase (3,000,000 \unit{U\per\mL})
+1. PNK (10,000 \unit{U\per\mL})
 
 Other Reagents
 
@@ -74,7 +74,7 @@ Other Reagents
 1. Carbenicillin
 1. Solid Phase Reversible Immobilization (SPRI) paramagnetic beads for PCR cleanup
 1. 70% molecular biology grade ethanol in nuclease-free water
-1. 10 mg/mL hexadimethrine bromide
+1. 10 \unit{\mg\per\mL} hexadimethrine bromide
 1. 0.05% Trypan blue
 1. Plasmid Midi-Prep Kit
 1. DNA gel purification kit

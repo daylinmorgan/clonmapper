@@ -79,8 +79,8 @@ Disposables
 1. 1.5 mL microcentrifuge tubes (sterile)
 1. 1.8 mL Screw top cryovials (sterile)
 1. 20 mL Luer-tapered syringe (sterile)
-1. 0.45 $\mu$m polyethersulfone (PES) syringe filter
-1. 30,000 molecular weight cutoff (MWCO) PES concentrator capable of processing 20 mL
+1. 0.45 µm polyethersulfone (PES) syringe filter
+1. 30,000 molecular weight cutoff (MWCO) PES concentrator capable of processing 20 µL
 
 Biologics
 
@@ -106,7 +106,7 @@ Primers
 Buffers
 
 1. Buffer 3.1: 100 mM NaCl, 50 mM Tris-HCl,
-   10 mM MgCl~2~, 100 $\mu$g/ml BSA, pH 7.9 at 25°C
+   10 mM MgCl~2~, 100 µg/mL BSA, pH 7.9 at 25°C
 2. NEB 5X Q5 Reaction Buffer
 3. 10X T4 PNK Buffer
 4. 10 mM dNTPs
@@ -115,12 +115,12 @@ Buffers
 
 Enzymes
 
-1. BsmBI (10,000 U/mL)
-1. BbsI (10,000 U/mL)
+1. BsmBI (10,000 TU/mL)
+1. BbsI (10,000 TU/mL)
 1. NEB Q5 polymerase
-1. T4 ligase (400,000 U/mL )
-1. T7 ligase (3,000,000 U/mL)
-1. PNK (10,000 U/mL)
+1. T4 ligase (400,000 TU/mL)
+1. T7 ligase (3,000,000 TU/mL)
+1. PNK (10,000 TU/mL)
 
 Other Reagents
 
@@ -149,7 +149,7 @@ Computational
 1. [Pycashier](https://github.com/brocklab/pycashier)
 ## Methods
 
-### sgRNA Barcode Library Plasmid Pool Assembly
+### ClonMapper Barcode Library Plasmid Pool Assembly
 
 1. Perform a 4X extension reaction to generate the double-stranded
    gRNA insert. Mix the below reagents to create a 50 µL reaction.[^2]
@@ -251,19 +251,20 @@ Computational
   calculate the amount of DNA used in µg, and determine your
   dilution factor. With those variable, TE = Colonies/µg/Dilution.
 
-### SgRNA Barcode Sampling
+### sgRNA Barcode Sampling
 
 The diversity of the initial plasmid pool should be assessed to ensure a
 high diversity library. To do this, PCR is performed with primers containing
 Illumina indices that anneal to regions flanking the barcodes.
 
-1. Midi-prep one tube of transformed *E. coli* from step [*sgRNA Barcode Library Plasmid Pool Assembly*](#sgrna-barcode-library-plasmid-pool-assembly)
+1. Midi-prep one tube of transformed *E. coli* from step
+  [*ClonMapper-Barcode-Library-Plasmid-Pool-Assembly*](#clonmapper-barcode-library-plasmid-pool-assembly)
    according to manufacturer's instructions.
 
 1. Generate the phasing primer mixture 'CM-FWD-S1-PAS' by mixing equimolar amounts
    of CM-FWD-S1-PASx0, CM-FWD-S1-PASx4, CM-FWD-S1-PASx7, and CM-FWD-S1-PASx8.[^9]
 
-1. Prepare **stage 1** PCR reaction to amplify barcodes by mixing the following reagents:
+1. Prepare *stage 1* PCR reaction to amplify barcodes by mixing the following reagents:
 
     | Reagent | volume (µL) |
     |---|---|
@@ -287,9 +288,9 @@ Illumina indices that anneal to regions flanking the barcodes.
     | 5 | 72 | 2 min |
     | 6 | 15 | hold |
 
-1. Clean stage 1 reaction as described in
+1. Clean *stage 1* reaction as described in
    [sgRNA barcode sampling](#sgrna-barcode-sampling) steps 4-20.
-1. Prepare **stage 2** PCR reaction to attach index sequences
+1. Prepare *stage 2* PCR reaction to attach index sequences
    and Illumina adapters by mixing the following reagents:
 
     | Reagent | volume (µL) |
@@ -299,12 +300,12 @@ Illumina indices that anneal to regions flanking the barcodes.
     | CM-FWD-S2-i5 | 2.5 |
     | CM-REV-S2-i7 | 2.5 |
     | Q5 Polymerase | 0.5 |
-    | 4 ng **stage 1** amplicon | variable |
+    | 4 ng *stage 1* amplicon | variable |
     | nuclease-free water | to 50 |
 
 1. Amplify the barcodes by running the 50 µL reaction
    on a thermocycler using the above cycling parameters
-   from **stage 1**, repeating steps 2-4 for 10 cycles [^12].
+   from *stage 1*, repeating steps 2-4 for 10 cycles [^12].
 1. Transfer 50 µL PCR amplification product to a
    nuclease-free microcentrifuge tube
 1. Allow SPRI beads to come to room temperature.
@@ -334,7 +335,6 @@ Illumina indices that anneal to regions flanking the barcodes.
    and ensure a clear peak around 225 bp.[^16]
 1. Submit sample for Illumina sequencing.
 
-
 [^9]: Universal phase amplicon sequencing primers are used to add more
   diversity to the sequencing reads which helps prevents sequencing errors.
 [^11]: Pre-heat thermocycler to 98 °C before adding tubes to heat block.
@@ -349,7 +349,7 @@ Illumina indices that anneal to regions flanking the barcodes.
   SPRI bead cleanup can be repeated with 1.1X beads to
   further purify PCR sample, but this will greatly reduce yield.
 
-### SgRNA Barcoding Lentivirus Production
+### sgRNA Barcoding Lentivirus Production
 
 1. 48 hours before transfection, plate 0.22-0.25 x 10^6^ low-passage HEK-293T
    cells in DMEM supplemented with 10% FBS **without antibiotics** in each well
@@ -552,7 +552,7 @@ See [^28]^,^[^29]
 
 $$\frac{\text{TU}}{\text{mL}}\text{=}\frac{\left(\text{Number of cells at time of transduction} \right)\text{ × }\left( \text{Fraction of Positive Cells} \right)}{\left( \text{Volume of virus }\left\lbrack \text{mL} \right\rbrack \right)}$$
 
-### SgRNA Barcode Transduction
+### sgRNA Barcode Transduction
 
 1. After calculating the viral titer (TU/mL) on your cell line of interest,
   determine the final number of cells you require for your experiment using
@@ -588,8 +588,9 @@ $$\text{MOI [TU/cell] = }\frac{\left( \text{Volume of Virus needed [mL]} \right)
    and collect into cell pellet.[^49]
 1. Isolate genomic DNA from cell pellet using kit
    or standard protocol and proceed to PCR amplification.
-1. Prepare CM-FWD-S1-PAS by creating
-1. Prepare **stage 1** PCR reaction to amplify barcodes by mixing the following reagents[^50]:
+1. Generate the phasing primer mixture 'CM-FWD-S1-PAS' by mixing equimolar amounts
+   of CM-FWD-S1-PASx0, CM-FWD-S1-PASx4, CM-FWD-S1-PASx7, and CM-FWD-S1-PASx8.[^9]
+1. Prepare *stage 1* PCR reaction to amplify barcodes by mixing the following reagents[^50]:
 
     | Reagent | volume (µL) |
     |---|---|
@@ -613,9 +614,9 @@ $$\text{MOI [TU/cell] = }\frac{\left( \text{Volume of Virus needed [mL]} \right)
     | 5 | 72 | 2 min |
     | 6 | 15 | hold |
 
-1. Clean stage 1 reaction as described in
+1. Clean *stage 1* reaction as described in
    [sgRNA barcode sampling](#sgrna-barcode-sampling) steps 4-20.
-1. Prepare **stage 2** PCR reaction to attach index sequences
+1. Prepare *stage 2* PCR reaction to attach index sequences
    and Illumina adapters by mixing the following reagents:
 
     | Reagent | volume (µL) |
@@ -625,13 +626,13 @@ $$\text{MOI [TU/cell] = }\frac{\left( \text{Volume of Virus needed [mL]} \right)
     | CM-FWD-S2-i5 | 2.5 |
     | CM-REV-S2-i7 | 2.5 |
     | Q5 Polymerase | 0.5 |
-    | 4 ng **stage 1** amplicon | variable |
+    | 4 ng *stage 1* amplicon | variable |
     | nuclease-free water | to 50 |
 
 1. Amplify the barcodes by running the 50 µL reaction
    on a thermocycler using the above cycling parameters
-   from **stage 1**, repeating steps 2-4 for 10 cycles. [^12]
-1. Clean stage 2 reaction as described
+   from *stage 1*, repeating steps 2-4 for 10 cycles. [^12]
+1. Clean *stage 2* reaction as described
    in [sgRNA Barcode Sampling](#sgrna-barcode-sampling) steps 6-22.
 
 [^49]: It is important to ensure that you have enough cells
@@ -652,7 +653,7 @@ how to get started processing fastq data to get barcode information.
 
 1. 3 pairs of overlapping oligos containing the barcode sequence of interest
    flanked by overlapping sequences should be ordered according to **Table 1**.[^56]
-1. In separate tubes, mix each of the 100 µm oligo pairs together:
+1. In separate tubes, mix each of the 100 µM oligo pairs together:
 
 - Tube AB: 10 µL Bg-AB-fwd + 10 µL Bg-AB-rev
 - Tube BC: 10 µL Bg-BC-fwd + 10 µL Bg-BC-rev

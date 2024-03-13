@@ -102,7 +102,7 @@
   calculate the amount of DNA used in \unit{\micro\gram}, and determine your
   dilution factor. With those variable, TE = Colonies/\unit{\micro\gram}/Dilution.
 
-## SgRNA Barcode Sampling
+## sgRNA Barcode Sampling
 
 The diversity of the initial plasmid pool should be assessed to ensure a
 high diversity library. To do this, PCR is performed with primers containing
@@ -200,7 +200,7 @@ Illumina indices that anneal to regions flanking the barcodes.
   SPRI bead cleanup can be repeated with 1.1X beads to
   further purify PCR sample, but this will greatly reduce yield.
 
-## SgRNA Barcoding Lentivirus Production
+## sgRNA Barcoding Lentivirus Production
 
 1. 48 hours before transfection, plate 0.22-0.25 x 10^6^ low-passage HEK-293T
    cells in DMEM supplemented with 10% FBS **without antibiotics** in each well
@@ -403,7 +403,7 @@ See [^28]^,^[^29]
 
 $$\frac{\text{TU}}{\text{mL}}\text{=}\frac{\left(\text{Number of cells at time of transduction} \right)\text{ × }\left( \text{Fraction of Positive Cells} \right)}{\left( \text{Volume of virus }\left\lbrack \text{mL} \right\rbrack \right)}$$
 
-## SgRNA Barcode Transduction
+## sgRNA Barcode Transduction
 
 1. After calculating the viral titer (TU/mL) on your cell line of interest,
   determine the final number of cells you require for your experiment using

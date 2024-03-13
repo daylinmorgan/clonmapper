@@ -84,7 +84,7 @@ Disposables
 
 Biologics
 
-1. Electrocompetent *e. coli* suitable for unstable DNA (restriction minus,
+1. Electrocompetent *E. coli* suitable for unstable DNA (restriction minus,
    endonuclease deficient, and recombination deficient)
 1. Cells of interest [^1]
 
@@ -152,14 +152,14 @@ Computational
 ### sgRNA Barcode Library Plasmid Pool Assembly
 
 1. Perform a 4X extension reaction to generate the double-stranded
-   gRNA insert. Mix the below reagents to create a 50 $\mu$L reaction.[^2]
+   gRNA insert. Mix the below reagents to create a 50 µL reaction.[^2]
 
-    | Reagent | volume ($\mu$L) |
+    | Reagent | volume (µL) |
     |---|---|
     | 5X Q5 Reaction Buffer | 10 |
     | 10 mM dNTPs | 1 |
-    | 100 $\mu$M CROPseq-PrimeF-BgL-BsmBI | 2
-    | 100$\mu$M CROPseq-RevExt-BgL-BsmBI | 1
+    | 100 µM CROPseq-PrimeF-BgL-BsmBI | 2
+    | 100 µM CROPseq-RevExt-BgL-BsmBI | 1
     | Q5 Polymerase | 0.5 |
     | nuclease-free water | to 50 |
 
@@ -175,12 +175,12 @@ Computational
     | 5 | 4 | hold |
 
 1. Clean and concentrate double-stranded gRNA insert PCR product
-   and elute in 30 $\mu$L nuclease-free water.
+   and elute in 30 µL nuclease-free water.
    Confirm dsDNA assembly on 2% agarose gel
    by running single stranded DNA against PCR product.
-1. Digest 5-10 $\mu$g of CROPseq vector backbone in a reaction containing
-   20 $\mu$L Digestion Buffer 3.1, 8 $\mu$L BsmBI,
-   and nuclease-free water to 200 $\mu$L for 4 hours at 55°C
+1. Digest 5-10 µg of CROPseq vector backbone in a reaction containing
+   20 µL Digestion Buffer 3.1, 8 µL BsmBI,
+   and nuclease-free water to 200 µL for 4 hours at 55°C
     
 1. Run the digested backbone on a 1-1.5% low melting point agarose gel,
    then follow the instructions on a DNA gel purification kit to extract
@@ -189,7 +189,7 @@ Computational
    at a molar ratio of 10:1 in a 50X Golden Gate assembly reaction
    by mixing the below reagents[^3]:
 
-    | Reagent | volume ($\mu$L) |
+    | Reagent | volume (µL) |
     |---|---|
     | 1.25 pmol linearized backbone | variable |
     | 12.5 pmol gRNA insert | variable |
@@ -209,23 +209,23 @@ Computational
     | 5 | 4 | hold |
 
 1. Clean barcoding library plasmid pool using a DNA clean and
-   concentrator kit and elute in 22 $\mu$L warm, nuclease-free water.[^4]
-1. Prepare for *e. coli* electroporation by pre-warming recovery media to room
-   temperature, thawing electrocompetent *e. coli* on ice,
+   concentrator kit and elute in 22 µL warm, nuclease-free water.[^4]
+1. Prepare for *E. coli* electroporation by pre-warming recovery media to room
+   temperature, thawing electrocompetent *E. coli* on ice,
    and pre-chilling 2 mm electroporation cuvettes on ice.[^5]
-1. Aliquot 100 $\mu$L of E.coli into the chilled 0.2 cm electroporation cuvette,
-   add 5 $\mu$L of purified assembled plasmid, and stir with pipet tip.[^6]
-1. Transform e. coli by electroporating with 1 pulse at 2.5 kV.[^7]
+1. Aliquot 100 µL of *E.coli* into the chilled 0.2 cm electroporation cuvette,
+   add 5 µL of purified assembled plasmid, and stir with pipet tip.[^6]
+1. Transform *E. coli* by electroporating with 1 pulse at 2.5 kV.[^7]
 1. Add 2 mL Recovery Media and gently pipet up and down immediately after
    electroporation, and transfer to a sterile 50ml conical tube.
 1. Repeat steps 10-12 three times
 1. Allow cells to recover for 30 min at 37 °C with shaking at 250 rpm.
-1. Pre-warm 2xYT agar plates with 100 $\mu$g/mL carbenicillin.
+1. Pre-warm 2xYT agar plates with 100 µg/mL carbenicillin.
 1. After recovery, perform dilution plating
    1:10^4^, 1:10^5^, 1:10^6^ on carbenicillin agar plates.
 1. Incubate plates overnight at 37 °C.
 1. Put the remaining transformant mixture into 500 mL 2xYT
-   with 100 $\mu$g/mL carbenicillin in a 2 L flasks.
+   with 100 µg/mL carbenicillin in a 2 L flasks.
 1. Incubate flasks at 30 °C overnight with shaking at 250 rpm.
 1. The culture can be pelleted or midi/maxi prepped for usage.
 1. Calculate transformation efficiency from dilution plating.[^8]
@@ -234,9 +234,9 @@ Computational
   DNA to prevent cross-contamination.
 [^3]: A 1X Golden Gate assembly reaction is setup by mixing 25 fmol digested
   gRNA transfer vector (*from step 3.1.4*), 250 fmol double stranded gRNA
-  barcode DNA (*from step 3.1.1*), 1 $\mu$L T4 ligase buffer,
-  0.5 $\mu$L T7 ligase, 0.5 $\mu$L BsmBI,
-  and nuclease-free water to 10 $\mu$L.
+  barcode DNA (*from step 3.1.1*), 1 µL T4 ligase buffer,
+  0.5 µL T7 ligase, 0.5 µL BsmBI,
+  and nuclease-free water to 10 µL.
 [^4]: Letting the water sit on the column for 3-5 minutes before
   elution increases yield. Re-run elution product through
   column 3 times to maximize yield.
@@ -246,10 +246,10 @@ Computational
 [^7]: Optimal time constants should be between 4.2-5.4 ms. This protocol
   was optimized with the EC2 setting on the Bio-Rad MicroPulser^TM^ Electroporator.
 [^8]: Transformation efficiency (TE) is defined as the number of colonies
-  produced with transformation with 1 $\mu$g of plasmid DNA.
+  produced with transformation with 1 µg of plasmid DNA.
   To calculate TE, count the number of colonies formed on the plate,
-  calculate the amount of DNA used in $\mu$g, and determine your
-  dilution factor. With those variable, TE = Colonies/$\mu$g/Dilution.
+  calculate the amount of DNA used in µg, and determine your
+  dilution factor. With those variable, TE = Colonies/µg/Dilution.
 
 ### SgRNA Barcode Sampling
 
@@ -257,7 +257,7 @@ The diversity of the initial plasmid pool should be assessed to ensure a
 high diversity library. To do this, PCR is performed with primers containing
 Illumina indices that anneal to regions flanking the barcodes.
 
-1. Midi-prep one tube of transformed e. coli from step [*sgRNA Barcode Library Plasmid Pool Assembly*](#sgrna-barcode-library-plasmid-pool-assembly)
+1. Midi-prep one tube of transformed *E. coli* from step [*sgRNA Barcode Library Plasmid Pool Assembly*](#sgrna-barcode-library-plasmid-pool-assembly)
    according to manufacturer's instructions.
 
 1. Generate the phasing primer mixture 'CM-FWD-S1-PAS' by mixing equimolar amounts
@@ -265,7 +265,7 @@ Illumina indices that anneal to regions flanking the barcodes.
 
 1. Prepare **stage 1** PCR reaction to amplify barcodes by mixing the following reagents:
 
-    | Reagent | volume ($\mu$L) |
+    | Reagent | volume (µL) |
     |---|---|
     | 5X Q5 Reaction Buffer | 10 |
     | 10 mM dNTPs | 1 |
@@ -275,7 +275,7 @@ Illumina indices that anneal to regions flanking the barcodes.
     | 100 ng DNA | variable |
     | nuclease-free water | to 50 |
 
-1. Amplify barcodes by running 50 $\mu$L reaction on a thermocycler
+1. Amplify barcodes by running 50 µL reaction on a thermocycler
    using the following settings[^11], repeating steps 2-4 for 8 cycles[^12]:
 
     | Step | Temp (°C) | Time |
@@ -292,7 +292,7 @@ Illumina indices that anneal to regions flanking the barcodes.
 1. Prepare **stage 2** PCR reaction to attach index sequences
    and Illumina adapters by mixing the following reagents:
 
-    | Reagent | volume ($\mu$L) |
+    | Reagent | volume (µL) |
     |---|---|
     | 5X Q5 Reaction Buffer | 10 |
     | 10 mM dNTPs | 1 |
@@ -302,34 +302,34 @@ Illumina indices that anneal to regions flanking the barcodes.
     | 4 ng **stage 1** amplicon | variable |
     | nuclease-free water | to 50 |
 
-1. Amplify the barcodes by running the 50 $\mu$L reaction
+1. Amplify the barcodes by running the 50 µL reaction
    on a thermocycler using the above cycling parameters
    from **stage 1**, repeating steps 2-4 for 10 cycles [^12].
-1. Transfer 50 $\mu$L PCR amplification product to a
+1. Transfer 50 µL PCR amplification product to a
    nuclease-free microcentrifuge tube
 1. Allow SPRI beads to come to room temperature.
-1. Add 35 $\mu$L (0.7X) paramagnetic SPRI beads and mix
+1. Add 35 µL (0.7X) paramagnetic SPRI beads and mix
    well with vortexing or pipetting up and down 10 times.
 1. Incubate at room temperature for 5 minutes.
 1. Place the tube on a magnetic rack and allow solution to clear (5-10 minutes).
 1. While the tube is on the rack transfer the clear supernatant
    to a new tube without disturbing the bead pellet.
-1. Add 45 $\mu$L (1.6-0.7x) paramagnetic SPRI beads to the supernatant
+1. Add 45 µL (1.6-0.7x) paramagnetic SPRI beads to the supernatant
    from step 10 and mix well with vortexing or pipetting up and down 10 times.
 1. Incubate at room temperature for 5 minutes.
 1. Place the tube on a magnetic rack and allow solution to clear (5-10 minutes).
 1. With the tube still in the rack, aspirate the clear supernatant.
-1. With the tube still in the rack, add 180 $\mu$L of 80% ethanol and
+1. With the tube still in the rack, add 180 µL of 80% ethanol and
    allow it to sit for 30 seconds.[^13]
 1. With the tube still in the rack, aspirate the ethanol and repeat step 14.
 1. Remove supernatant and allow bead to dry for no **more** than 5 minutes.[^14]
 1. Remove tube from the magnetic rack and elute DNA
-   by adding 42 $\mu$L of nuclease-free water.
+   by adding 42 µL of nuclease-free water.
 1. Incubate at room temperature for 10 minutes.
-1. Transfer tube to magnetic rack and collect 40 $\mu$L of purified
+1. Transfer tube to magnetic rack and collect 40 µL of purified
    PCR product after solution has cleared (5-10 minutes).[^15]
 1. Quantify DNA yield with a high sensitivity fluorometry kit
-   ensuring yield between 0.5-10 ng/$\mu$L.
+   ensuring yield between 0.5-10 ng/µL.
 1. Load sample on to BioAnalyzer chip according to the manufacturer's protocol
    and ensure a clear peak around 225 bp.[^16]
 1. Submit sample for Illumina sequencing.
@@ -344,7 +344,7 @@ Illumina indices that anneal to regions flanking the barcodes.
 [^14]: Do not over dry the beads, this can result in a loss of yield and quality.
 [^15]: Beads may become trapped within the meniscus of the water.
   Pipetting slowly will keep the beads against the wall of the tube
-  and leave them in the remaining 2 $\mu$L of water.
+  and leave them in the remaining 2 µL of water.
 [^16]: If there are considerable peaks at 120 bp or less,
   SPRI bead cleanup can be repeated with 1.1X beads to
   further purify PCR sample, but this will greatly reduce yield.
@@ -361,16 +361,16 @@ Illumina indices that anneal to regions flanking the barcodes.
 1. In the afternoon, warm Opti-MEM^TM^, Lipofectamine^TM^ 2000,
    and VSV-G, psPAX, and sgRNA barcoding plasmid to room temperature.[^17]^,^[^18]
 1. Per well of a 6 well plate,
-   prepare "Tube A" containing 150 $\mu$L Opti-MEM^TM^
-   and 9 $\mu$L Lipofectamine^TM^ 2000.[^19]
+   prepare "Tube A" containing 150 µL Opti-MEM^TM^
+   and 9 µL Lipofectamine^TM^ 2000.[^19]
 1. Incubate "Tube A" at room temperature for 5 minutes.
 1. Per well of a 6 well plate,
-   prepare "Tube B" containing 150 $\mu$L Opti-MEM^TM^,
-   1.5 $\mu$g psPax, 0.4 $\mu$g VSV-G, 3-5 $\mu$g sgRNA barcoding plasmid.
+   prepare "Tube B" containing 150 µL Opti-MEM^TM^,
+   1.5 µg psPax, 0.4 µg VSV-G, 3-5 µg sgRNA barcoding plasmid.
 1. Slowly add "Tube B" dropwise to "Tube A" and
    carefully mix by gently inverting 10 times
 1. Incubate at room temperature for 20 minutes.
-1. Add 300 $\mu$L of the transfection mix slowly
+1. Add 300 µL of the transfection mix slowly
    and dropwise to each well of HEK-293T cells.
 1. 16-18 hours post-transfection, carefully remove and dispose of media
    containing Lipofectamine^TM^ 2000 complexes and slowly replenish with
@@ -379,15 +379,15 @@ Illumina indices that anneal to regions flanking the barcodes.
    and store in a 50 mL conical tube at 4 °C.[^22]^,^[^23]^,^[^24]
 1. Spin down collected viral containing supernatant at 500 x g
    for 10 min at 4 °C to remove residual HEK-293T cells.
-1. Remove plunger from 20 mL syringe and attach to a 0.45 $\mu$m PES syringe filter.
+1. Remove plunger from 20 mL syringe and attach to a 0.45 µm PES syringe filter.
 1. Transfer viral supernatant to the 20 mL syringe.
-1. Filter viral supernatant through 0.45 $\mu$m PES syringe filter
+1. Filter viral supernatant through 0.45 µm PES syringe filter
    into a fresh 50 mL conical tube to remove any remaining cell debris.
 1. Concentrate virus ~20X in 30,000 MWCO PES ultrafiltration centrifugal
    concentrator by loading 20 mL of filtered viral supernatant into
    concentrator chamber and spinning at 4000 x g for 60-75 minutes
    at 4 °C until ~1 mL of media remains in filter.[^25]
-1. Aliquot 25-50 $\mu$L of concentrated virus in
+1. Aliquot 25-50 µL of concentrated virus in
    threaded cryovials and store at -80 °C.[^26]^,^[^27]
 
 [^17]: Lentivirus can promiscuously infect cells, including your skin!
@@ -439,9 +439,9 @@ See [^28]^,^[^29]
    hemocytometer to know approximate number of live cells at
    time of transduction.[^31]^,^[^32]
 1. Create stock of media containing your cells' standard growth medium
-   supplemented with 20% FBS containing 0-10 $\mu$g/mL hexadimethrine
-   bromide (1:1000 dilution from hexadimethrine bromide stock to get 10 $\mu$g/mL).[^33]
-1. Place 600 $\mu$L of hexadimethrine bromide containing medium
+   supplemented with 20% FBS containing 0-10 µg/mL hexadimethrine
+   bromide (1:1000 dilution from hexadimethrine bromide stock to get 10 µg/mL).[^33]
+1. Place 600 µL of hexadimethrine bromide containing medium
    into separate microcentrifuge tubes.
 1. Add virus in increasing amounts to each tube.
 1. Replace media on cells of interest with virus and
@@ -471,18 +471,18 @@ See [^28]^,^[^29]
 [^31]: It is very important to know the number of cells at the time
   of transduction. This number is used to calculate viral titer.
 [^32]: Trypan blue exclusion is performed by mixing equal parts 0.05%
-  Trypan blue with your cell suspension, usually 10 $\mu$L of each,
-  then load 10 $\mu$L of the stained suspension into the hemocytometer.
+  Trypan blue with your cell suspension, usually 10 µL of each,
+  then load 10 µL of the stained suspension into the hemocytometer.
 [^33]: Hexadimethrine bromide is a cationic solution that assists
   in viral adsorption to cells [@davis2002].
   Hexadimethrine bromide can be toxic to some cells.
   Hexadimethrine bromide sensitivity should be assessed via serial dilution
   to determine maximum tolerable hexadimethrine bromide dose before
-  determining viral titer. Most cells respond well to 6-8 $\mu$g/mL
+  determining viral titer. Most cells respond well to 6-8 µg/mL
   hexadimethrine bromide.
 [^34]: Ensure one well is kept uninfected as a negative control.
-  A range of 0.5-200 $\mu$L is usually sufficient to find viral titer,
-  e.g. 0, 0.5, 1, 5, 10, 25, 50, 100, 150, 200 $\mu$L.
+  A range of 0.5-200 µL is usually sufficient to find viral titer,
+  e.g. 0, 0.5, 1, 5, 10, 25, 50, 100, 150, 200 µL.
 [^35]: Lentiviral exposure time will vary across cell type dependent
   on growth dynamics and properties intrinsic to the cells.
   Optimize lentiviral exposure time with constitutively active
@@ -500,11 +500,11 @@ See [^28]^,^[^29]
 
 1. Count your cells of interest using a hemocytometer.
 1. Create stock of media containing your cells' standard growth medium
-  supplemented with 20% FBS containing 0-10 $\mu$g/mL hexadimethrine bromide
-  (1:1000 dilution from hexadimethrine bromide stock for 10 $\mu$g/mL).[^33]
+  supplemented with 20% FBS containing 0-10 µg/mL hexadimethrine bromide
+  (1:1000 dilution from hexadimethrine bromide stock for 10 µg/mL).[^33]
 1. Resuspend 1.20 x 10^6^ cells in 7.2 mL of containing hexadimethrine bromide
-   media such that the final solution contains 1 x 10^5^ cells in 600 $\mu$L.
-1. Plate 600 $\mu$L of cell solution in 10 wells
+   media such that the final solution contains 1 x 10^5^ cells in 600 µL.
+1. Plate 600 µL of cell solution in 10 wells
    of a tissue culture treated 12-well plate
 1. Add virus in increasing amounts to each well and mix well.[^34]
 1. Incubate for 16 hrs at 37 °C.[^35]^,^[^36]
@@ -526,7 +526,7 @@ See [^28]^,^[^29]
 
 #### Flow Cytometry to Determine Viral Titer
 
-1. Pass cells resuspended in FACS buffer through a 35 $\mu$m nylon mesh strainer
+1. Pass cells resuspended in FACS buffer through a 35 µm nylon mesh strainer
    into a 5 mL flow cytometry test tube.[^42]
 1. Use control samples to set laser voltages on FSC-A, SSC-A,
    and BFP such that nearly all cells are seen within FSC-A vs. SSC-A plot and
@@ -546,7 +546,7 @@ See [^28]^,^[^29]
   of the negative control cells are captured in the negative gate.
 [^44]: Plot will appear logarithmic. Only values within the linear region
   of the plot should be used to calculate viral titer (usually between 10-40% BFP-positive).
-[^45]: Example: If 5 $\mu$L of virus added to 100,000 cells resulted
+[^45]: Example: If 5 µL of virus added to 100,000 cells resulted
   in 30% BFP-positive cells within the linear region of the titer curve,
   then the viral titer would be (100,000 x 0.30) / (0.005 mL) = 6.0 x 10^6^ TU/mL
 
@@ -570,7 +570,7 @@ $$\text{MOI [TU/cell] = }\frac{\left( \text{Volume of Virus needed [mL]} \right)
 
 [^46]: Example: If your viral titer was 6.0 x 10^6^ TU/mL and you wanted
   to infect 3.0 x 10^6^ cells at an MOI of 0.1, you would need to subject
-  the 3.0 x 10^6^ cells to 50 $\mu$L of virus.
+  the 3.0 x 10^6^ cells to 50 µL of virus.
 [^47]: A low MOI of 0.1 or below helps prevent occurrence
   of multiple barcode integrations. In order to uniquely recall cell lineages
   it is important to maximize the probability that there is one or zero barcodes
@@ -591,17 +591,17 @@ $$\text{MOI [TU/cell] = }\frac{\left( \text{Volume of Virus needed [mL]} \right)
 1. Prepare CM-FWD-S1-PAS by creating
 1. Prepare **stage 1** PCR reaction to amplify barcodes by mixing the following reagents[^50]:
 
-    | Reagent | volume ($\mu$L) |
+    | Reagent | volume (µL) |
     |---|---|
     | 5X Q5 Reaction Buffer | 10 |
     | 10 mM dNTPs | 1 |
     | CM-FWD-S1-PAS | 2.5 |
     | CM-REV-S1 | 2.5 |
     | Q5 Polymerase | 0.5 |
-    | 2 $\mu$g DNA | variable |
+    | 2 µg DNA | variable |
     | nuclease-free water | to 50 |
 
-1. Amplify barcodes by running 50 $\mu$L reaction on a thermocycler
+1. Amplify barcodes by running 50 µL reaction on a thermocycler
    using the following setting[^11], repeating steps 2-4 for 20 cycles[^12]:
 
     | Step | Temp (°C) | Time |
@@ -618,7 +618,7 @@ $$\text{MOI [TU/cell] = }\frac{\left( \text{Volume of Virus needed [mL]} \right)
 1. Prepare **stage 2** PCR reaction to attach index sequences
    and Illumina adapters by mixing the following reagents:
 
-    | Reagent | volume ($\mu$L) |
+    | Reagent | volume (µL) |
     |---|---|
     | 5X Q5 Reaction Buffer | 10 |
     | 10 mM dNTPs | 1 |
@@ -628,7 +628,7 @@ $$\text{MOI [TU/cell] = }\frac{\left( \text{Volume of Virus needed [mL]} \right)
     | 4 ng **stage 1** amplicon | variable |
     | nuclease-free water | to 50 |
 
-1. Amplify the barcodes by running the 50 $\mu$L reaction
+1. Amplify the barcodes by running the 50 µL reaction
    on a thermocycler using the above cycling parameters
    from **stage 1**, repeating steps 2-4 for 10 cycles. [^12]
 1. Clean stage 2 reaction as described
@@ -638,9 +638,9 @@ $$\text{MOI [TU/cell] = }\frac{\left( \text{Volume of Virus needed [mL]} \right)
   to sufficiently sample your population depending upon the initial barcode diversity.
 [^50]: DNA amount used will be dependent on the nature
   of the cell population and desired sampling depth.
-  To capture rare events, a maximum of 2 $\mu$g of DNA per reaction can be used
+  To capture rare events, a maximum of 2 µg of DNA per reaction can be used
   and multiple reactions can be done. Given that a single diploid human genome
-  is estimated at ~6.6 pg, 2 $\mu$g of genomic DNA represents that of ~300,000 cells.
+  is estimated at ~6.6 pg, 2 µg of genomic DNA represents that of ~300,000 cells.
   To capture only highly represented clonal populations, less DNA can be used.
 
 #### Processing Barcode Sequencing Data
@@ -652,18 +652,18 @@ how to get started processing fastq data to get barcode information.
 
 1. 3 pairs of overlapping oligos containing the barcode sequence of interest
    flanked by overlapping sequences should be ordered according to **Table 1**.[^56]
-1. In separate tubes, mix each of the 100 $\mu$M oligo pairs together:
+1. In separate tubes, mix each of the 100 µm oligo pairs together:
 
-- Tube AB: 10 $\mu$L Bg-AB-fwd + 10 $\mu$L Bg-AB-rev
-- Tube BC: 10 $\mu$L Bg-BC-fwd + 10 $\mu$L Bg-BC-rev
-- Tube CD: 10 $\mu$L Bg-CD-fwd + 10 $\mu$L Bg-CD-rev
+- Tube AB: 10 µL Bg-AB-fwd + 10 µL Bg-AB-rev
+- Tube BC: 10 µL Bg-BC-fwd + 10 µL Bg-BC-rev
+- Tube CD: 10 µL Bg-CD-fwd + 10 µL Bg-CD-rev
 
 3. Heat each to 80 °C and let cool to create DNA blocks containing a barcode,
    a PAM site, and overhang sequences.[^57]
 1. Ligate DNA blocks together creating the barcode array
    by mixing the following reagents: 
 
-    | Reagent | volume ($\mu$L) |
+    | Reagent | volume (µL) |
     |---|---|
     | Tube "AB" | 10 |
     | Tube "BC" | 10 |
@@ -674,15 +674,15 @@ how to get started processing fastq data to get barcode information.
     | nuclease-free water | 9 |
 
 1. Incubate at 37 °C for 45 minutes.
-1. Add 2 $\mu$L T7 DNA ligase to the 50 $\mu$L mixture
+1. Add 2 µL T7 DNA ligase to the 50 µL mixture
    and incubate at room temperature overnight.
 1. Run ligation product in a 2% agarose gel
    and gel purify band from approximately 170 bp.
 
 1. Ligate the barcode array into the recall plasmid backbone at a molar ratio
    of 10:1 in a Golden Gate assembly reaction by mixing 25 fmol Recall-miniCMV-sfGFP,
-   250 fmol assembled barcode array, 1 $\mu$L T4 ligase buffer,
-   0.5 $\mu$L T7 ligase, 0.5 $\mu$L BbsI, and nuclease-free water to 10 $\mu$L.
+   250 fmol assembled barcode array, 1 µL T4 ligase buffer,
+   0.5 µL T7 ligase, 0.5 µL BbsI, and nuclease-free water to 10 µL.
 
 1. Run the Golden Gate assembly reaction on a thermocycler
    using the following settings, repeating steps 1-2 for 35 cycles:
@@ -715,17 +715,17 @@ See [^59]^,^[^60]
    of interest in growth medium in a 6-well plate such that
    it is near 60-80% confluent at time of transfection.
 1. Per well of a 6 well plate,
-   prepare "Tube A" containing 100 $\mu$L Opti-MEM^TM^
-   and 9 $\mu$L Lipofectamine^TM^ 3000.[^19]
+   prepare "Tube A" containing 100 µL Opti-MEM^TM^
+   and 9 µL Lipofectamine^TM^ 3000.[^19]
 1. Incubate "Tube A" at room temperature for 5 minutes.
 1. Per well of a 6 well plate,
-   prepare "Tube B" containing 125 $\mu$L Opti-MEM^TM^,
+   prepare "Tube B" containing 125 µL Opti-MEM^TM^,
    225 ng Recall plasmid (*from Section 3.8*),
-   275 ng dCas9-VPR plasmid and 2 $\mu$L$\mu$g DNA of p3000.
+   275 ng dCas9-VPR plasmid and 2 µLµg DNA of p3000.
 1. Slowly add "Tube B" dropwise to "Tube A"
    and carefully mix by gently inverting 10 times.
 1. Incubate at room temperature for 20 minutes.
-1. Add 225 $\mu$L of the transfection mix slowly
+1. Add 225 µL of the transfection mix slowly
    and dropwise to each well of adherent cells.
 1. 16-18 hours post-transfection,
    carefully remove media containing Lipofectamine^TM^ 3000/DNA complexes
@@ -733,7 +733,7 @@ See [^59]^,^[^60]
 1. 48-72 hours post-transfection, dissociate cells from the plate
    and wash cells with PBS twice at 300 x g for 5 minutes at 4 °C before
    resuspending in chilled FACS buffer.[^38]
-1. Pass cells resuspended in FACS buffer through a 35 $\mu$m nylon mesh strainer
+1. Pass cells resuspended in FACS buffer through a 35 µm nylon mesh strainer
    into a 5 mL flow cytometry test tube and keep on ice.
 1. Use control samples to set laser voltages on FSC-A, SSC-A, BFP, and GFP
    on FACS sorter such that nearly all cells are seen within FSC-A vs.
@@ -752,7 +752,7 @@ See [^59]^,^[^60]
   for maximized plasmid expression and minimized cell death before
   recall electroporation. If electroporating, total plasmid load
   per cell may vary by cell type. Example: CD8 T cells respond well
-  to 2.5 $\mu$g of each plasmid (5 $\mu$g total DNA load) per 5 x 10^5^ cells.
+  to 2.5 µg of each plasmid (5 µg total DNA load) per 5 x 10^5^ cells.
 [^61]: Ensure proper controls for flow.
   Minimally have a positive control singularly positive for BFP,
   a positive control singularly positive for GFP,

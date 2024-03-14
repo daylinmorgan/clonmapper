@@ -7,42 +7,66 @@ import re
 import sys
 
 
+def replace_unit_exact(unit):
+    return unit_re("\\" + unit), unit
+
+
+def unit_re(unit):
+    return re.compile(r"\\unit\{" + re.escape(unit) + r"\}")
+
+
 REPLACE_PATTERNS = (
     (
-        re.compile(r"\[@blundell2014;@kebschull2018\]"),
-        "[@blundell2014]^,^[@kebschull2018]",
-    ),
-    (re.compile(r"^#"), "##"),
-) + tuple(
-    (re.compile(r"\\unit\{" + re.escape(unit) + r"\}"), replacement)
-    for unit, replacement in (
-        ("\\mL", "mL"),
-        ("\\mM", "mM"),
-        ("\\uL", "µL"),
-        ("\\ug", "µg"),
-        ("\\ul\\per\\ug", "µL/µg"),
-        ("\\ul\\per\\mL", "µL/mL"),
-        ("\\ug\\per\\mL", "µg/mL"),
-        ("\\mg", "µg"),
-        ("\\um", "µm"),
-        ("\\uM", "µM"),
-        ("\\fmol", "fmol"),
-        ("TU\\per\\mL", "TU/mL"),
-        ("U\\per\\mL", "TU/mL"),
-        ("\\mg\\per\\mL", "mg/mL"),
+        (
+            re.compile(r"\[@blundell2014;@kebschull2018\]"),
+            "[@blundell2014]^,^[@kebschull2018]",
+        ),
+        (re.compile(r"^#"), "##"),
     )
-) + tuple(
-    (re.compile(r"\\hyperref\[" + re.escape(ref) + r"\]\{\\textbf\{" + re.escape(label) + r"\}\}"), f"[{label}](#{label.replace(' ','-').lower()})")
-    for ref, label in (
+    + tuple(
+        (unit_re(unit), replacement)
+        for unit, replacement in (
+            ("\\uL", "µL"),
+            ("\\ug", "µg"),
+            ("\\uL\\per\\ug", "µL/µg"),
+            ("\\ug\\per\\mL", "µg/mL"),
+            ("\\um", "µm"),
+            ("\\uM", "µM"),
+            ("TU\\per\\mL", "TU/mL"),
+            ("U\\per\\mL", "TU/mL"),
+            ("\\mg\\per\\mL", "mg/mL"),
+        )
+    )
+    + tuple(
+        replace_unit_exact(unit)
+        for unit in (
+            "kV",
+            "ms",
+            "L",
+            "cm",
+            "mm",
+            "mL",
+            "mM",
+            "fmol",
+        )
+    )
+    + tuple(
+        (
+            re.compile(
+                r"\\hyperref\["
+                + re.escape(ref)
+                + r"\]\{\\textbf\{"
+                + re.escape(label)
+                + r"\}\}"
+            ),
+            f"[{label}](#{label.replace(' ','-').lower()})",
+        )
+        for ref, label in (
             ("tab:oligos", "Oligonucleotides"),
-            ("tab:reagents", "Recommended Reagents")
+            ("tab:reagents", "Recommended Reagents"),
+        )
     )
-    )
-
-# *see* \hyperref[tab:oligos]{\textbf{Oligonucleotides}}
-
-
-
+)
 
 DROP_PATTERNS = (
     re.compile(r"\\pagebreak"),

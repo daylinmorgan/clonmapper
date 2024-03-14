@@ -50,7 +50,7 @@ of clonal populations may be resolved by scRNA-seq. Once a barcode of interest
 is identified from NGS or scRNA-seq, the barcode identifier can be exploited
 for isolation of the clone.
 This is achieved by transfecting the cell population with a plasmid containing
-an activator variant of Cas9 (dCas9-VPR) and a second plasmid containing the
+an activator variant of Cas9, dCas9-VPR, and a second plasmid containing the
 Cas9-homing PAM sites adjacent to the identified barcode upstream of a super-folding green
 fluorescent protein (sfGFP) reporter.
 Expression of sfGFP will occur only in cells that are producing the matching

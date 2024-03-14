@@ -109,7 +109,7 @@ high diversity library. To do this, PCR is performed with primers containing
 Illumina indices that anneal to regions flanking the barcodes.
 
 1. Midi-prep one tube of transformed *E. coli* from step
-  [*ClonMapper-Barcode-Library-Plasmid-Pool-Assembly*](#clonmapper-barcode-library-plasmid-pool-assembly)
+   [*ClonMapper Barcode Plasmid Library Assembly*](#clonmapper-barcode-plasmid-library-assembly)
    according to manufacturer's instructions.
 
 1. Generate the phasing primer mixture 'CM-FWD-S1-PAS' by mixing equimolar amounts

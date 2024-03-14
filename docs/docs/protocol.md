@@ -134,7 +134,7 @@ Other Reagents
 1. OptiMEM^TM^ reduced serum medium
 1. Fetal Bovine Serum (FBS)
 1. Carbenicillin
-1. Solid Phase Reversible Immobilization (SPRI) paramagnetic beads for PCR cleanup
+1. AmpureXP beads for PCR cleanup
 1. 70% molecular biology grade ethanol in nuclease-free water
 1. 10 mg/mL hexadimethrine bromide
 1. 0.05% Trypan blue
@@ -149,7 +149,7 @@ Computational
 1. [Pycashier](https://github.com/brocklab/pycashier)
 ## Methods
 
-### ClonMapper Barcode Library Plasmid Pool Assembly
+### ClonMapper Barcode Plasmid Library Assembly
 
 1. Perform a 4X extension reaction to generate the double-stranded
    gRNA insert. Mix the below reagents to create a 50 µL reaction.[^2]
@@ -251,14 +251,14 @@ Computational
   calculate the amount of DNA used in µg, and determine your
   dilution factor. With those variable, TE = Colonies/µg/Dilution.
 
-### sgRNA Barcode Sampling
+### ClonMapper Barcode Sampling
 
 The diversity of the initial plasmid pool should be assessed to ensure a
 high diversity library. To do this, PCR is performed with primers containing
 Illumina indices that anneal to regions flanking the barcodes.
 
 1. Midi-prep one tube of transformed *E. coli* from step
-  [*ClonMapper-Barcode-Library-Plasmid-Pool-Assembly*](#clonmapper-barcode-library-plasmid-pool-assembly)
+   [*ClonMapper Barcode Plasmid Library Assembly*](#clonmapper-barcode-plasmid-library-assembly)
    according to manufacturer's instructions.
 
 1. Generate the phasing primer mixture 'CM-FWD-S1-PAS' by mixing equimolar amounts
@@ -288,8 +288,7 @@ Illumina indices that anneal to regions flanking the barcodes.
     | 5 | 72 | 2 min |
     | 6 | 15 | hold |
 
-1. Clean *stage 1* reaction as described in
-   [sgRNA barcode sampling](#sgrna-barcode-sampling) steps 4-20.
+1. Clean *stage 1* reaction as described in [**Appendix: AmpureXP Bead PCR Cleanup**](#ampurexp-bead-pcr-cleanup).
 1. Prepare *stage 2* PCR reaction to attach index sequences
    and Illumina adapters by mixing the following reagents:
 
@@ -306,50 +305,16 @@ Illumina indices that anneal to regions flanking the barcodes.
 1. Amplify the barcodes by running the 50 µL reaction
    on a thermocycler using the above cycling parameters
    from *stage 1*, repeating steps 2-4 for 10 cycles [^12].
-1. Transfer 50 µL PCR amplification product to a
-   nuclease-free microcentrifuge tube
-1. Allow SPRI beads to come to room temperature.
-1. Add 35 µL (0.7X) paramagnetic SPRI beads and mix
-   well with vortexing or pipetting up and down 10 times.
-1. Incubate at room temperature for 5 minutes.
-1. Place the tube on a magnetic rack and allow solution to clear (5-10 minutes).
-1. While the tube is on the rack transfer the clear supernatant
-   to a new tube without disturbing the bead pellet.
-1. Add 45 µL (1.6-0.7x) paramagnetic SPRI beads to the supernatant
-   from step 10 and mix well with vortexing or pipetting up and down 10 times.
-1. Incubate at room temperature for 5 minutes.
-1. Place the tube on a magnetic rack and allow solution to clear (5-10 minutes).
-1. With the tube still in the rack, aspirate the clear supernatant.
-1. With the tube still in the rack, add 180 µL of 80% ethanol and
-   allow it to sit for 30 seconds.[^13]
-1. With the tube still in the rack, aspirate the ethanol and repeat step 14.
-1. Remove supernatant and allow bead to dry for no **more** than 5 minutes.[^14]
-1. Remove tube from the magnetic rack and elute DNA
-   by adding 42 µL of nuclease-free water.
-1. Incubate at room temperature for 10 minutes.
-1. Transfer tube to magnetic rack and collect 40 µL of purified
-   PCR product after solution has cleared (5-10 minutes).[^15]
-1. Quantify DNA yield with a high sensitivity fluorometry kit
-   ensuring yield between 0.5-10 ng/µL.
-1. Load sample on to BioAnalyzer chip according to the manufacturer's protocol
-   and ensure a clear peak around 225 bp.[^16]
-1. Submit sample for Illumina sequencing.
+
+1. Clean *stage 2* reaction as described in [**Appendix: AmpureXP Bead PCR Cleanup**](#ampurexp-bead-pcr-cleanup).
 
 [^9]: Universal phase amplicon sequencing primers are used to add more
   diversity to the sequencing reads which helps prevents sequencing errors.
 [^11]: Pre-heat thermocycler to 98 °C before adding tubes to heat block.
 [^12]: The number of cycles will depend on the starting template amount.
   A nested PCR reaction may have to be performed to enhance barcode specificity.
-[^13]: 80% ethanol should be prepared fresh for each PCR cleanup.
-[^14]: Do not over dry the beads, this can result in a loss of yield and quality.
-[^15]: Beads may become trapped within the meniscus of the water.
-  Pipetting slowly will keep the beads against the wall of the tube
-  and leave them in the remaining 2 µL of water.
-[^16]: If there are considerable peaks at 120 bp or less,
-  SPRI bead cleanup can be repeated with 1.1X beads to
-  further purify PCR sample, but this will greatly reduce yield.
 
-### sgRNA Barcoding Lentivirus Production
+### ClonMapper Lentivirus Production
 
 1. 48 hours before transfection, plate 0.22-0.25 x 10^6^ low-passage HEK-293T
    cells in DMEM supplemented with 10% FBS **without antibiotics** in each well
@@ -580,7 +545,7 @@ $$\text{MOI [TU/cell] = }\frac{\left( \text{Volume of Virus needed [mL]} \right)
   for titer determination. Ensure that 0% of negative control samples appear in the sorting gate.
 
 
-### Targeted sgRNA Barcode Sampling of Cells
+### ClonMapper Barcode Sampling of Cells
 
 #### Preparing Samples for Sequencing
 
@@ -614,8 +579,9 @@ $$\text{MOI [TU/cell] = }\frac{\left( \text{Volume of Virus needed [mL]} \right)
     | 5 | 72 | 2 min |
     | 6 | 15 | hold |
 
-1. Clean *stage 1* reaction as described in
-   [sgRNA barcode sampling](#sgrna-barcode-sampling) steps 4-20.
+
+1. Clean *stage 1* reaction as described in [**Appendix: AmpureXP Bead PCR Cleanup**](#ampurexp-bead-pcr-cleanup).
+
 1. Prepare *stage 2* PCR reaction to attach index sequences
    and Illumina adapters by mixing the following reagents:
 
@@ -632,8 +598,8 @@ $$\text{MOI [TU/cell] = }\frac{\left( \text{Volume of Virus needed [mL]} \right)
 1. Amplify the barcodes by running the 50 µL reaction
    on a thermocycler using the above cycling parameters
    from *stage 1*, repeating steps 2-4 for 10 cycles. [^12]
-1. Clean *stage 2* reaction as described
-   in [sgRNA Barcode Sampling](#sgrna-barcode-sampling) steps 6-22.
+
+1. Clean *stage 2* reaction as described in [**Appendix: AmpureXP Bead PCR Cleanup**](#ampurexp-bead-pcr-cleanup).
 
 [^49]: It is important to ensure that you have enough cells
   to sufficiently sample your population depending upon the initial barcode diversity.
@@ -661,8 +627,8 @@ how to get started processing fastq data to get barcode information.
 
 3. Heat each to 80 °C and let cool to create DNA blocks containing a barcode,
    a PAM site, and overhang sequences.[^57]
-1. Ligate DNA blocks together creating the barcode array
-   by mixing the following reagents: 
+1. Ligate DNA blocks together creating the **3X-barcode array**
+   by mixing the following reagents:
 
     | Reagent | volume (µL) |
     |---|---|
@@ -680,10 +646,19 @@ how to get started processing fastq data to get barcode information.
 1. Run ligation product in a 2% agarose gel
    and gel purify band from approximately 170 bp.
 
-1. Ligate the barcode array into the recall plasmid backbone at a molar ratio
-   of 10:1 in a Golden Gate assembly reaction by mixing 25 fmol Recall-miniCMV-sfGFP,
-   250 fmol assembled barcode array, 1 µL T4 ligase buffer,
-   0.5 µL T7 ligase, 0.5 µL BbsI, and nuclease-free water to 10 µL.
+
+1. Ligate the **3X-barcode-array** into the recall plasmid backbone at a molar ratio
+   of 10:1 in a Golden Gate assembly reaction by mixing the following reagents:
+
+    | Reagent | volume (µL) |
+    |---|---|
+    | Recall-miniCMV-sfGFP | 25 fmol |
+    | **3X-barcode-array** | 250 fmol |
+    | T4 ligase buffer | 1 µL |
+    | T7 ligase | 0.5 µL |
+    | BbsI | 0.5 µL |
+    | nuclease-free water | to 10 µL |
+
 
 1. Run the Golden Gate assembly reaction on a thermocycler
    using the following settings, repeating steps 1-2 for 35 cycles:
@@ -701,6 +676,8 @@ how to get started processing fastq data to get barcode information.
    for standard protocol.
 1. Verify insertion of barcode array
    into Recall-miniCMV-sfGFP backbone via Sanger sequencing.
+
+
 
 [^56]: The barcode sequence should be ordered to match
   the extracted barcode for the fragments labeled as 'extraction'
@@ -764,28 +741,69 @@ See [^59]^,^[^60]
 
 
 
+## Appendix
+
+### AmpureXP Bead PCR Cleanup
+
+<!-- TODO: write info section here
+  If there are considerable peaks at 120 bp or less,
+  SPRI bead cleanup can be repeated with 1.1X beads to
+  further purify PCR sample, but this will greatly reduce yield.
+-->
+
+1. Transfer 50 µL PCR amplification product to a
+   nuclease-free microcentrifuge tube
+1. Allow AmpureXP beads to come to room temperature.
+1. Add 35 µL (0.7X) AmpureXP beads and mix
+   well with vortexing or pipetting up and down 10 times.
+1. Incubate at room temperature for 5 minutes.
+1. Place the tube on a magnetic rack and allow solution to clear (5-10 minutes).
+1. While the tube is on the rack transfer the clear supernatant
+   to a new tube without disturbing the bead pellet.
+1. Add 45 µL (1.6-0.7x) AmpureXP beads to the supernatant
+   from step 10 and mix well with vortexing or pipetting up and down 10 times.
+1. Incubate at room temperature for 5 minutes.
+1. Place the tube on a magnetic rack and allow solution to clear (5-10 minutes).
+1. With the tube still in the rack, aspirate the clear supernatant.
+1. With the tube still in the rack, add 180 µL of 80% ethanol and
+   allow it to sit for 30 seconds.[^cleanup-1]
+1. With the tube still in the rack, aspirate the ethanol and repeat step 14.
+1. Remove supernatant and allow bead to dry for no **more** than 5 minutes.[^cleanup-2]
+1. Remove tube from the magnetic rack and elute DNA
+   by adding 42 µL of nuclease-free water.
+1. Incubate at room temperature for 10 minutes.
+1. Transfer tube to magnetic rack and collect 40 µL of purified
+   PCR product after solution has cleared (5-10 minutes).[^cleanup-3]
+1. Quantify DNA yield with a high sensitivity fluorometry kit
+   ensuring yield between 0.5-10 ng/µL.
 
 
-| Step | Name | Sequence (5'-->3') | Notes |
-|:---:|:---|:---|:---|
-| 3.1 | CROPseq-PrimeF-BgL-BsmBI | GAGCCTCGTCTCCCACCG**NNNNNNNNNNNNNNNNNNNN**GTTTTGAGACGCATGCTGCA | The N20 sequence is a random string of oligonucleotides |
-| 3.1 | CROPseq-RevExt-BgL-BsmBI | TGCAGCATGCGTCTCAAAAC |  |
-| 3.1 | 10X PrimeF-BgL-BbsI | GCCTGAAGACCTCACCG**NNNNNNNNNNNNNNNNNNNN**GTTTTAGTCTTCCATGCTGC | The N20 sequence is a random string of oligonucleotides |
-| 3.1 | 10X-RevExt-BgL-BbsI | TGCAGCATGGAAGACTAAAAC |  |
-| 3.2, 3.7 | CM-FWD-S1-PAS | equimolar mixture of CM-FWD-S1 PAS primers |  |
-| 3.2, 3.7 | CM-FWD-S1-PASx0 | TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGCTTGTGGAAAGGACGAAACAC |  |
-| 3.2, 3.7 | CM-FWD-S1-PASx4 | TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGGCAACTTGTGGAAAGGACGAAACAC |  |
-| 3.2, 3.7 | CM-FWD-S1-PASx7 | TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGAGCCACCCTTGTGGAAAGGACGAAACAC |  |
-| 3.2, 3.7 | CM-FWD-S1-PASx8 | TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGTAGTGAATCTTGTGGAAAGGACGAAACAC |  |
-| 3.2, 3.7 | CM-REV-S1 | GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAGGGACTAGCCTTATTTTAACTTGCTATTTCTAGCTC |  |
-| 3.2, 3.7 | CM-FWD-S2-i5 | AATGATACGGCGACCACCGAGATCTACAC**NNNNNNNN**TCGTCGGCAGCGTC | The N8 sequence is where the i5 Illumina index should be placed |
-| 3.2, 3.7 | CM-REV-S2-i7 | CAAGCAGAAGACGGCATACGAGAT**NNNNNNNN**GTCTCGTGGGCTCGG | The N8 sequence is where the i7 Illumina index should be placed |
-| 3.8 | BgN20-AB-fwd | TACTCGACCAAGAACCGCA**NNNNNNNNNNNNNNNNNNNN**AGGTGGATTAGTTCTCT | Insert barcode in place of N20 |
-| 3.8 | BgN20-AB-rev | AAGCAGAGAACTAATCCACCT**NNNNNNNNNNNNNNNNNNNN**TGCGGTTCTTGGTCG | Insert reverse-complement barcode in place of N20 |
-| 3.8 | BgN20-BC-fwd | GCTTGTCCTGCGGTTACCC**NNNNNNNNNNNNNNNNNNNN**AGGCTGTAATCCAGCTG | Insert barcode in place of N20 |
-| 3.8 | BgN20-BC-rev | AGCGCAGCTGGATTACAGCCT**NNNNNNNNNNNNNNNNNNNN**GGGTAACCGCAGGAC | Insert reverse-complement barcode in place of N20 |
-| 3.8 | BgN20-CD-fwd | CGCTGTGGTATCACTCGTC**NNNNNNNNNNNNNNNNNNNN**AGGCTCAGCTAAGGTGC | Insert barcode in place of N20 |
-| 3.8 | BgN20-CD-rev | CATTGCACCTTAGCTGAGCCT**NNNNNNNNNNNNNNNNNNNN**GACGAGTGATACCAC | Insert reverse-complement barcode in place of N20 |
+[^cleanup-1]: 80% ethanol should be prepared fresh for each PCR cleanup.
+[^cleanup-2]: Do not over dry the beads, this can result in a loss of yield and quality.
+[^cleanup-3]: Beads may become trapped within the meniscus of the water.
+  Pipetting slowly will keep the beads against the wall of the tube
+  and leave them in the remaining 2 µL of water.
+
+
+
+| Name | Sequence (5'-->3') | Notes |
+|:---|:---|:---|
+| CROPseq-PrimeF-BgL-BsmBI | GAGCCTCGTCTCCCACCG**NNNNNNNNNNNNNNNNNNNN**GTTTTGAGACGCATGCTGCA | The N20 sequence is a random string of oligonucleotides |
+| CROPseq-RevExt-BgL-BsmBI | TGCAGCATGCGTCTCAAAAC |  |
+| CM-FWD-S1-PAS | equimolar mixture of CM-FWD-S1 PAS primers |  |
+| CM-FWD-S1-PASx0 | TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGCTTGTGGAAAGGACGAAACAC |  |
+| CM-FWD-S1-PASx4 | TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGGCAACTTGTGGAAAGGACGAAACAC |  |
+| CM-FWD-S1-PASx7 | TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGAGCCACCCTTGTGGAAAGGACGAAACAC |  |
+| CM-FWD-S1-PASx8 | TCGTCGGCAGCGTCAGATGTGTATAAGAGACAGTAGTGAATCTTGTGGAAAGGACGAAACAC |  |
+| CM-REV-S1 | GTCTCGTGGGCTCGGAGATGTGTATAAGAGACAGGGACTAGCCTTATTTTAACTTGCTATTTCTAGCTC |  |
+| CM-FWD-S2-i5 | AATGATACGGCGACCACCGAGATCTACAC**NNNNNNNN**TCGTCGGCAGCGTC | The N8 sequence is where the i5 Illumina index should be placed |
+| CM-REV-S2-i7 | CAAGCAGAAGACGGCATACGAGAT**NNNNNNNN**GTCTCGTGGGCTCGG | The N8 sequence is where the i7 Illumina index should be placed |
+| BgN20-AB-fwd | TACTCGACCAAGAACCGCA**NNNNNNNNNNNNNNNNNNNN**AGGTGGATTAGTTCTCT | Insert barcode in place of N20 |
+| BgN20-AB-rev | AAGCAGAGAACTAATCCACCT**NNNNNNNNNNNNNNNNNNNN**TGCGGTTCTTGGTCG | Insert reverse-complement barcode in place of N20 |
+| BgN20-BC-fwd | GCTTGTCCTGCGGTTACCC**NNNNNNNNNNNNNNNNNNNN**AGGCTGTAATCCAGCTG | Insert barcode in place of N20 |
+| BgN20-BC-rev | AGCGCAGCTGGATTACAGCCT**NNNNNNNNNNNNNNNNNNNN**GGGTAACCGCAGGAC | Insert reverse-complement barcode in place of N20 |
+| BgN20-CD-fwd | CGCTGTGGTATCACTCGTC**NNNNNNNNNNNNNNNNNNNN**AGGCTCAGCTAAGGTGC | Insert barcode in place of N20 |
+| BgN20-CD-rev | CATTGCACCTTAGCTGAGCCT**NNNNNNNNNNNNNNNNNNNN**GACGAGTGATACCAC | Insert reverse-complement barcode in place of N20 |
 
 
 Table: Oligonucleotides

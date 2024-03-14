@@ -18,7 +18,7 @@ Disposables
 1. 1.8 \unit{\mL} Screw top cryovials (sterile)
 1. 20 \unit{\mL} Luer-tapered syringe (sterile)
 1. 0.45 \unit{\um} polyethersulfone (PES) syringe filter
-1. 30,000 molecular weight cutoff (MWCO) PES concentrator capable of processing 20 \unit{\uL}
+1. 30,000 molecular weight cutoff (MWCO) PES concentrator capable of processing 20 \unit{\mL}
 
 Biologics
 

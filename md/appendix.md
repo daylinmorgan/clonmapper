@@ -172,7 +172,7 @@ See [^28]^,^[^29]
 
 $$\frac{\text{TU}}{\text{mL}}\text{=}\frac{\left(\text{Number of cells at time of transduction} \right)\text{ × }\left( \text{Fraction of Positive Cells} \right)}{\left( \text{Volume of virus }\left\lbrack \text{mL} \right\rbrack \right)}$$
 
-## sgRNA Barcode Transduction
+## ClonMapper Viral Transduction
 
 1. After calculating the viral titer (\unit{TU\per\mL}) on your cell line of interest,
   determine the final number of cells you require for your experiment using

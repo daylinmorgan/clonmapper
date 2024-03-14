@@ -7,41 +7,42 @@ import re
 import sys
 
 
-
 REPLACE_PATTERNS = (
-    (re.compile(r"\[@blundell2014;@kebschull2018\]"),'[@blundell2014]^,^[@kebschull2018]'),
+    (
+        re.compile(r"\[@blundell2014;@kebschull2018\]"),
+        "[@blundell2014]^,^[@kebschull2018]",
+    ),
     (re.compile(r"^#"), "##"),
-
 ) + tuple(
-            (re.compile(r"\\unit\{" + re.escape(unit) + r"\}"),replacement)
-        for unit,replacement in (
-           ( "\\mL","mL"),
-           ( "\\mM","mM"),
-           ( "\\uL","µL"),
-           ( "\\ug","µg"),
-            ( "\\ul\\per\\ug", "µL/µg"),
-            ( "\\ul\\per\\mL", "µL/mL"),
-            ( "\\ug\\per\\mL", "µg/mL"),
-           ( "\\mg","µg"),
-           ( "\\um","µm"),
-           ( "\\uM","µM"),
-           ( "\\fmol","fmol"),
-        ("TU\\per\\mL","TU/mL"),
-        ("U\\per\\mL","TU/mL"),
-        ("\\mg\\per\\mL","mg/mL")
-
-
-
-        )
+    (re.compile(r"\\unit\{" + re.escape(unit) + r"\}"), replacement)
+    for unit, replacement in (
+        ("\\mL", "mL"),
+        ("\\mM", "mM"),
+        ("\\uL", "µL"),
+        ("\\ug", "µg"),
+        ("\\ul\\per\\ug", "µL/µg"),
+        ("\\ul\\per\\mL", "µL/mL"),
+        ("\\ug\\per\\mL", "µg/mL"),
+        ("\\mg", "µg"),
+        ("\\um", "µm"),
+        ("\\uM", "µM"),
+        ("\\fmol", "fmol"),
+        ("TU\\per\\mL", "TU/mL"),
+        ("U\\per\\mL", "TU/mL"),
+        ("\\mg\\per\\mL", "mg/mL"),
     )
+)
 DROP_PATTERNS = (
     re.compile(r"\\pagebreak"),
     re.compile(r"{.*\.unnumbered}"),
-    re.compile(r"<!--.*-->",)
+    re.compile(
+        r"<!--.*-->",
+    ),
 )
 
+
 def replace(line):
-    for (pattern, txt) in REPLACE_PATTERNS:
+    for pattern, txt in REPLACE_PATTERNS:
         line = pattern.sub(txt, line)
 
     for pattern in DROP_PATTERNS:
@@ -54,8 +55,9 @@ def main():
     for line in sys.stdin:
         edited = replace(line)
         if "\\unit" in edited:
-            sys.stderr.write("unreplaced unit for line: " + line + '->' + edited)
+            sys.stderr.write("unreplaced unit for line: " + line + "->" + edited)
         sys.stdout.write(edited)
+
 
 if __name__ == "__main__":
     main()

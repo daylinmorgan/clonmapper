@@ -7,7 +7,10 @@ import sys
 
 def get_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument("input", help="input csv file",)
+    parser.add_argument(
+        "input",
+        help="input csv file",
+    )
     parser.add_argument("output", help="output tex file")
     parser.add_argument("--label", help="table label", required=True)
     parser.add_argument("-c", "--caption", help="table caption", default="")
@@ -69,7 +72,7 @@ def main():
                 except TypeError:
                     print(f"Error:{row.values()}")
                     print(
-                        "there was an issue with this row does it have a value for each column?"
+                        "there was an issue with this row, does it have a value for each column?"
                     )
                     sys.exit(1)
 

@@ -266,7 +266,7 @@ Illumina indices that anneal to regions flanking the barcodes.
     | nuclease-free water | to 50 |
 
 1. Amplify barcodes by running 50 \unit{\uL} reaction on a thermocycler
-   using the following setting[^11], repeating steps 2-4 for 20 cycles[^12]:
+   using the following settings[^11], repeating steps 2-4 for 20 cycles[^12]:
 
     | Step | Temp (°C) | Time |
     |---|---|---|

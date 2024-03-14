@@ -1,5 +1,8 @@
 # Appendix
 
+See below for general purpose procedures related
+to ClonMapper.
+
 ## AmpureXP Bead PCR Cleanup
 
 <!-- TODO: write info section here

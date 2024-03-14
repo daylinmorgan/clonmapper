@@ -31,7 +31,19 @@ REPLACE_PATTERNS = (
         ("U\\per\\mL", "TU/mL"),
         ("\\mg\\per\\mL", "mg/mL"),
     )
-)
+) + tuple(
+    (re.compile(r"\\hyperref\[" + re.escape(ref) + r"\]\{\\textbf\{" + re.escape(label) + r"\}\}"), f"[{label}](#{label.replace(' ','-').lower()})")
+    for ref, label in (
+            ("tab:oligos", "Oligonucleotides"),
+            ("tab:reagents", "Recommended Reagents")
+    )
+    )
+
+# *see* \hyperref[tab:oligos]{\textbf{Oligonucleotides}}
+
+
+
+
 DROP_PATTERNS = (
     re.compile(r"\\pagebreak"),
     re.compile(r"{.*\.unnumbered}"),
@@ -56,6 +68,8 @@ def main():
         edited = replace(line)
         if "\\unit" in edited:
             sys.stderr.write("unreplaced unit for line: " + line + "->" + edited)
+        elif not edited.startswith("$") and "\\" in edited:
+            sys.stderr.write("unreplaced latex syntax: " + line + "->" + edited)
         sys.stdout.write(edited)
 
 

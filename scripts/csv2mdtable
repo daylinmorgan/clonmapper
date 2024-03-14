@@ -11,7 +11,7 @@ ALIGNMENTS = {"c": ":---:", "r": "---:", "l": ":---"}
 def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("input", help="input csv file")
-    parser.add_argument("-c", "--caption", help="table caption", default="")
+    parser.add_argument("-t", "--title", help="title", default="")
     parser.add_argument(
         "--fmt", help="column alignments i.e. (l,c,r) by default all centered"
     )
@@ -59,10 +59,8 @@ def main():
 
             rows.append(row_out)
         print("\n")
+        print(f"## {args.title}")
         print("\n".join(rows))
-        print("\n")
-        if args.caption:
-            print(f"Table: {args.caption}")
         print("\n")
 
 

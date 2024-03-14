@@ -1,5 +1,6 @@
+# Tables
 
-
+## Oligonucleotides
 | Name | Sequence (5'-->3') | Notes |
 |:---|:---|:---|
 | CROPseq-PrimeF-BgL-BsmBI | GAGCCTCGTCTCCCACCG**NNNNNNNNNNNNNNNNNNNN**GTTTTGAGACGCATGCTGCA | The N20 sequence is a random string of oligonucleotides |
@@ -20,11 +21,9 @@
 | BgN20-CD-rev | CATTGCACCTTAGCTGAGCCT**NNNNNNNNNNNNNNNNNNNN**GACGAGTGATACCAC | Insert reverse-complement barcode in place of N20 |
 
 
-Table: Oligonucleotides
 
 
-
-
+## Recommended Reagents
 | Name | Vendor | Catalog No. |
 |:---|:---:|:---:|
 | AMPure XP Reagent | Beckman Coulter | A63880 |
@@ -46,8 +45,5 @@ Table: Oligonucleotides
 | Hexadimethrine bromide | Millpore Sigma | TR-1003-G |
 | Plasmid Plus Kit (Midi) | Qiagen | 12941 |
 | DNA Clean and Concentrator-5 | Zymo | D4013 |
-
-
-Table: Recommended Reagents
 
 

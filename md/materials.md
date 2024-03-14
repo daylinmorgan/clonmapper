@@ -31,15 +31,15 @@ Biologics
 Plasmids
 
 1. CROPseq gRNA expression transfer vector,
-   Cropseq-BFP-WPRE-TS-hU6-BsmbI (Addgene \#137993;Brock Lab AA112)
+   Cropseq-BFP-WPRE-TS-hU6-BsmbI (Addgene #137993;Brock Lab AA112)
 1. Lentiviral packaging plasmid, VSV-G (Addgene #14888)
 1. Lentiviral packaging plasmid, psPAX2 (Addgene #12260)
 1. dCas9-VPR (Addgene #63798)
-1. Recall-miniCMV-sfGFP (Addgene \#137995;Brock Lab AA158)
+1. Recall-miniCMV-sfGFP (Addgene #137995;Brock Lab AA158)
 
 Primers
 
-(*see* **Table 1**)
+*see* \hyperref[tab:oligos]{\textbf{Oligonucleotides}}
 
 Buffers
 
@@ -85,3 +85,7 @@ Computational
 1. Python >=3.8
 1. Cell Ranger (for 10X analysis)
 1. [Pycashier](https://github.com/brocklab/pycashier)
+
+
+*see also* \hyperref[tab:reagents]{\textbf{Recommended Reagents}}
+

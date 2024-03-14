@@ -94,8 +94,8 @@ tex/oligos.tex: tables/oligos.csv scripts/csv2latex
 		tex/oligos.tex \
 		--label 'oligos' \
 		-c "Oligonucleotides" \
-		--split 3 \
-		--fmt 'c l p{{.5\textwidth}} l' \
+		--split 2 \
+		--fmt 'l p{{.5\textwidth}} l' \
 		--fill
 
 tex/reagents.tex: tables/reagents.csv scripts/csv2latex

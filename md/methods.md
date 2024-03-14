@@ -478,8 +478,8 @@ how to get started processing fastq data to get barcode information.
 
 3. Heat each to 80 °C and let cool to create DNA blocks containing a barcode,
    a PAM site, and overhang sequences.[^57]
-1. Ligate DNA blocks together creating the barcode array
-   by mixing the following reagents: 
+1. Ligate DNA blocks together creating the **3X-barcode array**
+   by mixing the following reagents:
 
     | Reagent | volume (\unit{\uL}) |
     |---|---|
@@ -497,11 +497,20 @@ how to get started processing fastq data to get barcode information.
 1. Run ligation product in a 2% agarose gel
    and gel purify band from approximately 170 bp.
 <!--TODO: make a table -->
-1. Ligate the barcode array into the recall plasmid backbone at a molar ratio
-   of 10:1 in a Golden Gate assembly reaction by mixing 25 \unit{\fmol} Recall-miniCMV-sfGFP,
-   250 \unit{\fmol} assembled barcode array, 1 \unit{\uL} T4 ligase buffer,
-   0.5 \unit{\uL} T7 ligase, 0.5 \unit{\uL} BbsI, and nuclease-free water to 10 \unit{\uL}.
-<!--TODO: make a table -->
+
+1. Ligate the **3X-barcode-array** into the recall plasmid backbone at a molar ratio
+   of 10:1 in a Golden Gate assembly reaction by mixing the following reagents:
+
+    | Reagent | volume (\unit{\uL}) |
+    |---|---|
+    | Recall-miniCMV-sfGFP | 25 \unit{\fmol} |
+    | **3X-barcode-array** | 250 \unit{\fmol} |
+    | T4 ligase buffer | 1 \unit{\uL} |
+    | T7 ligase | 0.5 \unit{\uL} |
+    | BbsI | 0.5 \unit{\uL} |
+    | nuclease-free water | to 10 \unit{\uL} |
+
+
 1. Run the Golden Gate assembly reaction on a thermocycler
    using the following settings, repeating steps 1-2 for 35 cycles:
 
@@ -518,6 +527,8 @@ how to get started processing fastq data to get barcode information.
    for standard protocol.
 1. Verify insertion of barcode array
    into Recall-miniCMV-sfGFP backbone via Sanger sequencing.
+
+<!-- TODO: Provide a sequence in oligo table for sanger confirmation -->
 
 [^56]: The barcode sequence should be ordered to match
   the extracted barcode for the fragments labeled as 'extraction'

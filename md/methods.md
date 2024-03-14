@@ -1,6 +1,6 @@
 # Methods
 
-## ClonMapper Barcode Library Plasmid Pool Assembly
+## ClonMapper Barcode Plasmid Library Assembly
 
 1. Perform a 4X extension reaction to generate the double-stranded
    gRNA insert. Mix the below reagents to create a 50 \unit{\uL} reaction.[^2]
@@ -165,7 +165,7 @@ Illumina indices that anneal to regions flanking the barcodes.
 [^12]: The number of cycles will depend on the starting template amount.
   A nested PCR reaction may have to be performed to enhance barcode specificity.
 
-## sgRNA Barcoding Lentivirus Production
+## ClonMapper Lentivirus Production
 
 1. 48 hours before transfection, plate 0.22-0.25 x 10^6^ low-passage HEK-293T
    cells in DMEM supplemented with 10% FBS **without antibiotics** in each well
@@ -396,7 +396,7 @@ $$\text{MOI [TU/cell] = }\frac{\left( \text{Volume of Virus needed [mL]} \right)
   for titer determination. Ensure that 0% of negative control samples appear in the sorting gate.
 
 
-## Targeted sgRNA Barcode Sampling of Cells
+## ClonMapper Barcode Sampling of Cells
 
 ### Preparing Samples for Sequencing
 

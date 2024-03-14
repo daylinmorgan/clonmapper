@@ -15,6 +15,16 @@ def unit_re(unit):
     return re.compile(r"\\unit\{" + re.escape(unit) + r"\}")
 
 
+def ref_re(ref, label):
+    return re.compile(
+        r"\\hyperref\["
+        + re.escape(ref)
+        + r"\]\{\\textbf\{"
+        + re.escape(label)
+        + r"\}\}"
+    )
+
+
 REPLACE_PATTERNS = (
     (
         (
@@ -52,13 +62,7 @@ REPLACE_PATTERNS = (
     )
     + tuple(
         (
-            re.compile(
-                r"\\hyperref\["
-                + re.escape(ref)
-                + r"\]\{\\textbf\{"
-                + re.escape(label)
-                + r"\}\}"
-            ),
+            ref_re(ref, label),
             f"[{label}](#{label.replace(' ','-').lower()})",
         )
         for ref, label in (

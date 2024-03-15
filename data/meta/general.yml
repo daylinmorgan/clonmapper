@@ -1,31 +1,26 @@
----
-title: Functionalized lineage tracing for the study and manipulation of heterogeneous cell populations
-geometry: margin=2cm
-mainfont: DejaVuSans
-numbersections: true
-link-citations: true
-reference-section-title: References
+title: ClonMapper Barcoding System
+subtitle: Functionalized lineage tracing for the study and manipulation of heterogeneous cell populations
 institute:
   - bme: Department of Biomedical Engineering, The University of Texas at Austin, Austin TX
   - icmb: Institute for Cellular and Molecular Biology, The University of Texas at Austin, Austin TX
 author:
-  - Andrea Gardner:
-      institute:
-        - bme
-      equal_contributor: "yes"
-  - Daylin Morgan:
-      institute:
-        - bme
-      equal_contributor: "yes"
-  - Aziz Al'Khafaji:
-      institute:
-        - icmb
-  - Amy Brock:
-      institute:
-        - bme
-        - icmb
-      correspondence: "yes"
-      email: "amy.brock@utexas.edu"
+#   - Andrea Gardner:
+#       institute:
+#         - bme
+#       equal_contributor: "yes"
+#   - Daylin Morgan:
+#       institute:
+#         - bme
+#       equal_contributor: "yes"
+#   - Aziz Al'Khafaji:
+#       institute:
+#         - icmb
+#   - Amy Brock:
+#       institute:
+#         - bme
+#         - icmb
+#       correspondence: "yes"
+#       email: "amy.brock@utexas.edu"
 abstract: |
   The ability to track and isolate unique cell lineages from large heterogeneous populations increases the
   resolution at which cellular processes can be understood under normal and pathogenic states beyond snapshots
@@ -47,4 +42,3 @@ keywords:
   - scRNA-seq
   - CRISPR
   - lineage isolation
----

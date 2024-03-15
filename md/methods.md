@@ -1,3 +1,5 @@
+\newpage
+
 # Methods
 
 ## ClonMapper Barcode Plasmid Library Assembly

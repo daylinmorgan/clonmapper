@@ -1,0 +1,14 @@
+geometry: margin=2cm
+mainfont: DejaVuSans
+link-citations: true
+reference-section-title: References
+
+# template specific variables
+titlepage: true
+toc-own-page: true
+titlepage-text-color: "bf5700"
+titlepage-rule-color: "bf5700"
+
+
+
+

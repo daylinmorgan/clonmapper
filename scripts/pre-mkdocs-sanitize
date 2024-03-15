@@ -74,6 +74,7 @@ REPLACE_PATTERNS = (
 
 DROP_PATTERNS = (
     re.compile(r"\\pagebreak"),
+    re.compile(r"\\newpage"),
     re.compile(r"{.*\.unnumbered}"),
     re.compile(
         r"<!--.*-->",

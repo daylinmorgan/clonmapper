@@ -1,7 +1,7 @@
 # Tables
 
 ## Oligonucleotides
-| Name | Sequence (5'-->3') | Notes |
+| Name | Sequence | Notes |
 |:---|:---|:---|
 | CROPseq-PrimeF-BgL-BsmBI | GAGCCTCGTCTCCCACCG**NNNNNNNNNNNNNNNNNNNN**GTTTTGAGACGCATGCTGCA | The N20 sequence is a random string of oligonucleotides |
 | CROPseq-RevExt-BgL-BsmBI | TGCAGCATGCGTCTCAAAAC |  |

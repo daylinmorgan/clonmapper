@@ -1,0 +1,100 @@
+#!/usr/bin/env python3
+import argparse
+import csv
+from pathlib import Path
+import sys
+
+
+def get_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "input",
+        help="input csv file",
+    )
+    parser.add_argument("output", help="output tex file")
+    parser.add_argument("--label", help="table label", required=True)
+    parser.add_argument("--caption", help="table caption", default="")
+    parser.add_argument("--oligo-column", help="column containing sequences")
+    parser.add_argument("--fill", help="expand to fill page", action="store_true")
+    parser.add_argument("--fmt", help="column format to use with tabular")
+    return parser.parse_args()
+
+
+def hyphen(v):
+    return r"\-".join([v[i : i + 3] for i in range(0, len(v), 3)])
+
+
+def splitseq(v):
+    if " " in v:
+        return v
+    if "**" in v:
+        start, n, end = v.split("**")
+        return rf"{hyphen(start)}\-\textbf{{{hyphen(n)}}}\-{hyphen(end)}"
+    else:
+        return hyphen(v)
+
+def parse_csv(path_to_csv):
+    with path_to_csv.open(mode="r") as f:
+        reader = csv.DictReader(f)
+        headers = list(reader.fieldnames)
+        rows = [row.values() for row in reader]
+    return headers, rows
+
+def rows_with_oligos(rows, oligo_column):
+    return (
+                " & ".join(
+                    [
+                        (r"\texttt{" + splitseq(v) + "}") if i + 1 == int(oligo_column) else v
+                        for i, v in enumerate(row)
+                    ]
+                )
+                + r" \\"
+                + "\n"
+            for row in rows
+            )
+
+def main():
+    args = get_args()
+    path_to_csv = Path.cwd() / args.input
+    path_to_tex = Path.cwd() / args.output
+    caption = args.caption
+
+    csv_headers, csv_rows = parse_csv(path_to_csv)
+    headers = " & ".join(csv_headers)
+    rows = rows_with_oligos(csv_rows, args.oligo_column) if args.oligo_column else [
+        " & ".join(row) + r" \\ " + "\n" for row in csv_rows
+
+    ]
+
+    rows_str = "".join(rows)
+    label = args.label
+    col_fmt = (r"""
+>{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.25}}
+>{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.5}}
+>{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.25}}
+"""
+    if not args.fmt else args.fmt)
+    table_tex_str = rf"""
+%...
+
+\begin{{longtable}}[]{{@{{}}{col_fmt}@{{}}}}
+\caption{{{caption}}}\label{{tab:{label}}} \\
+\toprule\noalign{{}}
+{headers} \\
+\midrule\noalign{{}}
+\endhead
+\bottomrule\noalign{{}}
+\endlastfoot
+{rows_str}
+\end{{longtable}}
+%...
+"""
+    # build latex file
+    path_to_tex.parent.mkdir(exist_ok=True)
+
+    with path_to_tex.open(mode="w") as f:
+        f.write(table_tex_str)
+
+
+if __name__ == "__main__":
+    main()

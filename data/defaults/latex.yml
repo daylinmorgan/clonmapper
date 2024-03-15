@@ -1,0 +1,12 @@
+pdf-engine: lualatex
+toc: true
+template: eisvogel.tex
+bibliography: bib/protocol.bib
+include-in-header: tex/preamble.tex
+
+filters:
+  - citeproc
+  # - filters/author-info-blocks.lua
+  # - filters/scholarly-metadata.lua
+
+

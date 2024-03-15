@@ -1,3 +1,5 @@
+\newpage
+
 # Materials
 
 Equipment
@@ -88,4 +90,3 @@ Computational
 
 
 *see also* \hyperref[tab:reagents]{\textbf{Recommended Reagents}}
-

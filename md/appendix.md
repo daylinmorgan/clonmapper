@@ -1,3 +1,5 @@
+\newpage
+
 # Appendix
 
 See below for general purpose procedures related
@@ -201,5 +203,4 @@ $$\text{MOI [TU/cell] = }\frac{\left( \text{Volume of Virus needed [mL]} \right)
   can be modeled as a Poisson distribution [@fehse2004;@kustikova2003].
 [^48]: When sorting for sgRNA barcoded cells, use more stringent gating than used
   for titer determination. Ensure that 0% of negative control samples appear in the sorting gate.
-
 

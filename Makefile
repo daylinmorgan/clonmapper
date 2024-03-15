@@ -14,24 +14,21 @@ else
 		$$(docker build -q .)
 endif
 
-FLAGS := -V "rev:$(REV)"
 
-LATEX_FLAGS := $(FLAGS) \
-	--metadata-file=meta.yml \
-	--citeproc \
-	--bibliography=bib/protocol.bib \
-	--pdf-engine=lualatex \
-	--template=templates/default.tex \
-	--verbose
+PANDOC_FLAGS := \
+	--data-dir data \
+	--verbose \
+	--metadata-file=data/meta/general.yml
 
-FILTERS := \
-	--lua-filter=filters/scholarly-metadata.lua \
-	--lua-filter=filters/author-info-blocks.lua
+LATEX_FLAGS := $(PANDOC_FLAGS) \
+	--defaults latex.yml \
+	--metadata-file=data/meta/latex.yml \
+	-V footer-left=$(REV)
 
 SHARED_MDs := introduction.md materials.md methods.md appendix.md
-LATEX_MDs := $(addprefix md/,$(SHARED_MDs) latex-tables.md  acknowledgements.md)
-
+LATEX_MDs := $(addprefix md/,$(SHARED_MDs) latex-tables.md acknowledgements.md)
 HTML_MDs := $(addprefix md/,$(SHARED_MDs) html-tables.md acknowledgements.md)
+
 LATEX_TABLES := $(addprefix tex/, oligos.tex reagents.tex)
 PDF := clonmapper-protocol-$(REV).pdf
 
@@ -42,23 +39,16 @@ bootstrap: ## setup venv for mkdocs
 p pdf: $(PDF) ## generate the pdf
 
 protocol.tex: .FORCE
-	$(PANDOC_CMD) $(LATEX_FLAGS) $(FILTERS) --output $@ $(LATEX_MDs)
+	$(PANDOC_CMD) $(LATEX_FLAGS) --output $@ $(LATEX_MDs)
 
 $(PDF): $(TEMPLATE) $(LATEX_MDs) $(LATEX_TABLES)
 	$(call log,Generating PDF)
-	$(PANDOC_CMD) $(LATEX_FLAGS) $(FILTERS) --output $@ $(LATEX_MDs)
+	$(PANDOC_CMD) $(LATEX_FLAGS) --output $@ $(LATEX_MDs)
 
 md/html-tables.md: tables/oligos.csv tables/reagents.csv scripts/csv2mdtable
 	@printf "# Tables" > $@
 	@scripts/csv2mdtable tables/oligos.csv -t "Oligonucleotides" --fmt 'l,l,l' >> $@
 	@scripts/csv2mdtable tables/reagents.csv -t "Recommended Reagents" --fmt 'l,c,c' >> $@
-
-docs/docs/protocol/%.md: md/%.md
-	@cat $< | scripts/pre-mkdocs-sanitize > $@
-
-docs/docs/protocol/html-tables.md: md/html-tables.md
-	@echo "# Tables" > $@
-	@cat $< | scripts/pre-mkdocs-sanitize >> $@
 
 docs/docs/protocol.md: $(HTML_MDs) scripts/pre-mkdocs-sanitize
 	@printf -- '---\nhide:\n  - navigation\n---\n' > $@
@@ -69,14 +59,10 @@ $(LATEST_PDF): $(PDF)
 	@rm -f docs/docs/pdf/latest/*
 	@cp $< $@
 
-# MKDOCS_DOCS := $(patsubst md/%.md,docs/docs/protocol/%.md, $(HTML_MDs)) \
-# 		docs/docs/full-protocol.md
-MKDOCS_DOCS = docs/docs/protocol.md
-
 .PHONY: docs.build docs.content docs.serve
 ## docs.* |> docs.{content,serve,build}
 ### content -> generate website content |> --align sep
-docs.content: $(LATEST_PDF) $(MKDOCS_DOCS)
+docs.content: $(LATEST_PDF) docs/docs/protocol.md
 	$(call log,Generating Website Content)
 
 ### serve -> run the mkdocs live server |> --align sep
@@ -90,22 +76,20 @@ docs.build: docs.content
 
 # latex tables with better formatting
 tex/oligos.tex: tables/oligos.csv scripts/csv2latex
-	@scripts/csv2latex \
+	@scripts/csv2longtable \
 		tables/oligos.csv \
 		tex/oligos.tex \
 		--label 'oligos' \
-		-c "Oligonucleotides" \
-		--split 2 \
-		--fmt 'l p{{.5\textwidth}} l' \
-		--fill
+		--caption "Oligonucleotides" \
+		--oligo-column 2
 
 tex/reagents.tex: tables/reagents.csv scripts/csv2latex
-	@scripts/csv2latex \
+	@scripts/csv2longtable \
 		tables/reagents.csv \
 		tex/reagents.tex \
 		--label 'reagents' \
-		-c "Recommended Reagents" \
-		--fmt 'l c c'
+		--caption "Recommended Reagents" \
+		--fmt 'lcc'
 
 
 docker: ## build docker container to run pandoc locally

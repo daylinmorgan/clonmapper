@@ -1,6 +1,6 @@
 .venv
 
-*.pdf
+clonmapper-protocol*.pdf
 protocol.tex
 protocol.html
 public/

@@ -4,6 +4,13 @@
 
 ## ClonMapper Barcode Plasmid Library Assembly
 
+In this step we will generate a high-diversity barcode plasmid library.
+At this stage there is an opportunity to customize the gRNA design.
+To maximize diversity you should order a forward oligonucleotide containing an N20 sequence.
+However, it's also possible to insert known sequences at either the 5'/3' end 
+or to require alternating strong weak bases.
+This protocol as written should produce approximately 20 (50 \unit{\mL}) bacteria cell pellets.
+
 1. Perform a 4X extension reaction to generate the double-stranded
    gRNA insert. Mix the below reagents to create a 50 \unit{\uL} reaction.[^2]
 
@@ -34,7 +41,6 @@
 1. Digest 5-10 \unit{\ug} of CROPseq vector backbone in a reaction containing
    20 \unit{\uL} Digestion Buffer 3.1, 8 \unit{\uL} BsmBI,
    and nuclease-free water to 200 \unit{\uL} for 4 hours at 55°C
-    <!-- TODO: HOW LONG? -->
 1. Run the digested backbone on a 1-1.5% low melting point agarose gel,
    then follow the instructions on a DNA gel purification kit to extract
    and purify the linearized plasmid band.
@@ -106,9 +112,13 @@
 
 ## ClonMapper Barcode Sampling
 
-The diversity of the initial plasmid pool should be assessed to ensure a
-high diversity library. To do this, PCR is performed with primers containing
-Illumina indices that anneal to regions flanking the barcodes.
+The diversity of the initial plasmid pool should be assessed to ensure a sufficiently high diversity.
+To do this, a two-stage PCR is performed first with primers flanking the gRNA,
+followed by a second reaction with primers containing Illumina indices/adapters.
+
+For primer sequences see \hyperref[tab:oligos]{\textbf{Oligonucleotides}}.
+For pre-generated stage 2 sequences containing i5/i7 adapters see
+[docs.brocklab.com/clonmapper/sequences](https://docs.brocklab.com/clonmapper/sequences).
 
 1. Midi-prep one tube of transformed *E. coli* from step
    [*ClonMapper Barcode Plasmid Library Assembly*](#clonmapper-barcode-plasmid-library-assembly)
@@ -165,9 +175,16 @@ Illumina indices that anneal to regions flanking the barcodes.
   diversity to the sequencing reads which helps prevents sequencing errors.
 [^11]: Pre-heat thermocycler to 98 °C before adding tubes to heat block.
 [^12]: The number of cycles will depend on the starting template amount.
-  A nested PCR reaction may have to be performed to enhance barcode specificity.
 
 ## ClonMapper Lentivirus Production
+
+In this step, we will generate the lentivirus used to integrate
+barcode gRNA sequences into our cells of interest.
+It's important that the necessary precautions are taken when handling live lentivirus.
+You should consult your local intuitions instructions and viral-handling protocols.
+Given batch to batch variation, and the need to control viral titer for individual cell lines,
+it is helpful to make large concentrated batches of virus to give you sufficient material
+to establish barcoded cell lines.
 
 
 1. 48 hours before transfection, plate 0.22-0.25 x 10^6^ low-passage HEK-293T
@@ -245,9 +262,36 @@ Illumina indices that anneal to regions flanking the barcodes.
 [^27]: Virus should be completed frozen and then thawed
   before calculating viral titer.
 
-<!--TODO: add advice about barcode instantiation and library generation -->
+## Integrating ClonMapper Barcodes in Cells
+
+Using the concentrated lentivirus generated in the previous section you should transduce your cells of interest.
+See [**Appendix: Determine Viral Titer](#determine-viral-titer) for typical forward and reverse transduction/viral titer procedures.
+
+It is critical that you infect your cells with a low (~0.1) multiplicty of infection (MOI),
+in order to limit the chances of a multiple integration event.
+To control the MOI you should titer every batch of concentrated virus on your specific cell line of interest.
+
+Once you have ascertained the viral titer, you should transduce your cells
+and separate blue fluorescent protein (BFP) positive cells using FACS.
+When sorting live cells you should take all necessary efforts to maximize cell viability for your cell line of interest.
+Controlling total cell library diversity and number of barcodes is accomplished by sorting
+your a subset of bfp-positive uniquely labeled cells into either a single well of a plate or a tube.
+Note that you are likely to recover fewer barcodes than cells you sort due to stochastic outgrowth and death following sort.
+The total number of barcodes recovered is typically half of the initial number of cells sorted.
+
+The actual number of barcodes should be confirmed as soon as the population has sufficiently outgrown and archives have been prepared.
+Cell libraries should also be frequently sampled prior to and following any experiments to monitor changes in barcode diversity
+through the course of routine cell culture maintenance.
 
 ## ClonMapper Barcode Sampling of Cells
+
+Barcodes are amplified from cellular genomes similar to the plasmid library as described above.
+Barcoded cell libraries should be assessed to ensure a sufficiently high diversity at time of initial archival.
+Crucially, any experiments involving barcoded cells should be carried out diligently to prevent population skewing over time.
+
+For primer sequences see \hyperref[tab:oligos]{\textbf{Oligonucleotides}}.
+For pre-generated stage 2 sequences containing i5/i7 adapters see
+[docs.brocklab.com/clonmapper/sequences](https://docs.brocklab.com/clonmapper/sequences).
 
 ### Preparing Samples for Sequencing
 
@@ -315,9 +359,13 @@ Illumina indices that anneal to regions flanking the barcodes.
 ### Processing Barcode Sequencing Data
 
 See [pycashier](https://github.com/brocklab/pycashier) for more info about
-how to get started processing fastq data to get barcode information.
+how to get started processing `fastq` data to extract barcode information.
 
 ## Recall Plasmid Assembly
+
+Once you have identified a barcode of interest within your cell library, you can generate
+a "Recall" plasmid to drive expression of green fluorescent protein (GFP)
+to isolate or track your clone of interest.
 
 1. 3 pairs of overlapping oligos containing the barcode sequence of interest
    flanked by overlapping sequences should be ordered according to **Table 1**.[^56]
@@ -387,7 +435,13 @@ how to get started processing fastq data to get barcode information.
 
 ## Recall and Isolation of Barcoded Cells
 
-See [^59]^,^[^60]
+With a barcode-specific recall vector you can isolate a clonal sub-population
+from your barcoded cell library.
+See below for the general procedure, 
+but note that it may be necessary to optimize transfection and live-cell sorting
+for your specific cells of interest.
+
+See notes [^59]^,^[^60]
 
 1. 24-48 hours before performing recall transfection, seed your cell line
    of interest in growth medium in a 6-well plate such that
@@ -398,7 +452,7 @@ See [^59]^,^[^60]
 1. Incubate "Tube A" at room temperature for 5 minutes.
 1. Per well of a 6 well plate,
    prepare "Tube B" containing 125 \unit{\uL} Opti-MEM^TM^,
-   225 ng Recall plasmid (*from Section 3.8*),
+   225 ng Recall plasmid,
    275 ng dCas9-VPR plasmid and 2 \unit{\uL\per\ug} DNA of p3000.
 1. Slowly add "Tube B" dropwise to "Tube A"
    and carefully mix by gently inverting 10 times.

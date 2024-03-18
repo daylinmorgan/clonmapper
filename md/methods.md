@@ -169,6 +169,7 @@ Illumina indices that anneal to regions flanking the barcodes.
 
 ## ClonMapper Lentivirus Production
 
+
 1. 48 hours before transfection, plate 0.22-0.25 x 10^6^ low-passage HEK-293T
    cells in DMEM supplemented with 10% FBS **without antibiotics** in each well
    of a sterile 6-well tissue culture treated plate such that cells will be
@@ -176,22 +177,23 @@ Illumina indices that anneal to regions flanking the barcodes.
 1. On the morning of transfection, replace media on HEK-293T cells with
     2 \unit{\mL} of fresh Opti-MEM^TM^ (or your cells growth medium)
     supplemented with 10% FBS **without antibiotics**.
-1. In the afternoon, warm Opti-MEM^TM^, Lipofectamine^TM^ 2000,
-   and VSV-G, psPAX, and sgRNA barcoding plasmid to room temperature.[^17]^,^[^18]
+1. In the afternoon, warm Opti-MEM^TM^, Lipofectamine^TM^ 3000, p3000^TM^,
+   VSV-G, psPAX, and ClonMapper barcode library plasmid to room temperature.[^17]^,^[^18]
 1. Per well of a 6 well plate,
-   prepare "Tube A" containing 150 \unit{\uL} Opti-MEM^TM^
-   and 9 \unit{\uL} Lipofectamine^TM^ 2000.[^19]
+   prepare "Tube A" containing 125 \unit{\uL} Opti-MEM^TM^
+   and 7 \unit{\uL} Lipofectamine^TM^ 3000.[^19]
 1. Incubate "Tube A" at room temperature for 5 minutes.
 1. Per well of a 6 well plate,
-   prepare "Tube B" containing 150 \unit{\uL} Opti-MEM^TM^,
-   1.5 \unit{\ug} psPax, 0.4 \unit{\ug} VSV-G, 3-5 \unit{\ug} sgRNA barcoding plasmid.
+   prepare "Tube B" containing 125 \unit{\uL} Opti-MEM^TM^,
+   1.5 \unit{\ug} psPax, 0.4 \unit{\ug} VSV-G, 3-5 \unit{\ug} ClonMapper barcode library plasmid
+   and p3000^TM^ (\unit{\uL\per\ug} DNA).
 1. Slowly add "Tube B" dropwise to "Tube A" and
    carefully mix by gently inverting 10 times
 1. Incubate at room temperature for 20 minutes.
-1. Add 300 \unit{\uL} of the transfection mix slowly
+1. Add 250 \unit{\uL} of the transfection mix slowly
    and dropwise to each well of HEK-293T cells.
 1. 16-18 hours post-transfection, carefully remove and dispose of media
-   containing Lipofectamine^TM^ 2000 complexes and slowly replenish with
+   containing Lipofectamine^TM^ 3000 complexes and slowly replenish with
    DMEM supplemented with 20% FBS **without antibiotics**.[^20]^,^[^21]
 1. 48 hours post-transfection, harvest viral containing supernatant
    and store in a 50 \unit{\mL} conical tube at 4 °C.[^22]^,^[^23]^,^[^24]

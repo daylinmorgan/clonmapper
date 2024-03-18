@@ -64,7 +64,6 @@ Enzymes
 
 Other Reagents
 
-1. Lipofectamine^TM^ 2000
 1. Lipofectamine^TM^ 3000
 1. Nuclease-free water
 1. Agarose

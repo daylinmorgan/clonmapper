@@ -75,7 +75,7 @@ docs.build: docs.content
 	@$(MKDOCS_CMD) build
 
 # latex tables with better formatting
-tex/oligos.tex: tables/oligos.csv scripts/csv2latex
+tex/oligos.tex: tables/oligos.csv scripts/csv2longtable
 	@scripts/csv2longtable \
 		tables/oligos.csv \
 		tex/oligos.tex \
@@ -83,7 +83,7 @@ tex/oligos.tex: tables/oligos.csv scripts/csv2latex
 		--caption "Oligonucleotides" \
 		--oligo-column 2
 
-tex/reagents.tex: tables/reagents.csv scripts/csv2latex
+tex/reagents.tex: tables/reagents.csv scripts/csv2longtable
 	@scripts/csv2longtable \
 		tables/reagents.csv \
 		tex/reagents.tex \

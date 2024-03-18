@@ -86,8 +86,8 @@
 [^2]: Always use filtered pipette tips when working with
   DNA to prevent cross-contamination.
 [^3]: A 1X Golden Gate assembly reaction is setup by mixing 25 \unit{\fmol} digested
-  gRNA transfer vector (*from step 3.1.4*), 250 \unit{\fmol} double stranded gRNA
-  barcode DNA (*from step 3.1.1*), 1 \unit{\uL} T4 ligase buffer,
+  gRNA transfer vector backbone, 250 \unit{\fmol} double stranded gRNA
+  barcode DNA, 1 \unit{\uL} T4 ligase buffer,
   0.5 \unit{\uL} T7 ligase, 0.5 \unit{\uL} BsmBI,
   and nuclease-free water to 10 \unit{\uL}.
 [^4]: Letting the water sit on the column for 3-5 minutes before

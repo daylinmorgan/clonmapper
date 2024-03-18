@@ -26,9 +26,9 @@ Biologics
 
 1. Electrocompetent *E. coli* suitable for unstable DNA (restriction minus,
    endonuclease deficient, and recombination deficient)
-1. Cells of interest [^1]
+1. Cells of interest [^cells]
 
-[^1]:  Make sure cells are transducible with lentivirus. Timing of lentiviral exposure and detectable expression of transgene will vary across cell types.
+[^cells]:  Make sure cells are transducible with lentivirus. Timing of lentiviral exposure and detectable expression of transgene will vary across cell types.
 
 Plasmids
 

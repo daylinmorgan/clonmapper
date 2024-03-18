@@ -7,10 +7,11 @@ hooks:
 nav:
   - Home: "index.md"
   - Protocol: "protocol.md" 
-  - PDF: "pdf/index.md"
+  - PDF: "pdf/latest"
   - Sequences: "sequences/index.md"
   - Resources: "resources.md"
   - Citation: "citation.md"
+  - Changelog: "changelog.md"
 
 theme:
   name: material

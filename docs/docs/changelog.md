@@ -1,10 +1,10 @@
 ---
 hide: [toc, navigation]
-title: PDFs
-template: pdf.html
+title: Changelog
 ---
 
-### Changes
+
+## [Current Version](/clonmapper/pdf/latest/)
 
 In addition to the specific changes listed below this version introduced
 an updated website and a reorganization/renaming of some of the sections.
@@ -15,10 +15,6 @@ Related to this some of the more generalized procedures were moved to an appendi
 - Targeted barcode amplification changed to a two stage PCR in order to first amplify sequences from genomic DNA,
   then a second reaction to add unique dual indicies for multiplexing/illumina sequencing.
 
-
-
-## Previous Versions
-
-### [2023.06.09-27effb6](./archive/clonmapper-protocol-2023.06.09-27effb6.pdf)
+## [2023.06.09-27effb6](../pdf/archive/clonmapper-protocol-2023.06.09-27effb6.pdf)
 
 

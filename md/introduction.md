@@ -56,3 +56,7 @@ fluorescent protein (sfGFP) reporter.
 Expression of sfGFP will occur only in cells that are producing the matching
 sgRNA barcode, allowing precise identification and FACS isolation of cells
 from lineages of interest.
+
+This protocol was originally developed by Aziz Al'Khafaji in the Brock Lab at the University of Texas at Austin.
+It was written and published in [Methods in Molecular Biology](https://doi.org/10.1007/978-1-0716-1811-0_8) by Andrea Gardner and Daylin Morgan.
+This version has been updated with the Brock Lab's current best practices.

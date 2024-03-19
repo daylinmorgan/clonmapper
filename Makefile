@@ -46,7 +46,7 @@ $(PDF): $(TEMPLATE) $(LATEX_MDs) $(LATEX_TABLES)
 	$(PANDOC_CMD) $(LATEX_FLAGS) --output $@ $(LATEX_MDs)
 
 md/html-tables.md: tables/oligos.csv tables/reagents.csv scripts/csv2mdtable
-	@printf "# Tables" > $@
+	@printf "## Tables" > $@
 	@scripts/csv2mdtable tables/oligos.csv -t "Oligonucleotides" --fmt 'l,l,l' >> $@
 	@scripts/csv2mdtable tables/reagents.csv -t "Recommended Reagents" --fmt 'l,c,c' >> $@
 

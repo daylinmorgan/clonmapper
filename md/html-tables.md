@@ -1,6 +1,6 @@
 ## Tables
 
-## Oligonucleotides
+### Oligonucleotides
 | Name | Sequence (5' to 3') | Notes |
 |:---|:---|:---|
 | CROPseq-PrimeF-BgL-BsmBI | GAGCCTCGTCTCCCACCGNNNNNNNNNNNNNNNNNNNNGTTTTGAGACGCATGCTGCA | The N20 sequence is a random string of oligonucleotides |
@@ -22,7 +22,7 @@
 
 
 
-## Recommended Reagents
+### Recommended Reagents
 | Name | Vendor | Catalog No. |
 |:---|:---:|:---:|
 | AMPure XP Reagent | Beckman Coulter | A63880 |

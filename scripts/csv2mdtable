@@ -21,47 +21,48 @@ def get_args():
 def enclose(row):
     return "| " + row + " |"
 
+def parse_csv(path_to_csv):
+    with path_to_csv.open(mode="r") as f:
+        reader = csv.DictReader(f)
+        headers = list(reader.fieldnames)
+        rows = [row.values() for row in reader]
+    return headers, rows
+
+
 
 def main():
     args = get_args()
     path_to_csv = Path.cwd() / args.input
 
-    rows = []
-
-    # get header and row information from csv
-    with path_to_csv.open(mode="r") as f:
-        reader = csv.DictReader(f)
-        if not args.fmt:
-            column_fmt = (
-                "|" + "|".join([ALIGNMENTS["c"]] * len(reader.fieldnames)) + "|"
-            )
-        else:
-            if len(args.fmt.split(",")) != len(reader.fieldnames):
+    headers, csv_rows = parse_csv(path_to_csv)
+    if args.fmt and (len(args.fmt.split(",")) != len(headers)):
                 print("--fmt argument and # of columns don't match")
                 sys.exit(1)
-            column_fmt = (
-                "|" + "|".join([ALIGNMENTS[c] for c in args.fmt.split(",")]) + "|"
+
+    column_fmt = (
+                "|" + "|".join([ALIGNMENTS[i] for i in args.fmt.split(",")]) + "|"
+            ) if args.fmt else  (
+                "|" + "|".join([ALIGNMENTS["c"]] * len(headers)) + "|"
             )
+    rows = []
+    rows.append(enclose(" | ".join(headers)))
+    rows.append(column_fmt)
 
-        rows.append(enclose(" | ".join(reader.fieldnames)))
-        rows.append(column_fmt)
+    for row in csv_rows:
+        try:
+            row_out = enclose(" | ".join(row))
+        except TypeError:
+            print(f"Error: {row}")
+            print(
+                "there was an issue with this row does it have a value for each column?"
+            )
+            sys.exit(1)
 
-        for row in reader:
-            # split sequences so they will wrap nicer in the table
-            try:
-                row_out = enclose(" | ".join(row.values()))
-            except TypeError:
-                print(f"Error:{row.values()}")
-                print(
-                    "there was an issue with this row does it have a value for each column?"
-                )
-                sys.exit(1)
-
-            rows.append(row_out)
-        print("\n")
-        print(f"## {args.title}")
-        print("\n".join(rows))
-        print("\n")
+        rows.append(row_out)
+    print("\n")
+    print(f"### {args.title}")
+    print("\n".join(rows))
+    print("\n")
 
 
 if __name__ == "__main__":

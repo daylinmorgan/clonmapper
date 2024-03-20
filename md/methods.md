@@ -140,7 +140,7 @@ For pre-generated stage 2 sequences containing i5/i7 adapters see
     | nuclease-free water | to 50 |
 
 1. Amplify barcodes by running 50 \unit{\uL} reaction on a thermocycler
-   using the following settings[^11], repeating steps 2-4 for 8 cycles[^12]:
+   using the following settings[^11], repeating steps 2-4 for 10 cycles[^12]:
 
     | Step | Temp (°C) | Time |
     |---|---|---|
@@ -151,7 +151,7 @@ For pre-generated stage 2 sequences containing i5/i7 adapters see
     | 5 | 72 | 2 min |
     | 6 | 15 | hold |
 
-1. Clean *stage 1* reaction as described in [**Appendix: AmpureXP Bead PCR Cleanup**](#ampurexp-bead-pcr-cleanup).
+1. Clean *stage 1* reaction as described in [*Appendix: AmpureXP Bead PCR Cleanup*](#ampurexp-bead-pcr-cleanup).
 1. Prepare *stage 2* PCR reaction to attach index sequences
    and Illumina adapters by mixing the following reagents:
 
@@ -167,9 +167,9 @@ For pre-generated stage 2 sequences containing i5/i7 adapters see
 
 1. Amplify the barcodes by running the 50 \unit{\uL} reaction
    on a thermocycler using the above cycling parameters
-   from *stage 1*, repeating steps 2-4 for 10 cycles [^12].
+   from *stage 1*, repeating steps 2-4 for 8 cycles [^12].
 
-1. Clean *stage 2* reaction as described in [**Appendix: AmpureXP Bead PCR Cleanup**](#ampurexp-bead-pcr-cleanup).
+1. Clean *stage 2* reaction as described in [*Appendix: AmpureXP Bead PCR Cleanup*](#ampurexp-bead-pcr-cleanup).
 
 [^9]: Universal phase amplicon sequencing primers are used to add more
   diversity to the sequencing reads which helps prevents sequencing errors.
@@ -265,7 +265,7 @@ to establish barcoded cell lines.
 ## Integrating ClonMapper Barcodes in Cells
 
 Using the concentrated lentivirus generated in the previous section you should transduce your cells of interest.
-See [**Appendix: Determine Viral Titer](#determine-viral-titer) for typical forward and reverse transduction/viral titer procedures.
+See [*Appendix: Determine Viral Titer*](#determine-viral-titer) for typical forward and reverse transduction/viral titer procedures.
 
 It is critical that you infect your cells with a low (~0.1) multiplicty of infection (MOI),
 in order to limit the chances of a multiple integration event.
@@ -288,6 +288,8 @@ through the course of routine cell culture maintenance.
 Barcodes are amplified from cellular genomes similar to the plasmid library as described above.
 Barcoded cell libraries should be assessed to ensure a sufficiently high diversity at time of initial archival.
 Crucially, any experiments involving barcoded cells should be carried out diligently to prevent population skewing over time.
+The below protocol assumes a high amount of starting material (2 \unit{\ug}) in order to sample ~300,000 cells.
+However, it's possible to amplify from a smaller starting amount of gDNA by increasing the total number of cycles from 20.
 
 For primer sequences see \hyperref[tab:oligos]{\textbf{Oligonucleotides}}.
 For pre-generated stage 2 sequences containing i5/i7 adapters see
@@ -325,8 +327,7 @@ For pre-generated stage 2 sequences containing i5/i7 adapters see
     | 5 | 72 | 2 min |
     | 6 | 15 | hold |
 
-
-1. Clean *stage 1* reaction as described in [**Appendix: AmpureXP Bead PCR Cleanup**](#ampurexp-bead-pcr-cleanup).
+1. Clean *stage 1* reaction as described in [*Appendix: AmpureXP Bead PCR Cleanup*](#ampurexp-bead-pcr-cleanup).
 
 1. Prepare *stage 2* PCR reaction to attach index sequences
    and Illumina adapters by mixing the following reagents:
@@ -343,9 +344,9 @@ For pre-generated stage 2 sequences containing i5/i7 adapters see
 
 1. Amplify the barcodes by running the 50 \unit{\uL} reaction
    on a thermocycler using the above cycling parameters
-   from *stage 1*, repeating steps 2-4 for 10 cycles. [^12]
+   from *stage 1*, repeating steps 2-4 for 8 cycles. [^12]
 
-1. Clean *stage 2* reaction as described in [**Appendix: AmpureXP Bead PCR Cleanup**](#ampurexp-bead-pcr-cleanup).
+1. Clean *stage 2* reaction as described in [*Appendix: AmpureXP Bead PCR Cleanup*](#ampurexp-bead-pcr-cleanup).
 
 [^49]: It is important to ensure that you have enough cells
   to sufficiently sample your population depending upon the initial barcode diversity.

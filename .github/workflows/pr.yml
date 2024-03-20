@@ -3,7 +3,6 @@ name: Pull Request
 on:
   # This workflow is started only on PRs
   pull_request:
-    # Your branch, usually "main" or "master"
     branches: [ "main" ]
 
 concurrency:

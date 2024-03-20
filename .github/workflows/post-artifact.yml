@@ -7,7 +7,7 @@ on:
     workflows: [Pull Request]
     types: [completed]
 
-# necessary post a comment
+# necessary to post a comment
 permissions:
   pull-requests: write
 

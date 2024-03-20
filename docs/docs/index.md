@@ -3,8 +3,8 @@ title: ClonMapper
 hide:
   - navigation
 ---
-<!-- hide title -->
 
+<!-- this additional css hides the title -->
 <style>
   .md-typeset h1,
   .md-content__button {
@@ -15,6 +15,12 @@ hide:
 <img src="assets/svg/clonmapper.svg" width='600' style='background-color: white;' align="left">
 
 Thank you for your interest in the ClonMapper DNA barcoding system.
+
+To get started go to the [protocol](protocol.md) tab or the latest [PDF](./pdf/latest).
+
+For previous versions and revision history see the [changelog](changelog.md).
+
+---
 
 ClonMapper was developed by Aziz Al'Khafaji in the [Brock Lab](https://brocklab.com)
 at the University of Texas at Austin.

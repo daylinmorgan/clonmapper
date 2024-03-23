@@ -1,9 +1,9 @@
 title: ClonMapper Barcoding System
 subtitle: Functionalized lineage tracing for the study and manipulation of heterogeneous cell populations
-institute:
-  - bme: Department of Biomedical Engineering, The University of Texas at Austin, Austin TX
-  - icmb: Institute for Cellular and Molecular Biology, The University of Texas at Austin, Austin TX
-author:
+# institute:
+#   - bme: Department of Biomedical Engineering, The University of Texas at Austin, Austin TX
+#   - icmb: Institute for Cellular and Molecular Biology, The University of Texas at Austin, Austin TX
+# author:
 #   - Andrea Gardner:
 #       institute:
 #         - bme

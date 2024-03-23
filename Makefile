@@ -91,7 +91,6 @@ tex/reagents.tex: tables/reagents.csv scripts/csv2longtable
 		--caption "Recommended Reagents" \
 		--fmt 'lcc'
 
-
 docker: ## build docker container to run pandoc locally
 	docker build . --tag daylinmorgan/pandoc
 
@@ -113,14 +112,6 @@ clean.docs:
 			docs/docs/full-protocol.md \
 			docs/docs/pdf/latest/*.pdf
 	@rm -rf docs/site
-
-templates/default.tex: templates/preamble.patch
-	pandoc -D latex > templates/default.tex
-	patch -u -b templates/default.tex -i templates/preamble.patch
-
-templates/preamble.patch:
-	pandoc -D latex > templates/default.latex
-	diff -u templates/default.latex templates/default.tex > templates/preamble.patch || true
 
 .PHONY: .FORCE
 .FORCE:

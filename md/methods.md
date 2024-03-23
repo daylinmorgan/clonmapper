@@ -267,15 +267,14 @@ to establish barcoded cell lines.
 Using the concentrated lentivirus generated in the previous section you should transduce your cells of interest.
 See [*Appendix: Determine Viral Titer*](#determine-viral-titer) for typical forward and reverse transduction/viral titer procedures.
 
-It is critical that you infect your cells with a low (~0.1) multiplicty of infection (MOI),
+It is critical that you infect your cells with a low (~0.1) multiplicity of infection (MOI),
 in order to limit the chances of a multiple integration event.
 To control the MOI you should titer every batch of concentrated virus on your specific cell line of interest.
 
 Once you have ascertained the viral titer, you should transduce your cells
 and separate blue fluorescent protein (BFP) positive cells using FACS.
 When sorting live cells you should take all necessary efforts to maximize cell viability for your cell line of interest.
-Controlling total cell library diversity and number of barcodes is accomplished by sorting
-your a subset of bfp-positive uniquely labeled cells into either a single well of a plate or a tube.
+So long as you have a low MOI you can control the starting diversity of your barcoded cell library using the total number of sorted cells as a proxy.
 Note that you are likely to recover fewer barcodes than cells you sort due to stochastic outgrowth and death following sort.
 The total number of barcodes recovered is typically half of the initial number of cells sorted.
 

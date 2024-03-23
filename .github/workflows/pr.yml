@@ -11,7 +11,7 @@ concurrency:
 
 jobs:
   build:
-    if: ${{ github.event != 'pull_request' }}
+    if: ${{ github.event_name != 'pull_request' }}
     permissions:
       # Required to upload/save artifact, otherwise you'll get
       # "Error: Resource not accessible by integration"

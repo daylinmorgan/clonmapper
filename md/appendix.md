@@ -29,7 +29,7 @@ to ClonMapper.
 1. With the tube still in the rack, aspirate the clear supernatant.
 1. With the tube still in the rack, add 180 \unit{\uL} of 80% ethanol and
    allow it to sit for 30 seconds.[^cleanup-1]
-1. With the tube still in the rack, aspirate the ethanol and repeat step 14.
+1. With the tube still in the rack, aspirate the ethanol and repeat step 11.
 1. Remove supernatant and allow bead to dry for no **more** than 5 minutes.[^cleanup-2]
 1. Remove tube from the magnetic rack and elute DNA
    by adding 42 \unit{\uL} of nuclease-free water.

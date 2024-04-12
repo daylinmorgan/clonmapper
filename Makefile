@@ -32,10 +32,6 @@ HTML_MDs := $(addprefix md/,$(SHARED_MDs) html-tables.md acknowledgements.md)
 LATEX_TABLES := $(addprefix tex/, oligos.tex reagents.tex)
 PDF := clonmapper-protocol-$(REV).pdf
 
-bootstrap: ## setup venv for mkdocs
-	@python3 -m venv $(VENV) --clear
-	@$(VENV)/bin/pip install -r ./docs/requirements.txt
-
 p pdf: $(PDF) ## generate the pdf
 
 protocol.tex: .FORCE
@@ -91,9 +87,6 @@ tex/reagents.tex: tables/reagents.csv scripts/csv2longtable
 		--caption "Recommended Reagents" \
 		--fmt 'lcc'
 
-docker: ## build docker container to run pandoc locally
-	docker build . --tag daylinmorgan/pandoc
-
 .PHONY: clean.site clean.paper
 ## c, clean |> clean.{paper,docs} 
 ### paper -> remove paper outputs |> --align sep
@@ -113,14 +106,17 @@ clean.docs:
 			docs/docs/pdf/latest/*.pdf
 	@rm -rf docs/site
 
+bootstrap: ## setup venv for mkdocs
+	@python3 -m venv $(VENV) --clear
+	@$(VENV)/bin/pip install -r ./docs/requirements.txt
+
 .PHONY: .FORCE
 .FORCE:
 
 .DEFAULT_GOAL := help
 log = $(if $(tprint),$(call tprint,{a.bold}==> {a.magenta}$(1){a.end}),@echo '==> $(1)')
 USAGE = {a.bold}{a.cyan}ClonMapper Protocol Tasks{a.end}\n\t{a.green}make{a.end}: <recipe>\n
-PRINT_VARS = HTML_FLAGS LATEX_FLAGS
-PHONIFY = true
+PHONIFY = true # task.mk feature to make documented tasks .PHONY by default
 -include .task.mk
 $(if $(wildcard .task.mk),,.task.mk: ; curl -fsSL https://raw.githubusercontent.com/daylinmorgan/task.mk/v23.1.2/task.mk -o .task.mk)
 

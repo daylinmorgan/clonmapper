@@ -14,7 +14,7 @@ Alternatively you can make quick changes using the built-in GitHub
 ### Requirements
 
 > [!NOTE]
-> If you submit your changes as pull-request GitHub CI will generate a pdf for you.
+> If you submit your changes as a pull-request GitHub CI will generate a pdf for you.
 
 At a minimum use should ensure you have `make` available.
 

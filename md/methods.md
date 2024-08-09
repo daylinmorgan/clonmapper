@@ -133,8 +133,8 @@ For pre-generated stage 2 sequences containing i5/i7 adapters see
     |---|---|
     | 5X Q5 Reaction Buffer | 10 |
     | 10 mM dNTPs | 1 |
-    | CM-FWD-S1-PAS | 2.5 |
-    | CM-REV-S1 | 2.5 |
+    | 10 \unit{\uM} CM-FWD-S1-PAS | 2.5 |
+    | 10 \unit{\uM} CM-REV-S1 | 2.5 |
     | Q5 Polymerase | 0.5 |
     | 100 ng DNA | variable |
     | nuclease-free water | to 50 |
@@ -159,8 +159,8 @@ For pre-generated stage 2 sequences containing i5/i7 adapters see
     |---|---|
     | 5X Q5 Reaction Buffer | 10 |
     | 10 mM dNTPs | 1 |
-    | CM-FWD-S2-i5 | 2.5 |
-    | CM-REV-S2-i7 | 2.5 |
+    | 10 \unit{\uM} CM-FWD-S2-i5 | 2.5 |
+    | 10 \unit{\uM} CM-REV-S2-i7 | 2.5 |
     | Q5 Polymerase | 0.5 |
     | 4 ng *stage 1* amplicon | variable |
     | nuclease-free water | to 50 |
@@ -308,8 +308,8 @@ For pre-generated stage 2 sequences containing i5/i7 adapters see
     |---|---|
     | 5X Q5 Reaction Buffer | 10 |
     | 10 mM dNTPs | 1 |
-    | CM-FWD-S1-PAS | 2.5 |
-    | CM-REV-S1 | 2.5 |
+    | 10 \unit{\uM} CM-FWD-S1-PAS | 2.5 |
+    | 10 \unit{\uM} CM-REV-S1 | 2.5 |
     | Q5 Polymerase | 0.5 |
     | 2 \unit{\ug} DNA | variable |
     | nuclease-free water | to 50 |
@@ -335,8 +335,8 @@ For pre-generated stage 2 sequences containing i5/i7 adapters see
     |---|---|
     | 5X Q5 Reaction Buffer | 10 |
     | 10 mM dNTPs | 1 |
-    | CM-FWD-S2-i5 | 2.5 |
-    | CM-REV-S2-i7 | 2.5 |
+    | 10 \unit{\uM} CM-FWD-S2-i5 | 2.5 |
+    | 10 \unit{\uM} CM-REV-S2-i7 | 2.5 |
     | Q5 Polymerase | 0.5 |
     | 4 ng *stage 1* amplicon | variable |
     | nuclease-free water | to 50 |
